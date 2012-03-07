@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII" />
+<title>Ajax test</title>
+
+<!-- treeview and yahoo event, dom and connection files -->
+<script type="text/javascript" src="../../js/yahoo/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="../../js/yahoo/connection-debug.js"></script>
+<script type="text/javascript" src="../../js/yahoo/json-debug.js"></script>
+
+<script type="text/javascript" src="../../js/yahoo/ajaxreq.js"></script>
+
+</head>
+<body id="body" onload="onReady();">
+<!-- <a href="javascript:performReq ();">
+dalle
+</a>
+-->
+<input name="patId" value="20" type="hidden"/>
+<input name="secId" value="1400" type="hidden"/>
+<input name="finish" value="0" type="hidden"/>
+<table>
+	<tbody>
+		<tr>
+			<td>A1. Fecha del primer contacto (DD MM AAAA)</td>
+		</tr>
+		<tr>
+			<td>&nbsp;<input
+				style="border: 1px solid darkblue; background: white none repeat scroll 0% 0%; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;"
+				name="q2430-1-1" id="q2430-1-1" maxlength="10" size="6" value=""
+				onblur="event.stopPropagation();intrvFormCtrl.chkNumber(this, '1', '31', '98')"
+				onfocus="intrvFormCtrl.onfocus(this.name)" type="text"/>
+			&nbsp;-&nbsp; &nbsp;<input name="q2430-1-2" id="q2430-1-2"
+				maxlength="10" size="6" value=""
+				onblur="event.stopPropagation();intrvFormCtrl.chkNumber(this, '1', '12', '98')"
+				onfocus="intrvFormCtrl.onfocus(this.name)" type="text"/>
+			&nbsp;-&nbsp; &nbsp;<input name="q2430-1-3" id="q2430-1-3"
+				maxlength="10" size="6" value=""
+				onblur="event.stopPropagation();intrvFormCtrl.chkNumber(this, '2007', '2015', '9998')"
+				onfocus="intrvFormCtrl.onfocus(this.name)" type="text"/>
+				</td>
+		</tr>
+		<tr>
+			<td>A2. Fecha de ingreso (DD MM AAAA)</td>
+		</tr>
+		<tr>
+			<td>&nbsp;<input name="q2267-1-1" id="q2267-1-1" maxlength="10"
+				size="6" value=""
+				onblur="event.stopPropagation();intrvFormCtrl.chkNumber(this, '1', '31', '98')"
+				onfocus="intrvFormCtrl.onfocus(this.name)" type="text"/>
+			&nbsp;-&nbsp; &nbsp;<input name="q2267-1-2" id="q2267-1-2"
+				maxlength="10" size="6" value=""
+				onblur="event.stopPropagation();intrvFormCtrl.chkNumber(this, '1', '12', '98')"
+				onfocus="intrvFormCtrl.onfocus(this.name)" type="text"/>
+			&nbsp;-&nbsp; &nbsp;<input name="q2267-1-3" id="q2267-1-3"
+				maxlength="10" size="6" value=""
+				onblur="event.stopPropagation();intrvFormCtrl.chkNumber(this, '2007', '2015', '9998')"
+				onfocus="intrvFormCtrl.onfocus(this.name)" type="text"/></td>
+		</tr>
+		<tr>
+			<td>A3. Especificar motivo de ingreso</td>
+		</tr>
+		<tr>
+			<td>&nbsp;<input name="q2268-1-1" id="q2268-1-1" maxlength="128"
+				size="31" value="" onblur="intrvFormCtrl.onBlur(this.name)"
+				onfocus="intrvFormCtrl.onfocus(this.name)" type="text"/></td>
+		</tr>
+		<tr>
+			<td>A3a. Codificar motivo (ICD10)</td>
+		</tr>
+		<tr>
+			<td>&nbsp;<input name="q5850-1-1" id="q5850-1-1" maxlength="128"
+				size="31" value="" onblur="intrvFormCtrl.onBlur(this.name)"
+				onfocus="intrvFormCtrl.onfocus(this.name)" type="text"/></td>
+		</tr>
+		<tr>
+			<td><br/>
+			</td>
+		</tr>
+
+		<tr>
+			<td><br>
+			<input name="btnSend" value="Continuar" disabled="disabled"
+				onclick="intrvFormCtrl.send(this.form)" type="button"/>&nbsp;&nbsp;
+			<input name="btnEnd" value="Guardar" disabled="disabled"
+				onclick="intrvFormCtrl.finish(this.form,1)" type="button"/></td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>

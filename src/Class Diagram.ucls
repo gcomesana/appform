@@ -1,0 +1,901 @@
+<class-diagram version="0.9.86" automaticImage="JPEG" icons="true" always-add-relationships="false" 
+  generalizations="true" realizations="true" associations="true" dependencies="false" nesting-relationships="true">  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.Role" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/Role.java" binary="false">    
+    <position x="1629" y="493" width="80" height="36"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.AbstractItem" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/AbstractItem.java" binary="false">    
+    <position x="482" y="413" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.AppDBLogger" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/AppDBLogger.java" binary="false">    
+    <position x="284" y="237" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.Patient" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/Patient.java" binary="false">    
+    <position x="1157" y="493" width="80" height="36"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.RelIntrvGroup" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/RelIntrvGroup.java" binary="false">    
+    <position x="1199" y="708" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.Interview" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/Interview.java" binary="false">    
+    <position x="1091" y="569" width="80" height="36"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.AppGroup" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/AppGroup.java" binary="false">    
+    <position x="1448" y="665" width="80" height="36"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.RelGrpAppuser" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/RelGrpAppuser.java" binary="false">    
+    <position x="1448" y="569" width="92" height="36"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.EnumItem" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/EnumItem.java" binary="false">    
+    <position x="421" y="619" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.Expects" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/Expects.java" binary="false">    
+    <position x="415" y="265" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.Hospital" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/Hospital.java" binary="false">    
+    <position x="1509" y="397" width="80" height="36"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.Question" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/Question.java" binary="false">    
+    <position x="669" y="171" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.Project" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/Project.java" binary="false">    
+    <position x="1277" y="493" width="80" height="36"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.AppUser" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/AppUser.java" binary="false">    
+    <position x="1448" y="493" width="80" height="36"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.PerfUserHistory" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/PerfUserHistory.java" binary="false">    
+    <position x="1332" y="397" width="95" height="36"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.Section" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/Section.java" binary="false">    
+    <position x="671" y="493" width="80" height="36"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.AppuserRole" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/AppuserRole.java" binary="false">    
+    <position x="1629" y="397" width="81" height="36"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.AnswerType" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/AnswerType.java" binary="false">    
+    <position x="838" y="492" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.AnswerItem" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/AnswerItem.java" binary="false">    
+    <position x="849" y="397" width="80" height="36"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.Answer" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/Answer.java" binary="false">    
+    <position x="1016" y="493" width="80" height="36"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.EnumType" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/EnumType.java" binary="false">    
+    <position x="420" y="532" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.PatGivesAns2Ques" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/PatGivesAns2Ques.java" binary="false">    
+    <position x="990" y="397" width="106" height="36"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.RelPrjAppusers" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/RelPrjAppusers.java" binary="false">    
+    <position x="1199" y="397" width="93" height="36"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.QuestionsAnsItems" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/QuestionsAnsItems.java" binary="false">    
+    <position x="669" y="329" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.Performance" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/Performance.java" binary="false">    
+    <position x="1366" y="282" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.GroupType" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/GroupType.java" binary="false">    
+    <position x="1492" y="790" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.entity.Text" project="appform" 
+    file="/appform/src/org/cnio/appform/entity/Text.java" binary="false">    
+    <position x="261" y="493" width="80" height="36"/>    
+    <display autosize="true" package="true" initial-value="false" signature="false" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <association>    
+    <bendpoint x="846" y="305"/>    
+    <bendpoint x="964" y="493"/>    
+    <source project="appform" name="org.cnio.appform.entity.Question" 
+      file="/appform/src/org/cnio/appform/entity/Question.java" binary="false" navigable="false">      
+      <attribute name="patAnsQues"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.PatGivesAns2Ques" 
+      file="/appform/src/org/cnio/appform/entity/PatGivesAns2Ques.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.AnswerItem" 
+      file="/appform/src/org/cnio/appform/entity/AnswerItem.java" binary="false" navigable="false">      
+      <attribute name="answers"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.Answer" 
+      file="/appform/src/org/cnio/appform/entity/Answer.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.RelPrjAppusers" 
+      file="/appform/src/org/cnio/appform/entity/RelPrjAppusers.java" binary="false" navigable="false">      
+      <attribute name="project"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.Project" 
+      file="/appform/src/org/cnio/appform/entity/Project.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.AppUser" 
+      file="/appform/src/org/cnio/appform/entity/AppUser.java" binary="false" navigable="false">      
+      <attribute name="userRoles"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.AppuserRole" 
+      file="/appform/src/org/cnio/appform/entity/AppuserRole.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.PatGivesAns2Ques" 
+      file="/appform/src/org/cnio/appform/entity/PatGivesAns2Ques.java" binary="false" navigable="false">      
+      <attribute name="patient"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.Patient" 
+      file="/appform/src/org/cnio/appform/entity/Patient.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <bendpoint x="1478" y="397"/>    
+    <source project="appform" name="org.cnio.appform.entity.AppUser" 
+      file="/appform/src/org/cnio/appform/entity/AppUser.java" binary="false" navigable="false">      
+      <attribute name="performances"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.Performance" 
+      file="/appform/src/org/cnio/appform/entity/Performance.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.Project" 
+      file="/appform/src/org/cnio/appform/entity/Project.java" binary="false" navigable="false">      
+      <attribute name="interviews"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.Interview" 
+      file="/appform/src/org/cnio/appform/entity/Interview.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.Patient" 
+      file="/appform/src/org/cnio/appform/entity/Patient.java" binary="false" navigable="false">      
+      <attribute name="patAnsQues"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.PatGivesAns2Ques" 
+      file="/appform/src/org/cnio/appform/entity/PatGivesAns2Ques.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.AppUser" 
+      file="/appform/src/org/cnio/appform/entity/AppUser.java" binary="false" navigable="false">      
+      <attribute name="relPrjAppuserses"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.RelPrjAppusers" 
+      file="/appform/src/org/cnio/appform/entity/RelPrjAppusers.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <bendpoint x="1168" y="397"/>    
+    <source project="appform" name="org.cnio.appform.entity.Patient" 
+      file="/appform/src/org/cnio/appform/entity/Patient.java" binary="false" navigable="false">      
+      <attribute name="performances"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.Performance" 
+      file="/appform/src/org/cnio/appform/entity/Performance.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.Interview" 
+      file="/appform/src/org/cnio/appform/entity/Interview.java" binary="false" navigable="false">      
+      <attribute name="parentPrj"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.Project" 
+      file="/appform/src/org/cnio/appform/entity/Project.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.QuestionsAnsItems" 
+      file="/appform/src/org/cnio/appform/entity/QuestionsAnsItems.java" binary="false" navigable="false">      
+      <attribute name="theAnswerItem"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.AnswerItem" 
+      file="/appform/src/org/cnio/appform/entity/AnswerItem.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.AppuserRole" 
+      file="/appform/src/org/cnio/appform/entity/AppuserRole.java" binary="false" navigable="false">      
+      <attribute name="theRole"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.Role" file="/appform/src/org/cnio/appform/entity/Role.java" 
+      binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.Interview" 
+      file="/appform/src/org/cnio/appform/entity/Interview.java" binary="false" navigable="false">      
+      <attribute name="sourceIntrv"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.Interview" 
+      file="/appform/src/org/cnio/appform/entity/Interview.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.PerfUserHistory" 
+      file="/appform/src/org/cnio/appform/entity/PerfUserHistory.java" binary="false" navigable="false">      
+      <attribute name="theUser"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.AppUser" 
+      file="/appform/src/org/cnio/appform/entity/AppUser.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.Role" file="/appform/src/org/cnio/appform/entity/Role.java" 
+      binary="false" navigable="false">      
+      <attribute name="userRoles"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.AppuserRole" 
+      file="/appform/src/org/cnio/appform/entity/AppuserRole.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.Performance" 
+      file="/appform/src/org/cnio/appform/entity/Performance.java" binary="false" navigable="false">      
+      <attribute name="performanceUsers"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.PerfUserHistory" 
+      file="/appform/src/org/cnio/appform/entity/PerfUserHistory.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <bendpoint x="1126" y="493"/>    
+    <bendpoint x="1126" y="397"/>    
+    <source project="appform" name="org.cnio.appform.entity.Interview" 
+      file="/appform/src/org/cnio/appform/entity/Interview.java" binary="false" navigable="false">      
+      <attribute name="performances"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.Performance" 
+      file="/appform/src/org/cnio/appform/entity/Performance.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.GroupType" 
+      file="/appform/src/org/cnio/appform/entity/GroupType.java" binary="false" navigable="false">      
+      <attribute name="groups"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.AppGroup" 
+      file="/appform/src/org/cnio/appform/entity/AppGroup.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization>    
+    <source project="appform" name="org.cnio.appform.entity.Text" file="/appform/src/org/cnio/appform/entity/Text.java" 
+      binary="false"/>    
+    <target project="appform" name="org.cnio.appform.entity.AbstractItem" 
+      file="/appform/src/org/cnio/appform/entity/AbstractItem.java" binary="false"/>  
+  </generalization>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.Hospital" 
+      file="/appform/src/org/cnio/appform/entity/Hospital.java" binary="false" navigable="false">      
+      <attribute name="theUsers"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.AppUser" 
+      file="/appform/src/org/cnio/appform/entity/AppUser.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.RelIntrvGroup" 
+      file="/appform/src/org/cnio/appform/entity/RelIntrvGroup.java" binary="false" navigable="false">      
+      <attribute name="appgroup"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.AppGroup" 
+      file="/appform/src/org/cnio/appform/entity/AppGroup.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.EnumType" 
+      file="/appform/src/org/cnio/appform/entity/EnumType.java" binary="false" navigable="false">      
+      <attribute name="items"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.EnumItem" 
+      file="/appform/src/org/cnio/appform/entity/EnumItem.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <bendpoint x="959" y="397"/>    
+    <bendpoint x="985" y="493"/>    
+    <source project="appform" name="org.cnio.appform.entity.Performance" 
+      file="/appform/src/org/cnio/appform/entity/Performance.java" binary="false" navigable="false">      
+      <attribute name="interview"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.Interview" 
+      file="/appform/src/org/cnio/appform/entity/Interview.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <bendpoint x="922" y="493"/>    
+    <source project="appform" name="org.cnio.appform.entity.Interview" 
+      file="/appform/src/org/cnio/appform/entity/Interview.java" binary="false" navigable="false">      
+      <attribute name="answerItems"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.AnswerItem" 
+      file="/appform/src/org/cnio/appform/entity/AnswerItem.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <bendpoint x="901" y="493"/>    
+    <source project="appform" name="org.cnio.appform.entity.AnswerItem" 
+      file="/appform/src/org/cnio/appform/entity/AnswerItem.java" binary="false" navigable="false">      
+      <attribute name="intrvOwner"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.Interview" 
+      file="/appform/src/org/cnio/appform/entity/Interview.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.PatGivesAns2Ques" 
+      file="/appform/src/org/cnio/appform/entity/PatGivesAns2Ques.java" binary="false" navigable="false">      
+      <attribute name="answer"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.Answer" 
+      file="/appform/src/org/cnio/appform/entity/Answer.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.Section" 
+      file="/appform/src/org/cnio/appform/entity/Section.java" binary="false" navigable="false">      
+      <attribute name="items"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.AbstractItem" 
+      file="/appform/src/org/cnio/appform/entity/AbstractItem.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.AppGroup" 
+      file="/appform/src/org/cnio/appform/entity/AppGroup.java" binary="false" navigable="false">      
+      <attribute name="relGrpAppusrs"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.RelGrpAppuser" 
+      file="/appform/src/org/cnio/appform/entity/RelGrpAppuser.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.PerfUserHistory" 
+      file="/appform/src/org/cnio/appform/entity/PerfUserHistory.java" binary="false" navigable="false">      
+      <attribute name="performance"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.Performance" 
+      file="/appform/src/org/cnio/appform/entity/Performance.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.RelPrjAppusers" 
+      file="/appform/src/org/cnio/appform/entity/RelPrjAppusers.java" binary="false" navigable="false">      
+      <attribute name="appuser"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.AppUser" 
+      file="/appform/src/org/cnio/appform/entity/AppUser.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.Expects" 
+      file="/appform/src/org/cnio/appform/entity/Expects.java" binary="false" navigable="false">      
+      <attribute name="answerItem"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.AnswerItem" 
+      file="/appform/src/org/cnio/appform/entity/AnswerItem.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.Interview" 
+      file="/appform/src/org/cnio/appform/entity/Interview.java" binary="false" navigable="false">      
+      <attribute name="usrOwner"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.AppUser" 
+      file="/appform/src/org/cnio/appform/entity/AppUser.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.AppGroup" 
+      file="/appform/src/org/cnio/appform/entity/AppGroup.java" binary="false" navigable="false">      
+      <attribute name="relGrpIntrvs"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.RelIntrvGroup" 
+      file="/appform/src/org/cnio/appform/entity/RelIntrvGroup.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.AnswerItem" 
+      file="/appform/src/org/cnio/appform/entity/AnswerItem.java" binary="false" navigable="false">      
+      <attribute name="questionsAnsItems"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.QuestionsAnsItems" 
+      file="/appform/src/org/cnio/appform/entity/QuestionsAnsItems.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <bendpoint x="1147" y="397"/>    
+    <source project="appform" name="org.cnio.appform.entity.Performance" 
+      file="/appform/src/org/cnio/appform/entity/Performance.java" binary="false" navigable="false">      
+      <attribute name="patient"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.Patient" 
+      file="/appform/src/org/cnio/appform/entity/Patient.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.Question" 
+      file="/appform/src/org/cnio/appform/entity/Question.java" binary="false" navigable="false">      
+      <attribute name="questionAnsItems"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.QuestionsAnsItems" 
+      file="/appform/src/org/cnio/appform/entity/QuestionsAnsItems.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <bendpoint x="1100" y="665"/>    
+    <source project="appform" name="org.cnio.appform.entity.Interview" 
+      file="/appform/src/org/cnio/appform/entity/Interview.java" binary="false" navigable="false">      
+      <attribute name="relIntrvGrps"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.RelIntrvGroup" 
+      file="/appform/src/org/cnio/appform/entity/RelIntrvGroup.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization>    
+    <source project="appform" name="org.cnio.appform.entity.AnswerType" 
+      file="/appform/src/org/cnio/appform/entity/AnswerType.java" binary="false"/>    
+    <target project="appform" name="org.cnio.appform.entity.AnswerItem" 
+      file="/appform/src/org/cnio/appform/entity/AnswerItem.java" binary="false"/>  
+  </generalization>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.AppGroup" 
+      file="/appform/src/org/cnio/appform/entity/AppGroup.java" binary="false" navigable="false">      
+      <attribute name="container"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.AppGroup" 
+      file="/appform/src/org/cnio/appform/entity/AppGroup.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.QuestionsAnsItems" 
+      file="/appform/src/org/cnio/appform/entity/QuestionsAnsItems.java" binary="false" navigable="false">      
+      <attribute name="theQuestion"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.Question" 
+      file="/appform/src/org/cnio/appform/entity/Question.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.Section" 
+      file="/appform/src/org/cnio/appform/entity/Section.java" binary="false" navigable="false">      
+      <attribute name="parentInt"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.Interview" 
+      file="/appform/src/org/cnio/appform/entity/Interview.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization>    
+    <source project="appform" name="org.cnio.appform.entity.Question" 
+      file="/appform/src/org/cnio/appform/entity/Question.java" binary="false"/>    
+    <target project="appform" name="org.cnio.appform.entity.AbstractItem" 
+      file="/appform/src/org/cnio/appform/entity/AbstractItem.java" binary="false"/>  
+  </generalization>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.Project" 
+      file="/appform/src/org/cnio/appform/entity/Project.java" binary="false" navigable="false">      
+      <attribute name="relPrjAppuserses"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.RelPrjAppusers" 
+      file="/appform/src/org/cnio/appform/entity/RelPrjAppusers.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <bendpoint x="1740" y="397"/>    
+    <bendpoint x="1740" y="493"/>    
+    <bendpoint x="1740" y="569"/>    
+    <source project="appform" name="org.cnio.appform.entity.Performance" 
+      file="/appform/src/org/cnio/appform/entity/Performance.java" binary="false" navigable="false">      
+      <attribute name="group"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.AppGroup" 
+      file="/appform/src/org/cnio/appform/entity/AppGroup.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.Interview" 
+      file="/appform/src/org/cnio/appform/entity/Interview.java" binary="false" navigable="false">      
+      <attribute name="children"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.Interview" 
+      file="/appform/src/org/cnio/appform/entity/Interview.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.RelGrpAppuser" 
+      file="/appform/src/org/cnio/appform/entity/RelGrpAppuser.java" binary="false" navigable="false">      
+      <attribute name="appgroup"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.AppGroup" 
+      file="/appform/src/org/cnio/appform/entity/AppGroup.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.AppGroup" 
+      file="/appform/src/org/cnio/appform/entity/AppGroup.java" binary="false" navigable="false">      
+      <attribute name="type"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.GroupType" 
+      file="/appform/src/org/cnio/appform/entity/GroupType.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.AbstractItem" 
+      file="/appform/src/org/cnio/appform/entity/AbstractItem.java" binary="false" navigable="false">      
+      <attribute name="parentSec"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.Section" 
+      file="/appform/src/org/cnio/appform/entity/Section.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <bendpoint x="943" y="493"/>    
+    <source project="appform" name="org.cnio.appform.entity.PatGivesAns2Ques" 
+      file="/appform/src/org/cnio/appform/entity/PatGivesAns2Ques.java" binary="false" navigable="false">      
+      <attribute name="question"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.Question" 
+      file="/appform/src/org/cnio/appform/entity/Question.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.Answer" 
+      file="/appform/src/org/cnio/appform/entity/Answer.java" binary="false" navigable="false">      
+      <attribute name="answerItem"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.AnswerItem" 
+      file="/appform/src/org/cnio/appform/entity/AnswerItem.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <bendpoint x="1457" y="397"/>    
+    <source project="appform" name="org.cnio.appform.entity.Performance" 
+      file="/appform/src/org/cnio/appform/entity/Performance.java" binary="false" navigable="false">      
+      <attribute name="appuser"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.AppUser" 
+      file="/appform/src/org/cnio/appform/entity/AppUser.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.AbstractItem" 
+      file="/appform/src/org/cnio/appform/entity/AbstractItem.java" binary="false" navigable="false">      
+      <attribute name="containees"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.AbstractItem" 
+      file="/appform/src/org/cnio/appform/entity/AbstractItem.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <bendpoint x="1121" y="665"/>    
+    <source project="appform" name="org.cnio.appform.entity.RelIntrvGroup" 
+      file="/appform/src/org/cnio/appform/entity/RelIntrvGroup.java" binary="false" navigable="false">      
+      <attribute name="intrv"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.Interview" 
+      file="/appform/src/org/cnio/appform/entity/Interview.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.Answer" 
+      file="/appform/src/org/cnio/appform/entity/Answer.java" binary="false" navigable="false">      
+      <attribute name="patAnsQues"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.PatGivesAns2Ques" 
+      file="/appform/src/org/cnio/appform/entity/PatGivesAns2Ques.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.AppUser" 
+      file="/appform/src/org/cnio/appform/entity/AppUser.java" binary="false" navigable="false">      
+      <attribute name="userPerformances"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.PerfUserHistory" 
+      file="/appform/src/org/cnio/appform/entity/PerfUserHistory.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.AppuserRole" 
+      file="/appform/src/org/cnio/appform/entity/AppuserRole.java" binary="false" navigable="false">      
+      <attribute name="theUser"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.AppUser" 
+      file="/appform/src/org/cnio/appform/entity/AppUser.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.AppUser" 
+      file="/appform/src/org/cnio/appform/entity/AppUser.java" binary="false" navigable="false">      
+      <attribute name="interviews"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.Interview" 
+      file="/appform/src/org/cnio/appform/entity/Interview.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.AppGroup" 
+      file="/appform/src/org/cnio/appform/entity/AppGroup.java" binary="false" navigable="false">      
+      <attribute name="containees"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.AppGroup" 
+      file="/appform/src/org/cnio/appform/entity/AppGroup.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.EnumItem" 
+      file="/appform/src/org/cnio/appform/entity/EnumItem.java" binary="false" navigable="false">      
+      <attribute name="parentType"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.EnumType" 
+      file="/appform/src/org/cnio/appform/entity/EnumType.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.AppUser" 
+      file="/appform/src/org/cnio/appform/entity/AppUser.java" binary="false" navigable="false">      
+      <attribute name="relGrpAppusrs"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.RelGrpAppuser" 
+      file="/appform/src/org/cnio/appform/entity/RelGrpAppuser.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <bendpoint x="230" y="397"/>    
+    <bendpoint x="230" y="493"/>    
+    <source project="appform" name="org.cnio.appform.entity.Expects" 
+      file="/appform/src/org/cnio/appform/entity/Expects.java" binary="false" navigable="false">      
+      <attribute name="question"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.Question" 
+      file="/appform/src/org/cnio/appform/entity/Question.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization>    
+    <source project="appform" name="org.cnio.appform.entity.EnumType" 
+      file="/appform/src/org/cnio/appform/entity/EnumType.java" binary="false"/>    
+    <target project="appform" name="org.cnio.appform.entity.AnswerItem" 
+      file="/appform/src/org/cnio/appform/entity/AnswerItem.java" binary="false"/>  
+  </generalization>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.Interview" 
+      file="/appform/src/org/cnio/appform/entity/Interview.java" binary="false" navigable="false">      
+      <attribute name="sections"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.Section" 
+      file="/appform/src/org/cnio/appform/entity/Section.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.RelGrpAppuser" 
+      file="/appform/src/org/cnio/appform/entity/RelGrpAppuser.java" binary="false" navigable="false">      
+      <attribute name="appuser"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.AppUser" 
+      file="/appform/src/org/cnio/appform/entity/AppUser.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <bendpoint x="1761" y="569"/>    
+    <bendpoint x="1761" y="493"/>    
+    <bendpoint x="1761" y="397"/>    
+    <source project="appform" name="org.cnio.appform.entity.AppGroup" 
+      file="/appform/src/org/cnio/appform/entity/AppGroup.java" binary="false" navigable="false">      
+      <attribute name="performances"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.Performance" 
+      file="/appform/src/org/cnio/appform/entity/Performance.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.entity.AbstractItem" 
+      file="/appform/src/org/cnio/appform/entity/AbstractItem.java" binary="false" navigable="false">      
+      <attribute name="container"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.entity.AbstractItem" 
+      file="/appform/src/org/cnio/appform/entity/AbstractItem.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" package="true" initial-value="false" signature="false" visibility="true">    
+    <attributes public="false" package="false" protected="false" private="false"/>    
+    <operations public="false" package="false" protected="false" private="false"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

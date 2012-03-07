@@ -1,0 +1,201 @@
+<!-- 
+	detailprj.jsp?op=det&t=prj&frmid=id 
+	show details for a project, including its contained items (this means, 
+	interviews), being able to delete them from this page 
+-->
+<%@ page language="java" contentType="text/html;charset=UTF-8"%>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+<%@page import="org.hibernate.Session, java.util.Collection, 
+								java.util.Iterator, java.util.ArrayList, java.util.List,
+								java.util.Enumeration"  %>
+								
+<%@page import="org.cnio.appform.entity.AbstractItem,
+								org.cnio.appform.entity.Text, org.cnio.appform.entity.Question, 
+								org.cnio.appform.entity.Project, org.cnio.appform.entity.Section,
+								org.cnio.appform.entity.Interview, org.cnio.appform.entity.AppUser,
+								org.cnio.appform.entity.AnswerItem, org.cnio.appform.util.AppUserCtrl,
+								org.cnio.appform.util.HibernateUtil,
+								org.cnio.appform.util.HibController,
+								org.cnio.appform.util.IntrvController" %>	
+								
+<%
+// 	Session hibSes = HibernateUtil.getSessionFactory().openSession();
+System.out.println("detailprj.jsp: hibSes: "+hibSes.hashCode());
+	List<Interview> intrCol = null;
+	
+	pageContext.setAttribute ("interviews", intrCol);
+	String res = request.getParameter ("res");
+//	Integer usrId = (Integer)session.getAttribute ("usrid");
+	IntrvController intrvCtrl = new IntrvController (hibSes);
+	
+	AppUser theAppUsr = (AppUser)hibSes.get(AppUser.class, usrId);
+	pageContext.setAttribute("isGuest", 0);
+	if (theAppUsr.isGuest()) {
+		pageContext.setAttribute("isGuest", 1);
+	}
+	
+	
+	if (res != null) { // the referer page is an editintr page
+		String itemId = request.getParameter ("frmid");
+		Interview ait = 
+			(Interview)hibSes.get(Interview.class, Integer.decode(itemId));
+		
+		Project prj = ait.getParentProj ();
+		pageContext.setAttribute("project", prj);
+		pageContext.setAttribute("itemid", itemId);
+		
+		session.setAttribute ("prjId", prj.getProjectCode());
+		
+//		intrCol = HibernateUtil.getIntr4Proj(hibSes, prj.getId(), usrId);
+		intrCol = intrvCtrl.getIntrv4Usr (prj.getId(), usrId);
+		pageContext.setAttribute ("interviews", intrCol);
+	}
+	else { // if res is not present, then we are here from the project list
+		String idPrj = request.getParameter("frmid");
+	
+		if (idPrj != null) {
+			Project prjAux = (Project)hibSes.get(Project.class, Integer.decode(idPrj));
+			pageContext.setAttribute("project", prjAux);
+			session.setAttribute("prjId", prjAux.getProjectCode());
+			
+//			intrCol = HibernateUtil.getIntr4Proj(hibSes, Integer.decode(idPrj), usrId);
+			intrCol = intrvCtrl.getIntrv4Usr (Integer.decode(idPrj), usrId);
+	
+			if (intrCol != null && intrCol.size() > 0) 	
+				pageContext.setAttribute ("interviews", intrCol);
+		}
+		else // here we should raise an error... 
+			response.sendRedirect ("../index.jsp");
+	}
+	
+// Role management for this jsp fragment
+//	String roles = (String)session.getAttribute("roles");
+System.out.print("<!-- detailprj.jsp: roles: " + roles + " -->");
+	String btnDis = "disabled=\"disabled\"";
+	pageContext.setAttribute("btnDis", "");
+	if ((roles.indexOf("editor") == -1) && (roles.indexOf("admin") == -1)) {
+/*	if (roles.indexOf("interviewer") != -1 || roles.indexOf("guest") != -1 ||
+			roles.indexOf("curator") != -1 || roles.indexOf("datamanager") != -1) { */
+		pageContext.setAttribute ("btnDis", btnDis);
+	}
+
+	pageContext.setAttribute ("btnDisAdm", "");
+/*
+	if (roles.indexOf("admin") != -1)
+		pageContext.setAttribute("btnDisAdm", btnDis);
+*/	
+	pageContext.setAttribute ("isCoord", 0);
+	if (roles.indexOf ("coordinator") != -1)
+		pageContext.setAttribute ("isCoord", 1);
+
+	if (roles.toUpperCase().indexOf(AppUserCtrl.ADMIN_ROLE) != -1 ||
+			roles.toUpperCase().indexOf(AppUserCtrl.EDITOR_ROLE) != -1 ||
+			roles.toUpperCase().indexOf(AppUserCtrl.INTRVR_ROLE) != -1)
+		pageContext.setAttribute("isCoord", 0);
+	
+
+	
+//	hibSes.close();
+%>
+
+
+<!-- **************** START CONTENT AREA (REGION b)**************** -->		 
+<div id='regionAdmB'>
+
+<h3>Project Details - Interview List</h3>
+Name: <b>${project.name}</b><br/>
+Description: <b>${project.description}</b><br/>
+Elements contained:
+<form id="formListItem" name="formListItem">
+<table cellpadding="5" cellspacing="1" border="1" width="500">
+<input type="hidden" name="t" value="ele"/>
+<input type="hidden" name="frmid" value=""/>
+<input type="hidden" name="op" value=""/>
+	
+	<tr>
+	<td rowspan="3" valign="top">
+	Choose one...
+	<table border="0">
+		<tr>
+			<td rowspan="3">
+			<select id="frmListItems" name="frmListItems" size="5" style="width:200px">
+				<c:if test="${not empty interviews}">
+					<c:forEach items="${interviews}" var="anIntr">
+						<option value="${anIntr.id}" ondblclick="listCtrl.goItemProps(${anIntr.id},'int');"
+						 <c:if test="${itemid eq anIntr.id}">class="optHigh"</c:if> 
+						 onmouseover="Tip ('${anIntr.name}');"
+						 onmouseout="UnTip();">
+						${anIntr.name}
+						</option>
+					</c:forEach>
+				</c:if>
+			</select>
+			</td>
+			<td rowspan="3" valign="middle">
+			<a href="javascript:listCtrl.raiseIntrv('frmListItems',1);"
+									style="text-decoration:none;color:darkblue;">
+								Preview selected</a><br><br>
+								
+								<a href="javascript:listCtrl.raiseIntrv('frmListItems',0);"
+									style="text-decoration:none;color:darkblue;">
+								Perform selected</a><br>
+								<c:if test="${isGuest eq 0 and isCoord eq 0}">
+									<input type="checkbox" name="chkRT" id="chkRT" value="1" checked="checked"/>
+									<span class="minifont">Autosaving</span><br>
+								</c:if>
+							
+								<c:if test="${isGuest eq 1 or isCoord eq 1}">
+									<br>
+								</c:if>
+								
+<%--
+if ((roles.indexOf("editor") == -1) && (roles.indexOf("admin") == -1)) {
+%>
+	<span style="color:lightgray">Edit selected</span>
+<%
+}
+else {
+--%>								
+			<a href="javascript:listCtrl.goItem('frmListItems','int');"
+									style="text-decoration:none;color:darkblue;">
+								Edit selected</a>
+<%--} --%>
+			</td>
+			<td><!-- 
+				<input type="button" name="btnUp" id="btnUp" value="  Up  "
+					onclick="listCtrl.moveUp(this.form.frmListItems);"/> -->
+			</td>
+		</tr>
+		
+		<tr><td><!-- 
+			<input type="button" name="btnDown" id="btnDown" value=" Down "
+				onclick="listCtrl.moveDown(this.form.frmListItems);"/> -->
+		</td></tr>
+		<tr><td><!-- 
+			<input type="button" name="btnReord" id="btnReord" value=" Re-sort "
+				onclick="listCtrl.onRearrange(this.form.frmListItems);"/> -->
+		</td></tr>
+	</table>
+	
+	</td>
+	<td align="left">
+		<input type="button" name="btnNew" value=" New " ${btnDis} ${btnDisAdm}
+					onclick="listCtrl.goNewItem(this.form, 'int', ${project.id});"/>
+	</td>
+	</tr>
+	
+	<tr><td align="left">
+		<input type="button" name="btnUpd" value=" Modify " ${btnDis}
+					onclick="listCtrl.goUpdItem(this.form, 'int', ${project.id});"/>
+	</td></tr>
+	<tr><td align="left">
+		<input type="button" name="btnDel" value = " Delete " ${btnDis}
+					onclick="listCtrl.goDelItem(this.form, 'int');"/>
+	</td></tr>
+</table>
+</form>
+</div> <!-- regionB -->
+<!-- ****************** END CONTENT AREA (REGION B) ***************** -->

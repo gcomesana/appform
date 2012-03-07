@@ -1,0 +1,10 @@
+
+div #slider {
+	overflow-y:auto;
+	max-height:115px;
+	min-height:115px;
+	max-width:450px;
+	margin: 5px 15px auto;
+	padding: 5px 5px 5px 5px;
+	border: 1px solid darkgray;
+}

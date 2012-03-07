@@ -1,0 +1,33 @@
+.userslist
+{
+/*	border:1px solid #E6E7E8; */
+  border: 1px solid darkblue;
+	width:140px;
+	height:160px;
+	margin:10px 0px 0px 40px;
+  font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+  overflow:auto;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#body {
+	width: 960px;
+}
+
+
+#content-container {
+	max-width: 1024px;
+}
+
+#header-container-adm {
+	max-width: 1024px;
+	width: 98.2%;
+}
+
+
+#footer-container-adm {
+	width: 98.2%;
+	max-width: 1024px;
+}

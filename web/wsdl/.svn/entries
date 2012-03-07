@@ -1,0 +1,41 @@
+8
+
+dir
+85
+svn+ssh://gcomesana@gredos/home/gcomesana/Development/svn-repo/appform/web/wsdl
+svn+ssh://gcomesana@gredos/home/gcomesana/Development/svn-repo
+
+
+
+2009-04-06T14:25:46.534791Z
+1
+gcomesana
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+4aadde07-169c-4302-b40d-08daa5913de5
+
+UsersFinder.wsdl
+file
+
+
+
+
+2009-10-08T15:11:30.000000Z
+cd818b7a9a226a0632d66d4a89412e56
+2009-04-06T14:25:46.534791Z
+1
+gcomesana
+has-props
+

@@ -1,0 +1,652 @@
+Fix interview 'QES_Italian' (2200)Fixing section: Introduzione
+** Fixing patient '157301082' (2555)
+Answer for ID: q10850-1-1 = 082
+Answer for q10851-1-1(Interviewer) is missing
+Answer for q10851-1-1(Interviewer) was filling
+Answer for Date_Int: q10854-1-1 = 15
+Answer for Date_Int: q10854-1-2 = 06
+Answer for Date_Int: q10854-1-3 = 2009
+Fixing section: A. Informazioni Demografiche
+** Fixing patient '157301082' (2555)
+Answer for A1: q10961-1-1 = 23
+Answer for A1: q10961-1-2 = 05
+Answer for A1: q10961-1-3 = 1988
+Answer for A1A: q10946-1-1 = 21
+Answer for A2: q10944-1-1 = 2
+Answer for A3: q10947-1-1 = 1
+Answer for A3A: q10943-1-1 = 9999
+10954: 3 containees
+Answer for A3B_1: q10955-1-1 = 9999
+Answer for A3B_2: q10956-1-1 = 9999
+Answer for A3B_3: q10957-1-1 = 9999
+============================
+Answer for A3C: q10951-1-1 = 9999
+Answer for A3D: q10952-1-1 = 9999
+Answer for A3E: q10953-1-1 = 9999
+Answer for A3F: q10964-1-1 = 9999
+Answer for A4A: q10945-1-1 = 6
+Answer for A4B: q10963-1-1 = 13
+Answer for A5: q10965-1-1 = 1
+Answer for A6: q10948-1-1 = 1
+Answer for A6: q10948-1-2 = 1
+Answer for A6: q10948-1-3 = 70
+Answer for A6: q10948-1-4 = 1
+Answer for A7: q10968-1-1 = 55
+Answer for A7: q10968-1-2 = 1
+Answer for A8: q10969-1-1 = 6666
+Answer for A8: q10969-1-2 = 9999
+Answer for A9: q10970-1-1 = 60
+Answer for A9: q10970-1-2 = 1
+Answer for A10: q10958-1-1 = 1
+Answer for A11: q10959-1-1 = 1
+Answer for A12: q10949-1-1 = 9999
+Answer for A13: q10967-1-1 = 9999
+Fixing section: B. Lavoro con turni
+** Fixing patient '157301082' (2555)
+Answer for B1: q10975-1-1 = 2
+Answer for B2: q10974-1-1 = 9999
+Fixing section: C. Fumo
+** Fixing patient '157301082' (2555)
+Answer for C1: q10987-1-1 = 2
+Answer for q10997-1-1(C1A) is missing
+Answer for q10997-1-1(C1A) was filling
+Answer for q11011-1-1(C2) is missing
+Answer for q11011-1-1(C2) was filling
+Answer for q10988-1-1(C3) is missing
+Answer for q10988-1-1(C3) was filling
+Answer for q10985-1-1(C4) is missing
+Answer for q10985-1-1(C4) was filling
+Answer for q10998-1-1(C5) is missing
+Answer for q10998-1-1(C5) was filling
+Answer for q10999-1-1(C6) is missing
+Answer for q10999-1-1(C6) was filling
+Answer for q10999-1-2(C6) is missing
+Answer for q10999-1-2(C6) was filling
+Answer for q10989-1-1(C7) is missing
+Answer for q10989-1-1(C7) was filling
+Answer for q10989-1-2(C7) is missing
+Answer for q10989-1-2(C7) was filling
+Answer for q10990-1-1(C8) is missing
+Answer for q10990-1-1(C8) was filling
+Answer for q10991-1-1(C9) is missing
+Answer for q10991-1-1(C9) was filling
+Answer for q11003-1-1(C10) is missing
+Answer for q11003-1-1(C10) was filling
+Answer for q11005-1-1(C11) is missing
+Answer for q11005-1-1(C11) was filling
+Answer for q11006-1-1(C12) is missing
+Answer for q11006-1-1(C12) was filling
+Answer for q11010-1-1(C13) is missing
+Answer for q11010-1-1(C13) was filling
+Answer for q10992-1-1(C14) is missing
+Answer for q10992-1-1(C14) was filling
+Fixing section: D. Acqua
+** Fixing patient '157301082' (2555)
+11019: 6 containees
+Answer for D1_1: q11021-1-1 = Via Corsivola 11b
+Answer for D1_2: q11022-1-1 = Campolongo Maggiore
+Answer for D1_3: q11023-1-1 = 30010
+Answer for D1_4: q11025-1-1 = Venezia
+Answer for D1_5: q11024-1-1 = Veneto
+Answer for D1_6: q11020-1-1 = Italia
+============================
+11046: 2 containees
+Answer for D1B_1: q11047-1-1 = 0495809216
+Answer for D1B_2: q11048-1-1 = 3493325433
+============================
+Answer for D2: q11050-1-1 = 05
+Answer for D2: q11050-1-2 = 1988
+Answer for D3: q11049-1-1 = 2
+11051: 7 containees
+Answer for D4_0: q11053-1-1 = 9999
+Answer for D4_1: q11057-1-1 = 9999
+Answer for D4_2: q11054-1-1 = 9999
+Answer for D4_3: q11055-1-1 = 9999
+Answer for D4_4: q11058-1-1 = 9999
+Answer for D4_5: q11056-1-1 = 9999
+Answer for D4_6: q11052-1-1 = 9999
+============================
+Answer for D5: q11059-1-1 = 9999
+Answer for D5: q11059-1-2 = 9999
+Answer for D6: q11076-1-1 = 9999
+11061: 2 containees
+Answer for D7_1A: q11062-1-1 = 2
+Answer for D7_1B: q11063-1-1 = 2
+============================
+11064: 2 containees
+Answer for D7_2A: q11065-1-1 = 3
+Answer for D7_2B: q11066-1-1 = 1
+============================
+11073: 2 containees
+Answer for D7_3A: q11074-1-1 = 9999
+Answer for D7_3B: q11075-1-1 = 9999
+============================
+Answer for D8: q11068-1-1 = 2
+11013: 2 containees
+Answer for D9A: q11015-1-1 = 9999
+Answer for D9A: q11015-1-2 = 9999
+Answer for D10A: q11014-1-1 = 9999
+============================
+11070: 2 containees
+Answer for D9B: q11072-1-1 = 5
+Answer for D9B: q11072-1-2 = 2
+Answer for D10B: q11071-1-1 = 30
+============================
+11016: 2 containees
+Answer for D9C: q11017-1-1 = 9999
+Answer for D9C: q11017-1-2 = 9999
+Answer for D10C: q11018-1-1 = 9999
+============================
+Answer for D11: q11045-1-1 = 2
+11027: 2 containees
+Answer for D12A: q11030-1-1 = 9999
+Answer for D12A: q11030-1-2 = 9999
+Answer for D12B: q11029-1-1 = 9999
+Answer for D12B: q11029-1-2 = 9999
+============================
+11031: 2 containees
+Answer for D13A: q11032-1-1 = 9999
+Answer for D13B: q11033-1-1 = 9999
+============================
+11034: 2 containees
+Answer for D14A: q11035-1-1 = 9999
+Answer for D14B: q11036-1-1 = 9999
+============================
+11037: 2 containees
+Answer for D15A: q11039-1-1 = 9999
+Answer for D15B: q11040-1-1 = 9999
+============================
+11041: 2 containees
+Answer for D16A: q11044-1-1 = 9999
+Answer for D16B: q11043-1-1 = 9999
+============================
+Fixing section: E. Caffè y Tè
+** Fixing patient '157301082' (2555)
+Answer for E1: q11084-1-1 = 2
+Answer for q11080-1-1(E2) is missing
+Answer for q11080-1-1(E2) was filling
+Answer for q11085-1-1(E3) is missing
+Answer for q11085-1-1(E3) was filling
+Answer for q11086-1-1(E4) is missing
+Answer for q11086-1-1(E4) was filling
+Answer for q11086-1-2(E4) is missing
+Answer for q11086-1-2(E4) was filling
+Answer for E5: q11087-1-1 = 2
+Answer for q11081-1-1(E6) is missing
+Answer for q11081-1-1(E6) was filling
+Answer for q11088-1-1(E7) is missing
+Answer for q11088-1-1(E7) was filling
+Answer for q11089-1-1(E8) is missing
+Answer for q11089-1-1(E8) was filling
+Answer for q11089-1-2(E8) is missing
+Answer for q11089-1-2(E8) was filling
+Fixing section: F. Consumo di alcolici
+** Fixing patient '157301082' (2555)
+Answer for F1: q11147-1-1 = 2
+Answer for q11093-1-1(F2) is missing
+Answer for q11093-1-1(F2) was filling
+Answer for q11094-1-1(F3) is missing
+Answer for q11094-1-1(F3) was filling
+Answer for q11095-1-1(F4) is missing
+Answer for q11095-1-1(F4) was filling
+11096: 8 containees
+Answer for q11099-1-1(F5_1I) is missing
+Answer for q11099-1-1(F5_1I) was filling
+Answer for q11100-1-1(F5_1II) is missing
+Answer for q11100-1-1(F5_1II) was filling
+Answer for q11100-1-2(F5_1II) is missing
+Answer for q11100-1-2(F5_1II) was filling
+Answer for q11100-1-3(F5_1II) is missing
+Answer for q11100-1-3(F5_1II) was filling
+Answer for q11097-1-1(F5_2I) is missing
+Answer for q11097-1-1(F5_2I) was filling
+Answer for q11101-1-1(F5_2II) is missing
+Answer for q11101-1-1(F5_2II) was filling
+Answer for q11101-1-2(F5_2II) is missing
+Answer for q11101-1-2(F5_2II) was filling
+Answer for q11101-1-3(F5_2II) is missing
+Answer for q11101-1-3(F5_2II) was filling
+Answer for q11098-1-1(F5_3I) is missing
+Answer for q11098-1-1(F5_3I) was filling
+Answer for q11104-1-1(F5_3II) is missing
+Answer for q11104-1-1(F5_3II) was filling
+Answer for q11104-1-2(F5_3II) is missing
+Answer for q11104-1-2(F5_3II) was filling
+Answer for q11104-1-3(F5_3II) is missing
+Answer for q11104-1-3(F5_3II) was filling
+Answer for q11103-1-1(F5_4I) is missing
+Answer for q11103-1-1(F5_4I) was filling
+Answer for q11102-1-1(F5_4II) is missing
+Answer for q11102-1-1(F5_4II) was filling
+Answer for q11102-1-2(F5_4II) is missing
+Answer for q11102-1-2(F5_4II) was filling
+Answer for q11102-1-3(F5_4II) is missing
+Answer for q11102-1-3(F5_4II) was filling
+============================
+11108: 8 containees
+Answer for q11116-1-1(F6_1I) is missing
+Answer for q11116-1-1(F6_1I) was filling
+Answer for q11111-1-1(F6_1II) is missing
+Answer for q11111-1-1(F6_1II) was filling
+Answer for q11111-1-2(F6_1II) is missing
+Answer for q11111-1-2(F6_1II) was filling
+Answer for q11111-1-3(F6_1II) is missing
+Answer for q11111-1-3(F6_1II) was filling
+Answer for q11113-1-1(F6_2I) is missing
+Answer for q11113-1-1(F6_2I) was filling
+Answer for q11112-1-1(F6_2II) is missing
+Answer for q11112-1-1(F6_2II) was filling
+Answer for q11112-1-2(F6_2II) is missing
+Answer for q11112-1-2(F6_2II) was filling
+Answer for q11112-1-3(F6_2II) is missing
+Answer for q11112-1-3(F6_2II) was filling
+Answer for q11110-1-1(F6_3I) is missing
+Answer for q11110-1-1(F6_3I) was filling
+Answer for q11114-1-1(F6_3II) is missing
+Answer for q11114-1-1(F6_3II) was filling
+Answer for q11114-1-2(F6_3II) is missing
+Answer for q11114-1-2(F6_3II) was filling
+Answer for q11114-1-3(F6_3II) is missing
+Answer for q11114-1-3(F6_3II) was filling
+Answer for q11109-1-1(F6_4I) is missing
+Answer for q11109-1-1(F6_4I) was filling
+Answer for q11115-1-1(F6_4II) is missing
+Answer for q11115-1-1(F6_4II) was filling
+Answer for q11115-1-2(F6_4II) is missing
+Answer for q11115-1-2(F6_4II) was filling
+Answer for q11115-1-3(F6_4II) is missing
+Answer for q11115-1-3(F6_4II) was filling
+============================
+11117: 8 containees
+Answer for q11119-1-1(F7_1I) is missing
+Answer for q11119-1-1(F7_1I) was filling
+Answer for q11122-1-1(F7_1II) is missing
+Answer for q11122-1-1(F7_1II) was filling
+Answer for q11122-1-2(F7_1II) is missing
+Answer for q11122-1-2(F7_1II) was filling
+Answer for q11122-1-3(F7_1II) is missing
+Answer for q11122-1-3(F7_1II) was filling
+Answer for q11118-1-1(F7_2I) is missing
+Answer for q11118-1-1(F7_2I) was filling
+Answer for q11123-1-1(F7_2II) is missing
+Answer for q11123-1-1(F7_2II) was filling
+Answer for q11123-1-2(F7_2II) is missing
+Answer for q11123-1-2(F7_2II) was filling
+Answer for q11123-1-3(F7_2II) is missing
+Answer for q11123-1-3(F7_2II) was filling
+Answer for q11120-1-1(F7_3I) is missing
+Answer for q11120-1-1(F7_3I) was filling
+Answer for q11125-1-1(F7_3II) is missing
+Answer for q11125-1-1(F7_3II) was filling
+Answer for q11125-1-2(F7_3II) is missing
+Answer for q11125-1-2(F7_3II) was filling
+Answer for q11125-1-3(F7_3II) is missing
+Answer for q11125-1-3(F7_3II) was filling
+Answer for q11121-1-1(F7_4I) is missing
+Answer for q11121-1-1(F7_4I) was filling
+Answer for q11124-1-1(F7_4II) is missing
+Answer for q11124-1-1(F7_4II) was filling
+Answer for q11124-1-2(F7_4II) is missing
+Answer for q11124-1-2(F7_4II) was filling
+Answer for q11124-1-3(F7_4II) is missing
+Answer for q11124-1-3(F7_4II) was filling
+============================
+11126: 8 containees
+Answer for q11129-1-1(F8_1I) is missing
+Answer for q11129-1-1(F8_1I) was filling
+Answer for q11131-1-1(F8_1II) is missing
+Answer for q11131-1-1(F8_1II) was filling
+Answer for q11131-1-2(F8_1II) is missing
+Answer for q11131-1-2(F8_1II) was filling
+Answer for q11131-1-3(F8_1II) is missing
+Answer for q11131-1-3(F8_1II) was filling
+Answer for q11128-1-1(F8_2I) is missing
+Answer for q11128-1-1(F8_2I) was filling
+Answer for q11132-1-1(F8_2II) is missing
+Answer for q11132-1-1(F8_2II) was filling
+Answer for q11132-1-2(F8_2II) is missing
+Answer for q11132-1-2(F8_2II) was filling
+Answer for q11132-1-3(F8_2II) is missing
+Answer for q11132-1-3(F8_2II) was filling
+Answer for q11130-1-1(F8_3I) is missing
+Answer for q11130-1-1(F8_3I) was filling
+Answer for q11134-1-1(F8_3II) is missing
+Answer for q11134-1-1(F8_3II) was filling
+Answer for q11134-1-2(F8_3II) is missing
+Answer for q11134-1-2(F8_3II) was filling
+Answer for q11134-1-3(F8_3II) is missing
+Answer for q11134-1-3(F8_3II) was filling
+Answer for q11127-1-1(F8_4I) is missing
+Answer for q11127-1-1(F8_4I) was filling
+Answer for q11133-1-1(F8_4II) is missing
+Answer for q11133-1-1(F8_4II) was filling
+Answer for q11133-1-2(F8_4II) is missing
+Answer for q11133-1-2(F8_4II) was filling
+Answer for q11133-1-3(F8_4II) is missing
+Answer for q11133-1-3(F8_4II) was filling
+============================
+11135: 8 containees
+Answer for q11137-1-1(F9_1I) is missing
+Answer for q11137-1-1(F9_1I) was filling
+Answer for q11140-1-1(F9_1II) is missing
+Answer for q11140-1-1(F9_1II) was filling
+Answer for q11140-1-2(F9_1II) is missing
+Answer for q11140-1-2(F9_1II) was filling
+Answer for q11140-1-3(F9_1II) is missing
+Answer for q11140-1-3(F9_1II) was filling
+Answer for q11136-1-1(F9_2I) is missing
+Answer for q11136-1-1(F9_2I) was filling
+Answer for q11141-1-1(F9_2II) is missing
+Answer for q11141-1-1(F9_2II) was filling
+Answer for q11141-1-2(F9_2II) is missing
+Answer for q11141-1-2(F9_2II) was filling
+Answer for q11141-1-3(F9_2II) is missing
+Answer for q11141-1-3(F9_2II) was filling
+Answer for q11138-1-1(F9_3I) is missing
+Answer for q11138-1-1(F9_3I) was filling
+Answer for q11142-1-1(F9_3II) is missing
+Answer for q11142-1-1(F9_3II) was filling
+Answer for q11142-1-2(F9_3II) is missing
+Answer for q11142-1-2(F9_3II) was filling
+Answer for q11142-1-3(F9_3II) is missing
+Answer for q11142-1-3(F9_3II) was filling
+Answer for q11139-1-1(F9_4I) is missing
+Answer for q11139-1-1(F9_4I) was filling
+Answer for q11143-1-1(F9_4II) is missing
+Answer for q11143-1-1(F9_4II) was filling
+Answer for q11143-1-2(F9_4II) is missing
+Answer for q11143-1-2(F9_4II) was filling
+Answer for q11143-1-3(F9_4II) is missing
+Answer for q11143-1-3(F9_4II) was filling
+============================
+Fixing section: G. Anamnesi
+** Fixing patient '157301082' (2555)
+Answer for G1: q11148-1-1 = 2
+Answer for G2: q11152-1-1 = 9999
+Answer for G3: q11154-1-1 = 9999
+Answer for G4: q11155-1-1 = 2
+Answer for G5: q11156-1-1 = 9999
+Answer for G6: q11158-1-1 = 9999
+Answer for G7: q11159-1-1 = 9999
+Answer for G8: q11160-1-1 = 9999
+Answer for G9: q11161-1-1 = 9999
+Answer for G10: q11162-1-1 = 9999
+Answer for G11: q11169-1-1 = 2
+Answer for G12: q11170-1-1 = 2
+Answer for G13: q11177-1-1 = 2
+Answer for G14: q11179-1-1 = 9999
+Answer for G15: q11192-1-1 = 1
+Answer for G16: q11193-1-1 = 2
+Answer for G17: q11208-1-1 = 9999
+Answer for G18: q11209-1-1 = 9999
+11223: 1 containees
+Answer for G19B: q11229-1-1 = 9999
+============================
+11224: 3 containees
+Answer for G19C: q11225-1-1 = 9999
+Answer for G19D: q11226-1-1 = 9999
+Answer for G19E: q11227-1-1 = 9999
+============================
+11230: 4 containees
+Answer for G20A: q11235-1-1 = 9999
+Answer for G20B: q11236-1-1 = 9999
+Answer for G21: q11233-1-1 = 9999
+Answer for G22: q11234-1-1 = 9999
+============================
+11238: 1 containees
+Answer for G23_1: q11239-1-1 = 9999
+============================
+11240: 1 containees
+Answer for G24_1: q11241-1-1 = 9999
+============================
+11242: 1 containees
+Answer for G25_1: q11243-1-1 = 9999
+============================
+11244: 1 containees
+Answer for G26_1: q11245-1-1 = 9999
+============================
+11173: 1 containees
+Answer for G27_1: q11174-1-1 = 9999
+============================
+11175: 1 containees
+Answer for G28_1: q11176-1-1 = 9999
+============================
+11180: 1 containees
+Answer for G29_1: q11181-1-1 = 9999
+============================
+11246: 1 containees
+Answer for G30A_1: q11247-1-1 = 9999
+============================
+11182: 1 containees
+Answer for G30B_1: q11183-1-1 = 9999
+============================
+11184: 1 containees
+Answer for G31_1: q11185-1-1 = 9999
+============================
+11186: 1 containees
+Answer for G32_1: q11187-1-1 = 9999
+============================
+11188: 1 containees
+Answer for G33_1: q11189-1-1 = 9999
+============================
+11190: 1 containees
+Answer for G34_1: q11191-1-1 = 9999
+============================
+11194: 1 containees
+Answer for G35_1: q11195-1-1 = 9999
+============================
+11196: 1 containees
+Answer for G36_1: q11197-1-1 = 9999
+============================
+11198: 1 containees
+Answer for G37_1: q11199-1-1 = 9999
+============================
+11200: 1 containees
+Answer for G38_1: q11201-1-1 = 9999
+============================
+11150: 1 containees
+Answer for G39_1: q11151-1-1 = 9999
+============================
+11202: 1 containees
+Answer for G40_1: q11203-1-1 = 9999
+============================
+11204: 2 containees
+Answer for G41A: q11207-1-1 = 9999
+Answer for G41_1: q11206-1-1 = 9999
+============================
+11248: 1 containees
+Answer for G42A_1: q11249-1-1 = 9999
+============================
+11250: 1 containees
+Answer for G42B_1: q11251-1-1 = 9999
+============================
+11163: 0 containees
+============================
+11164: 4 containees
+Answer for G42D: q11166-1-1 = 9999
+Answer for G42E: q11165-1-1 = 9999
+Answer for G42F: q11167-1-1 = 9999
+Answer for G42G: q11168-1-1 = 9999
+Answer for G42G: q11168-1-2 = 9999
+============================
+11211: 2 containees
+Answer for G43A: q11220-1-1 = 9999
+Answer for G44: q11213-1-1 = 9999
+============================
+11213: 0 containees
+============================
+11214: 4 containees
+Answer for G44B: q11215-1-1 = 9999
+Answer for G44C: q11216-1-1 = 9999
+Answer for G44D: q11218-1-1 = 9999
+Answer for G44E: q11217-1-1 = 9999
+Answer for G44E: q11217-1-2 = 9999
+============================
+Fixing section: H. Medicine
+** Fixing patient '157301082' (2555)
+11255: 4 containees
+Answer for H1B: q11257-1-1 = 9999
+Answer for H1C: q11260-1-1 = 9999
+Answer for H1D: q11256-1-1 = 9999
+Answer for H1E: q11259-1-1 = 9999
+Answer for H1E: q11259-1-2 = 9999
+============================
+11262: 4 containees
+Answer for H2B: q11264-1-1 = 9999
+Answer for H2C: q11265-1-1 = 9999
+Answer for H2D: q11266-1-1 = 9999
+Answer for H2E: q11267-1-1 = 9999
+Answer for H2E: q11267-1-2 = 9999
+============================
+11270: 4 containees
+Answer for H3B: q11275-1-1 = 9999
+Answer for H3C: q11272-1-1 = 9999
+Answer for H3D: q11273-1-1 = 9999
+Answer for H3E: q11274-1-1 = 9999
+Answer for H3E: q11274-1-2 = 9999
+============================
+Fixing section: I. Attivitá Física
+** Fixing patient '157301082' (2555)
+11276: 8 containees
+Answer for I1A: q11282-1-1 = 0
+Answer for I1B: q11281-1-1 = 9999
+Answer for I1C: q11284-1-1 = 9999
+Answer for I1C: q11284-1-2 = 9999
+Answer for I1C: q11284-1-3 = 9999
+Answer for I1D: q11278-1-1 = 9999
+Answer for I1D: q11278-1-2 = 9999
+Answer for I1D: q11278-1-3 = 9999
+Answer for I1E: q11285-1-1 = 9999
+Answer for I1E: q11285-1-2 = 9999
+Answer for I1E: q11285-1-3 = 9999
+Answer for I1F: q11279-1-1 = 9999
+Answer for I1F: q11279-1-2 = 9999
+Answer for I1F: q11279-1-3 = 9999
+Answer for I1G: q11280-1-1 = 9999
+Answer for I1G: q11280-1-2 = 9999
+Answer for I1G: q11280-1-3 = 9999
+Answer for I1H: q11283-1-1 = 9999
+Answer for I1H: q11283-1-2 = 9999
+Answer for I1H: q11283-1-3 = 9999
+============================
+11288: 0 containees
+============================
+11293: 9 containees
+Answer for I2A: q11299-1-1 = 9999
+Answer for I2B: q11296-1-1 = 9999
+Answer for I2B: q11296-1-2 = 9999
+Answer for I2C: q11300-1-1 = 9999
+Answer for I2D: q11301-1-1 = 9999
+Answer for I2E: q11302-1-1 = 9999
+Answer for I2F: q11297-1-1 = 9999
+Answer for I2G: q11303-1-1 = 9999
+Answer for I2H: q11294-1-1 = 9999
+Answer for I2I: q11305-1-1 = 9999
+Answer for I2I: q11305-1-2 = 9999
+Answer for I2I: q11305-1-3 = 9999
+============================
+11306: 9 containees
+Answer for I3A: q11310-1-1 = 9999
+Answer for I3B: q11312-1-1 = 9999
+Answer for I3C: q11313-1-1 = 9999
+Answer for I3D: q11314-1-1 = 9999
+Answer for I3E: q11307-1-1 = 9999
+Answer for I3F: q11308-1-1 = 9999
+Answer for I3G: q11315-1-1 = 9999
+Answer for I3H: q11309-1-1 = 9999
+Answer for I3I: q11318-1-1 = 9999
+Answer for I3I: q11318-1-2 = 9999
+Answer for I3I: q11318-1-3 = 9999
+============================
+Fixing section: J.Igiene orale
+** Fixing patient '157301082' (2555)
+Answer for J1: q10856-1-1 = 2
+Answer for J2: q10857-1-1 = 1
+Answer for J3: q10858-1-1 = 2
+Answer for J4: q10859-1-1 = 2
+Answer for J5: q10860-1-1 = 1
+Answer for J6: q10862-1-1 = 2
+Answer for J7: q10861-1-1 = 2
+Answer for q10863-1-1(J8) is missing
+Answer for q10863-1-1(J8) was filling
+Answer for q10864-1-1(J9) is missing
+Answer for q10864-1-1(J9) was filling
+Fixing section: K.Storia Familiare
+** Fixing patient '157301082' (2555)
+10867: 12 containees
+Answer for K1_mother: q10875-1-1 = 1
+Answer for K2_mother: q10879-1-1 = 9999
+Answer for K3A_mother: q10880-1-1 = 50
+Answer for K3B_mother: q10881-1-1 = 9999
+Answer for K4_mother: q10870-1-1 = 2
+Answer for K5_mother: q10876-1-1 = 2
+Answer for K5A_mother: q10878-1-1 = 9999
+Answer for K6_mother: q10869-1-1 = 2
+Answer for K7_mother: q10871-1-1 = 2
+Answer for K8_mother: q10872-1-1 = 2
+Answer for K9_mother: q10873-1-1 = 2
+Answer for K10_mother: q10874-1-1 = 2
+============================
+10882: 2 containees
+Answer for K11_mother: q10883-1-1 = 9999
+Answer for K12_mother: q10884-1-1 = 9999
+============================
+10885: 12 containees
+Answer for K1_father: q10886-1-1 = 1
+Answer for K2_father: q10887-1-1 = 9999
+Answer for K3A_father: q10901-1-1 = 54
+Answer for K3B_father: q10902-1-1 = 9999
+Answer for K4_father: q10889-1-1 = 1
+Answer for K5_father: q10890-1-1 = 2
+Answer for K5A_father: q10895-1-1 = 9999
+Answer for K6_father: q10891-1-1 = 2
+Answer for K7_father: q10892-1-1 = 2
+Answer for K8_father: q10893-1-1 = 2
+Answer for K9_father: q10894-1-1 = 2
+Answer for K10_father: q10896-1-1 = 2
+============================
+10898: 2 containees
+Answer for K11_father: q10900-1-1 = 9999
+Answer for K12_father: q10899-1-1 = 9999
+============================
+Answer for K13A: q10926-1-1 = 1
+Answer for K13B: q10927-1-1 = 8888
+Answer for K14A: q10928-1-1 = 8888
+Answer for K14B: q10929-1-1 = 8888
+10905: 17 containees
+Answer for K15: q10917-1-1 = 1
+Answer for K16: q10918-1-1 = 1
+Answer for K17: q10919-1-1 = 9999
+Answer for K18A: q10923-1-1 = 29
+Answer for K18B: q10924-1-1 = 9999
+Answer for K19: q10921-1-1 = 2
+Answer for K20: q10909-1-1 = 2
+Answer for K20B: q10916-1-1 = 9999
+Answer for K21: q10906-1-1 = 2
+Answer for K22: q10910-1-1 = 1
+Answer for K23: q10911-1-1 = 2
+Answer for K24: q10908-1-1 = 2
+Answer for K25: q10922-1-1 = 2
+Answer for K26_1: q10913-1-1 = 9999
+Answer for K26_1: q10913-1-2 = 9999
+Answer for K26_2: q10914-1-1 = 9999
+Answer for K26_2: q10914-1-2 = 9999
+Answer for K26_3: q10915-1-1 = 9999
+Answer for K26_3: q10915-1-2 = 9999
+Answer for K26_4: q10925-1-1 = 9999
+Answer for K26_4: q10925-1-2 = 9999
+============================
+Fixing section: L. Livello Socioeconomico
+** Fixing patient '157301082' (2555)
+Answer for L1: q10930-1-1 = 4
+10931: 3 containees
+Answer for L2_1: q10933-1-1 = Bruno Miotto
+Answer for L2_2: q10934-1-1 = Padre
+Answer for L2_3: q10935-1-1 = 335669779
+============================
+10936: 2 containees
+Answer for Int_End_Time: q10937-1-1 = 13
+Answer for Int_End_Time: q10937-1-2 = 45
+Answer for Int_Duration: q10938-1-1 = 45
+============================
+======================================Total missing answers fixed: 110

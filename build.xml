@@ -1,0 +1,932 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Appform WebApp" basedir="." default="preproduction-package">
+
+	<!-- project-specific variables -->
+	<property environment="env" />
+
+
+	<property name="package.name" value="appform.war" />
+	<property name="pre.package.name" value="appform-gredos.war" />
+	<property name="pgt.package.name" value="epibuilder.war" />
+	<property name="cegen.package.name" value="cegenforms.war" />
+	<property name="generic.package.name" value="epiquestdemo.war" />
+	<property name="webapp.dir" value="/usr/local/apache-tomcat-6.0.18/webapps" />
+	<property name="dest.dir" value="/Users/bioinfo/Development/deploy/appform" />
+
+	<!-- lib and classes built related dirs -->
+	<property name="build.dir" value="build" />
+	<property name="classes.dir" value="WEB-INF/classes" />
+	<property file="${build.dir}/build.${env.HOSTNAME}" />
+	<property name="lib.dir" value="WEB-INF/lib" />
+	<property name="lib.tomcat.dir" value="/usr/local/apache-tomcat-6.0.18/lib" />
+
+	<!-- src related dirs -->
+	<property name="src.dir" value="src" />
+	<property name="src.tests.dir" value="src-tests" />
+
+	<!-- jsp pages and related stuff directory properties -->
+	<property name="jsp.dir" value="web/jsp" />
+	<property name="pages.root" value="web" />
+	<property name="css.dir" value="web/css" />
+	<property name="js.dir" value="web/js" />
+	<property name="ext.dir" value="${js.dir}/lib/ext" />
+	
+	<property name="img.dir" value="web/img" />
+	<property name="types.dir" value="web/html" />
+	<property name="display.dir" value="web/display" />
+	<property name="passwd.dir" value="web/getpass" />
+	
+
+	<property name="webinf.dir" value="WEB-INF" />
+	<property name="metainf.dir" value="META-INF" />
+
+	<!-- put everything in a temp folder with the right structure during the build -->
+	<property name="temp.dir" value="${dest.dir}/temp" />
+	<property name="temp.dir.web-inf" value="${temp.dir}/WEB-INF" />
+	<property name="temp.dir.lib" value="${temp.dir.web-inf}/lib" />
+	<property name="temp.dir.classes" value="${temp.dir.web-inf}/classes" />
+	<property name="temp.dir.meta-inf" value="${temp.dir}/META-INF" />
+	<property name="temp.dir.js" value="${temp.dir}/js" />
+
+	<property name="package.file" value="${dest.dir}/${package.name}" />
+
+	<path id="build.class.path">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${lib.tomcat.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<!-- delete temporary resources used in build time -->
+	<target name="clean" id="cleaning">
+		<!--
+		<delete>
+			<fileset dir="${dest.dir}" includes="**/*" />
+		</delete>
+		-->
+		<delete dir="${temp.dir}" />
+		<delete dir="${temp.dir.classes}" />
+		<delete dir="${temp.dir.meta-inf}" />
+		<delete dir="${temp.dir.web-inf}" />
+	
+	</target>
+
+	<!-- make directories to use in build time -->
+	<target name="prepare" depends="clean">
+		<echo>=== PREPARING OUTPUT DIRECTORIES ===</echo>
+<!--		<mkdir dir="${dest.dir}" /> -->
+		<mkdir dir="${temp.dir}" />
+<!-- <mkdir dir="${temp.dir.lib}" /> -->
+		
+		<mkdir dir="${temp.dir.meta-inf}" />
+		<mkdir dir="${temp.dir.web-inf}" />
+		<mkdir dir="${temp.dir.classes}" />
+	</target>
+
+
+	<!-- COMPILE --> 
+	<target name="compile" depends="prepare">
+<!--	<target name="compile" depends="clean"> -->
+		<echo>=== COMPILE ===</echo>
+		<echo>Compiling ${src.dir} files ...</echo>
+<!-- compile files on the src-tests path -
+		<echo>Compiling ${src.tests.dir} files ...</echo>
+		<javac debug="on" srcdir="${src.tests.dir}" destdir="${temp.dir.classes}" includes="com/**">
+			<classpath refid="build.class.path" />
+		</javac>
+-->
+		
+<!-- here the META-INF AND .svn directories have to be excluded -->
+<!-- persistence.xml in WEB-INF/classes/META-INF is also excluded -->
+		<javac debug="on" srcdir="${src.dir}" destdir="${temp.dir.classes}" 
+			includes="**/*" excludes=".svn/ META-INF/ **/Water*.java Ajax*.java **/*Test.java">
+			<classpath refid="build.class.path" />
+		</javac>
+
+	</target>
+	
+	
+<!-- handy target to copy files to temp dir previously to generate war file -->
+	<target name="transfer">
+		<echo>==== TRANSFERRING... ====</echo>
+<!-- two wars are transferred and then one of them is chosen depending on de deployment -->
+		<copy file="${webinf.dir}/web-pre.xml" tofile="${temp.dir.web-inf}/web-pre.xml" overwrite="true" />
+		<copy file="${webinf.dir}/web-war.xml" tofile="${temp.dir.web-inf}/web-war.xml" overwrite="true" />
+		<copy file="${webinf.dir}/web-war-pgt.xml" tofile="${temp.dir.web-inf}/web-war-pgt.xml" overwrite="true" />
+		<copy file="${webinf.dir}/web-pgt-pre.xml" tofile="${temp.dir.web-inf}/web-pre-pgt.xml" overwrite="true" />
+		<copy file="${webinf.dir}/web-war-cegen.xml" tofile="${temp.dir.web-inf}/web-war-cegen.xml" overwrite="true" />
+		<copy file="${webinf.dir}/web-cegen-pre.xml" tofile="${temp.dir.web-inf}/web-pre-cegen.xml" overwrite="true" />
+		<copy file="${webinf.dir}/web-generic.xml" tofile="${temp.dir.web-inf}/web-generic.xml" overwrite="true" />
+		
+		<copy file="${metainf.dir}/MANIFEST.MF" tofile="${temp.dir.meta-inf}/MANIFEST.MF" />
+		
+<!-- this is just to test the hibernate config and db connection through hib -->
+		<copy file="${jsp.dir}/test/testhib.jsp" tofile="${temp.dir}/testhib.jsp" />
+		
+		<copy todir="${temp.dir}/css">
+			<fileset dir="${css.dir}" />
+		</copy>
+		
+		<copy todir="${temp.dir}/display">
+			<fileset dir="${display.dir}" />
+		</copy>
+		
+		<copy todir="${temp.dir}/getpass">
+			<fileset dir="${passwd.dir}" />
+		</copy>
+
+		<copy todir="${temp.dir}/js">
+			<fileset dir="${js.dir}">
+				<exclude name="assets/" />
+				<exclude name="lib/" />
+			</fileset>
+		</copy>
+		
+		<copy todir="${temp.dir.js}/lib/ext">
+			<fileset dir="${ext.dir}">
+				<exclude name="**/*debug.js" />
+			</fileset>
+		</copy>
+
+		
+		<copy todir="${temp.dir}/html">
+			<fileset dir="${types.dir}" >
+				<exclude name="**/*.old" />
+				<exclude name="**/*.html" />
+			</fileset>
+		</copy>
+		
+		<copy todir="${temp.dir}/img">
+			<fileset dir="${img.dir}" />
+		</copy>
+
+		<copy todir="${temp.dir.lib}">
+			<fileset dir="${webinf.dir}/lib">
+				<include name="*.jar" />
+			</fileset>
+		</copy>
+
+		<copy todir="${temp.dir}/jsp">
+			<fileset dir="${jsp.dir}">
+				<exclude name="common/" />
+				<exclude name="old/" />
+				<exclude name="test/" />
+				<exclude name="ajax/js/" />
+				<exclude name=".svn/" />
+			</fileset>
+		</copy>
+
+		<copy todir="${temp.dir}">
+			<fileset dir="${pages.root}">
+				<include name="*.jsp" />
+				<include name="*.props" />
+			</fileset>
+		</copy>
+		
+		<copy todir="${temp.dir}">
+			<fileset file="appform.props" />
+		</copy>
+	</target>
+	
+	
+	<!-- EXECUTABLE JAR FILE BUILDING TO CURATION PROCESS -->
+	<target name="curation-padme-jar" depends="compile">
+		<echo>*** Packing application classes and libraries in a executable JAR ***</echo>
+		
+		<path id="class.path">		
+		  <fileset dir="${lib.dir}" >
+		    <include name="**/*.jar"/>
+		  </fileset>
+		</path>
+		
+		<pathconvert property="class-path" pathsep=" " dirsep="/">
+		  <path refid="class.path"></path>
+		  <map from="${webapp.dir}/appform/${lib.dir}" to="lib"/>		
+		</pathconvert>
+
+		
+		<jar destfile="${dest.dir}/curation-padme.jar">
+			<fileset dir="${classes.dir}" id="classes">
+				<exclude name="${classes.dir}/hibernate-pre.cfg.xml,${classes.dir}/hibernate-war.cfg.xml" />
+			</fileset>
+<!--			<fileset dir="${lib.dir}" id="libs" /> -->
+			
+			<manifest>
+				<attribute name="Main-Class" value="org.cnio.appform.test.CurTest" />
+				<attribute name="Class-Path" value="${class-path}" />
+			</manifest>
+		</jar>
+	</target>
+	
+	
+
+<!-- EXECUTABLE JAR FILE BUILDING TO CURATION PROCESS -->
+	<target name="full-jar" depends="compile">
+		<echo>*** Packing application classes and libraries in a JAR file ***</echo>
+		
+		<path id="class.path">		
+		  <fileset dir="${lib.dir}" >
+		    <include name="**/*.jar"/>
+		  </fileset>
+		</path>
+		
+		<pathconvert property="class-path" pathsep=" " dirsep="/">
+		  <path refid="class.path"></path>
+		  <map from="${webapp.dir}/appform/${lib.dir}" to="lib"/>		
+		</pathconvert>
+
+		
+		<jar destfile="${dest.dir}/appform-full-classes.jar">
+			<fileset dir="${classes.dir}" id="classes">
+				<exclude name="${classes.dir}/hibernate-pre.cfg.xml,${classes.dir}/hibernate-war.cfg.xml" />
+			</fileset>
+<!--			<fileset dir="${lib.dir}" id="libs" /> -->
+<!--			
+			<manifest>
+				<attribute name="Main-Class" value="org.cnio.appform.test.CurTest" />
+				<attribute name="Class-Path" value="${class-path}" />
+			</manifest>
+-->
+		</jar>
+	</target>
+	
+	
+<!-- ####################### ENTITY CLASSES JAR's ########################## -->	
+	<!-- GENERIC DOMAIN JAR FILE BUILDING -->
+		<target name="generic-epiquest-domain" depends="compile">
+		<echo>*** Packing domain classes (NOT libraries) in a single JAR (PADME) ***</echo>
+<echo>Moving ${src.dir}/hibernate-generic.cfg.xml -> ${src.dir}/hibernate.cfg.xml</echo>
+		<move file="${classes.dir}/hibernate.cfg.xml" 
+					tofile="${classes.dir}/hibernate.cfg.aux.xml" />
+		
+		<move file="${classes.dir}/hibernate-generic.cfg.xml" 
+					tofile="${classes.dir}/hibernate.cfg.xml" />
+		
+		<jar destfile="${dest.dir}/generic-epiquest-domain.jar">
+			<fileset dir="${classes.dir}" id="classes" 
+				includes="org/cnio/appform/entity/* hibernate.cfg.xml"/>
+<!--			<fileset dir="${lib.dir}" id="libs" /> -->
+		</jar>
+		
+		<move file="${classes.dir}/hibernate.cfg.xml" 
+					tofile="${classes.dir}/hibernate-generic.cfg.xml" />
+						
+		<move file="${classes.dir}/hibernate.cfg.aux.xml" 
+					tofile="${classes.dir}/hibernate.cfg.xml" />
+	</target>
+	
+	
+	
+<!-- DOMAIN JAR FILE BUILDING -->
+	<target name="padme-jar-domain" depends="compile">
+		<echo>*** Packing domain classes (NOT libraries) in a single JAR (PADME) ***</echo>
+<echo>Moving ${src.dir}/hibernate-war.cfg.xml -> ${src.dir}/hibernate.cfg.xml</echo>
+		<move file="${classes.dir}/hibernate.cfg.xml" 
+					tofile="${classes.dir}/hibernate.cfg.aux.xml" />
+		
+		<move file="${classes.dir}/hibernate-war.cfg.xml" 
+					tofile="${classes.dir}/hibernate.cfg.xml" />
+		
+		<jar destfile="${dest.dir}/padme-domain-classes.jar">
+			<fileset dir="${classes.dir}" id="classes" 
+				includes="org/cnio/appform/entity/* hibernate.cfg.xml"/>
+<!--			<fileset dir="${lib.dir}" id="libs" /> -->
+		</jar>
+		
+		<move file="${classes.dir}/hibernate.cfg.xml" 
+					tofile="${classes.dir}/hibernate-war.cfg.xml" />
+						
+		<move file="${classes.dir}/hibernate.cfg.aux.xml" 
+					tofile="${classes.dir}/hibernate.cfg.xml" />
+	</target>	
+	
+	
+	
+	
+<!-- DOMAIN JAR FILE BUILDING -->
+	<target name="gredos-jar-domain" depends="compile">
+		<echo>*** Packing domain classes (NOT libraries) in a single JAR (GREDOS) ***</echo>
+		
+		<move file="${classes.dir}/hibernate.cfg.xml" 
+						tofile="${classes.dir}/hibernate.cfg.aux.xml" />
+		
+		<move file="${classes.dir}/hibernate-pre.cfg.xml" 
+						tofile="${classes.dir}/hibernate.cfg.xml" />
+		
+		<jar destfile="${dest.dir}/gredos-domain-classes.jar">
+			<fileset dir="${classes.dir}" id="classes" 
+				includes="org/cnio/appform/entity/* hibernate.cfg.xml"/>
+<!--			<fileset dir="${lib.dir}" id="libs" /> -->
+		</jar>
+		
+		<move file="${classes.dir}/hibernate.cfg.xml" 
+								tofile="${classes.dir}/hibernate-pre.cfg.xml" />
+				
+		<move file="${classes.dir}/hibernate.cfg.aux.xml" 
+						tofile="${classes.dir}/hibernate.cfg.xml" /> 
+	</target>
+	
+	
+	<target name="jar-domain" depends="compile">
+		<echo>*** Packing domain classes (NOT libraries) in a single JAR (DEFAULT) ***</echo>
+		
+		<jar destfile="${dest.dir}/domain-classes.jar">
+			<fileset dir="${classes.dir}" id="classes" 
+				includes="org/cnio/appform/entity/* hibernate.cfg.xml"/>
+<!--			<fileset dir="${lib.dir}" id="libs" /> -->
+		</jar>
+		 
+	</target>
+<!-- ####################### ENTITY CLASSES JAR ########################### -->	
+	
+	
+	
+	
+<!-- ###################### UTILITY CLASSES JAR ########################### -->
+	<target name="jar-package-util-generic" depends="compile">
+		<echo>*** Packing application classes (gredos config, NOT ENTITY CLASSES) in a single JAR (PADME) ***</echo>
+		
+		<move file="${classes.dir}/hibernate.cfg.xml" 
+								tofile="${classes.dir}/hibernate.cfg.aux.xml" />
+				
+		<move file="${classes.dir}/hibernate-generic.cfg.xml" 
+						tofile="${classes.dir}/hibernate.cfg.xml" />
+		
+		<jar destfile="${dest.dir}/generic-appform-classes.jar">
+			<fileset dir="${classes.dir}" id="classes">
+<!--				<excludesfile name="${classes.dir}/hibernate.cfg.xml"/> -->
+				<exclude name="**/hibernate-*" />
+				<exclude name="**/entity/*"/>
+			</fileset>
+<!--			<fileset dir="${lib.dir}" id="libs" /> -->
+		</jar>
+		
+		<move file="${classes.dir}/hibernate.cfg.xml" 
+										tofile="${classes.dir}/hibernate-generic.cfg.xml" />
+						
+		<move file="${classes.dir}/hibernate.cfg.aux.xml" 
+						tofile="${classes.dir}/hibernate.cfg.xml" />
+	</target>
+	
+	
+	
+<!-- ###################### UTILITY CLASSES JAR ########################### -->
+	<target name="jar-package-util-port4321" depends="compile">
+		<echo>*** Packing application classes (gredos config, NOT ENTITY CLASSES) in a single JAR (PADME) ***</echo>
+		
+		
+		<jar destfile="${dest.dir}/appform-generic-classes-port4321.jar">
+			<fileset dir="${classes.dir}" id="classes">
+<!--				<excludesfile name="${classes.dir}/hibernate.cfg.xml"/> -->
+				<exclude name="**/hibernate-*" />
+				<exclude name="**/entity/*"/>
+			</fileset>
+<!--			<fileset dir="${lib.dir}" id="libs" /> -->
+		</jar>
+		
+		
+	</target>
+	
+	
+	
+	
+	
+	<target name="jar-package-padme" depends="compile">
+		<echo>*** Packing application classes (gredos config, NOT ENTITY CLASSES) in a single JAR (PADME) ***</echo>
+		
+		<move file="${classes.dir}/hibernate.cfg.xml" 
+								tofile="${classes.dir}/hibernate.cfg.aux.xml" />
+				
+		<move file="${classes.dir}/hibernate-war.cfg.xml" 
+						tofile="${classes.dir}/hibernate.cfg.xml" />
+		
+		<jar destfile="${dest.dir}/padme-appform-classes.jar">
+			<fileset dir="${classes.dir}" id="classes">
+<!--				<excludesfile name="${classes.dir}/hibernate.cfg.xml"/> -->
+				<exclude name="**/hibernate-*" />
+				<exclude name="**/entity/*"/>
+			</fileset>
+<!--			<fileset dir="${lib.dir}" id="libs" /> -->
+		</jar>
+		
+		<move file="${classes.dir}/hibernate.cfg.xml" 
+										tofile="${classes.dir}/hibernate-war.cfg.xml" />
+						
+		<move file="${classes.dir}/hibernate.cfg.aux.xml" 
+						tofile="${classes.dir}/hibernate.cfg.xml" />
+	</target>
+	
+	
+	
+	<target name="jar-package-gredos" depends="compile">
+		<echo>*** Packing application classes (NOT ENTITY CLASSES) in a single JAR (GREDOS) ***</echo>
+		
+		<move file="${classes.dir}/hibernate.cfg.xml" 
+						tofile="${classes.dir}/hibernate.cfg.aux.xml" />
+		
+		<move file="${classes.dir}/hibernate-pre.cfg.xml" 
+						tofile="${classes.dir}/hibernate.cfg.xml" />
+		
+		<jar destfile="${dest.dir}/gredos-appform-classes.jar">
+			<fileset dir="${classes.dir}" id="classes">
+				<excludesfile name="${classes.dir}/hibernate.cfg.xml"/>
+				<exclude name="**/entity/*"/>
+			</fileset>
+<!--			<fileset dir="${lib.dir}" id="libs" /> -->
+		</jar>
+		
+		<move file="${classes.dir}/hibernate.cfg.xml" 
+								tofile="${classes.dir}/hibernate-pre.cfg.xml" />
+				
+		<move file="${classes.dir}/hibernate.cfg.aux.xml" 
+						tofile="${classes.dir}/hibernate.cfg.xml" />
+	</target>
+	
+	
+	
+	<target name="jar-package" depends="compile">
+		<echo>*** Packing application classes (NOT ENTITY CLASSES) in a single JAR ***</echo>
+<!--		
+		<move file="${classes.dir}/hibernate.cfg.xml" 
+						tofile="${classes.dir}/hibernate.cfg.aux.xml" />
+		
+		<move file="${classes.dir}/hibernate-pre.cfg.xml" 
+						tofile="${classes.dir}/hibernate.cfg.xml" />
+-->		
+		<jar destfile="${dest.dir}/appform-classes.jar">
+			<fileset dir="${classes.dir}" id="classes">
+				<excludesfile name="${classes.dir}/hibernate.cfg.xml"/>
+				<exclude name="**/entity/*"/>
+			</fileset>
+<!--			<fileset dir="${lib.dir}" id="libs" /> -->
+		</jar>
+<!--		
+		<move file="${classes.dir}/hibernate.cfg.xml" 
+								tofile="${classes.dir}/hibernate-pre.cfg.xml" />
+				
+		<move file="${classes.dir}/hibernate.cfg.aux.xml" 
+						tofile="${classes.dir}/hibernate.cfg.xml" />
+-->
+	</target>
+	
+<!-- ###################### UTILITY CLASSES JAR ############################ -->	
+	
+	
+	
+<!-- ##################### CEGEN BUILDING PACKAGE ########################## -->	
+	<target name="cegen-preproduction-package" depends="compile">
+			<echo>=== PGT PREPRODUCTION (GREDOS) PACKAGE ===</echo>
+
+			<!-- copy the config files -->
+			<!--		<copy file="${resources.dir}/MANIFEST.MF" 
+						tofile="${temp.dir.meta-inf}/MANIFEST.MF" overwrite="true" /> -->
+			<!--	
+		<copy file="${classes.dir}/hibernate.cfg.xml"
+						tofile="${temp.dir.classes}/hibernate.cfg.xml" />	
+		<copy file="${resources.dir}/managed-beans.xml" 
+						tofile="${temp.dir.web-inf}/managed-beans.xml" overwrite="true" /> 
+			<copy file="${resources.dir}/navigation-rules.xml" 
+						tofile="${temp.dir.web-inf}/navigation-rules.xml" overwrite="true" />
+	-->
+
+			<antcall target="transfer" />
+			<copy file="${src.dir}/hibernate-cegen-prep.cfg.xml" 
+					tofile="${temp.dir.classes}/hibernate.cfg.xml" />
+			
+			<copy file="${src.dir}/log4j-cegen.xml"	tofile="${temp.dir.classes}/log4j.xml" />
+			<copy file="${src.dir}/log4j.dtd" tofile="${temp.dir.classes}/log4j.dtd" />
+			<copy file="${metainf.dir}/context-pre-cegen.xml" 
+						tofile="${temp.dir.meta-inf}/context.xml" />
+	<!--
+			<copy todir="${temp.dir.classes}">
+				<fileset dir="${src.dir}">
+					<include name="**/*.xml" />
+					<include name="**/*.xsl" />
+				</fileset>
+			</copy>
+	-->
+			<war destfile="${dest.dir}/${cegen.package.name}" manifest="${temp.dir.meta-inf}/MANIFEST.MF" 
+				webxml="${temp.dir.web-inf}/web-pre-cegen.xml">
+
+				<zipfileset dir="${temp.dir}/html" prefix="jsp" />
+				<zipfileset dir="${temp.dir}/display" prefix="display" />
+				<zipfileset dir="${temp.dir}/getpass" prefix="getpass" />
+				<zipfileset dir="${temp.dir}/jsp" prefix="jsp" />
+				<zipfileset dir="${temp.dir}/css" prefix="css" />
+				<zipfileset dir="${temp.dir}/js" prefix="js" />
+				<zipfileset dir="${temp.dir}/img" prefix="img" />
+				<zipfileset dir="${temp.dir}/html" prefix="html" />
+				<zipfileset dir="${temp.dir.meta-inf}" includes="**/context.xml" prefix="META-INF"/>
+				
+				<!-- copy only root jsp's, not pages in subdirectories -->
+				<fileset dir="${temp.dir}">
+					<include name="*.jsp" />
+					<include name="*.props" />
+				</fileset>
+				<classes dir="${temp.dir.classes}" />
+				<lib dir="${temp.dir.web-inf}/lib" />
+			</war>
+
+		</target>
+		
+		
+		
+		
+		
+		<!-- PACKAGE -->
+		<target name="cegen-production-package" depends="compile">
+			<echo>=== CEGEN PRODUCTION WAR ===</echo>
+
+			<!-- copy the config files -->
+			<!--		<copy file="${resources.dir}/MANIFEST.MF" 
+						tofile="${temp.dir.meta-inf}/MANIFEST.MF" overwrite="true" /> -->
+			<!--	
+		<copy file="${classes.dir}/hibernate.cfg.xml"
+						tofile="${temp.dir.classes}/hibernate.cfg.xml" />	
+		<copy file="${resources.dir}/managed-beans.xml" 
+						tofile="${temp.dir.web-inf}/managed-beans.xml" overwrite="true" /> 
+			<copy file="${resources.dir}/navigation-rules.xml" 
+						tofile="${temp.dir.web-inf}/navigation-rules.xml" overwrite="true" />
+	-->
+
+			<antcall target="transfer" />
+			<copy file="${src.dir}/hibernate-cegen.cfg.xml" 
+					tofile="${temp.dir.classes}/hibernate.cfg.xml" />
+			
+			<copy file="${src.dir}/log4j-cegen.xml"	tofile="${temp.dir.classes}/log4j.xml" />
+			<copy file="${src.dir}/log4j.dtd" tofile="${temp.dir.classes}/log4j.dtd" />
+			
+			<copy file="${metainf.dir}/context-war-cegen.xml" 
+						tofile="${temp.dir.meta-inf}/context.xml" />
+	<!--
+			<copy todir="${temp.dir.classes}">
+				<fileset dir="${src.dir}">
+					<include name="**/*.xml" />
+					<include name="**/*.xsl" />
+				</fileset>
+			</copy>
+	-->
+			<war destfile="${dest.dir}/${cegen.package.name}" manifest="${temp.dir.meta-inf}/MANIFEST.MF" 
+				webxml="${temp.dir.web-inf}/web-war-cegen.xml">
+
+				<zipfileset dir="${temp.dir}/html" prefix="jsp" />
+				<zipfileset dir="${temp.dir}/display" prefix="display" />
+				<zipfileset dir="${temp.dir}/getpass" prefix="getpass" />
+				<zipfileset dir="${temp.dir}/jsp" prefix="jsp" />
+				<zipfileset dir="${temp.dir}/css" prefix="css" />
+				<zipfileset dir="${temp.dir}/js" prefix="js" />
+				<zipfileset dir="${temp.dir}/img" prefix="img" />
+				<zipfileset dir="${temp.dir}/html" prefix="html" />
+				<zipfileset dir="${temp.dir.meta-inf}" includes="**/context.xml" prefix="META-INF"/>
+				
+				<!-- copy only root jsp's, not pages in subdirectories -->
+				<fileset dir="${temp.dir}">
+					<include name="*.jsp" />
+					<include name="*.props" />
+				</fileset>
+				
+				<classes dir="${temp.dir.classes}" />
+				<lib dir="${temp.dir.web-inf}/lib" />
+			</war>
+
+		</target>
+<!-- ##################### CEGEN BUILDING PACKAGE ########################## -->		
+	
+	
+	
+	
+	<target name="pgt-preproduction-package" depends="compile">
+		<echo>=== PGT PREPRODUCTION (GREDOS) PACKAGE ===</echo>
+
+		<!-- copy the config files -->
+		<!--		<copy file="${resources.dir}/MANIFEST.MF" 
+					tofile="${temp.dir.meta-inf}/MANIFEST.MF" overwrite="true" /> -->
+		<!--	
+	<copy file="${classes.dir}/hibernate.cfg.xml"
+					tofile="${temp.dir.classes}/hibernate.cfg.xml" />	
+	<copy file="${resources.dir}/managed-beans.xml" 
+					tofile="${temp.dir.web-inf}/managed-beans.xml" overwrite="true" /> 
+		<copy file="${resources.dir}/navigation-rules.xml" 
+					tofile="${temp.dir.web-inf}/navigation-rules.xml" overwrite="true" />
+-->
+
+		<antcall target="transfer" />
+		<copy file="${src.dir}/hibernate-epidb-prep.cfg.xml" 
+				tofile="${temp.dir.classes}/hibernate.cfg.xml" />
+		
+		<copy file="${src.dir}/log4j-pgt.xml"	tofile="${temp.dir.classes}/log4j.xml" />
+		<copy file="${src.dir}/log4j.dtd" tofile="${temp.dir.classes}/log4j.dtd" />
+		<copy file="${metainf.dir}/context-pre-pgt.xml" 
+					tofile="${temp.dir.meta-inf}/context.xml" />
+<!--
+		<copy todir="${temp.dir.classes}">
+			<fileset dir="${src.dir}">
+				<include name="**/*.xml" />
+				<include name="**/*.xsl" />
+			</fileset>
+		</copy>
+-->
+		<war destfile="${dest.dir}/${pgt.package.name}" manifest="${temp.dir.meta-inf}/MANIFEST.MF" 
+			webxml="${temp.dir.web-inf}/web-pre-pgt.xml">
+
+			<zipfileset dir="${temp.dir}/html" prefix="jsp" />
+			<zipfileset dir="${temp.dir}/display" prefix="display" />
+			<zipfileset dir="${temp.dir}/getpass" prefix="getpass" />
+			<zipfileset dir="${temp.dir}/jsp" prefix="jsp" />
+			<zipfileset dir="${temp.dir}/css" prefix="css" />
+			<zipfileset dir="${temp.dir}/js" prefix="js" />
+			<zipfileset dir="${temp.dir}/img" prefix="img" />
+			<zipfileset dir="${temp.dir}/html" prefix="html" />
+			<zipfileset dir="${temp.dir.meta-inf}" includes="**/context.xml" prefix="META-INF"/>
+			
+			<!-- copy only root jsp's, not pages in subdirectories -->
+			<fileset dir="${temp.dir}">
+				<include name="*.jsp" />
+				<include name="*.props" />
+			</fileset>
+			<classes dir="${temp.dir.classes}" />
+			<lib dir="${temp.dir.web-inf}/lib" />
+		</war>
+
+	</target>
+	
+	
+	
+	
+	
+	<!-- PACKAGE -->
+	<target name="pgt-production-package" depends="compile">
+		<echo>=== PGT PRODUCTION -UBIO- PACKAGE ===</echo>
+
+		<!-- copy the config files -->
+		<!--		<copy file="${resources.dir}/MANIFEST.MF" 
+					tofile="${temp.dir.meta-inf}/MANIFEST.MF" overwrite="true" /> -->
+		<!--	
+	<copy file="${classes.dir}/hibernate.cfg.xml"
+					tofile="${temp.dir.classes}/hibernate.cfg.xml" />	
+	<copy file="${resources.dir}/managed-beans.xml" 
+					tofile="${temp.dir.web-inf}/managed-beans.xml" overwrite="true" /> 
+		<copy file="${resources.dir}/navigation-rules.xml" 
+					tofile="${temp.dir.web-inf}/navigation-rules.xml" overwrite="true" />
+-->
+
+		<antcall target="transfer" />
+		<copy file="${src.dir}/hibernate-epidb.cfg.xml" 
+				tofile="${temp.dir.classes}/hibernate.cfg.xml" />
+		
+		<copy file="${src.dir}/log4j-pgt.xml"	tofile="${temp.dir.classes}/log4j.xml" />
+		<copy file="${src.dir}/log4j.dtd" tofile="${temp.dir.classes}/log4j.dtd" />
+		
+		<copy file="${metainf.dir}/context-war-pgt.xml" 
+					tofile="${temp.dir.meta-inf}/context.xml" />
+<!--
+		<copy todir="${temp.dir.classes}">
+			<fileset dir="${src.dir}">
+				<include name="**/*.xml" />
+				<include name="**/*.xsl" />
+			</fileset>
+		</copy>
+-->
+		<war destfile="${dest.dir}/${pgt.package.name}" manifest="${temp.dir.meta-inf}/MANIFEST.MF" 
+			webxml="${temp.dir.web-inf}/web-war-pgt.xml">
+
+			<zipfileset dir="${temp.dir}/html" prefix="jsp" />
+			<zipfileset dir="${temp.dir}/display" prefix="display" />
+			<zipfileset dir="${temp.dir}/getpass" prefix="getpass" />
+			<zipfileset dir="${temp.dir}/jsp" prefix="jsp" />
+			<zipfileset dir="${temp.dir}/css" prefix="css" />
+			<zipfileset dir="${temp.dir}/js" prefix="js" />
+			<zipfileset dir="${temp.dir}/img" prefix="img" />
+			<zipfileset dir="${temp.dir}/html" prefix="html" />
+			<zipfileset dir="${temp.dir.meta-inf}" includes="**/context.xml" prefix="META-INF"/>
+			
+			<!-- copy only root jsp's, not pages in subdirectories -->
+			<fileset dir="${temp.dir}">
+				<include name="*.jsp" />
+				<include name="*.props" />
+			</fileset>
+			
+			<classes dir="${temp.dir.classes}" />
+			<lib dir="${temp.dir.web-inf}/lib" />
+		</war>
+
+	</target>
+	
+	
+	
+	
+	<target name="preproduction-package" depends="compile">
+		<echo>=== PREPRODUCTION (GREDOS) PACKAGE ===</echo>
+
+		<!-- copy the config files -->
+		<!--		<copy file="${resources.dir}/MANIFEST.MF" 
+					tofile="${temp.dir.meta-inf}/MANIFEST.MF" overwrite="true" /> -->
+		<!--	
+	<copy file="${classes.dir}/hibernate.cfg.xml"
+					tofile="${temp.dir.classes}/hibernate.cfg.xml" />	
+	<copy file="${resources.dir}/managed-beans.xml" 
+					tofile="${temp.dir.web-inf}/managed-beans.xml" overwrite="true" /> 
+		<copy file="${resources.dir}/navigation-rules.xml" 
+					tofile="${temp.dir.web-inf}/navigation-rules.xml" overwrite="true" />
+-->
+
+		<antcall target="transfer" />
+		<copy file="${src.dir}/hibernate-pre.cfg.xml" 
+				tofile="${temp.dir.classes}/hibernate.cfg.xml" />
+		
+		<copy file="${src.dir}/log4j.xml"	tofile="${temp.dir.classes}/log4j.xml" />
+		<copy file="${src.dir}/log4j.dtd" tofile="${temp.dir.classes}/log4j.dtd" />
+		<copy file="${metainf.dir}/context-pre.xml" 
+					tofile="${temp.dir.meta-inf}/context.xml" />
+<!--
+		<copy todir="${temp.dir.classes}">
+			<fileset dir="${src.dir}">
+				<include name="**/*.xml" />
+				<include name="**/*.xsl" />
+			</fileset>
+		</copy>
+-->
+		<war destfile="${dest.dir}/${pre.package.name}" manifest="${temp.dir.meta-inf}/MANIFEST.MF" 
+			webxml="${temp.dir.web-inf}/web-pre.xml">
+
+			<zipfileset dir="${temp.dir}/html" prefix="jsp" />
+			<zipfileset dir="${temp.dir}/display" prefix="display" />
+			<zipfileset dir="${temp.dir}/getpass" prefix="getpass" />
+			<zipfileset dir="${temp.dir}/jsp" prefix="jsp" />
+			<zipfileset dir="${temp.dir}/css" prefix="css" />
+			<zipfileset dir="${temp.dir}/js" prefix="js" />
+			<zipfileset dir="${temp.dir}/img" prefix="img" />
+			<zipfileset dir="${temp.dir}/html" prefix="html" />
+			<zipfileset dir="${temp.dir.meta-inf}" includes="**/context.xml" prefix="META-INF"/>
+			
+			<!-- copy only root jsp's, not pages in subdirectories -->
+			<fileset dir="${temp.dir}">
+				<include name="*.jsp" />
+				<include name="*.props" />
+			</fileset>
+			<classes dir="${temp.dir.classes}" />
+			<lib dir="${temp.dir.web-inf}/lib" />
+		</war>
+
+	</target>
+
+	
+	
+	
+<!-- PACKAGE -->
+	<target name="production-package" depends="compile">
+		<echo>=== PRODUCTION -UBIO- PACKAGE ===</echo>
+
+		<!-- copy the config files -->
+		<!--		<copy file="${resources.dir}/MANIFEST.MF" 
+					tofile="${temp.dir.meta-inf}/MANIFEST.MF" overwrite="true" /> -->
+		<!--	
+	<copy file="${classes.dir}/hibernate.cfg.xml"
+					tofile="${temp.dir.classes}/hibernate.cfg.xml" />	
+	<copy file="${resources.dir}/managed-beans.xml" 
+					tofile="${temp.dir.web-inf}/managed-beans.xml" overwrite="true" /> 
+		<copy file="${resources.dir}/navigation-rules.xml" 
+					tofile="${temp.dir.web-inf}/navigation-rules.xml" overwrite="true" />
+-->
+
+		<antcall target="transfer" />
+		<copy file="${src.dir}/hibernate-war.cfg.xml" 
+				tofile="${temp.dir.classes}/hibernate.cfg.xml" />
+		
+		<copy file="${src.dir}/log4j-pgt.xml"	tofile="${temp.dir.classes}/log4j.xml" />
+		<copy file="${src.dir}/log4j.dtd" tofile="${temp.dir.classes}/log4j.dtd" />
+		
+		<copy file="${metainf.dir}/context-war.xml" 
+					tofile="${temp.dir.meta-inf}/context.xml" />
+<!--
+		<copy todir="${temp.dir.classes}">
+			<fileset dir="${src.dir}">
+				<include name="**/*.xml" />
+				<include name="**/*.xsl" />
+			</fileset>
+		</copy>
+-->
+		<war destfile="${dest.dir}/${package.name}" manifest="${temp.dir.meta-inf}/MANIFEST.MF" 
+			webxml="${temp.dir.web-inf}/web-war.xml">
+
+			<zipfileset dir="${temp.dir}/html" prefix="jsp" />
+			<zipfileset dir="${temp.dir}/display" prefix="display" />
+			<zipfileset dir="${temp.dir}/getpass" prefix="getpass" />
+			<zipfileset dir="${temp.dir}/jsp" prefix="jsp" />
+			<zipfileset dir="${temp.dir}/css" prefix="css" />
+			<zipfileset dir="${temp.dir}/js" prefix="js" />
+			<zipfileset dir="${temp.dir}/img" prefix="img" />
+			<zipfileset dir="${temp.dir}/html" prefix="html" />
+			<zipfileset dir="${temp.dir.meta-inf}" includes="**/context.xml" prefix="META-INF"/>
+			
+			<!-- copy only root jsp's, not pages in subdirectories -->
+			<fileset dir="${temp.dir}">
+				<include name="*.jsp" />
+				<include name="*.props" />
+			</fileset>
+			
+			<classes dir="${temp.dir.classes}" />
+			<lib dir="${temp.dir.web-inf}/lib" />
+		</war>
+
+	</target>
+	
+	
+	
+	
+	
+	<!-- PACKAGE -->
+		<target name="generic-war-package" depends="compile">
+			<echo>=== PRODUCTION -UBIO- PACKAGE ===</echo>
+
+			<!-- copy the config files -->
+			<!--		<copy file="${resources.dir}/MANIFEST.MF" 
+						tofile="${temp.dir.meta-inf}/MANIFEST.MF" overwrite="true" /> -->
+			<!--	
+		<copy file="${classes.dir}/hibernate.cfg.xml"
+						tofile="${temp.dir.classes}/hibernate.cfg.xml" />	
+		<copy file="${resources.dir}/managed-beans.xml" 
+						tofile="${temp.dir.web-inf}/managed-beans.xml" overwrite="true" /> 
+			<copy file="${resources.dir}/navigation-rules.xml" 
+						tofile="${temp.dir.web-inf}/navigation-rules.xml" overwrite="true" />
+	-->
+
+			<antcall target="transfer" />
+			<copy file="${src.dir}/hibernate-generic.cfg.xml" 
+					tofile="${temp.dir.classes}/hibernate.cfg.xml" />
+			
+			<copy file="${src.dir}/log4j-generic.xml"	tofile="${temp.dir.classes}/log4j.xml" />
+			<copy file="${src.dir}/log4j.dtd" tofile="${temp.dir.classes}/log4j.dtd" />
+			
+			<copy file="${metainf.dir}/context-generic.xml" 
+						tofile="${temp.dir.meta-inf}/context.xml" />
+	<!--
+			<copy todir="${temp.dir.classes}">
+				<fileset dir="${src.dir}">
+					<include name="**/*.xml" />
+					<include name="**/*.xsl" />
+				</fileset>
+			</copy>
+	-->
+			<war destfile="${dest.dir}/${generic.package.name}" manifest="${temp.dir.meta-inf}/MANIFEST.MF" 
+				webxml="${temp.dir.web-inf}/web-generic.xml">
+
+				<zipfileset dir="${temp.dir}/html" prefix="jsp" />
+				<zipfileset dir="${temp.dir}/display" prefix="display" />
+				<zipfileset dir="${temp.dir}/getpass" prefix="getpass" />
+				<zipfileset dir="${temp.dir}/jsp" prefix="jsp" />
+				<zipfileset dir="${temp.dir}/css" prefix="css" />
+				<zipfileset dir="${temp.dir}/js" prefix="js" />
+				<zipfileset dir="${temp.dir}/img" prefix="img" />
+				<zipfileset dir="${temp.dir}/html" prefix="html" />
+				<zipfileset dir="${temp.dir.meta-inf}" includes="**/context.xml" prefix="META-INF"/>
+				
+				<!-- copy only root jsp's, not pages in subdirectories -->
+				<fileset dir="${temp.dir}">
+					<include name="*.jsp" />
+					<include name="*.props" />
+				</fileset>
+				
+				<classes dir="${temp.dir.classes}" />
+				<lib dir="${temp.dir.web-inf}/lib" />
+			</war>
+
+		</target>
+	
+	
+	
+
+	<!-- JUST DEPLOY JSP's -->
+	<target name="jsps">
+		<echo>=== DEPLOY JSP'S ===</echo>
+		<!-- i'm trying to be explicit about what i put out there -->
+		<copy todir="${webapp.dir}/${jsp.dir.name}">
+			<fileset dir="${pages.dir}">
+				<include name="**/*.jsp" />
+				<include name="**/*.html" />
+				<include name="**/*.css" />
+				<include name="**/*.gif" />
+				<include name="**/*.jpg" />
+				<include name="**/*.png" />
+				<include name="**/*.js" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- INSTALL -->
+	<target name="install" depends="production-package">
+		<echo>=== INSTALL ===</echo>
+		<copy file="${package.file}" tofile="${webapp.dir}/${package.name}" overwrite="true" />
+	</target>
+
+	<!-- INSTALL AND CLEAN -->
+	<target name="install-n-clean" depends="production-package">
+		<echo>=== INSTALL ===</echo>
+		<copy file="${package.file}" tofile="${webapp.dir}/${package.name}" overwrite="true" />
+
+		<antcall target="${clean}" />
+	</target>
+
+</project>

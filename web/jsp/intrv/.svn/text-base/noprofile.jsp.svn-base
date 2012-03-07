@@ -1,0 +1,143 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+    
+
+<!-- start layout index.jsp -->
+<!-- %@ page import="org.jboss.portal.server.PortalConstants" % -->
+<!-- %@ taglib uri="/WEB-INF/theme/panportal-layout.tld" prefix="p" --> 
+<!-- %@ taglib uri="/tld/portal-layout.tld" prefix="p" % -->
+<!-- %@ taglib uri="/WEB-INF/theme/portal-layout.tld" prefix="p" % -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Application Form Tool</title>
+
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"/>
+   <!-- to correct the unsightly Flash of Unstyled Content. -->
+	
+	<link rel="stylesheet" type="text/css" 
+					href="../../css/portal_style.css" id="portalCss"/>   
+  <link rel="stylesheet" type="text/css" 
+  				href="../css/portal_style.css" id="portalCss"/> 
+  <link rel="stylesheet" type="text/css" href="../../css/supernote.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/overlay.css" />
+<!-- 	<link rel="shortcut icon" href="../img/favicon.ico"/> -->
+	 
+<!-- this are the js includes to build the left tree -->
+	<link rel="stylesheet" type="text/css" href="../js/fonts/fonts-min.css" />
+
+<!-- treeview and yahoo event, dom and connection files -->	
+	<script type="text/javascript" src="../../js/yahoo/yahoo-dom-event.js"></script>
+	<script type="text/javascript" src="../../js/yahoo/connection-debug.js"></script>
+	<script type="text/javascript" src="../../js/yahoo/json-debug.js"></script>
+	<script type="text/javascript" src="../../js/overlay.js"></script>
+	<script type="text/javascript" src="../../js/yahoo/ajaxreq.js"></script>
+
+	
+<!-- custom javascript files -->	 	 
+	<script type="text/javascript" src="../../js/core.js"></script>	 
+ 	<script type="text/javascript" src="../../js/ajaxresponses.js"></script>
+ 	
+ 	<script type="text/javascript" src="../../js/ctrlsec.js"></script>
+ 	<script type="text/javascript" src="../../js/listitemctrl.js"></script>
+ 	
+ 	<script type="text/javascript" src="../../js/yahoo/selector-beta-debug.js"></script>
+<!-- 
+ 	<script type="text/javascript" src="../../js/formitemctrl.js"></script>
+  
+	<script type="text/javascript" src="/miniappform/js/ctrlitem.js"></script>
+-->
+	<script type="text/javascript" src="../../js/supernote.js"></script>
+	<script type="text/javascript" src="../../js/main.js"></script>
+</head>
+
+<body onload="onReady();" onreadystatechange="onReady()"; id="body">
+<div id="fitter"></div>
+
+<div id="portal-container">
+   <div id="sizer">
+      <div id="expander">
+
+         <div id="logoName"><!-- 
+         <a href="http://www.inab.org" target="_blank" style="text-decoration:none">
+              <img src="../img/inblogo.gif" height="100" border="0"/>
+            <span class="inblogo">Instituto Nacional de Bioinformática</span>
+            </a>-->
+				 </div>
+         <table border="0" cellpadding="0" cellspacing="0" id="header-container-adm">
+            <tr> 
+              <td align="center" valign="top" id="header">
+                <!-- Utility controls -->
+                <!-- actually, dashboard is located at the upper right corner 
+                     and is composed by the links to the different sections
+                     in the portal: dashboard, portal, logout, maybe admin -->
+                <div id='dashboardnavAdm' align="left">
+							User: <b>username</b><br/>
+
+							Roles: <b>rolename</b><br/>
+<a href="../logout.jsp " style="text-decoration:none;color:darkblue;font-size=bolder">Logout</a>
+							</div>
+
+                <!-- navigation tabs and such -->
+							<div id="navigation">
+								
+<!-- BREADCRUMS -->
+							</div> <!-- navigation -->
+								
+						  </td>
+            </tr>
+         </table>
+        <div id="content-container">
+
+<!-- **************** START CONTENT AREA (REGION b)**************** -->		 
+	<div id='regionNotGrantedB'>
+		<br>
+		You <span style="color:red;font-weight: bold;">
+		profile is not completed to see and execute</span> the application.<br>
+		It seems the <b>hospital</b> you belong to was not assigned to you yet.<br><br>
+		Please, contact and report the
+		issue to <a href="mailto:gcomesana@cnio.es" style="text-decoration:none;color:darkblue">
+		the administrator</a>.
+		<br><br><!-- 
+		<a href="../logout.jsp" style="text-decoration:none;color:darkblue">Log in</a> again as a different user<br>
+		or<br>
+		<a href="javascript:window.history.go(-1)" style="text-decoration:none;color:darkblue">go back to the previous page</a>
+-->
+	</div> <!-- regionB -->
+<!-- ****************** END CONTENT AREA (REGION B) ***************** -->
+				
+
+<!-- **************** START LEFT MENU AREA (REGION A)**************** -->
+        <div id='regionAdmA'>
+					 	
+        </div> <!-- region A --> 
+<!-- ****************** END LEFT MENU AREA (REGION A) ***************** -->
+
+            
+        </div> 
+        
+</div> <!-- expander -->
+   </div><!-- sizer -->
+</div><!-- portal-container -->
+
+
+<!-- FOOTER AND END OF PAGE -->
+<div id="footer-container-adm" class="portal-copyright-adm">Developed at
+<a class="portal-copyright-adm" href="http://www.inab.org">CNIO/INB</a><br/>
+
+</div>
+
+<div id="overlay">
+    <div>
+    <p>Processing...</p>
+		<p><img src="../img/ajax-loader-trans.gif" alt="Processing..." /></p>
+    </div>
+</div>
+<!-- p:region regionName='AJAXFooter' regionID='AJAXFooter'/> 
+<script type='text/javascript'>footer()</script> -->
+
+</body>
+</html>
+

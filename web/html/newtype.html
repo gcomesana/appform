@@ -1,0 +1,51 @@
+<html>
+<head>
+<script type="text/javascript" src="../js/yahoo/yahoo-dom-event.js"></script>
+	<script type="text/javascript" src="../js/yahoo/connection-debug.js"></script>
+	<script type="text/javascript" src="../js/yahoo/json-debug.js"></script>
+	<script type="text/javascript" src="../js/overlay.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="../js/yahoo/ajaxreq.js"  charset="UTF-8"></script>
+	<script type="text/javascript" src="../js/core.js"  charset="UTF-8"></script>
+	<script type="text/javascript" src="../js/ajaxresponses.js"  charset="UTF-8"></script>
+	<script type="text/javascript" src="../js/newtype.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="../css/newtype.css">
+	<link rel="stylesheet" type="text/css" href="../css/overlay.css"/>
+  
+	<title>Manage Types</title>
+	
+</head>
+<body onload="onReady();">
+
+	<form name="frmNewType" id="frmNewType">
+		<div class="g1">
+			<span>Name: </span><input type="text" id="typename" name="typename" value="">
+			<span>Type: </span><select id="typeSelect" name="typeSelect"></select>
+			<input type="button" class="button" name="" onclick="newTypeCtrl.delType();" value="Erase type">
+		</div>
+		<div class="g2">
+			<span>Key: </span><input type="text" name="typekey" id="typekey">
+			<span>Value: </span><input type="text" name="typevalue" id="typevalue">
+			<input type="button"  class="buttonarrow" name="" onclick="newTypeCtrl.add();" value=">">
+		</div>
+
+		<div class="g3">
+			<div id="typelist">
+			</div>
+			<input type="button" class="button" name="" onclick="newTypeCtrl.del();" value="Remove">
+			<input type="button" class="buttonarrow" name="" value="U" onclick="newTypeCtrl.up();">
+			<input type="button" class="buttonarrow" name="" value="D" onclick="newTypeCtrl.down();">
+		</div>
+		<input type="button"  class="button" name="btnSave" value="save"
+			onclick="newTypeCtrl.onSave();">&nbsp;
+		<input type="button"  class="button" name="btnClose" value="close"
+			onclick="self.close();">
+	</form>
+	<div id="overlay">
+    <div>
+    <p>Processing...</p>
+		<p><img src="../img/ajax-loader-trans.gif" alt="Processing..." /></p>
+   </div>
+</div>
+</body>
+</html>

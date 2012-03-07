@@ -1,0 +1,41 @@
+8
+
+dir
+78
+svn+ssh://gcomesana@gredos/home/gcomesana/Development/svn-repo/appform/doc
+svn+ssh://gcomesana@gredos/home/gcomesana/Development/svn-repo
+
+
+
+2009-04-08T11:00:58.851845Z
+6
+gcomesana
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+4aadde07-169c-4302-b40d-08daa5913de5
+
+Application Description Overview.doc
+file
+
+
+
+
+2009-10-06T15:56:51.000000Z
+d6ac875a09fe2efcf904b75b4de151fc
+2009-04-08T11:00:58.851845Z
+6
+gcomesana
+has-props
+

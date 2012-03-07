@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<%@ page language="java" contentType="text/html;charset=UTF-8"
+    pageEncoding="UTF-8"%>
+       
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+<%@page import="org.hibernate.Session, org.hibernate.Transaction,
+							  org.hibernate.HibernateException, java.util.Collection, 
+								java.util.Iterator, java.util.ArrayList, 
+								java.util.Enumeration, java.util.List,
+								java.net.URLDecoder, java.net.URLEncoder"  %>
+								
+<%@page import="org.cnio.appform.entity.Interview, org.cnio.appform.entity.AbstractItem,
+								org.cnio.appform.entity.Section, org.cnio.appform.entity.AnswerItem,
+								org.cnio.appform.entity.Question, org.cnio.appform.entity.Text,
+								org.cnio.appform.entity.AppUser, org.cnio.appform.entity.Role,
+								org.cnio.appform.entity.AppGroup, org.cnio.appform.entity.AppDBLogger,
+								org.cnio.appform.util.HibernateUtil, 
+								org.cnio.appform.util.HibController,
+								org.cnio.appform.util.AppUserCtrl, org.cnio.appform.util.LogFile,
+								org.cnio.appform.audit.ActionsLogger" %>
+								
+<%
+
+	String referer = request.getHeader("referer");
+out.println("<!-- referer: "+referer+"-->");
+
+	session.removeAttribute ("sectionIds");
+	session.removeAttribute ("currentSec");
+	session.removeAttribute ("lastSec");
+	session.removeAttribute ("shortPerf");
+	session.removeAttribute ("patId");
+	session.removeAttribute ("preview");
+	session.removeAttribute ("rt");
+
+// If it is a preview, just redirect to the intrv.jsp page
+	String preview = request.getParameter("sim");
+	String intrvId = request.getParameter("intrv");
+	if (preview != null)
+		response.sendRedirect("intrv.jsp?sim=1&intrv="+intrvId);
+	
+//	String usrId = request.getParameter ("usr");
+	String user = (String)session.getAttribute ("user");
+	Integer userId = (Integer)session.getAttribute ("usrid");
+	
+	Session hibSes = HibernateUtil.getSessionFactory().openSession();
+	AppUserCtrl userCtrl = new AppUserCtrl (hibSes);
+	AppUser appUsr = null;
+	ActionsLogger dbLog = new ActionsLogger (hibSes);
+	AppGroup secActiveGrp = null;
+
+
+// Vars to use with the performance configuration dialog
+	int jsShortIntrv=0, jsCanCrtSubj=0, jsGrpId=-1, jsPrjId=50;
+	String jsInit = "var ", jsGrpCode="";
+
+///////////////////////////////////////////////////////////////
+// Roles and usrid initialization for the whole interview performance
+	if (user == null && userId == null) {
+		user = request.getUserPrincipal().getName();
+	  session.setAttribute ("user", user);
+		appUsr = userCtrl.getUser(user);
+		session.setAttribute ("usrid", appUsr.getId());
+		
+		List<Role> roles = userCtrl.getRoleFromUser(appUsr);
+		String strRoles = "";
+		for (Role r: roles) {
+			strRoles += r.getName()+",";
+		}
+		strRoles = strRoles.substring(0, strRoles.length()-1);
+		session.setAttribute ("roles", strRoles);
+	}
+	else
+		appUsr = (AppUser)hibSes.get(AppUser.class, userId);
+	
+	pageContext.setAttribute("usrid", appUsr.getId());
+	
+///////////////////////////////////////////////////////////////
+// Trying to set the secondary group
+	int numGroups = -1;
+	String secGrpName = null;
+// This is not used as the group dialog has to be raised always starting a 
+// new interview from the composer tool
+// a switch is used to know whether the dialog has to be raised
+//	if (session.getAttribute("secondaryGrpName") == null) {
+//		if (appUsr == null)
+//			appUsr = (AppUser)hibSes.get(AppUser.class, userId);
+	
+	secActiveGrp = (AppGroup)userCtrl.getSecondaryActiveGroup(appUsr);
+	
+	if (secActiveGrp == null) {
+		Integer mainGrpId = (Integer)session.getAttribute("primaryGrpId");
+		AppGroup mainGrp = (AppGroup)hibSes.get(AppGroup.class, mainGrpId);
+		List<AppGroup> secondaryGrps = userCtrl.getSecondaryGroups(appUsr, mainGrp);
+	
+		numGroups = (secondaryGrps == null)? 0: secondaryGrps.size();
+		pageContext.setAttribute("numGroups", numGroups);
+		
+		if (numGroups == 0) {
+		%>
+			<jsp:forward page="noprofile.jsp"></jsp:forward>
+		<%
+		}
+		
+		if (numGroups == 1) {
+			secActiveGrp = secondaryGrps.get(0);
+			
+			session.setAttribute("secondaryGrpId", secActiveGrp.getId());
+			session.setAttribute("secondaryGrpName", secActiveGrp.getName());
+			jsGrpId = secActiveGrp.getId();		
+			jsGrpCode = secActiveGrp.getCodgroup();
+			
+			userCtrl.setActiveGroup (appUsr, secActiveGrp, 1);
+			secGrpName = secActiveGrp.getName();
+		}
+		else {
+			pageContext.setAttribute("secGroups", secondaryGrps);
+			String grpsId = "";
+			for (Iterator<AppGroup> itGrp = secondaryGrps.iterator(); itGrp.hasNext();) {
+				AppGroup grp = itGrp.next();
+				grpsId += grp.getName()+":" + grp.getId().toString()+";";
+			}
+			
+			grpsId = grpsId.substring(0, grpsId.length()-1);
+			pageContext.setAttribute("grpsId", grpsId);
+		}
+	
+	///////////////////////////////////////////////////////////////
+	// There is already one group selected, so it has to be audited
+		if (numGroups == 1) {
+			Transaction tx = null;
+			String msgLog = "User "+appUsr.getUsername()+" has '" +secGrpName+
+										"' as secondary active group";
+											
+			try {
+				tx = hibSes.beginTransaction();
+				
+				AppDBLogger sessionLog = new AppDBLogger ();
+				sessionLog.setUserId(appUsr.getId());
+				sessionLog.setSessionId(session.getId());
+				sessionLog.setMessage(msgLog);
+				sessionLog.setLastIp(request.getRemoteAddr());
+				hibSes.save(sessionLog);
+				
+				tx.commit();
+			}
+			catch (HibernateException ex) {
+				if (tx != null)
+					tx.rollback();
+				
+				LogFile.error("Fail to log user secondary group selection:\t");
+				LogFile.error("userId="+appUsr.getId()+"; sessionId="+session.getId());
+				LogFile.error(ex.getLocalizedMessage());
+				StackTraceElement[] stack = ex.getStackTrace();
+				LogFile.logStackTrace(stack);
+			}
+		}
+	
+	} // eo secActiveGrp is null 
+	else {
+		session.setAttribute("secondaryGrpId", secActiveGrp.getId());
+		session.setAttribute("secondaryGrpName", secActiveGrp.getName());
+		jsGrpId = secActiveGrp.getId();		
+		jsGrpCode = secActiveGrp.getCodgroup();
+		
+		secGrpName = secActiveGrp.getName();
+	}
+	
+	pageContext.setAttribute("isGuest", 0);
+	if (appUsr.isGuest()) {
+		pageContext.setAttribute("isGuest", 1);
+	}
+
+
+///////////////////////////////////////////////////////////////////
+// Code to set up this interview performance or preview
+	String intrvName="";
+	String rtParam = request.getParameter("rt");
+
+	intrvId = (intrvId == null)? "50": intrvId;
+	session.setAttribute ("intrvId", Integer.decode(intrvId));
+  pageContext.setAttribute ("intrvId", Integer.decode(intrvId));
+	
+	Interview intrv = (Interview)hibSes.get(Interview.class, Integer.decode(intrvId));
+	intrvName = intrv.getName();
+	pageContext.setAttribute ("intrvName", intrv.getName());
+	pageContext.setAttribute("isSample", intrv.getIsSampleIntrv());
+	
+	jsShortIntrv = intrv.getCanShorten();
+	jsCanCrtSubj = intrv.getCanCreateSubject();
+	jsPrjId = intrv.getParentProj().getId();
+	
+	
+///////////////////////////////////////////////////////////////////
+// REAL TIME STUFF	
+	if (rtParam == null || !rtParam.equalsIgnoreCase("1"))
+		session.setAttribute("rt", "0");
+	else 
+		session.setAttribute("rt", "1");
+	
+	pageContext.setAttribute("jsinit", jsInit);
+	
+	
+///////////////////////////////////////////////////////////////////
+// here there be the chance to initialize the sections list
+	List<Section> lSecs = 
+			HibController.SectionCtrl.getSectionsFromIntrv(hibSes, intrv);
+	List<Integer> idSecs = new ArrayList<Integer>();
+	for (Section aSec: lSecs) {
+		idSecs.add(aSec.getId());
+	}
+	session.setAttribute ("sectionIds", idSecs);
+	
+
+	
+// Section intro = lSecs.get(0);
+//	pageContext.setAttribute ("introId", intro.getId());
+	
+%>
+<c:if test="${numGroups eq 0}">
+	<jsp:forward page="../noprofile.jsp"></jsp:forward>
+</c:if>
+<%	
+
+//////////////////////////////////////////////////////////////////
+/* PREVIEW/PERFORMANCE auditing stuff
+	String onload = "'onReady("+intrvId+",";
+	Integer secId, preview = 0, realtime;
+	String msgLog;
+	if (preview == 1) {
+		msgLog = "User '"+appUsr.getUsername()+
+								"' does preview for interview '"+intrvName+"'";
+		LogFile.info (msgLog);
+		dbLog.logItem(session.getId(), "", appUsr.getId(), ActionsLogger.INTERVIEW, 
+									intrv.getId(), intrv.getName(), ActionsLogger.QUERY);
+		
+		pageContext.setAttribute("listDisable", "disabled=disabled");
+//		pageContext.setAttribute("mypreview", 1);
+	}
+/
+	else {
+		msgLog = "User '"+appUsr.getUsername()+"' starts interview performance";
+		LogFile.info(msgLog);
+		dbLog.logItem(session.getId(), "", appUsr.getId(), ActionsLogger.PERFORMANCE, 
+									intrv.getId(), intrv.getName(), ActionsLogger.CREATE);
+		
+//		pageContext.setAttribute("mypreview", 0);
+	}
+/
+*/
+	if (secGrpName != null && secGrpName.length() >= 25)
+		pageContext.setAttribute("grpname", secGrpName.substring(0, 25));
+	else
+		pageContext.setAttribute ("grpname", secGrpName);
+	
+	hibSes.close();
+%>
+
+<html>
+<head>
+  <title>Interview Performance</title>
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8"/>
+	<link rel="stylesheet" type="text/css" href="../css/portal_style.css"/> 
+	<link rel="stylesheet" type="text/css" href="../../css/portal_style.css"/> 
+  
+  <link rel="stylesheet" type="text/css" href="../../js/lib/ext/resources/css/ext-all.css" />
+	<link rel="stylesheet" type="text/css" href="../../js/lib/ext/resources/css/xtheme-gray.css" />
+	
+	<script language="JavaScript1.2" type="application/javascript" 
+				src="../../js/lib/ext/adapter/ext/ext-base.js"></script>
+	<script language="JavaScript1.2" type="application/javascript" 
+				src="../../js/lib/ext/ext-all.js"></script>
+				
+	<!--
+	<script> 
+    Ext.onReady(function(){ 
+       Ext.Msg.alert('Hello', 'World'); 
+    }); 
+ 	</script> 			
+	-->
+	
+<!-- EXTJS BASED DIALOG STUFF -->
+	<script language="JavaScript1.2" type="application/javascript" 
+				src="../../js/extutil.js"></script>
+				
+	<c:if test="${isSample ne 1}">  
+		<script language="JavaScript1.2" type="application/javascript" 
+					src="../../js/intrvctrl/introdlgactions.js"></script>
+		<script language="JavaScript1.2" type="application/javascript" 
+					src="../../js/intrvctrl/introdlg.js"></script>
+	</c:if>
+
+	<c:if test="${isSample eq 1}">
+		<script language="JavaScript1.2" type="application/javascript" 
+					src="../../js/intrvctrl/sampledlg.js"></script>
+					
+		<script language="JavaScript1.2" type="application/javascript" 
+					src="../../js/intrvctrl/sampledlgcfg.js"></script>
+					
+		<script type="application/javascript" language="JavaScript1.2" 
+			src="../../js/intrvctrl/sampledlgst.js"></script>
+	</c:if>
+		
+</head>
+<body></body>
+</html>
+

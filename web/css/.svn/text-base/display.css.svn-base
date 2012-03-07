@@ -1,0 +1,120 @@
+.divSearch {
+	color: #000000;
+/*	background-color: #3366FF; */
+	background-color: white;
+	border: 2px solid #000066;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+
+.body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000000;
+	width: 834px;
+	max-width: 834px;
+	padding: 5px,5px,5px,5px;
+}
+
+
+divTit {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: small-caps;
+	color: #000033;
+}
+
+.divTit {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	font-variant: small-caps;
+	color: #000033;
+	padding-bottom: 20px;
+	margin-bottom: 5px;
+	width: 100%;
+}
+
+input {
+	border: 1px solid #000066;
+}
+
+input[type=button] {
+	background-color: darkgrey;
+	font-weight: bold;
+}
+
+input[type=button]:hover {
+	background-color: grey;
+}
+
+span#btnComp:hover {
+	background-color: grey;
+}
+
+
+select {
+	border: 1px solid #000033;
+}
+
+select[size] {
+	width:300px;
+}
+
+
+.divViewPort {
+	color: #000000;
+	background-color: #999999;
+	border: 2px solid #000066;
+	margin-top: 10px;
+	padding: 5px, 5px, 5px, 5px;
+/*	width: 100%; */
+	max-width: 834px;
+	height: 500px; /* this is to use vertical inner div vertical scroll */
+	overflow: auto;
+	overflow-y: auto;
+	white-space: nowrap;
+	position:relative;
+	
+}
+
+
+.divCombos {
+/*	position: relative; */
+	background-color: pink;
+	margin: 1px 2px 1px 2px;
+	float: left;
+	overflow: hidden;
+	width: 300px; 
+}
+
+
+table#vpcontent {
+	background-color: #3366FF;
+	border: 1px solid black;
+	width: 100%;
+}
+
+.handpointer {
+  cursor: pointer;
+}
+
+.itemOdd {
+	background-color: silver;
+	width: 100%;
+}
+
+.itemEven {
+	background-color: white;
+	width: 100%;
+}
+
+
+.mainTable {
+	width: 100%;
+}

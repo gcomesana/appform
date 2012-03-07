@@ -1,0 +1,11 @@
+Biutiful commit
+--This line, and those below, will be ignored--
+
+A    ItOrderComparator.java
+A    KeyComparator.java
+A    DataRetriever.java
+A    NewRetriever.java
+M    DataWriter.java
+A    NewWriter.java
+AM   MainDump.java
+A    InvKeyComparator.java

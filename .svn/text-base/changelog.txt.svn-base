@@ -1,0 +1,68 @@
+21.01.2009
+- interview performance, user access and interview management audit in database 
+(applog table) and file (by using log4j and auditing to 
+$CATALINA_HOME/logs/appform directory)
+
+- simultaneous (concurrent) access not allowed for any user (one user can be logged in
+just once at the same time)
+
+- now a new interview has its own datatypes from the scratch (basic types will 
+be cloned for the new interview)
+
+- the admin user is able to see any interview template along with modifying and
+deleting them. Not able to create new interview templates (as they need an owner)
+
+
+13.02.2009
+- Session listener (org.cnio.appform.audit.AppSessionListener) appears to work 
+fine now.
+- Programatic group management finished. Features are:
+	- as before, there are two sort of groups: primary (country, company) and 
+	secondary (department, lab, office, ...)
+	- New active group concept, for both primary and secondary groups
+	- For an user with several primary groups, primary group selector (modal 
+	dialog) is early displayed to choose the active primary group
+	- At the time to perform an interview, the user should be choose one among
+	his/her many secondary groups
+
+26.02.2009
+- Logging problems fixed. The current version for commons logging (where the
+problems came from) is 1.1.1 (1.0.4 had the invalid hierarchy... bug)
+- Known bugs:
+	- session and IP not reset sometimes.
+	
+	
+20.03.2009
+- Group dialog changed: the combobox for the groups was replaced 
+by a group of radiobuttons in order to accomodate long group names
+
+20.05.2009
+- Authentication method changed: from JDBCRealm to JAASRealm to have more
+control on the login process (org.cnio.appform.jaas and 
+org.cnio.appform.servlet.filter packages added)
+- Real time sending data included. Now the interviewers can perform an interview
+by sending every answer at a time or by using the traditional method.
+- Audit issues solved.
+- As required by editors, the element edition has no restrictions as for cloned
+interviews
+- Some minor bugs solved
+
+15.06.2009
+- Answer changes audit:
+	* added perf_history table in database to support M:N relationship between 
+	appuser and performance entities
+	* added onUpdAnswer trigger in database
+	* entity classes AppUser, Performance updated
+	* entity class PerfUserHistory updated
+	* IntrvFormCtrl class modified to set every interview performed
+	* HibernateUtil class modified to support new entity class
+	
+- Login attempts limit outlined:
+	* table appuser updated with field login_attempts to count how many attempts
+	* AppLoginModule updated to support increase of attempts
+	* AppSessionListener updated to set number of attempts in database to 0 on logout
+	* AppUserCtrl updated to support new audit messages
+	* HibernateUtl now supports a variable with the number of login attempts
+	* Improvements:
+		get the number of login attempts from file
+		support automatic password retrieve through a form in error.jsp with jcaptcha

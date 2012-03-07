@@ -1,0 +1,284 @@
+
+package org.cnio.appform.util.dump;
+
+
+import org.cnio.appform.entity.*;
+
+import org.cnio.appform.util.*;
+import org.hibernate.*;
+
+import java.util.List;
+import java.nio.charset.Charset;
+
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+
+public class DynamicRetriever {
+
+		private String filePath = "";
+		private DataWriter dw = new DataWriter ();
+		
+		public DynamicRetriever (String path) {
+			filePath = path;
+		}
+	
+		
+	/**
+	 * Execute an sql query on hibernate and return the result
+	 * @param sql, the string representing the query and ready to be runned
+	 */
+	  private List<Object[]> execQuery (String qryStr) {
+	     Session myHibSes = HibernateUtil.getSessionFactory().openSession();
+	     Transaction tx = null;
+	     List<Object[]> rows = null;
+
+	    try {
+	      tx = myHibSes.beginTransaction();
+	       SQLQuery sqlQry = myHibSes.createSQLQuery(qryStr);
+	      
+	      rows = sqlQry.list();
+	      tx.commit();
+	    }
+	    catch (HibernateException ex) {
+	        if (tx != null)
+	          tx.rollback();
+
+	        System.out.println(ex.getMessage());
+	        ex.printStackTrace ();
+	    }
+	    finally {
+	      myHibSes.close();
+	    }
+
+	    return rows;
+	  }
+
+
+	
+
+/**
+ * Get the subject id with higher number of answered questions.
+ * @param prjCode, a project code (not database id)
+ * @param grpId, a group database id
+ * @param intrvId, a questionnaire database id
+ * @param secOrder, the order of the section of interest
+ * @return the maximum number of questions for the section for all subjects
+ */	  
+	  private int getSubjectWithMaxAnswers (String prjCode, Integer grpId,
+	                                        Integer intrvId, Integer secOrder) {
+	     String secParam = (secOrder == null)?"s.section_order ": secOrder.toString();
+
+//	     grpFrom = if (grpId.isEmpty) "" else "appgroup g, "
+//	     grpParam = if (grpId.isEmpty) "" else "g.idgrop = " +grpId
+
+	     String sqlqry = "select p.idpat as patid, p.codpatient as patientcod,"+
+	          "count (q.codquestion) as numcodq "+
+	"from patient p, pat_gives_answer2ques pga, appgroup g, performance pf," +
+			"question q, answer a, interview i, item it, section s, project pj "+
+	"where g.idgroup = " + grpId +
+	  " and i.idinterview = "+ intrvId +
+	  " and pj.project_code = '"+prjCode+"' " +
+	  "and pj.idprj = i.codprj "+
+	  "and pf.codinterview = i.idinterview "+
+	  "and s.codinterview = i.idinterview "+
+	  "and pf.codpat = p.idpat "+
+	  "and pf.codgroup = g.idgroup "+
+	  "and pga.codpat = p.idpat "+
+	  "and pga.codquestion = q.idquestion "+
+	  "and pga.codanswer = a.idanswer "+
+	  "and q.idquestion = it.iditem " +
+	  "and it.idsection = s.idsection "  +
+	  "and s.section_order = "+ secParam +
+	  " and p.codpatient <> '15700000000' "+
+	  "and p.codpatient <> '1570110009' "+
+	  "and p.codpatient <> '15769696969' "+
+	"group by p.codpatient, p.idpat "+
+	"order by 3 desc, 2";
+
+//	System.out.println("Query to execute:");
+//	System.out.println(sqlqry);
+	     List<Object[]> rows = execQuery (sqlqry);
+	     Object[] row = rows.get(0);
+	     
+	     return (Integer)row[0];
+//	     row:Array[Any] = rows.first.asInstanceOf[Array[Any]]
+//	    row(0).asInstanceOf[Int]
+	  }
+
+
+
+	  
+/**
+ * Build up a string with all questions codes answered for the subject with
+ * higher number of answers. The subject with highest number of answers is
+ * got from getSubjectWithMaxAnswers (...) method
+ * @param prjCode, the project code
+ * @param grpId, the group id 
+ * @param intrvId, the interview identifier
+ * @param secOrder, the section order referring to the section of interest
+ * @param patId, the patient id got from getSubjectWithMaxAnswers
+ * @return an string with the header of the data table
+ */
+	  private String getHigherQuesCodes (String prjCode, Integer grpId,
+	                                  Integer intrvId, Integer secOrder,
+	                                  Integer patId) {
+	  	String secParam = (secOrder == null)?"s.section_order ": secOrder.toString();
+	              
+	    String sqlqry = "select p.codpatient, g.name as grpname, "+
+	        "i.name as intrvname, s.name as secname, "+
+	  "q.codquestion as codq, a.thevalue, s.section_order, "+
+		"it.item_order, pga.answer_order, pga.answer_number, it.repeatable as itrep "+
+	  "from patient p, pat_gives_answer2ques pga, appgroup g,	performance pf, "+
+			"question q, answer a, interview i, item it, section s, project pj "+
+	  "where g.idgroup = "+grpId+
+	  " and i.idinterview = "+intrvId+
+	  " and pj.project_code = '"+prjCode+"' " +
+	  "and pj.idprj = i.codprj "+
+	  "and pf.codinterview = i.idinterview "+
+	  "and pf.codgroup = g.idgroup "+
+	  "and s.codinterview = i.idinterview "+
+	  "and pf.codpat = p.idpat "+
+	  "and pga.codpat = p.idpat "+
+	  "and pga.codquestion = q.idquestion "+
+	  "and pga.codanswer = a.idanswer "+
+	  "and q.idquestion = it.iditem "+
+	  "and it.idsection = s.idsection " +
+	  "and s.section_order = "+ secParam +
+		" and p.idpat = "+patId+
+	  " order by 1, 7, 10, 8, 5, 9";
+
+//	System.out.println (sqlqry);
+		List<Object[]> rows = execQuery (sqlqry);
+		return dw.writeHeader(rows);
+		
+	}
+
+	  
+
+	/**
+	 * Write the rows into a file
+	 */
+	  private void writeoutRows (String prjCode, Integer intrvId, Integer grpId,
+	          Integer secOrder, BufferedWriter csvFile) throws java.io.IOException {
+	  	String secParam = (secOrder == null)?"s.section_order ": secOrder.toString();
+
+	     String sqlqry = "select p.codpatient, g.name as grpname, "+
+	        "i.name as intrvname, s.name as secname, "+
+	      "q.codquestion as codq, a.thevalue, s.section_order, "+
+	      "it.item_order, pga.answer_order, pga.answer_number, it.\"repeatable\" as itrep "+
+	      "from patient p, pat_gives_answer2ques pga, appgroup g,	performance pf, "+
+	        "question q, answer a, interview i, item it, section s, project pj "+
+	      "where g.idgroup = "+grpId +
+	      " and i.idinterview = "+intrvId +
+	      " and pj.project_code = '"+prjCode+"' " +
+	      "and pj.idprj = i.codprj "+
+	      "and pf.codinterview = i.idinterview "+
+	      "and pf.codgroup = g.idgroup "+
+	      "and s.codinterview = i.idinterview "+
+	      "and pf.codpat = p.idpat "+
+	      "and pga.codpat = p.idpat "+
+	      "and pga.codquestion = q.idquestion "+
+	      "and pga.codanswer = a.idanswer "+
+	      "and q.idquestion = it.iditem "+
+	      "and it.idsection = s.idsection " +
+	      "and s.section_order = " + secParam +
+	      " order by 1, 7, 10, 8, 5, 9";
+
+	     List<Object[]> rows = execQuery (sqlqry);
+	     
+	     dw.writeRows(csvFile, rows);
+	  }
+
+
+	/**
+	 * Write out a file with the interview data from database parametrized by project,
+	 * questionnaire, group and sections.
+	 * @param prjCode, the project code
+	 * @param intrvId, the interview id (can be redundant...)
+	 * @param grpId, the group the interviews are going to belong to
+	 * @param the section defined by its order in the questionnaire
+	 * @param fileName, the name of the file output
+	 */
+	  public void getDump (String prjCode, Integer intrvId, Integer grpId, 
+	  						Integer orderSec, String fileName) 
+	  										throws java.io.FileNotFoundException, java.io.IOException {
+
+	  	BufferedWriter fileOut = new BufferedWriter (
+	          new OutputStreamWriter (new FileOutputStream (fileName), Charset.defaultCharset()));
+
+	    Integer maxPatId = getSubjectWithMaxAnswers(prjCode, grpId, intrvId, orderSec);
+	    String out = getHigherQuesCodes(prjCode, grpId, intrvId, orderSec, maxPatId);
+System.out.println (out);
+	    fileOut.append(out);
+	    fileOut.flush();
+
+	    writeoutRows (prjCode, intrvId, grpId, orderSec, fileOut);
+	    fileOut.close();
+	  }
+	  
+	  
+	  
+	  
+	  
+/**
+ * Interface method to get a dump from project, interview, group names, not ids
+ * @param prjName, the name of the project
+ * @param intrvName, the name of the interview
+ * @param grpName, the name of the group
+ * @param orderSec, the section
+ * @param fileName, the fileName
+ */
+	  public void getDump (String prjName, String intrvName, String grpName, 
+	  										Integer orderSec, String fileName) 
+	  										throws java.io.FileNotFoundException, java.io.IOException {
+	  	String prjCode = "";
+	  	Integer intrvId, grpId;
+	  	
+	  	Project prj = null;
+	  	Interview intrv = null;
+	  	AppGroup grp = null;
+	  	
+	  	Session hibSes = HibernateUtil.getSessionFactory().openSession();
+	  	List<Project> prjs = HibernateUtil.getProjectByName(hibSes, prjName);
+	  	if (prjs != null && prjs.size() > 0) {
+	  		prj = prjs.get(0);
+	  		IntrvController intrvCtrl = new IntrvController (hibSes);
+	  		
+	  		List<Interview> intrvs = intrvCtrl.getIntr4Proj(prj, intrvName);
+	  		if (intrvs != null && intrvs.size() > 0)
+	  			intrv = intrvs.get(0);
+	  	}
+	  	AppUserCtrl usrCtrl = new AppUserCtrl (hibSes);
+	  	grp = usrCtrl.getGroupFromName(grpName);
+	  	hibSes.close();
+	  	
+	  	if (prj == null) {
+	  		System.err.println ("A project named '"+prjName+"' was not found");
+	  		return;
+	  	}
+	  	
+	  	if (intrv == null) {
+	  		System.err.println ("An interview named '"+intrvName+"' for project " +
+	  				"'"+prjName+"' was not found");
+	  		return;
+	  	}
+	  	
+	  	if (grp == null) {
+	  		System.err.println ("An group named '"+grpName+"' was not found");
+	  		return;
+	  	}
+	  	
+	  	prjCode = prj.getProjectCode();
+	  	intrvId = intrv.getId();
+	  	grpId = grp.getId();
+	  	
+	  	getDump (prjCode, intrvId, grpId, orderSec, fileName);
+	  	
+	  	
+	  	
+	  	
+	  	
+	  }
+
+}

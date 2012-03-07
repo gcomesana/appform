@@ -1,0 +1,142 @@
+package org.cnio.appform.test;
+
+import org.cnio.appform.entity.*;
+
+import org.cnio.appform.util.HibernateUtil;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+
+import org.cnio.appform.util.dump.*;
+
+public class ReportTest {
+
+	
+	private final static String INTRV_ARG = "-i";
+	private final static String PRJ_ARG = "-p";
+	private final static String GRP_ARG = "-g";
+	private final static String SEC_ARG = "-s";
+	private final static String FILE_ARG = "-f";
+	
+	Session hibSess;
+	
+	public ReportTest () {
+		SessionFactory sf = HibernateUtil.getSessionFactory();
+		hibSess = sf.openSession();
+	}
+	
+	public Session getHibSes () {
+		return hibSess;
+	}
+	
+	
+	public Session getCurrentHibSes () {
+		hibSess = HibernateUtil.getSessionFactory().getCurrentSession();
+		
+		return hibSess;
+	}
+	
+	
+	public Session getCurrentSession () {
+		return HibernateUtil.getSessionFactory().getCurrentSession();
+	}
+	
+	
+	public Session openSession () {
+		hibSess = HibernateUtil.getSessionFactory().openSession();
+		
+		return hibSess;
+	}
+	
+	
+	public void closeHibSes () {
+		hibSess.close();
+	}
+	
+	
+	
+/**
+ * 
+ * 
+ * @param args
+ */
+	public static void main (String[] args) {
+		
+		String lastArg = "";
+		String prj = "", intrv = "", grp = "", file = "", sec = "";
+		
+		if (args.length == 0 || args[0].equalsIgnoreCase("-h")) {
+			String helpMsg = "\nDatabase dumper:\n\nOptions are (order is irrelevant):\n" +
+					"\t-p project name\n" +
+					"\t-i questionnaire name\n" +
+					"\t-g hospital/group name\n" +
+					"\t-s section order in questionnaire\n" +
+					"\t-f file name (absolute or relative)\n\n" +
+					"Spaces between switches and names are relevant.\n\n";
+			System.out.println (helpMsg);
+			return;
+		}
+		
+		
+		for (String arg: args) {
+			if (arg.startsWith("-")) 
+				lastArg = arg;
+
+			else {
+				if (lastArg.equalsIgnoreCase(ReportTest.PRJ_ARG))
+					prj += prj.equals("")? arg: " "+arg;
+				
+				if (lastArg.equalsIgnoreCase(ReportTest.INTRV_ARG))
+					intrv += intrv.equals("")? arg: " "+arg;
+				
+				if (lastArg.equalsIgnoreCase(ReportTest.GRP_ARG))
+					grp += grp.equals("")? arg: " "+arg;
+				
+				if (lastArg.equalsIgnoreCase(ReportTest.SEC_ARG))
+					sec += sec.equals("")? arg: " "+arg;
+				
+				if (lastArg.equalsIgnoreCase(ReportTest.FILE_ARG))
+					file += file.equals("")? arg: " "+arg;
+			}
+		}
+		
+		
+		if (prj.equals("")) {
+			System.out.println ("\nThe name of the project has to be provided with the form" +
+					" -p project_name");
+			return;
+		}
+		
+		if (intrv.equals("")) {
+			System.out.println ("\nThe name of the interview has to be provided with the form" +
+					" -i questionnaire_name");
+			return;
+		}
+		/*
+		if (grp.equals("")) {
+			System.out.println ("\nThe name of the hospital has to be provided with the form" +
+					" -g hospital_name");
+			return;
+		}
+		*/
+		if (sec.equals("")) {
+			System.out.println ("\nThe section order for the questionnaire has to be provided with the form" +
+					" -s section_order");
+			return;
+		}
+		
+		if (file.equals("")) {
+			System.out.println ("\nThe name of the output file has to be provided with the form" +
+					" -f filename. It can be absolute or relative.");
+			return;
+		}
+		
+		
+		Integer orderSec = Integer.decode(sec);
+		DBDump dumper = new DBDump (prj, intrv, grp, orderSec, file);
+		dumper.dump();
+		
+System.out.println ("End!!");
+	}
+	
+}

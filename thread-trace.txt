@@ -1,0 +1,175 @@
+(tid: 111) ** IntrvFormCtrl.saveAnswer: U9696969 (16457); n: 2; o: 1
+-- java.lang.Thread.getStackTrace(Thread.java:1503)
+-- org.cnio.appform.util.IntrvFormCtrl.saveAnswer(IntrvFormCtrl.java:725)
+-- org.cnio.appform.servlet.AjaxUtilServlet.doPost(AjaxUtilServlet.java:289)
+-- javax.servlet.http.HttpServlet.service(HttpServlet.java:641)
+-- javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+-- org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+-- org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+-- org.cnio.appform.servlet.filter.AuthenticationFilter.doFilter(AuthenticationFilter.java:146)
+-- org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+-- org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+-- org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:240)
+-- org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:164)
+-- org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:591)
+-- org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:164)
+-- com.googlecode.psiprobe.Tomcat60AgentValve.invoke(Tomcat60AgentValve.java:30)
+-- org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+-- org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:562)
+-- org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+-- org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:394)
+-- org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:243)
+-- org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:188)
+-- org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:302)
+-- java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+-- java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+-- java.lang.Thread.run(Thread.java:680)
+(tid: 111) AjaxUtilServlet saving answer w/ result: true
+(tid: 111) #### AjsxUtilServlet.doPost: about to call getAnswer4Question with qId:16457
+
+(tid: 109) SaveAnswers.getQuestions4Section from DB:
+1.- qId: 353; num: 1; ord: 1; ansVal: 157081023; idAns: 3195693; patId: null; idAnsItem: 1400
+2.- qId: 16214; num: 1; ord: 1; ansVal: 9999; idAns: 4018484; patId: null; idAnsItem: 1400
+3.- qId: 17500; num: 1; ord: 1; ansVal: 9999; idAns: 4503650; patId: null; idAnsItem: 1400
+4.- qId: 16454; num: 1; ord: 1; ansVal: FRANCISCO LUIS; idAns: 4018467; patId: null; idAnsItem: 1400
+5.- qId: 16455; num: 1; ord: 1; ansVal: ALBA; idAns: 4018469; patId: null; idAnsItem: 1400
+6.- qId: 16456; num: 1; ord: 1; ansVal: JUNQUERA; idAns: 4018470; patId: null; idAnsItem: 1400
+7.- qId: 16457; num: 1; ord: 1; ansVal: 28/4107432581; idAns: 4018473; patId: null; idAnsItem: 1400
+8.- qId: 16457; num: 1; ord: 2; ansVal: 3; idAns: 4018474; patId: null; idAnsItem: 7163
+9.- qId: 16458; num: 1; ord: 1; ansVal: 635166; idAns: 4018476; patId: null; idAnsItem: 1400
+10.- qId: 17102; num: 1; ord: 1; ansVal: 06; idAns: 4018478; patId: null; idAnsItem: 1401
+11.- qId: 17102; num: 1; ord: 2; ansVal: 03; idAns: 4018480; patId: null; idAnsItem: 1401
+12.- qId: 17102; num: 1; ord: 3; ansVal: 1968; idAns: 4018482; patId: null; idAnsItem: 1401
+13.- qId: 1189; num: 1; ord: 1; ansVal: Janire Rodr#guez; idAns: 3195694; patId: null; idAnsItem: 1400
+14.- qId: 10275; num: 1; ord: 1; ansVal: 13; idAns: 3195695; patId: null; idAnsItem: 1401
+15.- qId: 10275; num: 1; ord: 2; ansVal: 10; idAns: 3195696; patId: null; idAnsItem: 1401
+16.- qId: 10275; num: 1; ord: 3; ansVal: 2009; idAns: 3195697; patId: null; idAnsItem: 1401
+Finishing building question coords: 16 questions
+(tid: 109) saveOrUpdateSectionAnswers: About to start while...18
+(tid: 109) saveOrUpdate: qcParam: qId: 16456; num: 1; ord: 1; ansVal: JUNQUERA; idAns: null; patId: null; idAnsItem: null has indexOfAnswer:5
+(tid: 109) saveOrUpdate: qcAns: qId: 16456; num: 1; ord: 1; ansVal: JUNQUERA; idAns: 4018470; patId: null; idAnsItem: 1400
+(tid: 109) Do nothing: both values are the same
+(tid: 109) saveOrUpdate: qcParam: qId: 17500; num: 1; ord: 1; ansVal: 9999; idAns: null; patId: null; idAnsItem: null has indexOfAnswer:2
+(tid: 109) saveOrUpdate: qcAns: qId: 17500; num: 1; ord: 1; ansVal: 9999; idAns: 4503650; patId: null; idAnsItem: 1400
+(tid: 109) Do nothing: both values are the same
+(tid: 109) saveOrUpdate: qcParam: qId: 16457; num: 2; ord: 2; ansVal: 3; idAns: null; patId: null; idAnsItem: null has indexOfAnswer:-1
+(tid: 109) !! No value for the answer in listOfAnswers and it has to be created into the DB
+(tid: 109) ** IntrvFormCtrl.saveAnswer: 9999 (16457); n: 2; o: 2
+-- java.lang.Thread.getStackTrace(Thread.java:1503)
+-- org.cnio.appform.util.IntrvFormCtrl.saveAnswer(IntrvFormCtrl.java:725)
+-- org.cnio.appform.util.IntrvFormCtrl.saveAnswer(IntrvFormCtrl.java:684)
+-- org.cnio.appform.util.SaveAnswers.saveOrUpdateSectionAnswers(SaveAnswers.java:344)
+-- org.apache.jsp.web.jsp.intrv.ajaxjsp.save_002don_002dsectionchange_jsp._jspService(save_002don_002dsectionchange_jsp.java:143)
+-- org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+-- javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+-- org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:419)
+-- org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:391)
+-- org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334)
+-- javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+-- org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+-- org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+-- org.cnio.appform.servlet.filter.AuthenticationFilter.doFilter(AuthenticationFilter.java:146)
+-- org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+-- org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+-- org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:240)
+-- org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:164)
+-- org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:591)
+-- org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:164)
+-- com.googlecode.psiprobe.Tomcat60AgentValve.invoke(Tomcat60AgentValve.java:30)
+-- org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+-- org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:562)
+-- org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+-- org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:394)
+-- org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:243)
+-- org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:188)
+-- org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:302)
+-- java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+-- java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+-- java.lang.Thread.run(Thread.java:680)
+
+(tid: 109) saveOrUpdate: qcParam: qId: 16457; num: 2; ord: 1; ansVal: U9696969; idAns: null; patId: null; idAnsItem: null has indexOfAnswer:-1
+(tid: 109) !! No value for the answer in listOfAnswers and it has to be created into the DB
+(tid: 109) ** IntrvFormCtrl.saveAnswer: 9999 (16457); n: 2; o: 1
+-- java.lang.Thread.getStackTrace(Thread.java:1503)
+-- org.cnio.appform.util.IntrvFormCtrl.saveAnswer(IntrvFormCtrl.java:725)
+-- org.cnio.appform.util.IntrvFormCtrl.saveAnswer(IntrvFormCtrl.java:684)
+-- org.cnio.appform.util.SaveAnswers.saveOrUpdateSectionAnswers(SaveAnswers.java:344)
+-- org.apache.jsp.web.jsp.intrv.ajaxjsp.save_002don_002dsectionchange_jsp._jspService(save_002don_002dsectionchange_jsp.java:143)
+-- org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+-- javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+-- org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:419)
+-- org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:391)
+-- org.apache.jasper.servlet.JspServlet.service(JspServlet.java:334)
+-- javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+-- org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:304)
+-- org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+-- org.cnio.appform.servlet.filter.AuthenticationFilter.doFilter(AuthenticationFilter.java:146)
+-- org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+-- org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+-- org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:240)
+-- org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:164)
+-- org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:591)
+-- org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:164)
+-- com.googlecode.psiprobe.Tomcat60AgentValve.invoke(Tomcat60AgentValve.java:30)
+-- org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+-- org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:562)
+-- org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+-- org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:394)
+-- org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:243)
+-- org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:188)
+-- org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:302)
+-- java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+-- java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+-- java.lang.Thread.run(Thread.java:680)
+(tid: 109) saveOrUpdate: qcParam: qId: 16458; num: 1; ord: 1; ansVal: 635166; idAns: null; patId: null; idAnsItem: null has indexOfAnswer:8
+(tid: 109) saveOrUpdate: qcAns: qId: 16458; num: 1; ord: 1; ansVal: 635166; idAns: 4018476; patId: null; idAnsItem: 1400
+(tid: 109) Do nothing: both values are the same
+(tid: 109) saveOrUpdate: qcParam: qId: 16455; num: 1; ord: 1; ansVal: ALBA; idAns: null; patId: null; idAnsItem: null has indexOfAnswer:4
+(tid: 109) saveOrUpdate: qcAns: qId: 16455; num: 1; ord: 1; ansVal: ALBA; idAns: 4018469; patId: null; idAnsItem: 1400
+(tid: 109) Do nothing: both values are the same
+(tid: 109) saveOrUpdate: qcParam: qId: 353; num: 1; ord: 1; ansVal: 157081023; idAns: null; patId: null; idAnsItem: null has indexOfAnswer:0
+(tid: 109) saveOrUpdate: qcAns: qId: 353; num: 1; ord: 1; ansVal: 157081023; idAns: 3195693; patId: null; idAnsItem: 1400
+(tid: 109) Do nothing: both values are the same
+(tid: 109) saveOrUpdate: qcParam: qId: 1189; num: 1; ord: 1; ansVal: Janire Rodr#guez; idAns: null; patId: null; idAnsItem: null has indexOfAnswer:12
+(tid: 109) saveOrUpdate: qcAns: qId: 1189; num: 1; ord: 1; ansVal: Janire Rodr#guez; idAns: 3195694; patId: null; idAnsItem: 1400
+(tid: 109) Do nothing: both values are the same
+(tid: 109) saveOrUpdate: qcParam: qId: 17102; num: 1; ord: 3; ansVal: 1968; idAns: null; patId: null; idAnsItem: null has indexOfAnswer:11
+(tid: 109) saveOrUpdate: qcAns: qId: 17102; num: 1; ord: 3; ansVal: 1968; idAns: 4018482; patId: null; idAnsItem: 1401
+(tid: 109) Do nothing: both values are the same
+(tid: 109) saveOrUpdate: qcParam: qId: 16457; num: 1; ord: 2; ansVal: 3; idAns: null; patId: null; idAnsItem: null has indexOfAnswer:7
+(tid: 109) saveOrUpdate: qcAns: qId: 16457; num: 1; ord: 2; ansVal: 3; idAns: 4018474; patId: null; idAnsItem: 7163
+(tid: 109) Do nothing: both values are the same
+(tid: 109) saveOrUpdate: qcParam: qId: 17102; num: 1; ord: 2; ansVal: 03; idAns: null; patId: null; idAnsItem: null has indexOfAnswer:10
+(tid: 109) saveOrUpdate: qcAns: qId: 17102; num: 1; ord: 2; ansVal: 03; idAns: 4018480; patId: null; idAnsItem: 1401
+(tid: 109) Do nothing: both values are the same
+(tid: 109) saveOrUpdate: qcParam: qId: 16457; num: 1; ord: 1; ansVal: 28/4107432581; idAns: null; patId: null; idAnsItem: null has indexOfAnswer:6
+(tid: 109) saveOrUpdate: qcAns: qId: 16457; num: 1; ord: 1; ansVal: 28/4107432581; idAns: 4018473; patId: null; idAnsItem: 1400
+(tid: 109) Do nothing: both values are the same
+(tid: 109) saveOrUpdate: qcParam: qId: 17102; num: 1; ord: 1; ansVal: 06; idAns: null; patId: null; idAnsItem: null has indexOfAnswer:9
+(tid: 109) saveOrUpdate: qcAns: qId: 17102; num: 1; ord: 1; ansVal: 06; idAns: 4018478; patId: null; idAnsItem: 1401
+(tid: 109) Do nothing: both values are the same
+(tid: 109) saveOrUpdate: qcParam: qId: 10275; num: 1; ord: 3; ansVal: 2009; idAns: null; patId: null; idAnsItem: null has indexOfAnswer:15
+(tid: 109) saveOrUpdate: qcAns: qId: 10275; num: 1; ord: 3; ansVal: 2009; idAns: 3195697; patId: null; idAnsItem: 1401
+(tid: 109) Do nothing: both values are the same
+(tid: 109) saveOrUpdate: qcParam: qId: 10275; num: 1; ord: 2; ansVal: 10; idAns: null; patId: null; idAnsItem: null has indexOfAnswer:14
+(tid: 109) saveOrUpdate: qcAns: qId: 10275; num: 1; ord: 2; ansVal: 10; idAns: 3195696; patId: null; idAnsItem: 1401
+(tid: 109) Do nothing: both values are the same
+(tid: 109) saveOrUpdate: qcParam: qId: 16454; num: 1; ord: 1; ansVal: FRANCISCO LUIS; idAns: null; patId: null; idAnsItem: null has indexOfAnswer:3
+(tid: 109) saveOrUpdate: qcAns: qId: 16454; num: 1; ord: 1; ansVal: FRANCISCO LUIS; idAns: 4018467; patId: null; idAnsItem: 1400
+(tid: 109) Do nothing: both values are the same
+(tid: 109) saveOrUpdate: qcParam: qId: 10275; num: 1; ord: 1; ansVal: 13; idAns: null; patId: null; idAnsItem: null has indexOfAnswer:13
+(tid: 109) saveOrUpdate: qcAns: qId: 10275; num: 1; ord: 1; ansVal: 13; idAns: 3195695; patId: null; idAnsItem: 1401
+(tid: 109) Do nothing: both values are the same
+(tid: 109) saveOrUpdate: qcParam: qId: 16214; num: 1; ord: 1; ansVal: 9999; idAns: null; patId: null; idAnsItem: null has indexOfAnswer:1
+(tid: 109) saveOrUpdate: qcAns: qId: 16214; num: 1; ord: 1; ansVal: 9999; idAns: 4018484; patId: null; idAnsItem: 1400
+(tid: 109) Do nothing: both values are the same
+*** Total time elapsed in saving/updating section: 41 ms ***
+creating file for: <init>
+Reseting data on constructor call...<init>:org.cnio.appform.util.RenderEng
+patId: 3480, thePatCode: 157081023
+items4sec before finish: hibSes.isOpen? true
+dbName: appform; dbServer: localhost:gcomesana
+
+(tid: 111) IntrvFormCtrl.getAnswer4Question: ansId4504901
+(tid: 111) #### AjaxUtilServlet: CHECKING for answer after saving question (16457, n=2, o=1): 4504901
+items4sec: after fetcher.close()

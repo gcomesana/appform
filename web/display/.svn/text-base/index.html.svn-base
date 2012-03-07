@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>AppformTool Questionnaires: Comparator tool</title>
+<link rel="stylesheet" type="text/css" href="../css/display.css" />
+
+<script type="text/javascript" language="JavaScript" src="js/jquery-1.3.js" charset="utf-8"></script>
+<script type="text/javascript" language="JavaScript" src="js/jquery.form.js" charset="utf-8"></script>
+<script type="text/javascript" language="JavaScript" src="js/jquery.json-1.3.js" charset="utf-8"></script>
+
+<script type="text/javascript" language="JavaScript" src="js/responses.js" charset="utf-8"></script>
+<script type="text/javascript" language="JavaScript" src="js/display-main.js" charset="utf-8"></script>
+</head>
+
+<body class="body">
+<script type="text/javascript" language="JavaScript" src="js/wz_tooltip.js" charset="utf-8"></script>
+
+<table border="0" class="mainTable">
+<tr><td>
+<span class="divTit" id="headTitle">Interview comparator</span>
+<span id="close" style="font-size: 13px; text-align: right; margin-left: 74%;">
+	<a href="javascript:this.window.close()" style="text-decoration:none">Close</a>
+</span>
+</td>
+</tr>
+<tr><td>
+<div class="divSearch" id="divSearch">
+	Choose a project and put a partial interview name in the box to retrieve
+	the properties for the interviews
+	<div style="margin-top:10px">
+	Project&nbsp;
+  <select name="comboPrj" class="comboPrj" id="comboPrj">
+    <option value="-1">Choose...</option>
+  </select>
+  &nbsp;&nbsp;
+ Interview&nbsp;
+ <input type="text" name="frmIntrvName" id="frmIntrvName" />
+ &nbsp;&nbsp;
+ <input type="button" name="btnGo" id="btnGo" value=" Go " />
+ </div>
+ 
+ <div name="resSearchDiv" id="resSearchDiv" 
+ 		style="border: 1px solid black;background-color: white;padding: 5px;margin-top:15px">
+   When interviews are found, mark those interviews you want to compare:
+   <br>
+   <div id="foundIntrvDiv" style="border:1px solid black; padding:2px; visibility:hidden">
+     Interviews found <span id="numIntrvs">(0)</span>:&nbsp;
+		 <span id="interviews" style="vertical-align:middle"></span>
+		 <!--
+		 <input type="checkbox" id="intrv1804" name="intrv1804" value="1804">Interview 1804
+     </input>
+		 <input type="checkbox" id="intrv1804" name="intrv1804" value="1804">Interview 1804
+     </input>
+		 <input type="checkbox" id="intrv1804" name="intrv1804" value="1804">Interview 1804
+     </input>-->
+   </div>
+ </div>
+ 
+</div>
+</td></tr>
+<tr><td style="position:relative">
+<div id="divViewPort" name="divViewPort" class="divViewPort">
+	<div id="scrollerDiv" style="width: 0px;"></div>
+	<!--
+	<div id="divContent" name="divContent" class="divViewPort">
+	<table id="vpcontent">
+		<tr>
+			<td width="200px">IDC<br><select id="intrv50">
+				<option value="-1">Sections</option>
+				</select>
+			</td>
+			<td width="200px">IDC - English<br>
+			<select id="intrv50">
+				<option value="-1">Sections</option>
+				</select></td>
+			<td  width="200px">IDC - German<br>
+			<select id="intrv50">
+				<option value="-1">Sections</option>
+				</select>
+			</td>
+			<td width="200px">IDC - Irish<br>
+			<select id="intrv50">
+				<option value="-1">Sections</option>
+				</select>
+			</td>
+			<td width="200px">IDC - Other<br>
+			<select id="intrv50">
+				<option value="-1">Sections</option>
+				</select>
+			</td>
+		</tr>
+	</table>
+	</div>
+	-->
+</div> <!-- viewport -->
+</td></tr>
+</table>
+<div id="divLog"></div>
+<div id="toolDiv"></div>
+</body>
+</html>

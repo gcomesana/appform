@@ -1,0 +1,229 @@
+<%@page import="org.cnio.appform.entity.AppUser"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+        
+<%@page import="org.hibernate.Session, org.hibernate.Transaction,
+							  org.hibernate.HibernateException, java.util.Collection, 
+								java.util.Iterator, java.util.ArrayList, java.util.List, 
+								java.util.Enumeration"  %>
+								
+<%@page import="org.cnio.appform.entity.AbstractItem, 
+								org.cnio.appform.entity.AppUser, org.cnio.appform.entity.Role,
+								org.cnio.appform.entity.Question,
+								org.cnio.appform.entity.Section,
+								org.cnio.appform.entity.Interview,
+								org.cnio.appform.entity.Project, 
+								org.cnio.appform.util.HibernateUtil, org.cnio.appform.audit.ActionsLogger,
+								org.cnio.appform.util.HibController, org.cnio.appform.util.LogFile,
+								org.cnio.appform.util.AppUserCtrl" %>
+
+<%@page import="javax.servlet.http.HttpSession" %>
+
+<%-- this is to add/update a section from editsec.jsp page --%>
+ 
+<%--
+Enumeration theParams = request.getParameterNames();
+
+while (theParams.hasMoreElements()) {
+  String paramName = (String) theParams.nextElement();
+  String paramValues[] = request.getParameterValues(paramName);
+
+  if (paramValues.length == 1) {
+      out.println(paramName+"="+paramValues[0]);
+  }
+  else {
+      out.print(paramName+"=");
+      for (int i=0; i < paramValues.length; i++) {
+          if (i > 0) 
+          		out.print(',');
+          out.print(paramValues[i]);
+      }
+      out.println();
+  }
+}
+<!-- delitem.jsp?t=sec&op=del&frmid=id, t can be ele, sec, ... -->
+
+--%>
+								
+
+<%
+	String op = request.getParameter("op"),
+					t = request.getParameter("t"),
+					id = request.getParameter("frmid"), msgOut = "err",
+					jsonOut= "", sons="",
+					ipAddr = request.getRemoteAddr();
+	
+	Session hibSes = HibernateUtil.getSessionFactory().openSession();
+	boolean res = false, intrvDeleted = false;
+	String intrvName = "";
+	Transaction tx = null;
+	int what = 0;
+	String theName = "";
+	ActionsLogger actLogger = new ActionsLogger (hibSes);
+	
+// Get the current user id and role(s) in order to allow deletion
+	Integer usrId = (Integer)session.getAttribute("usrid");
+	String roles = (String)session.getAttribute("roles");
+	
+	try {
+		
+		if (t.equalsIgnoreCase("ele") == false) {
+			tx = hibSes.beginTransaction();
+//			tx = (tx == null || !tx.isActive())? hibSes.beginTransaction(): tx;
+		
+			if (t.equalsIgnoreCase("sec")) { 
+				Section sec = (Section)hibSes.get(Section.class, Integer.decode(id));
+				theName = sec.getName();
+				hibSes.delete(sec);
+				msgOut = "The section '"+theName+"' has been removed";
+				res = true;
+				what = ActionsLogger.SECTION;
+			}
+					
+			else if (t.equalsIgnoreCase("prj")) {
+// out.print("about to delete ele with frmid:"+id);			
+				Project it = 
+					(Project)hibSes.get(Project.class, Integer.decode(id));
+				theName = it.getName();
+				hibSes.delete(it);
+				res = true;
+				msgOut = "The project '"+theName+"' has been removed from system";
+				what = ActionsLogger.PROJECT;
+			}
+			
+			else if (t.equalsIgnoreCase("int")) {
+// out.print("about to delete ele with frmid:"+id);			
+				Interview it = 
+					(Interview)hibSes.get(Interview.class, Integer.decode(id));
+				theName = it.getName();
+				
+				hibSes.delete(it);
+				msgOut = "The interview '"+theName+"' has been removed from project";
+				res = true;
+				intrvDeleted = true;
+				what = ActionsLogger.INTERVIEW;
+			}
+			tx.commit();
+			
+			actLogger.logItem(session.getId(), ipAddr, usrId, what, 
+												Integer.decode(id), theName, ActionsLogger.DELETE);
+		}
+		
+		
+// DELETING AN ELEMENT, CONTAINEES INCLUDED		
+/****************
+		else { // if (t.equalsIgnoreCase("ele")) {
+
+			AbstractItem it = 
+				(AbstractItem)hibSes.get(AbstractItem.class, Long.decode(id));
+			
+			boolean isQuestion = it instanceof Question;
+			boolean hasAnswers;
+			
+			if (isQuestion)
+				hasAnswers = HibController.ItemManager.getAnswers4Question(hibSes, (Question)it) != null;
+			
+			if (roles.indexOf("admin") != -1) {
+
+// Gotta delete the sons before deleting the container object
+				sons=(it.getContainees().size() > 0)? ",\"sons\":\"": "";
+				for (int i=it.getContainees().size(); i>0 ; i--) {
+					AbstractItem son = it.getContainees().get(i-1);
+					
+					if (son instanceof Question) 
+						HibController.ItemManager.deleteAnswers (hibSes, (Question)son);
+					
+					son.setContainer(null);
+					sons += son.getId()+",";
+				}
+				
+				tx = hibSes.beginTransaction();
+				sons = sons.equalsIgnoreCase("")? "": 
+												sons.substring(0, sons.length()-1)+"\"";
+				it.removeContainees();
+				tx.commit();
+	
+	// Remove the item itself
+				if (it instanceof Question)
+					HibController.ItemManager.deleteAnswers(hibSes, (Question)it);
+	
+				tx.begin();
+	// out.print (it.getId()+".-"+it.getContent());
+				if (it instanceof Question) {
+					if (((Question)it).getMandatory () == 0) {
+						hibSes.delete(it);
+						msgOut = "ok";
+						res = true;
+					}
+					else  { // mandatory = 1, so the question is considered as MANDATORY
+						msgOut = "The Question can not be deleted";
+						res = false;
+					}
+				}
+				else {
+					hibSes.delete(it);
+					msgOut = "ok";
+					res = true;
+				}
+				tx.commit();
+			}
+			else {
+				res = false;
+				msgOut = "Only administrators can remove questions";
+			}
+			
+			
+		}
+*/		
+	}
+	catch (HibernateException hibEx) {
+		if (tx != null)
+			tx.rollback();
+// hibEx.printStackTrace();		
+		msgOut = hibEx.getMessage();
+		
+		LogFile.error("Fail to delete item:\t");
+		LogFile.error("Item type (id): "+t+"("+id+")");
+		
+		LogFile.error(hibEx.getLocalizedMessage());
+		StackTraceElement[] stack = hibEx.getStackTrace();
+		LogFile.logStackTrace(stack);
+	}
+	hibSes.close();
+	
+	if (res) 
+		jsonOut = "{\"res\":1,\"frmid\":"+id+",\"msg\":\""+msgOut+"\""+sons+"}";
+		
+	else
+		jsonOut = "{\"res\":0,\"frmid\":"+id+",\"msg\":\""+msgOut+"\"}";
+	
+	out.print(jsonOut);
+%>
+
+<%--
+ 	<jsp:forward page="index.jsp">
+		<jsp:param  name="res" value="1"/>
+	</jsp:forward>
+	
+%
+	}
+	else {
+		
+	}
+%
+%--
+		<jsp:forward page="index.jsp">
+			<jsp:param name="res" value="0"/>
+		</jsp:forward>
+%
+	}
+	// pageContext.setAttribute("sections", sectionsCol);
+%
+%-
+ 	<jsp:forward page="index.jsp">
+		<jsp:param  name="res" value="1"/>
+These next two parameters are not included because would be redundant!!!!		
+	->	<jsp:param name="op" value="${param.op}"/>
+	->	<jsp:param name="t" value="${param.t}" /> 
+	</jsp:forward>
+--%>

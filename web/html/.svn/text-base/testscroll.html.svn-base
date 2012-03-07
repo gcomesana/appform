@@ -1,0 +1,126 @@
+<HTML>
+<HEAD>
+<TITLE>Scroll Div Horizontal</TITLE>
+
+<script type="text/javascript">
+
+scrollStep=1
+
+timerLeft=""
+timerRight=""
+
+function toLeft(id){
+document.getElementById(id).scrollLeft=0
+}
+
+function scrollDivRight(id){
+clearTimeout(timerRight) 
+document.getElementById(id).scrollLeft+=scrollStep
+timerRight=setTimeout("scrollDivRight('"+id+"')",10)
+}
+
+function scrollDivLeft(id){
+clearTimeout(timerLeft)
+document.getElementById(id).scrollLeft-=scrollStep
+timerLeft=setTimeout("scrollDivLeft('"+id+"')",10)
+}
+
+function toRight(id){
+document.getElementById(id).scrollLeft=document.getElementById(id).scrollWidth
+}
+
+function stopMe(){
+clearTimeout(timerRight) 
+clearTimeout(timerLeft)
+}
+
+</script>
+
+
+<style>
+#container {
+	position: relative;
+	width: 300px;
+	height: 200px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	border: 1px solid #800000;
+}
+
+#scroller {
+	width: 200%;
+	/*width:928px; */
+	/* = width + margin left + margin right + padding*2 + border*2  from the content rule */
+}
+
+.content { /*	width:200px; */
+	width: 19%;
+	height: 200px;
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 5px;
+	text-align: justify;
+	border: 1px solid black;
+}
+</style>
+
+
+</HEAD>
+<BODY>
+<!--
+<a href="#null" onclick="toLeft('container')">Left</a> 
+<a href="#null" onmouseover="scrollDivLeft('container')" onmouseout="stopMe()">Scroll Left</a>
+<a href="#null" onmouseover="scrollDivRight('container')" onmouseout="stopMe()">ScrollRight</a> 
+<a href="#null" onclick="toRight('container')">Right</a> 
+-->
+<BR>
+<BR>
+
+<table>
+	<tr>
+		<td width="524px">
+
+		<DIV id="container">
+
+		<DIV id="scroller">
+
+		<div class="content" style="background-color: green">Lorem ipsum
+		dolor sit amet, consectetuer adipiscing elit. Mauris orci. Suspendisse
+		aliquam, quam eu convallis pellentesque, felis velit blandit augue,
+		vitae semper pede metus non nulla. Etiam eu eros in ligula euismod
+		vestibulum. Aenean porttitor adipiscing metus.</div>
+
+		<div class="content" style="background-color: yellow">Phasellus
+		tellus nisi, viverra non, fringilla eget, tristique sit amet,<img
+			src="pic1.jpg"
+			style="width: 40px; height: 58px; float: left; margin: 4px 5px 0px 0px">
+		felis. Vestibulum iaculis mauris non lectus. Suspendisse libero arcu,
+		fermentum at, eleifend<img src="pic2.jpg"
+			style="width: 40px; height: 58px; float: right; margin: 4px 0px 0px 10px">
+		non, fringilla eu, lectus. Mauris sit amet tortor. Proin accumsan
+		mauris sit amet mauris.<br style="clear: both">
+		</div>
+
+		<div class="content" style="background-color: red">Maecenas
+		cursus scelerisque diam. Integer felis. Suspendisse euismod venenatis
+		nulla.</div>
+
+		<div class="content" style="background-color: blue">Sed vitae
+		risus. Vivamus vitae augue et est aliquet malesuada. Vivamus sit amet
+		dolor ac arcu posuere ullamcorper. Praesent faucibus augue sit amet
+		quam. Integer viverra laoreet dui. Vestibulum semper odio auctor
+		libero. Maecenas consectetuer, elit nec ornare luctus, diam odio
+		feugiat felis, ut nonummy dolor sapien sed orci.</div>
+
+		<br style="clear: both">
+
+		</DIV>
+		<!-- scroller div --></DIV>
+		</td>
+	</tr>
+</table>
+
+</BODY>
+</HTML>
+

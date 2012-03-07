@@ -1,0 +1,41 @@
+8
+
+dir
+78
+svn+ssh://gcomesana@gredos/home/gcomesana/Development/svn-repo/appform/src/org/cnio/appform/aop
+svn+ssh://gcomesana@gredos/home/gcomesana/Development/svn-repo
+
+
+
+2009-04-06T14:25:46.534791Z
+1
+gcomesana
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+4aadde07-169c-4302-b40d-08daa5913de5
+
+TestAspect.aj
+file
+
+
+
+
+2009-10-06T15:56:55.000000Z
+1ee234b2f26007f36804d02a981a4096
+2009-04-06T14:25:46.534791Z
+1
+gcomesana
+has-props
+

@@ -1,0 +1,78 @@
+		<form>
+		<h3>SECTION C: TOBACCO</h3>
+		<table>
+		<tr><td>Now I have a few questions about your smoking habits</td></tr>
+			<tr><td>C1. Have you smoked a total of 100 cigarettes or more in your lifetime (in other words, 5 or more packets)?</td><td><select>
+		<option>YES
+		<option>NO
+		<option>DK
+		</select></td></tr>
+		
+		<tr><td>Prompt: By cigarettes, I mean packed (manufactured) cigarettes or hand-rolled cigarettes</td></tr>
+			<tr><td>C2. How old were you when you first started smoking cigarettes?</td><td><input type="text"></td></tr>
+			
+			<tr><td>C3. Do you smoke now?</td><td><select>
+		<option>YES
+		<option>NO
+		<option>DK
+		</select></td></tr>
+			
+			
+		<tr><td>C4. How old were you when you last smoked cigarettes?</td><td><input type="text"></td></tr>
+		<tr><td>C5. Thinking about the years between the time you started smoking and (when you gave up / the present), was there ever a period of one year or longer during which you did not smoke cigarettes?</td><td><select>
+		<option>YES
+		<option>NO
+		<option>DK
+		</select></td></tr>
+
+		<tr><td>C6. For how many months or years in total did you stop smoking cigarettes?</td><td><input type="text"></td><td><select>
+		<option>MONTHS
+		<option>YEARS
+		<option>DK
+		</select></td></tr>
+		<tr><td>C7. Thinking over all the years that you smoked, how many cigarettes did you usually smoke in a day/week?</td><td><input type="text"></td><td><select>
+		<option>MONTHS
+		<option>YEARS
+		<option>DK
+		</select></td></tr>
+		<tr><td>C8. When you were smoking, did you generally inhale the smoke: only into your mouth, down into your throat only, or down into your chests?</td><td><select>
+		<option>MOUTH ONLY
+		<option>THROAT
+		<option>CHEST
+		<option>DK
+		</select></td></tr>
+		<tr><td>C9. Were the cigarettes that you regularly smoked filtered or non-filtered?</td><td><select>
+		<option>FILTERED
+		<option>NON-FILTERED
+		<option>FILTERED AND NON-FILTERED
+		<option>DK
+		</select></td></tr>
+		<tr><td>C10. Have you ever smoked at least one cigar per week for six months or longer?</td><td><select>
+		<option>YES
+		<option>NO
+		<option>DK
+		</select></td></tr>
+		<tr><td>C11. Thinking over all the years that you smoked cigars, how many cigars did you usually smoke in a week?</td><td><select>
+		<option><1 PER WEEK
+		<option>DK
+		</select></td></tr>
+		<tr><td>C12. Have you ever smoked at least one tobacco pipe per week for six months or longer?</td><td><select>
+		<option>YES
+		<option>NO
+		<option>DK
+		</select></td></tr>
+		<tr><td>C13. Thinking over all the years that you smoked a pipe, how many complete tobacco pipes did you usually smoke in a week?</td><td><select>
+		<option>COMPLETE PIPES
+		<option><1 PER WEEK
+		<option>DK
+		</select></td></tr>
+		<tr><td>C14. What type of pipe tobacco did you regularly smoke: black or blond?</td><td><select>
+		<option>BLACK
+		<option>BLOND
+		<option>BLENDED
+		<option>DK
+		</select></td></tr>
+		
+		</table>
+		<input type='submit' value='send' onclick="send();"/>
+		</form>

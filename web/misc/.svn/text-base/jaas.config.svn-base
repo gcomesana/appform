@@ -1,0 +1,4 @@
+appform {
+  org.cnio.appform.jaas.AppLoginModule required
+ 	debug="true";
+};

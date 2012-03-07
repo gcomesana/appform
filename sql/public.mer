@@ -1,0 +1,1309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ERDiagram version="1.1">
+  <Connection session="postgres8.3-jdbc3 @ localhost" database="public" />
+  <Drawing gridVisible="false" snapOn="false" fastRouting="false" labelsVisible="true" />
+  <Tables>
+    <Table name="answer">
+      <Drawing expanded="true" location="590,483" dimensions="197,107" />
+      <Columns>
+        <Column name="idanswer" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="serial" size="10" />
+        </Column>
+        <Column name="thevalue" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="512" />
+        </Column>
+        <Column name="answer_order" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="codansitem" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="answer_item">
+      <Drawing expanded="true" location="1185,940" dimensions="197,127" />
+      <Columns>
+        <Column name="idansitem" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="serial" size="10" />
+        </Column>
+        <Column name="answer_order" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="name" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="128" />
+        </Column>
+        <Column name="description" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="128" />
+        </Column>
+        <Column name="codintrv" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="answertype">
+      <Drawing expanded="true" location="1600,503" dimensions="176,68" />
+      <Columns>
+        <Column name="idanstype" primary_key="true" foreign_key="true" required="true" unique="true">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="pattern" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="256" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="appgroup">
+      <Drawing expanded="true" location="-709,464" dimensions="205,146" />
+      <Columns>
+        <Column name="idgroup" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="serial" size="10" />
+        </Column>
+        <Column name="name" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="128" />
+        </Column>
+        <Column name="codgroup" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="128" />
+        </Column>
+        <Column name="tmpl_holder" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="parent" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="codgroup_type" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="appuser">
+      <Drawing expanded="true" location="-327,2039" dimensions="195,167" />
+      <Columns>
+        <Column name="iduser" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="serial" size="10" />
+        </Column>
+        <Column name="username" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="varchar" size="128" />
+        </Column>
+        <Column name="passwd" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="varchar" size="128" />
+        </Column>
+        <Column name="c_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="timestamp" size="10,6" />
+        </Column>
+        <Column name="u_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="timestamp" size="10,6" />
+        </Column>
+        <Column name="codhosp" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="country" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="16" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="enumitem">
+      <Drawing expanded="true" location="1321,38" dimensions="197,147" />
+      <Columns>
+        <Column name="idenumitem" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="serial" size="10" />
+        </Column>
+        <Column name="codenumtype" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="name" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="128" />
+        </Column>
+        <Column name="description" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="128" />
+        </Column>
+        <Column name="thevalue" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="256" />
+        </Column>
+        <Column name="listorder" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="enumtype">
+      <Drawing expanded="true" location="1339,503" dimensions="161,68" />
+      <Columns>
+        <Column name="idenumtype" primary_key="true" foreign_key="true" required="true" unique="true">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="numitems" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="grouptype">
+      <Drawing expanded="true" location="-705,960" dimensions="197,88" />
+      <Columns>
+        <Column name="idgrouptype" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="serial" size="10" />
+        </Column>
+        <Column name="name" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="varchar" size="128" />
+        </Column>
+        <Column name="description" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="1024" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="hospital">
+      <Drawing expanded="true" location="-324,2306" dimensions="188,128" />
+      <Columns>
+        <Column name="idhosp" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="serial" size="10" />
+        </Column>
+        <Column name="name" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="varchar" size="128" />
+        </Column>
+        <Column name="hospcod" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="c_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="timestamp" size="10,6" />
+        </Column>
+        <Column name="u_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="timestamp" size="10,6" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="interview">
+      <Drawing expanded="true" location="131,1614" dimensions="204,185" />
+      <Columns>
+        <Column name="idinterview" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="serial" size="10" />
+        </Column>
+        <Column name="name" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="128" />
+        </Column>
+        <Column name="description" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="128" />
+        </Column>
+        <Column name="codprj" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="codusr" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="c_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="timestamp" size="10,6" />
+        </Column>
+        <Column name="u_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="timestamp" size="10,6" />
+        </Column>
+        <Column name="source" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="intr_instance">
+      <Drawing expanded="true" location="99,1227" dimensions="213,127" />
+      <Columns>
+        <Column name="idinstance" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="serial" size="10" />
+        </Column>
+        <Column name="place" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="256" />
+        </Column>
+        <Column name="date_ini" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="timestamp" size="10,6" />
+        </Column>
+        <Column name="date_end" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="timestamp" size="10,6" />
+        </Column>
+        <Column name="codinterview" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="intrv_group">
+      <Drawing expanded="true" location="-608,69" dimensions="181,86" />
+      <Columns>
+        <Column name="idintrv_group" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="serial" size="10" />
+        </Column>
+        <Column name="codintrv" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="codgroup" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="item">
+      <Drawing expanded="true" location="558,901" dimensions="200,206" />
+      <Columns>
+        <Column name="iditem" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="serial" size="10" />
+        </Column>
+        <Column name="idsection" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="ite_iditem" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="content" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="10240" />
+        </Column>
+        <Column name="item_order" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="c_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="timestamp" size="10,6" />
+        </Column>
+        <Column name="u_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="timestamp" size="10,6" />
+        </Column>
+        <Column name="repeatable" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="highlight" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="pat_gives_answer2ques">
+      <Drawing expanded="true" location="671,29" dimensions="190,165" />
+      <Columns>
+        <Column name="idp_a_q" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="serial" size="10" />
+        </Column>
+        <Column name="codpat" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="codanswer" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="codquestion" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="answer_number" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="answer_order" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="answer_grp" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="patient">
+      <Drawing expanded="true" location="-23,443" dimensions="199,188" />
+      <Columns>
+        <Column name="idpat" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="serial" size="10" />
+        </Column>
+        <Column name="name" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="256" />
+        </Column>
+        <Column name="codpatient" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="varchar" size="15" />
+        </Column>
+        <Column name="address" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="512" />
+        </Column>
+        <Column name="phone" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="20" />
+        </Column>
+        <Column name="numhc" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="32" />
+        </Column>
+        <Column name="c_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="timestamp" size="10,6" />
+        </Column>
+        <Column name="u_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="timestamp" size="10,6" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="performance">
+      <Drawing expanded="true" location="-327,0" dimensions="223,224" />
+      <Columns>
+        <Column name="idperformance" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="serial" size="10" />
+        </Column>
+        <Column name="coduser" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="codinterview" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="codpat" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="date_ini" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="timestamp" size="10,6" />
+        </Column>
+        <Column name="date_end" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="timestamp" size="10,6" />
+        </Column>
+        <Column name="place" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="256" />
+        </Column>
+        <Column name="num_order" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="last_sec" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="codgroup" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="project">
+      <Drawing expanded="true" location="278,2058" dimensions="202,128" />
+      <Columns>
+        <Column name="idprj" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="serial" size="10" />
+        </Column>
+        <Column name="name" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="128" />
+        </Column>
+        <Column name="description" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="128" />
+        </Column>
+        <Column name="c_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="timestamp" size="10,6" />
+        </Column>
+        <Column name="u_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="timestamp" size="10,6" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="question">
+      <Drawing expanded="true" location="887,483" dimensions="183,108" />
+      <Columns>
+        <Column name="idquestion" primary_key="true" foreign_key="true" required="true" unique="true">
+          <Data type="serial" size="10" />
+        </Column>
+        <Column name="repeatable" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="codquestion" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="16" />
+        </Column>
+        <Column name="mandatory" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="question_ansitem">
+      <Drawing expanded="true" location="1024,49" dimensions="197,126" />
+      <Columns>
+        <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="serial" size="10" />
+        </Column>
+        <Column name="codansitem" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="codquestion" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="answer_order" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="pattern" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="255" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="rel_grp_appusr">
+      <Drawing expanded="true" location="-866,69" dimensions="158,86" />
+      <Columns>
+        <Column name="idgrp_usr" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="serial" size="10" />
+        </Column>
+        <Column name="codgroup" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="coduser" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="rel_prj_appusers">
+      <Drawing expanded="true" location="435,1663" dimensions="161,86" />
+      <Columns>
+        <Column name="idprj_usrs" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="serial" size="10" />
+        </Column>
+        <Column name="codprj" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="coduser" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="role">
+      <Drawing expanded="true" location="-1131,2058" dimensions="202,128" />
+      <Columns>
+        <Column name="idrole" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="serial" size="10" />
+        </Column>
+        <Column name="name" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="128" />
+        </Column>
+        <Column name="description" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="128" />
+        </Column>
+        <Column name="c_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="timestamp" size="10,6" />
+        </Column>
+        <Column name="u_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="timestamp" size="10,6" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="section">
+      <Drawing expanded="true" location="550,1207" dimensions="216,167" />
+      <Columns>
+        <Column name="idsection" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="serial" size="10" />
+        </Column>
+        <Column name="name" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="128" />
+        </Column>
+        <Column name="description" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="128" />
+        </Column>
+        <Column name="section_order" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="codinterview" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="c_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="timestamp" size="10,6" />
+        </Column>
+        <Column name="u_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="timestamp" size="10,6" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="text">
+      <Drawing expanded="true" location="325,503" dimensions="165,68" />
+      <Columns>
+        <Column name="idtext" primary_key="true" foreign_key="true" required="true" unique="true">
+          <Data type="serial" size="10" />
+        </Column>
+        <Column name="highlighted" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="user_role">
+      <Drawing expanded="true" location="-1077,1643" dimensions="186,126" />
+      <Columns>
+        <Column name="iduser_role" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="serial" size="10" />
+        </Column>
+        <Column name="coduser" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="codrole" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="username" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="128" />
+        </Column>
+        <Column name="rolename" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="varchar" size="128" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="usr_pat_intrinst">
+      <Drawing expanded="true" location="-4,59" dimensions="167,105" />
+      <Columns>
+        <Column name="id_upi" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="serial" size="10" />
+        </Column>
+        <Column name="coduser" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="codpatient" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+        <Column name="codintr_ins" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="int4" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+  </Tables>
+  <Relationships>
+    <Relationship name="fkabca3fbe5c3d6ca1">
+      <Details primary_table="answer_item" foreign_table="answer">
+        <PrimaryKeys>
+          <ColumnName name="idansitem" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codansitem" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_answer_rel_answ__answer_i">
+      <Details primary_table="answer_item" foreign_table="answer">
+        <PrimaryKeys>
+          <ColumnName name="idansitem" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codansitem" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fked6a1af434d3ec6d">
+      <Details primary_table="interview" foreign_table="answer_item">
+        <PrimaryKeys>
+          <ColumnName name="idinterview" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codintrv" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_ansitem_intrv">
+      <Details primary_table="interview" foreign_table="answer_item">
+        <PrimaryKeys>
+          <ColumnName name="idinterview" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codintrv" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fkb00210386a4127c5">
+      <Details primary_table="answer_item" foreign_table="answertype">
+        <PrimaryKeys>
+          <ColumnName name="idansitem" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="idanstype" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_answerty_isoneof_answer_i">
+      <Details primary_table="answer_item" foreign_table="answertype">
+        <PrimaryKeys>
+          <ColumnName name="idansitem" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="idanstype" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk460ba8fee20f1477">
+      <Details primary_table="appgroup" foreign_table="appgroup">
+        <PrimaryKeys>
+          <ColumnName name="idgroup" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="parent" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_parent_group">
+      <Details primary_table="appgroup" foreign_table="appgroup">
+        <PrimaryKeys>
+          <ColumnName name="idgroup" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="parent" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_grouptype">
+      <Details primary_table="grouptype" foreign_table="appgroup">
+        <PrimaryKeys>
+          <ColumnName name="idgrouptype" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codgroup_type" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk460ba8fefa6441bc">
+      <Details primary_table="grouptype" foreign_table="appgroup">
+        <PrimaryKeys>
+          <ColumnName name="idgrouptype" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codgroup_type" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_hospital_user">
+      <Details primary_table="hospital" foreign_table="appuser">
+        <PrimaryKeys>
+          <ColumnName name="idhosp" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codhosp" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk33f5054cff274c45">
+      <Details primary_table="hospital" foreign_table="appuser">
+        <PrimaryKeys>
+          <ColumnName name="idhosp" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codhosp" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_enumitem_contains_enumtype">
+      <Details primary_table="enumtype" foreign_table="enumitem">
+        <PrimaryKeys>
+          <ColumnName name="idenumtype" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codenumtype" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk849ca7944d54c7fd">
+      <Details primary_table="enumtype" foreign_table="enumitem">
+        <PrimaryKeys>
+          <ColumnName name="idenumtype" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codenumtype" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_enumtype_isoneof2_answer_i">
+      <Details primary_table="answer_item" foreign_table="enumtype">
+        <PrimaryKeys>
+          <ColumnName name="idansitem" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="idenumtype" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk886d93fbda39f0f6">
+      <Details primary_table="answer_item" foreign_table="enumtype">
+        <PrimaryKeys>
+          <ColumnName name="idansitem" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="idenumtype" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk1dfcd1819fb025d9">
+      <Details primary_table="appuser" foreign_table="interview">
+        <PrimaryKeys>
+          <ColumnName name="iduser" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codusr" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_interview_belongs_user">
+      <Details primary_table="appuser" foreign_table="interview">
+        <PrimaryKeys>
+          <ColumnName name="iduser" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codusr" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_cloned_from">
+      <Details primary_table="interview" foreign_table="interview">
+        <PrimaryKeys>
+          <ColumnName name="idinterview" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="source" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk1dfcd181bc927c7a">
+      <Details primary_table="project" foreign_table="interview">
+        <PrimaryKeys>
+          <ColumnName name="idprj" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codprj" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_interview_is_formed_project">
+      <Details primary_table="project" foreign_table="interview">
+        <PrimaryKeys>
+          <ColumnName name="idprj" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codprj" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk1dfcd18132dc448d">
+      <Details primary_table="interview" foreign_table="interview">
+        <PrimaryKeys>
+          <ColumnName name="idinterview" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="source" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_instance_interview">
+      <Details primary_table="interview" foreign_table="intr_instance">
+        <PrimaryKeys>
+          <ColumnName name="idinterview" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codinterview" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk84c0ddb334d3ec6d">
+      <Details primary_table="interview" foreign_table="intrv_group">
+        <PrimaryKeys>
+          <ColumnName name="idinterview" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codintrv" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_intrvgroup_intrv">
+      <Details primary_table="interview" foreign_table="intrv_group">
+        <PrimaryKeys>
+          <ColumnName name="idinterview" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codintrv" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk84c0ddb3e9d1abd4">
+      <Details primary_table="appgroup" foreign_table="intrv_group">
+        <PrimaryKeys>
+          <ColumnName name="idgroup" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codgroup" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_intrvgroup_group">
+      <Details primary_table="appgroup" foreign_table="intrv_group">
+        <PrimaryKeys>
+          <ColumnName name="idgroup" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codgroup" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk317b136ead1f80">
+      <Details primary_table="section" foreign_table="item">
+        <PrimaryKeys>
+          <ColumnName name="idsection" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="idsection" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_item_contains_item">
+      <Details primary_table="item" foreign_table="item">
+        <PrimaryKeys>
+          <ColumnName name="iditem" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="ite_iditem" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_item_is_formed_section">
+      <Details primary_table="section" foreign_table="item">
+        <PrimaryKeys>
+          <ColumnName name="idsection" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="idsection" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk317b13ee6627b7">
+      <Details primary_table="item" foreign_table="item">
+        <PrimaryKeys>
+          <ColumnName name="iditem" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="ite_iditem" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_pat_give_rel_ans_p_answer">
+      <Details primary_table="answer" foreign_table="pat_gives_answer2ques">
+        <PrimaryKeys>
+          <ColumnName name="idanswer" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codanswer" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fkd6209a2db9245433">
+      <Details primary_table="question" foreign_table="pat_gives_answer2ques">
+        <PrimaryKeys>
+          <ColumnName name="idquestion" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codquestion" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fkd6209a2dcefe49a3">
+      <Details primary_table="answer" foreign_table="pat_gives_answer2ques">
+        <PrimaryKeys>
+          <ColumnName name="idanswer" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codanswer" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_pat_give_rel_ques__question">
+      <Details primary_table="question" foreign_table="pat_gives_answer2ques">
+        <PrimaryKeys>
+          <ColumnName name="idquestion" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codquestion" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_pat_give_rel_pat_a_patient">
+      <Details primary_table="patient" foreign_table="pat_gives_answer2ques">
+        <PrimaryKeys>
+          <ColumnName name="idpat" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codpat" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fkd6209a2d9fd61a61">
+      <Details primary_table="patient" foreign_table="pat_gives_answer2ques">
+        <PrimaryKeys>
+          <ColumnName name="idpat" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codpat" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_performa_rel_intrv_intervie">
+      <Details primary_table="interview" foreign_table="performance">
+        <PrimaryKeys>
+          <ColumnName name="idinterview" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codinterview" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_performa_rel_pat_p_patient">
+      <Details primary_table="patient" foreign_table="performance">
+        <PrimaryKeys>
+          <ColumnName name="idpat" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codpat" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_performa_rel_appus_appuser">
+      <Details primary_table="appuser" foreign_table="performance">
+        <PrimaryKeys>
+          <ColumnName name="iduser" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="coduser" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fka7c310307bd5537b">
+      <Details primary_table="interview" foreign_table="performance">
+        <PrimaryKeys>
+          <ColumnName name="idinterview" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codinterview" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fka7c31030289fe600">
+      <Details primary_table="appuser" foreign_table="performance">
+        <PrimaryKeys>
+          <ColumnName name="iduser" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="coduser" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fka7c31030e9d1abd4">
+      <Details primary_table="appgroup" foreign_table="performance">
+        <PrimaryKeys>
+          <ColumnName name="idgroup" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codgroup" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fka7c310309fd61a61">
+      <Details primary_table="patient" foreign_table="performance">
+        <PrimaryKeys>
+          <ColumnName name="idpat" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codpat" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_performa_rel_group">
+      <Details primary_table="appgroup" foreign_table="performance">
+        <PrimaryKeys>
+          <ColumnName name="idgroup" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codgroup" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_question_itemisa2_item">
+      <Details primary_table="item" foreign_table="question">
+        <PrimaryKeys>
+          <ColumnName name="iditem" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="idquestion" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fkba823be6e7b3fc5">
+      <Details primary_table="item" foreign_table="question">
+        <PrimaryKeys>
+          <ColumnName name="iditem" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="idquestion" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk6d9a2ea05c3d6ca1">
+      <Details primary_table="answer_item" foreign_table="question_ansitem">
+        <PrimaryKeys>
+          <ColumnName name="idansitem" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codansitem" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_question">
+      <Details primary_table="question" foreign_table="question_ansitem">
+        <PrimaryKeys>
+          <ColumnName name="idquestion" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codquestion" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk6d9a2ea0b9245433">
+      <Details primary_table="question" foreign_table="question_ansitem">
+        <PrimaryKeys>
+          <ColumnName name="idquestion" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codquestion" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_answer_item">
+      <Details primary_table="answer_item" foreign_table="question_ansitem">
+        <PrimaryKeys>
+          <ColumnName name="idansitem" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codansitem" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_rel_grp__rel_grp_a_appuser">
+      <Details primary_table="appuser" foreign_table="rel_grp_appusr">
+        <PrimaryKeys>
+          <ColumnName name="iduser" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="coduser" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk3e240fd3e9d1abd4">
+      <Details primary_table="appgroup" foreign_table="rel_grp_appusr">
+        <PrimaryKeys>
+          <ColumnName name="idgroup" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codgroup" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_rel_grp__rel_grp_a_appgroup">
+      <Details primary_table="appgroup" foreign_table="rel_grp_appusr">
+        <PrimaryKeys>
+          <ColumnName name="idgroup" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codgroup" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk3e240fd3289fe600">
+      <Details primary_table="appuser" foreign_table="rel_grp_appusr">
+        <PrimaryKeys>
+          <ColumnName name="iduser" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="coduser" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_rel_prj__rel_prj_a_appuser">
+      <Details primary_table="appuser" foreign_table="rel_prj_appusers">
+        <PrimaryKeys>
+          <ColumnName name="iduser" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="coduser" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fkd0e56e24289fe600">
+      <Details primary_table="appuser" foreign_table="rel_prj_appusers">
+        <PrimaryKeys>
+          <ColumnName name="iduser" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="coduser" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fkd0e56e24bc927c7a">
+      <Details primary_table="project" foreign_table="rel_prj_appusers">
+        <PrimaryKeys>
+          <ColumnName name="idprj" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codprj" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_rel_prj__rel_prj_a_project">
+      <Details primary_table="project" foreign_table="rel_prj_appusers">
+        <PrimaryKeys>
+          <ColumnName name="idprj" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codprj" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk756f7ee57bd5537b">
+      <Details primary_table="interview" foreign_table="section">
+        <PrimaryKeys>
+          <ColumnName name="idinterview" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codinterview" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_section_is_formed_interview">
+      <Details primary_table="interview" foreign_table="section">
+        <PrimaryKeys>
+          <ColumnName name="idinterview" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codinterview" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_text_itemisa_item">
+      <Details primary_table="item" foreign_table="text">
+        <PrimaryKeys>
+          <ColumnName name="iditem" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="idtext" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk27b94df0028e8c">
+      <Details primary_table="item" foreign_table="text">
+        <PrimaryKeys>
+          <ColumnName name="iditem" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="idtext" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_userrole_role">
+      <Details primary_table="role" foreign_table="user_role">
+        <PrimaryKeys>
+          <ColumnName name="idrole" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codrole" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk143bf46a1c3f28d3">
+      <Details primary_table="role" foreign_table="user_role">
+        <PrimaryKeys>
+          <ColumnName name="idrole" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codrole" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_userrole_user">
+      <Details primary_table="appuser" foreign_table="user_role">
+        <PrimaryKeys>
+          <ColumnName name="iduser" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="coduser" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk143bf46a289fe600">
+      <Details primary_table="appuser" foreign_table="user_role">
+        <PrimaryKeys>
+          <ColumnName name="iduser" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="coduser" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_pat_ternary_rel">
+      <Details primary_table="patient" foreign_table="usr_pat_intrinst">
+        <PrimaryKeys>
+          <ColumnName name="idpat" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codpatient" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_intr_ins_ternary_rel">
+      <Details primary_table="intr_instance" foreign_table="usr_pat_intrinst">
+        <PrimaryKeys>
+          <ColumnName name="idinstance" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="codintr_ins" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="fk_usr_ternary_rel">
+      <Details primary_table="appuser" foreign_table="usr_pat_intrinst">
+        <PrimaryKeys>
+          <ColumnName name="iduser" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="coduser" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+  </Relationships>
+</ERDiagram>
+

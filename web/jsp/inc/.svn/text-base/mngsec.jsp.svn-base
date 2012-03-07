@@ -1,0 +1,122 @@
+<!-- mngsec.jsp modified -->
+<%-- This snippet list the sections based on interview id (frmid).
+	This should be similar to detailprj for interview
+--%>
+
+<%@ page language="java" contentType="text/html;charset=UTF-8"%>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+<%@page import="org.hibernate.Session, java.util.Collection, 
+								java.util.Iterator, java.util.ArrayList, java.util.List,
+								java.util.Enumeration"  %>
+								
+<%@page import="org.cnio.appform.entity.AbstractItem,
+								org.cnio.appform.entity.Text, org.cnio.appform.entity.Question, 
+								org.cnio.appform.entity.Project, org.cnio.appform.entity.Section,
+								org.cnio.appform.entity.Interview, 
+								org.cnio.appform.entity.AnswerItem,
+								org.cnio.appform.util.HibernateUtil,
+								org.cnio.appform.util.HibController,
+								org.cnio.appform.util.IntrvController" %>	
+<%
+ 	Session hibSes = HibernateUtil.getSessionFactory().openSession();
+	List<Section> sectionsCol = null; 
+//	List<AbstractItem> itemsSec;
+
+
+	pageContext.setAttribute("interview", null);
+	pageContext.setAttribute("spid", null);
+	String intrId = request.getParameter ("frmid");
+	if (intrId != null) {
+		Interview intr = (Interview)hibSes.get(Interview.class, Integer.decode(intrId));
+		sectionsCol = HibController.SectionCtrl.getSectionsFromIntrv (hibSes, intr);
+		pageContext.setAttribute("interview", intr);
+		pageContext.setAttribute("spid", Integer.decode(intrId));
+	}
+	else
+		sectionsCol = HibController.SectionCtrl.getSectionByName (hibSes, "");
+	
+	String roles = (String)session.getAttribute("roles");
+	out.print("<!-- roles: " + roles + "-->");
+	String btnDis = "disabled=\"disabled\"";
+	pageContext.setAttribute("btnDis", "");
+// if no editor and no admin, user doesnt have permissions	
+	if ((roles.indexOf("editor") == -1) && (roles.indexOf("admin") == -1)) {
+		pageContext.setAttribute ("btnDis", btnDis);
+	}
+	
+	pageContext.setAttribute("sections", sectionsCol);
+	
+	hibSes.close ();
+%>
+
+
+<!-- **************** START CONTENT AREA (REGION b)**************** -->		 
+           <div id='regionAdmB'>
+
+<h3>Interview
+<c:if test="${not empty interview}"> '${interview.name}'</c:if> Details - Sections List</h3>
+
+Name: <b>${interview.name}</b><br/>
+Description: <b>${interview.description}</b><br/>
+Elements contained:
+<form id="formSecs" name="formSecs" method="post">
+<table cellpadding="2" cellspacing="1" border="1">
+	<tr>
+	<td rowspan="3" valign="top">
+	Choose one...
+	<table border="0">
+		<tr><td rowspan="3">
+			<select id="frmListSecs" name="frmListSecs" size="10" style="width:400px">
+				<c:if test="${not empty sections}">
+					<c:forEach items="${sections}" var="aSec">
+						<option value="${aSec.id}" 
+										ondblclick="secFormCtrl.goItemProps(${aSec.id},'sec');"
+										onmouseover="Tip ('${aSec.name}');"
+						 				onmouseout="UnTip();">
+						${aSec.name}
+						</option>
+					</c:forEach>
+				</c:if>
+			</select>
+			</td>
+			<td>
+				<input type="button" name="btnUp" id="btnUp" value="  Up  " ${btnDis}
+							onclick="listCtrl.moveUp(this.form.frmListSecs);"/>
+			</td>
+		</tr>
+		
+		<tr><td>
+			<input type="button" name="btnDown" id="btnDown" value=" Down " ${btnDis}
+					onclick="listCtrl.moveDown(this.form.frmListSecs);"/>
+		</td></tr>
+		<tr><td>
+			<input type="button" name="btnReord" id="btnReord" value=" Re-sort "
+				${btnDis}	onclick="listCtrl.onRearrange(this.form.frmListSecs, 'sec');"/><br><br>
+				<a href="javascript:listCtrl.goItem('frmListSecs','sec');"
+									style="text-decoration:none;color:darkblue;">
+								Edit selected</a>
+		</td></tr>
+	</table>
+	
+	</td>
+	<td align="left">
+		<input type="button" name="btnNew" value=" New " ${btnDis} 
+					onclick="secFormCtrl.listSections(this.form, 'NEW', ${spid});"/>
+	</td>
+	</tr>
+	
+	<tr><td align="left">
+		<input type="button" name="btnUpd" value=" Modify " ${btnDis}
+					onclick="secFormCtrl.listSections(this.form, 'UPD', ${spid});"/>
+	</td></tr>
+	<tr><td align="left">
+		<input type="button" name="btnDel" value = " Delete " ${btnDis}
+					onclick="secFormCtrl.listSections(this.form, 'DEL');"/>
+	</td></tr>
+</table>
+</form>
+					 </div> <!-- regionB -->
+<!-- ****************** END CONTENT AREA (REGION B) ***************** -->

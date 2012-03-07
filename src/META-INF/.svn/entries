@@ -1,0 +1,54 @@
+8
+
+dir
+78
+svn+ssh://gcomesana@gredos/home/gcomesana/Development/svn-repo/appform/src/META-INF
+svn+ssh://gcomesana@gredos/home/gcomesana/Development/svn-repo
+
+
+
+2009-04-06T14:25:46.534791Z
+1
+gcomesana
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+4aadde07-169c-4302-b40d-08daa5913de5
+
+persistence.xml
+file
+
+
+
+
+2009-10-06T15:56:55.000000Z
+e4639ae8c48791611fd27502b73dee6b
+2009-04-06T14:25:46.534791Z
+1
+gcomesana
+has-props
+
+orm.xml
+file
+
+
+
+
+2009-10-06T15:56:55.000000Z
+a5017947f240e72d9416bde94ec7375d
+2009-04-06T14:25:46.534791Z
+1
+gcomesana
+has-props
+

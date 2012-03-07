@@ -1,0 +1,41 @@
+8
+
+dir
+85
+svn+ssh://gcomesana@gredos/home/gcomesana/Development/svn-repo/appform/web/misc
+svn+ssh://gcomesana@gredos/home/gcomesana/Development/svn-repo
+
+
+
+2009-04-06T14:25:46.534791Z
+1
+gcomesana
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+4aadde07-169c-4302-b40d-08daa5913de5
+
+jaas.config
+file
+
+
+
+
+2009-10-08T15:11:30.000000Z
+5f456055eb288324333b8be87e9cf3cc
+2009-04-06T14:25:46.534791Z
+1
+gcomesana
+has-props
+

@@ -1,0 +1,40 @@
+8
+
+dir
+119
+svn+ssh://gcomesana@gredos/home/gcomesana/Development/svn-repo/appform/src/org/cnio/appform/util/curation
+svn+ssh://gcomesana@gredos/home/gcomesana/Development/svn-repo
+
+
+
+2009-12-09T11:59:50.031479Z
+119
+gcomesana
+
+
+svn:special svn:externals svn:needs-lock
+
+MissingAnsSamples.java
+file
+
+
+
+
+2009-11-19T13:34:10.000000Z
+44d5dd911f83590d5219261585436356
+2009-12-09T11:59:50.031479Z
+119
+gcomesana
+
+InterviewsCuration.java
+file
+
+
+
+
+2009-12-07T11:06:50.000000Z
+50d91a9f7418a45b3122bdfc88c78aaa
+2009-12-09T11:59:50.031479Z
+119
+gcomesana
+

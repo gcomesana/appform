@@ -1,0 +1,98 @@
+package org.cnio.appform.util.dump;
+
+import java.io.BufferedWriter;
+import java.util.regex.Pattern;
+import java.util.List;
+
+
+public class DataWriter {
+	
+  private final String CSV_SEP = "|";
+//  private Regex regexNum = new Regex ("(\\d+)")
+//	  private val regexLab = new Regex ("^[a-zA-Z]+[\\w|\\p{Punct}]+$")
+//  private val regexLab = new Regex ("(\\D+)")
+
+  private String regexNum = "(\\d+)";
+  private String regexDec = "(-?\\d+[\\.\\d+])";
+  private String regexLab = "(\\D+)";
+  
+  
+/**
+ * Writes out the header for the csv file. The fields are not determined and
+ * as a guard to stop writing out is set as the change of patient code (or the end of
+ * rowset).
+ * @param rows the whole rowset.
+ */
+  public String writeHeader (List<Object[]> rows) {
+    // This is ONLY for the header
+     StringBuilder out = new StringBuilder ();
+     Object[] aRow = rows.get(0);
+     String patRef = (String)aRow[0];
+
+System.out.println ("Writing file header as:");
+out.append("subject"+CSV_SEP+"group"+CSV_SEP+"interview"+CSV_SEP+"section"+CSV_SEP);
+     Object[] innRow = aRow;
+    for (Object[] row: rows) {
+// System.out.println ("codques: "+innRow[4]);
+      innRow = row;
+      if (((String)innRow[0]).equalsIgnoreCase(patRef))
+        out.append(innRow[4]+CSV_SEP);
+    }
+    out.setCharAt(out.length()-1, '\n');
+
+    return out.toString();
+  }
+
+
+
+
+  public void writeRows (BufferedWriter file, List<Object[]> rows) throws java.io.IOException {
+
+     StringBuilder out = new StringBuilder ();
+     String patRef = "";
+System.out.println ("Writing out rows ("+rows.size()+" rows)");
+			
+	
+
+    for (Object[] aRow: rows) {
+    	Object[] innRow = aRow;
+    	String grpName = "", intrvName = "", secName = "";
+    	
+      if (((String)innRow[0]).equalsIgnoreCase(patRef) == false) {
+  //finish the previous subject and start the next one (if so)
+        if (out.length() != 0) {
+//            out.replace(out.size-3, out.size, "\n")
+//          out.setCharAt(out.length()-1, '\n');
+//            print (out.toString)
+//        	out.deleteCharAt(out.length()-1);
+        	out.setCharAt(out.length()-1, '\n');
+          file.write(out.toString());
+          file.flush();
+          out.delete(0, out.length());
+        }
+        
+        patRef = (String)innRow[0];
+        grpName = (String)innRow[1];
+        intrvName = (String)innRow[2];
+        secName = (String)innRow[3];
+
+        out.append(patRef+CSV_SEP);
+        out.append("\""+grpName+"\""+CSV_SEP);
+        out.append("\""+intrvName+"\""+CSV_SEP);
+        out.append("\""+secName+"\""+CSV_SEP);
+      } // eo new patient detected
+
+      String ansVal = (String)innRow[5];
+      
+      if (Pattern.matches(regexLab, ansVal))
+      	ansVal = "\""+ansVal+"\"";
+      
+      
+      out.append(ansVal+CSV_SEP);
+    }
+
+    System.out.println ();
+    file.write(out.toString());
+    file.flush();
+  }
+}

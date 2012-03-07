@@ -1,0 +1,22 @@
+package org.cnio.appform.test;
+
+public class AspectTest {
+	private String msg;
+	
+	public AspectTest () {
+		msg = "x";
+	}
+	
+	public void setMsg (String message) {
+		msg = message;
+	}
+	
+	public String getMsg () {
+		return msg;
+	}
+	
+	
+	public void printMsg () {
+		System.out.println(msg);
+	}
+}

@@ -1,0 +1,108 @@
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+div #slider {
+	overflow-y:auto;
+/*	max-height:325px;
+	min-height:325px;
+	max-width:400px;*/
+	margin:0 auto;
+}
+
+input {
+	border: 1px solid darkblue;
+}
+	
+td {
+	font-size: 11px;
+	font-color: darkblue;
+}
+
+div #myDlg {
+	font-size: 11px;
+	font-color: darkblue;
+	
+}
+
+a {
+	font-color: blue;
+	text-decoration: none;
+}
+
+a:visited {
+	font-color: blue;
+	text-decoratin: none;
+}
+
+.spanfont {
+	font-size: 11px;
+	color: red;
+	font-weight: bold;
+	margin-top: 5px;
+	min-height: 20px; 
+	text-align: center;
+/*	border: 1px solid lime; */
+}
+
+
+.constraints-font {
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+/*	border: 1px solid lime; */
+}
+
+
+#tablesplit {
+	height: 200px;
+	max-height: 200px;
+	min-height: 200px;
+	border: 1px solid darkgray;
+	/*padding: 5px 5px 5px 5px;*/
+}
+
+
+/* These are classes to apply on the password strength bar */
+#passwordStrength {
+	float:left; 
+/*	margin-left:14px; */
+	height:10px;
+}
+
+* html #passwordStrength {
+	height:6px;
+}
+
+.strength0 {
+	width:175px;
+	background:#cccccc;
+}
+
+.strength1{
+	width:175px;
+	background:#ff0000;
+}
+
+.strength2{
+	width:200px;	
+	background:#FF7200;
+}
+
+.strength3{
+	width:225px;
+	background:#7DEF59;
+}
+
+.strength4{
+	background:#55FF00;
+	width:250px;
+}
+
+.strength5{
+	background:#55FF00;
+	width:275px;
+}
+
+ 

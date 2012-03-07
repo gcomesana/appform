@@ -1,0 +1,370 @@
+  /*==============================================================*/
+  /* DBMS name:      PostgreSQL 8                                 */
+  /* Created on:     18/03/2008 15:29:41                          */
+  /*==============================================================*/
+  
+  /*
+  drop table ANSWER;
+  
+  drop table ANSWERTYPE;
+  
+  drop table ANSWER_ITEM;
+  
+  drop table ENUMITEM;
+  
+  drop table ENUMTYPE;
+  
+  drop table ITEM;
+  
+  drop table QUESTION;
+  
+  drop table SECTION;
+  
+  drop table TEXT;
+  */
+  
+  
+  /*==============================================================*/
+  /* Table: ROLE                                                  */
+  /*==============================================================*/
+  create table ROLE (
+    IDROLE               SERIAL               not null,
+    NAME                 VARCHAR(128)         null,
+    DESCRIPTION          VARCHAR(128)         null,
+    C_DATE               TIMESTAMP            default now(),
+    U_DATE               TIMESTAMP,
+    
+    constraint PK_ROLE primary key (IDROLE)
+  );
+  
+  
+  /*==============================================================*/
+  /* Table: APPUSER                                               */
+  /*==============================================================*/
+  create table APPUSER (
+    IDUSER               SERIAL               not null,
+    USERNAME             VARCHAR(128)         NOT null,
+    PASSWD               VARCHAR(128)         NOT NULL,
+    C_DATE               TIMESTAMP            default now(),
+    U_DATE               TIMESTAMP,
+    
+    constraint PK_APPUSER primary key (IDUSER)
+  );
+  
+  /*==============================================================*/
+  /* Table: USER_ROLE                                             */
+  /* Table relationship M:N between user and role                 */
+  /*==============================================================*/
+  create table USER_ROLE (
+    IDUSER_ROLE         SERIAL    NOT NULL,
+    CODUSER             INT4      NOT NULL,
+    CODROLE             INT4      NOT NULL,
+    USERNAME             VARCHAR(128)         null,
+    ROLENAME             VARCHAR(128)         null,
+    constraint PK_USER_ROLE primary key (IDUSER_ROLE),
+    
+		constraint FK_USERROLE_USER foreign key (CODUSER)
+      references APPUSER (IDUSER)
+      on delete cascade on update cascade,
+      
+    constraint FK_USERROLE_ROLE foreign key (CODROLE)
+      references ROLE (IDROLE)
+      on delete cascade on update cascade
+/*      
+    constraint FK_USERROLE_USERNAME foreign key (USERNAME)
+      references APPUSER (USERNAME)
+      on delete cascade on update cascade,
+      
+    constraint FK_USERROLE_ROLENAME foreign key (ROLENAME)
+      references ROLE (NAME)
+      on delete cascade on update cascade
+*/      
+  );
+  
+  
+  /*==============================================================*/
+  /* Table: PATIENT                                               */
+  /* This table contains the data for a patient                   */
+  /* The field CODPATIENT, which can be confusing, keeps the code */
+  /* for the patient for this study and he is an structured id    */
+  /* (for more info, see the project documentation                */
+  /*==============================================================*/
+  create table PATIENT (
+    IDPATIENT            SERIAL               not null,
+    NAME                 VARCHAR(256)         NOT null,
+    CODPATIENT           VARCHAR(15)          NOT NULL,
+    ADDRESS              VARCHAR(512),
+    PHONE                VARCHAR (20),
+    NUMHC                VARCHAR(32)         NOT NULL,
+    C_DATE               TIMESTAMP           default now(),
+    U_DATE               TIMESTAMP,
+    
+    constraint PK_PATIENT primary key (IDPATIENT)
+  );
+  
+  
+  
+  /*==============================================================*/
+  /* Table: PROJECT                                               */
+  /*==============================================================*/
+  create table PROJECT (
+    IDPRJ                SERIAL               not null,
+    NAME                 VARCHAR(128)         null,
+    DESCRIPTION          VARCHAR(128)         null,
+    C_DATE               TIMESTAMP            default now(),
+    U_DATE               TIMESTAMP,
+    
+    constraint PK_PROJECT primary key (IDPRJ)
+  );
+
+  
+  /*==============================================================*/
+  /* Table: INTERVIEW                                             */
+  /*==============================================================*/
+  create table INTERVIEW (
+    IDINTERVIEW          SERIAL                 not null,
+    NAME                 VARCHAR(128)         null,
+    DESCRIPTION          VARCHAR(128)         null,
+    
+    CODPRJ               INT4,
+    C_DATE               TIMESTAMP            default now(),
+    U_DATE               TIMESTAMP,
+    
+    constraint PK_INTERVIEW primary key (IDINTERVIEW),
+    constraint FK_INTERVIEW_IS_FORMED_PROJECT foreign key (CODPRJ)
+        references PROJECT (IDPRJ)
+        on delete cascade on update cascade
+  );
+  
+  
+  /*==============================================================*/
+  /* Table: INTR_INSTANCE                                         */
+  /* An interview instance, when applied to a patient by an user
+   * CODINTERVIEW is to see what is the interview template        */
+  /*==============================================================*/
+  create table INTR_INSTANCE (
+     IDINSTANCE           SERIAL               not null,
+     place                varchar(256),
+     date_ini             timestamp,
+     date_end             timestamp,
+	   CODINTERVIEW		      INT4				   NOT NULL,
+     
+     constraint PK_INTR_INSTANCE primary key (IDINSTANCE),
+     constraint FK_INSTANCE_INTERVIEW foreign key (CODINTERVIEW)
+        references INTERVIEW (IDINTERVIEW)
+        on delete restrict on update restrict
+  );
+  
+  
+  
+  /*==============================================================*/
+  /* Table: SECTION                                               */
+  /*==============================================================*/
+  create table SECTION (
+     IDSECTION            SERIAL               not null,
+     NAME                 VARCHAR(128)         null,
+     DESCRIPTION          VARCHAR(128)         null,
+     SECTION_ORDER        INT4                 null,
+     CODINTERVIEW         INT4,
+     
+     C_DATE               TIMESTAMP            default now(),
+     U_DATE               TIMESTAMP,
+     constraint PK_SECTION primary key (IDSECTION),
+     constraint FK_SECTION_IS_FORMED_INTERVIEW foreign key (CODINTERVIEW)
+        references INTERVIEW (IDINTERVIEW)
+        on delete cascade on update cascade
+  );
+  
+  /*==============================================================*/
+  /* Table: ITEM                                                  */
+  /* (Usuarlly idsectin gotta be not null, but this is allowed in */
+  /*  order to create item objects without section related at the */
+  /*  beginning)                                                  */
+  /*==============================================================*/
+  create table ITEM (
+     IDITEM               SERIAL               not null,
+     IDSECTION            INT4,--                 not null,
+     ITE_IDITEM           INT4                 null,
+     CONTENT              VARCHAR(10240)       null,
+     ITEM_ORDER           INT4                 null,
+     REPEATABLE						INT4								 null,
+     
+     C_DATE               TIMESTAMP            default now(),
+     U_DATE               TIMESTAMP,
+     constraint PK_ITEM primary key (IDITEM),
+     constraint FK_ITEM_IS_FORMED_SECTION foreign key (IDSECTION)
+        references SECTION (IDSECTION)
+        on delete restrict on update restrict,
+     constraint FK_ITEM_CONTAINS_ITEM foreign key (ITE_IDITEM)
+        references ITEM (IDITEM)
+        on delete cascade on update cascade
+  );
+  
+  /*==============================================================*/
+  /* Table: QUESTION                                              */
+  /* The codquestion is to name the code of a question as is in   */
+  /* spec document inside a section (h2a, e1...).									*/
+  /*==============================================================*/
+  create table QUESTION (
+     IDQUESTION           SERIAL               not null,
+     codquestion					varchar(16),
+--     CODITEM              INT4                 not null,
+--     MANDATORY            INT4                 null,
+--     REPEATABLE           INT4                 null,
+     constraint PK_QUESTION primary key (IDQUESTION),
+     constraint FK_QUESTION_ITEMISA2_ITEM foreign key (IDQUESTION)
+        references ITEM (IDITEM)
+        on delete restrict on update restrict
+  );
+  
+  /*==============================================================*/
+  /* Table: TEXT                                                  */
+  /*==============================================================*/
+  create table TEXT (
+-- This one should be fk but hibernate doesnt allow it  
+--     CODITEM               INT4                 not null,
+     IDTEXT                 SERIAL               not null,
+     HIGHLIGHTED            INT4,
+     constraint PK_TEXT primary key (IDTEXT),
+     constraint FK_TEXT_ITEMISA_ITEM foreign key (IDTEXT)
+        references ITEM (IDITEM)
+        on delete restrict on update restrict
+  );
+  
+  
+  /*==============================================================*
+   * Table: ANSWER                                                *
+   * The answer for a question in a instance of interview (with a patient)
+   * With iditem/idquestion, you can know the question
+   * With codintr_ins you can know the interview instance (and, then
+   * the patient, if so)
+   * With answer_order is possible to have several rows with the same
+   * idquestion/iditem and several answers in order (ex. frequency) 
+   *==============================================================*/
+  create table ANSWER (
+     IDANSWER             SERIAL               not null,
+     IDITEM               INT4                 not null,
+     IDQUESTION           INT4                 not null,
+     CODINTR_INS		  INT4				   not null,
+     theValue             VARCHAR(512)         null,
+     ANSWER_ORDER         INT4                 null,
+     
+	 constraint PK_ANSWER primary key (IDANSWER),
+     constraint FK_ANSWER_ISRESPOND_QUESTION foreign key (IDQUESTION)
+        references QUESTION (IDQUESTION)
+        on delete cascade on update cascade,
+ 	 constraint FK_ANSWER_INTRINST foreign key (CODINTR_INS)
+        references INTR_INSTANCE (IDINSTANCE)
+        on delete cascade on update cascade
+  );
+  
+  
+  
+  /*==============================================================*/
+  /* Table: USR_PAT_INTRINST                                      */
+  /* Represents the ternary relationship between a patient (PAT), */
+  /* the interviewer (USR) and the interview to the patient       */
+  /* (INTRINST)                                                   */
+  /*==============================================================*/
+  create table USR_PAT_INTRINST (
+    ID_UPI      	SERIAL    NOT NULL,
+    CODUSER     	INT4	  NOT NULL,
+  	CODPATIENT		INT4	  NOT NULL,
+	CODINTR_INS		INT4	  NOT NULL,
+
+	constraint PK_USR_PAT_INTRINST primary key (ID_UPI),
+	 constraint FK_USR_TERNARY_REL foreign key (CODUSER)
+	    references APPUSER (IDUSER)
+	    on delete cascade on update cascade,
+	    
+	 constraint FK_PAT_TERNARY_REL foreign key (CODPATIENT)
+	    references PATIENT (IDPATIENT)
+	    on delete cascade on update cascade,
+
+	 constraint FK_INTR_INS_TERNARY_REL foreign key (CODINTR_INS)
+	    references INTR_INSTANCE (IDINSTANCE)
+	    on delete cascade on update cascade
+  );
+  
+  
+  
+  
+  /*==============================================================*/
+  /* Table: ANSWER_ITEM                                           */
+  /*==============================================================*/
+  create table ANSWER_ITEM (
+     IDANSITEM            SERIAL               not null,
+--     IDQUESTION           INT4                 not null,
+     ANSWER_ORDER         INT4                 null,
+     NAME                 VARCHAR(128)         null,
+     DESCRIPTION          VARCHAR(128)         null,
+     constraint PK_ANSWER_ITEM primary key (IDANSITEM)
+/*     constraint FK_ANSWER_I_EXPECTS_QUESTION foreign key (IDQUESTION)
+        references QUESTION (IDQUESTION)
+        on delete restrict on update restrict*/
+  );
+  
+-- This next table is due to the M-N relationship between answer types and
+-- questions  
+  /*==============================================================*/
+  /* Table: QUESTION_ANSITEM                                      */
+  /*==============================================================*/
+  create table QUESTION_ANSITEM (
+     ID                   SERIAL            not null,
+     CODANSITEM            INT4               not null,
+     CODQUESTION           INT4                 not null,
+     ANSWER_ORDER         INT4                 null,     
+     
+     constraint PK_QUESTION_ANSITEM primary key (ID),
+     constraint FK_ANSWER_ITEM foreign key (CODANSITEM)
+        references ANSWER_ITEM (IDANSITEM)
+        on delete cascade on update cascade,
+        
+     constraint FK_QUESTION foreign key (CODQUESTION)
+        references QUESTION (IDQUESTION)
+        on delete cascade on update cascade
+  );
+  
+  /*==============================================================*/
+  /* Table: ANSWERTYPE                                            */
+  /*==============================================================*/
+  create table ANSWERTYPE (
+--     CODANSITEM           INT4                 not null,
+     IDANSTYPE          INT4               not null,
+     pattern            VARCHAR(256),
+     constraint PK_ANSWERTYPE primary key (IDANSTYPE),
+     constraint FK_ANSWERTY_ISONEOF_ANSWER_I foreign key (IDANSTYPE)
+        references ANSWER_ITEM (IDANSITEM)
+        on delete cascade on update cascade
+  );
+  
+  /*==============================================================*/
+  /* Table: ENUMTYPE                                              */
+  /*==============================================================*/
+  create table ENUMTYPE (
+--     CODANSITEM            INT4                 not null,
+     IDENUMTYPE           INT4               not null,
+     NUMITEMS             INT4,
+     constraint PK_ENUMTYPE primary key (IDENUMTYPE),
+     constraint FK_ENUMTYPE_ISONEOF2_ANSWER_I foreign key (IDENUMTYPE)
+        references ANSWER_ITEM (IDANSITEM)
+        on delete cascade on update cascade
+  );
+  
+  /*==============================================================*/
+  /* Table: ENUMITEM                                              */
+  /*==============================================================*/
+  create table ENUMITEM (
+     IDENUMITEM           SERIAL               not null,
+     CODENUMTYPE           INT4                 not null,
+     NAME                 VARCHAR(128)         null,
+     DESCRIPTION          VARCHAR(128)         null,
+     theValue             VARCHAR(256)         null,
+     listorder            INT4                 null,
+     constraint PK_ENUMITEM primary key (IDENUMITEM),
+     constraint FK_ENUMITEM_CONTAINS__ENUMTYPE foreign key (CODENUMTYPE)
+        references ENUMTYPE (IDENUMTYPE)
+        on delete restrict on update restrict
+  );
+  
+  

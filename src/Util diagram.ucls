@@ -1,0 +1,158 @@
+<class-diagram version="0.9.86" automaticImage="JPEG" icons="true" always-add-relationships="false" 
+  generalizations="true" realizations="true" associations="true" dependencies="false" nesting-relationships="true">  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.util.HibController.ItemManager" project="appform" 
+    file="/appform/src/org/cnio/appform/util/HibController.java" binary="false">    
+    <position x="1326" y="668" width="258" height="231"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="true" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.util.RenderEng" project="appform" 
+    file="/appform/src/org/cnio/appform/util/RenderEng.java" binary="false">    
+    <position x="2284" y="502" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="true" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.util.HibernateUtil" project="appform" 
+    file="/appform/src/org/cnio/appform/util/HibernateUtil.java" binary="false">    
+    <position x="799" y="213" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="true" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.util.TransportSender" project="appform" 
+    file="/appform/src/org/cnio/appform/util/TransportSender.java" binary="false">    
+    <position x="1064" y="85" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="true" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.util.AppUserCtrl" project="appform" 
+    file="/appform/src/org/cnio/appform/util/AppUserCtrl.java" binary="false">    
+    <position x="1968" y="97" width="227" height="274"/>    
+    <display autosize="false" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="true" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.util.HibController" project="appform" 
+    file="/appform/src/org/cnio/appform/util/HibController.java" binary="false">    
+    <position x="1624" y="-35" width="86" height="39"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="true" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.util.HibController.EnumTypeCtrl" project="appform" 
+    file="/appform/src/org/cnio/appform/util/HibController.java" binary="false">    
+    <position x="1624" y="668" width="369" height="247"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="true" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.util.SingletonPreserver" project="appform" 
+    file="/appform/src/org/cnio/appform/util/SingletonPreserver.java" binary="false">    
+    <position x="1278" y="-35" width="129" height="87"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="true" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.util.MailSender" project="appform" 
+    file="/appform/src/org/cnio/appform/util/MailSender.java" binary="false">    
+    <position x="1457" y="-35" width="127" height="71"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="true" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.util.LogFile" project="appform" 
+    file="/appform/src/org/cnio/appform/util/LogFile.java" binary="false">    
+    <position x="969" y="205" width="190" height="199"/>    
+    <display autosize="false" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="true" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.util.IntrvFormCtrl" project="appform" 
+    file="/appform/src/org/cnio/appform/util/IntrvFormCtrl.java" binary="false">    
+    <position x="2519" y="311" width="270" height="343"/>    
+    <display autosize="false" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="true" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.util.HibController.SectionCtrl" project="appform" 
+    file="/appform/src/org/cnio/appform/util/HibController.java" binary="false">    
+    <position x="2033" y="668" width="212" height="135"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="true" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="org.cnio.appform.util.IntrvController" project="appform" 
+    file="/appform/src/org/cnio/appform/util/IntrvController.java" binary="false">    
+    <position x="2529" y="-35" width="250" height="311"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="true" package="true" protected="true" private="false"/>    
+    </display>  
+  </class>  
+  <dependency>    
+    <source project="appform" name="org.cnio.appform.util.RenderEng" 
+      file="/appform/src/org/cnio/appform/util/RenderEng.java" binary="false"/>    
+    <target project="appform" name="org.cnio.appform.util.IntrvFormCtrl" 
+      file="/appform/src/org/cnio/appform/util/IntrvFormCtrl.java" binary="false"/>  
+  </dependency>  
+  <nesting>    
+    <source project="appform" name="org.cnio.appform.util.HibController" 
+      file="/appform/src/org/cnio/appform/util/HibController.java" binary="false"/>    
+    <target project="appform" name="org.cnio.appform.util.HibController.SectionCtrl" 
+      file="/appform/src/org/cnio/appform/util/HibController.java" binary="false"/>  
+  </nesting>  
+  <dependency>    
+    <source project="appform" name="org.cnio.appform.util.IntrvController" 
+      file="/appform/src/org/cnio/appform/util/IntrvController.java" binary="false"/>    
+    <target project="appform" name="org.cnio.appform.util.AppUserCtrl" 
+      file="/appform/src/org/cnio/appform/util/AppUserCtrl.java" binary="false"/>  
+  </dependency>  
+  <nesting>    
+    <source project="appform" name="org.cnio.appform.util.HibController" 
+      file="/appform/src/org/cnio/appform/util/HibController.java" binary="false"/>    
+    <target project="appform" name="org.cnio.appform.util.HibController.EnumTypeCtrl" 
+      file="/appform/src/org/cnio/appform/util/HibController.java" binary="false"/>  
+  </nesting>  
+  <dependency>    
+    <source project="appform" name="org.cnio.appform.util.IntrvFormCtrl" 
+      file="/appform/src/org/cnio/appform/util/IntrvFormCtrl.java" binary="false"/>    
+    <target project="appform" name="org.cnio.appform.util.AppUserCtrl" 
+      file="/appform/src/org/cnio/appform/util/AppUserCtrl.java" binary="false"/>  
+  </dependency>  
+  <association>    
+    <source project="appform" name="org.cnio.appform.util.SingletonPreserver" 
+      file="/appform/src/org/cnio/appform/util/SingletonPreserver.java" binary="false" navigable="false">      
+      <attribute name="lifeLine"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="appform" name="org.cnio.appform.util.SingletonPreserver" 
+      file="/appform/src/org/cnio/appform/util/SingletonPreserver.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting>    
+    <source project="appform" name="org.cnio.appform.util.HibController" 
+      file="/appform/src/org/cnio/appform/util/HibController.java" binary="false"/>    
+    <target project="appform" name="org.cnio.appform.util.HibController.ItemManager" 
+      file="/appform/src/org/cnio/appform/util/HibController.java" binary="false"/>  
+  </nesting>  
+  <classifier-display autosize="true" package="true" initial-value="false" signature="true" visibility="true">    
+    <attributes public="false" package="false" protected="false" private="false"/>    
+    <operations public="true" package="true" protected="true" private="false"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

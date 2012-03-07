@@ -1,0 +1,73 @@
+package org.cnio.appform.util.dump;
+
+
+import java.util.Hashtable;
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+
+public class DBDump {
+	
+	
+	private String prjName = ""; 
+	private String intrvName = "";
+	private String grpName = ""; 
+	private Integer orderSec = 0;
+	private String fileName = "";
+	private int sortOrd = 0;
+	
+	
+	public DBDump (String prj, String intrv, String grp, Integer orderSec,
+								 Integer sortOrder, String file) {
+		prjName = prj;
+		intrvName = intrv;
+		grpName = grp;
+		this.orderSec = orderSec;
+		sortOrd = sortOrder;
+		fileName = file;
+	}
+	
+
+	public DBDump (String fileVars) {
+		if (fileVars != null && fileVars.length() > 0)
+			varsmap = buildMap (fileVars);
+	}
+	
+	
+	public DBDump () {
+		
+	}
+	
+	
+
+	
+	
+	public DBDump () {
+		
+	}
+	
+	
+	public void dump () {
+
+//		DynamicRetriever dumper = new DynamicRetriever (PATH_2_DUMP);
+		NewRetriever dumper = new NewRetriever (PATH_2_DUMP);
+		try {
+//			dumper.getDump ("157", 50, 1, 12, PATH_2_DUMP+"/qes12stpaubis.csv");
+//			dumper.getDump ("157", 50, 304,1, PATH_2_DUMP+"/qes1marbis.csv");
+			
+			dumper.getDump(prjName, intrvName, grpName, orderSec, sortOrd, fileName);
+		}
+		catch (java.io.FileNotFoundException ex) {
+			System.err.println("The directory to store the dump file does not exists");
+		}
+		catch (java.io.IOException ioEx) {
+			System.err.println(ioEx.getMessage());
+//			ioEx.printStackTrace();
+		}
+    
+	}
+
+
+	
+}

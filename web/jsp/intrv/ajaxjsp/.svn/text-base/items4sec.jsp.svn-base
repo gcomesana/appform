@@ -1,0 +1,247 @@
+<%--
+This page gets the items for a section. It takes into acount the existence of
+a patientid in the session attribute set in order to include the patient code
+introduction page or display the proper section.
+--%>
+
+<%@ page language="java" contentType="text/html;charset=UTF-8"%>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+<%@page import="org.hibernate.Session, java.util.Collection, 
+								java.util.Iterator, java.util.ArrayList, java.util.List,
+								java.util.Enumeration, java.util.Calendar, java.util.Locale,
+								java.util.TimeZone, java.text.DateFormat"  %>
+								
+<%@page import="org.apache.commons.lang.StringEscapeUtils" %>								
+<%@page import="org.cnio.appform.entity.*,
+								org.cnio.appform.util.IntrvFormCtrl,
+								org.cnio.appform.util.HibernateUtil,
+								org.cnio.appform.util.HibController,
+								org.cnio.appform.util.RenderEng" %>
+	
+<%
+Integer isLogged = (Integer)session.getAttribute("logged");
+Integer	intrvId = (Integer)session.getAttribute ("intrvId");
+Integer usrId = (Integer)session.getAttribute ("usrid");
+if (isLogged == null || intrvId == null || usrId == null) {
+	String jsonMsg = "{\"res\":0,\"msg\":\"The session has expired. Log in again\"}";
+	out.println(jsonMsg);
+	
+	return;
+}
+
+// if frmid and spid are present, then 
+// this is the result of an update/save of an item
+String secId = request.getParameter ("frmid");
+String patId = request.getParameter ("patid");
+String finish = request.getParameter("intrv_end");
+
+String rt = (String)session.getAttribute("rt");
+
+pageContext.setAttribute ("frmid", secId);
+pageContext.setAttribute ("patid", patId);
+// pageContext.setAttribute ("rt", rt);
+
+// usrId = (usrId == null)? 100: usrId;
+
+String itrtd="<tr><td>", etrtd="</td></tr>", btnDisabled = "";
+List<AbstractItem> itemsSec = null;
+Section sec = null;
+Session hibSes = HibernateUtil.getSessionFactory().openSession();
+IntrvFormCtrl intrCtrl = new IntrvFormCtrl(hibSes);
+
+
+if (secId != null) { // it is suppossed than we have always a secId
+	sec = (Section)hibSes.get(Section.class, Integer.decode(secId));
+// Here we have to read simple text, questions and containers!!!!
+//	itemsSec = HibernateUtil.getItems4Section (hibSes, Integer.decode(secId));
+	itemsSec = HibernateUtil.getContainers4Section(hibSes, sec);
+	pageContext.setAttribute("section", sec);
+}
+else { // this is in the case the secId is missing, which implies the load of the first section
+	Interview intrv = (Interview)hibSes.get(Interview.class, intrvId);
+	sec = intrv.getSections().get(0);
+	itemsSec = HibernateUtil.getContainers4Section(hibSes, sec);
+	
+	pageContext.setAttribute ("section", sec);
+	secId = sec.getId().toString();
+}
+AppUser user = (AppUser)hibSes.get(AppUser.class, usrId);
+
+// this switch is to check whether or not this is a normal page or the
+// intro page and, so, disabling buttons or not
+boolean normalpage = false, coordinatorRole = false;
+
+// Previewing
+if (session.getAttribute ("preview") != null) {
+	String codProject = (String)session.getAttribute("prjId");
+	
+//	codProject = (codProject == null? IntrvFormCtrl.DEFAULT_PRJ: codProject);
+// for preview we use the default project with the NULL_PATIENT
+// no worries as it is not possible to save data on preview
+	codProject = IntrvFormCtrl.DEFAULT_PRJ;
+	Patient pat = intrCtrl.getPatientFromCode(IntrvFormCtrl.NULL_PATIENT);
+	patId = Integer.toString(pat.getId());
+	btnDisabled = "disabled=\"disabled\" ";
+}
+else { // or not previewing but the patId can be got from the session vars
+	Integer thePatId = (Integer)session.getAttribute ("patId");
+	patId = (thePatId != null)? thePatId.toString(): patId;
+	
+// Besides checking the patient id, we have to check whether or not the
+// role is authorized to perform the interview
+	String roles = (String)session.getAttribute("roles");
+	if ((roles.indexOf("editor") == -1) && (roles.indexOf("admin") == -1) &&
+			(roles.indexOf("interviewer") == -1)) {
+		btnDisabled = "disabled=\"disabled\" ";
+		coordinatorRole = true;
+	}
+}
+
+// This means we are rendering the intro page and the guard patId == null
+// indicates this is a new interview. patId is set null on saveform.jsp when
+// the intervie is finished/paused
+if (patId == null) { 
+	btnDisabled = "";
+%>
+
+<jsp:include page="intropage.jsp" /> 
+
+<%
+}
+else { // a "normal" section
+	normalpage = true;
+//	Patient pat = (Patient)hibSes.get(Patient.class, Integer.decode(patId));
+	RenderEng render;
+	if (rt == null || rt.equalsIgnoreCase("0"))
+		render	= new RenderEng();
+	else
+		render = new RenderEng (1);
+	
+	out.println ("<form id=\"sectionForm\" name=\"sectionForm\">");
+	out.println ("<span class=\"titleForm\">"+sec.getName()+"</span><br><br>");
+	out.println ("<table>");
+	out.println ("<input type=\"hidden\" id=\"patId\" name=\"patId\" value=\""+patId+"\" />");
+	out.println ("<input type=\"hidden\" id=\"secId\" name=\"secId\" value=\""+secId+"\" />");
+	out.println ("<input type=\"hidden\" id=\"finish\" name=\"finish\" value=\"0\" />");
+	
+	
+/////////////////////////////////////////////////////////////////////////
+// In the case of short interview, display the textarea for justifying
+	Integer shortPerf = (Integer)session.getAttribute("shortPerf");
+	if (shortPerf != null && shortPerf == 1 && sec.getSectionOrder() == 1) {
+		PerfUserHistory puh = 
+				intrCtrl.getLastJustification(Integer.decode(patId), intrvId);
+		
+		String msgEn = "A <b>SHORT</b> interview performance was chosen this time. This decision has ";
+		msgEn += "to be justified. The next text is the justification for this ";
+		msgEn += "interview last time it was performed. Just keep this text or ";
+		msgEn += "edit it to justify the short performance this time";
+		String msgEs = "Se ha elegido realizar una entrevista <b>CORTA</b>. Esta decisión ";
+		msgEs += "tiene que ser justificada. El siguiente texto es la justificación ";
+		msgEs += "para esta entrevista la última vez que fue realizada. Tan solo ";
+		msgEs += "mantiene este texto o edítalo para justificar la entrevista ";
+		msgEs += "corta esta vez";
+		
+		String justifyTime = "";
+		if (puh != null) {
+			justifyTime = "<br>Last justification date/time was: ";
+			DateFormat endf = DateFormat.getDateInstance(DateFormat.LONG, Locale.ENGLISH);
+			justifyTime += endf.format(puh.getTimeStamp());
+		}
+		
+		Integer grpId = (Integer)session.getAttribute("primaryGrpId");
+		AppGroup grp = 	(AppGroup)hibSes.get(AppGroup.class, grpId);
+
+		if (grp.getCodgroup().toUpperCase() == "ESP")
+			out.print("<tr><td>"+msgEs+justifyTime+"</td></tr>");
+		else
+			out.print("<tr><td>"+msgEn+justifyTime+"</td></tr>");
+		
+		out.println("<tr><td>");
+		String onBlurRT = " onblur=\"event.stopPropagation();";
+		onBlurRT += "intrvFormCtrl.sendJustification(this, "+patId+", "+intrvId+")\" ";
+		
+		String onFocusTxt = " onfocus=\"intrvFormCtrl.onfocus('"+
+					IntrvFormCtrl.JUSTIFICATION_NAME+"');\" ";
+		String txtJustify = "<textarea id=\""+IntrvFormCtrl.JUSTIFICATION_NAME+
+				"\" name=\""+IntrvFormCtrl.JUSTIFICATION_NAME+"\"";
+		
+// REAL TIME EVENT for justification textarea		
+		if (rt != null && rt.equalsIgnoreCase("1"))
+			txtJustify += onBlurRT;
+		
+		txtJustify += onFocusTxt + " rows=\"5\" cols=\"50\" wrap=\"soft\" must=\"1\">";
+		txtJustify += puh == null? "": 
+							(puh.getJustification() == null)? "": puh.getJustification();
+		txtJustify += "</textarea>";
+		
+		out.print (txtJustify);
+		out.print("</td></tr>");
+	}
+/////////////////////////////////////////////////////////////////////////
+// END OF display the textarea for justifying
+	
+	for (AbstractItem ai : itemsSec) {
+		render.clearHtmlStr();
+		/*
+System.out.println("item4sec.jsp: calling render with: ("+ai.getId()+
+					","+Integer.decode(patId)+") "+ai.getContent()); 
+		*/		
+		render.html4Item (hibSes, ai, Integer.decode(patId), intrCtrl);
+out.println (render.getHtmlStr());		
+	}	
+} // else (this is a "normal" section)
+
+// Integer currentSec = (Integer)session.getAttribute ("currentSec");
+// currentSec = (currentSec == null)? 1: currentSec;
+Integer currentSec;
+if (finish == null) {
+	List<Integer> idSecs = (List<Integer>)session.getAttribute ("sectionIds");
+	currentSec = idSecs.indexOf(Integer.decode(secId));
+
+	session.setAttribute ("currentSec", currentSec);
+}
+else {
+	session.setAttribute ("currentSec", 0);
+	currentSec = 0;
+}
+
+out.println(itrtd);
+out.println("<br>");
+
+// buttons
+String country = (String)session.getAttribute("primaryGrpName"), btnSave, btnCont;
+if (country.equalsIgnoreCase("SPAIN")) {
+	btnSave = " Guardar ";
+	btnCont = " Continuar ";
+}
+else {
+	btnSave = " Save ";
+	btnCont = " Continue ";
+}
+
+if (!coordinatorRole || !normalpage) {
+	out.println("<input type=\"button\" name=\"btnSend\" value=\""+btnCont+"\" "+
+							btnDisabled +
+							"onclick=\"intrvFormCtrl.send(this.form)\"/>&nbsp;&nbsp;");
+	out.println("<input type=\"button\" name=\"btnEnd\" value=\""+btnSave+"\" "+
+							btnDisabled +
+							"onclick=\"intrvFormCtrl.finish(this.form,"+currentSec+")\"/>");
+}
+
+if (normalpage && coordinatorRole) {
+	out.println("<input type=\"button\" name=\"btnEnd\" value=\"Finish\" "+
+				"onclick=\"intrvFormCtrl.nextCheck();\"/>");
+}
+//
+out.println(etrtd);
+out.println("</table>");
+out.println("</form>");
+
+System.out.println("items4sec before finish: hibSes.isOpen? "+hibSes.isOpen());
+if (hibSes != null && hibSes.isOpen())
+	hibSes.close();
+%>

@@ -1,0 +1,862 @@
+2011-08-16 15:54:59,933  INFO TableMetadata.<init>:43 - indexes: [pk_performance, perf_unique_intrv-pat-grp]
+2011-08-16 15:54:59,953  INFO TableMetadata.<init>:39 - table found: public.project
+2011-08-16 15:54:59,953  INFO TableMetadata.<init>:40 - columns: [u_date, description, name, project_code, c_date, idprj]
+2011-08-16 15:54:59,953  INFO TableMetadata.<init>:42 - foreign keys: []
+2011-08-16 15:54:59,953  INFO TableMetadata.<init>:43 - indexes: [pk_project]
+2011-08-16 15:54:59,970  INFO TableMetadata.<init>:39 - table found: public.pat_gives_answer2ques
+2011-08-16 15:54:59,970  INFO TableMetadata.<init>:40 - columns: [codquestion, codanswer, codpat, idp_a_q, answer_number, answer_grp, answer_order]
+2011-08-16 15:54:59,970  INFO TableMetadata.<init>:42 - foreign keys: [fk_pat_give_rel_ans_p_answer, fk_pat_give_rel_pat_a_patient, fk_pat_give_rel_ques__question]
+2011-08-16 15:54:59,970  INFO TableMetadata.<init>:43 - indexes: [pk_pat_gives_answer2ques]
+2011-08-16 15:54:59,986  INFO TableMetadata.<init>:39 - table found: public.question
+2011-08-16 15:54:59,986  INFO TableMetadata.<init>:40 - columns: [codquestion, mandatory, repeatable, idquestion]
+2011-08-16 15:54:59,986  INFO TableMetadata.<init>:42 - foreign keys: [fk_question_itemisa2_item, fkba823be6e7b3fc5]
+2011-08-16 15:54:59,986  INFO TableMetadata.<init>:43 - indexes: [pk_question]
+2011-08-16 15:55:00,002  INFO TableMetadata.<init>:39 - table found: public.question_ansitem
+2011-08-16 15:55:00,002  INFO TableMetadata.<init>:40 - columns: [id, codquestion, pattern, codansitem, answer_order]
+2011-08-16 15:55:00,002  INFO TableMetadata.<init>:42 - foreign keys: [fk_answer_item, fk_question]
+2011-08-16 15:55:00,002  INFO TableMetadata.<init>:43 - indexes: [pk_question_ansitem]
+2011-08-16 15:55:00,018  INFO TableMetadata.<init>:39 - table found: public.rel_grp_appusr
+2011-08-16 15:55:00,018  INFO TableMetadata.<init>:40 - columns: [idgrp_usr, coduser, active, codgroup]
+2011-08-16 15:55:00,018  INFO TableMetadata.<init>:42 - foreign keys: [fk_rel_grp__rel_grp_a_appgroup, fk_rel_grp__rel_grp_a_appuser]
+2011-08-16 15:55:00,019  INFO TableMetadata.<init>:43 - indexes: [pk_rel_grp_appusr]
+2011-08-16 15:55:00,034  INFO TableMetadata.<init>:39 - table found: public.rel_prj_appusers
+2011-08-16 15:55:00,034  INFO TableMetadata.<init>:40 - columns: [coduser, idprj_usrs, codprj]
+2011-08-16 15:55:00,035  INFO TableMetadata.<init>:42 - foreign keys: [fk_rel_prj__rel_prj_a_project, fk_rel_prj__rel_prj_a_appuser]
+2011-08-16 15:55:00,035  INFO TableMetadata.<init>:43 - indexes: [pk_rel_prj_appusers]
+2011-08-16 15:55:00,050  INFO TableMetadata.<init>:39 - table found: public.section
+2011-08-16 15:55:00,050  INFO TableMetadata.<init>:40 - columns: [codinterview, idsection, u_date, description, name, c_date, section_order]
+2011-08-16 15:55:00,051  INFO TableMetadata.<init>:42 - foreign keys: [fk_section_is_formed_interview]
+2011-08-16 15:55:00,051  INFO TableMetadata.<init>:43 - indexes: [pk_section]
+2011-08-16 15:55:00,066  INFO TableMetadata.<init>:39 - table found: public.simpletypes_view
+2011-08-16 15:55:00,066  INFO TableMetadata.<init>:40 - columns: [idansitem, name, codintrv]
+2011-08-16 15:55:00,066  INFO TableMetadata.<init>:42 - foreign keys: []
+2011-08-16 15:55:00,066  INFO TableMetadata.<init>:43 - indexes: []
+2011-08-16 15:55:00,082  INFO TableMetadata.<init>:39 - table found: public.user_role
+2011-08-16 15:55:00,082  INFO TableMetadata.<init>:40 - columns: [username, codrole, rolename, coduser, iduser_role]
+2011-08-16 15:55:00,082  INFO TableMetadata.<init>:42 - foreign keys: [fk_userrole_user, fk_userrole_role]
+2011-08-16 15:55:00,083  INFO TableMetadata.<init>:43 - indexes: [pk_user_role]
+2011-08-16 15:55:00,090 ERROR SchemaUpdate.execute:155 - Unsuccessful: alter table enumtypes_view add constraint FK6306066C34D3EC6D foreign key (codintrv) references interview
+2011-08-16 15:55:00,090 ERROR SchemaUpdate.execute:156 - ERROR: "enumtypes_view" is not a table
+2011-08-16 15:55:00,092 ERROR SchemaUpdate.execute:155 - Unsuccessful: alter table simpletypes_view add constraint FK921B39DD34D3EC6D foreign key (codintrv) references interview
+2011-08-16 15:55:00,092 ERROR SchemaUpdate.execute:156 - ERROR: "simpletypes_view" is not a table
+2011-08-16 15:55:00,092  INFO SchemaUpdate.execute:160 - schema update complete
+2011-08-16 15:55:00,141  INFO LogFile.info:92 - IntrvController.createInterview ()!!!
+2011-08-16 15:58:20,298  INFO Version.<clinit>:15 - Hibernate Annotations 3.3.0.GA
+2011-08-16 15:58:20,309  INFO Environment.<clinit>:514 - Hibernate 3.2.6
+2011-08-16 15:58:20,312  INFO Environment.<clinit>:547 - hibernate.properties not found
+2011-08-16 15:58:20,315  INFO Environment.buildBytecodeProvider:681 - Bytecode provider name : cglib
+2011-08-16 15:58:20,321  INFO Environment.<clinit>:598 - using JDK 1.4 java.sql.Timestamp handling
+2011-08-16 15:58:20,379  INFO Configuration.configure:1432 - configuring from resource: /hibernate.cfg.xml
+2011-08-16 15:58:20,379  INFO Configuration.getConfigurationInputStream:1409 - Configuration resource: /hibernate.cfg.xml
+2011-08-16 15:58:20,423  INFO Configuration.doConfigure:1547 - Configured SessionFactory: null
+2011-08-16 15:58:20,480  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Project
+2011-08-16 15:58:20,506  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Project on table project
+2011-08-16 15:58:20,562  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Interview
+2011-08-16 15:58:20,563  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Interview on table interview
+2011-08-16 15:58:20,578  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Section
+2011-08-16 15:58:20,578  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Section on table section
+2011-08-16 15:58:20,581  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.AbstractItem
+2011-08-16 15:58:20,581  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.AbstractItem on table item
+2011-08-16 15:58:20,586  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Question
+2011-08-16 15:58:20,587  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Question on table question
+2011-08-16 15:58:20,597  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Text
+2011-08-16 15:58:20,597  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Text on table Text
+2011-08-16 15:58:20,598  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.QuestionsAnsItems
+2011-08-16 15:58:20,598  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.QuestionsAnsItems on table question_ansitem
+2011-08-16 15:58:20,600  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.AnswerItem
+2011-08-16 15:58:20,601  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.AnswerItem on table answer_item
+2011-08-16 15:58:20,605  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.AnswerType
+2011-08-16 15:58:20,605  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.AnswerType on table AnswerType
+2011-08-16 15:58:20,606  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.EnumType
+2011-08-16 15:58:20,606  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.EnumType on table EnumType
+2011-08-16 15:58:20,607  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.EnumItem
+2011-08-16 15:58:20,607  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.EnumItem on table enumitem
+2011-08-16 15:58:20,614  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Answer
+2011-08-16 15:58:20,614  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Answer on table answer
+2011-08-16 15:58:20,617  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Patient
+2011-08-16 15:58:20,617  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Patient on table Patient
+2011-08-16 15:58:20,623  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Role
+2011-08-16 15:58:20,623  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Role on table Role
+2011-08-16 15:58:20,625  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.AppUser
+2011-08-16 15:58:20,626  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.AppUser on table appuser
+2011-08-16 15:58:20,635  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.AppuserRole
+2011-08-16 15:58:20,635  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.AppuserRole on table user_role
+2011-08-16 15:58:20,637  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.RelIntrvGroup
+2011-08-16 15:58:20,637  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.RelIntrvGroup on table intrv_group
+2011-08-16 15:58:20,639  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.GroupType
+2011-08-16 15:58:20,639  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.GroupType on table grouptype
+2011-08-16 15:58:20,641  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.AppDBLogger
+2011-08-16 15:58:20,641  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.AppDBLogger on table applog
+2011-08-16 15:58:20,647  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.AppGroup
+2011-08-16 15:58:20,648  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.AppGroup on table appgroup
+2011-08-16 15:58:20,654  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.PatGivesAns2Ques
+2011-08-16 15:58:20,654  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.PatGivesAns2Ques on table pat_gives_answer2ques
+2011-08-16 15:58:20,657  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Performance
+2011-08-16 15:58:20,658  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Performance on table performance
+2011-08-16 15:58:20,663  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.RelGrpAppuser
+2011-08-16 15:58:20,663  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.RelGrpAppuser on table rel_grp_appusr
+2011-08-16 15:58:20,665  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.RelPrjAppusers
+2011-08-16 15:58:20,666  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.RelPrjAppusers on table rel_prj_appusers
+2011-08-16 15:58:20,667  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.PerfUserHistory
+2011-08-16 15:58:20,667  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.PerfUserHistory on table perf_history
+2011-08-16 15:58:20,669  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.EnumTypesView
+2011-08-16 15:58:20,670  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.EnumTypesView on table enumtypes_view
+2011-08-16 15:58:20,672  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.SimpleTypesView
+2011-08-16 15:58:20,672  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.SimpleTypesView on table simpletypes_view
+2011-08-16 15:58:20,711  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Project.interviews -> interview
+2011-08-16 15:58:20,712  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Project.relPrjAppuserses -> rel_prj_appusers
+2011-08-16 15:58:20,712  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Interview.answerItems -> answer_item
+2011-08-16 15:58:20,713  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Interview.children -> interview
+2011-08-16 15:58:20,713  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Interview.performances -> performance
+2011-08-16 15:58:20,713  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Interview.relIntrvGrps -> intrv_group
+2011-08-16 15:58:20,713  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Interview.sections -> section
+2011-08-16 15:58:20,714  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Section.items -> item
+2011-08-16 15:58:20,714  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AbstractItem.containees -> item
+2011-08-16 15:58:20,714  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Question.patAnsQues -> pat_gives_answer2ques
+2011-08-16 15:58:20,715  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Question.questionAnsItems -> question_ansitem
+2011-08-16 15:58:20,715  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AnswerItem.answers -> answer
+2011-08-16 15:58:20,715  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AnswerItem.questionsAnsItems -> question_ansitem
+2011-08-16 15:58:20,715  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.EnumType.items -> enumitem
+2011-08-16 15:58:20,716  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Answer.patAnsQues -> pat_gives_answer2ques
+2011-08-16 15:58:20,716  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Patient.patAnsQues -> pat_gives_answer2ques
+2011-08-16 15:58:20,716  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Patient.performances -> performance
+2011-08-16 15:58:20,716  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Role.userRoles -> user_role
+2011-08-16 15:58:20,717  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppUser.interviews -> interview
+2011-08-16 15:58:20,717  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppUser.performances -> performance
+2011-08-16 15:58:20,717  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppUser.relGrpAppusrs -> rel_grp_appusr
+2011-08-16 15:58:20,718  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppUser.relPrjAppuserses -> rel_prj_appusers
+2011-08-16 15:58:20,718  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppUser.userPerformances -> perf_history
+2011-08-16 15:58:20,718  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppUser.userRoles -> user_role
+2011-08-16 15:58:20,718  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.GroupType.groups -> appgroup
+2011-08-16 15:58:20,719  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppGroup.containees -> appgroup
+2011-08-16 15:58:20,719  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppGroup.performances -> performance
+2011-08-16 15:58:20,719  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppGroup.relGrpAppusrs -> rel_grp_appusr
+2011-08-16 15:58:20,719  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppGroup.relGrpIntrvs -> intrv_group
+2011-08-16 15:58:20,720  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Performance.performanceUsers -> perf_history
+2011-08-16 15:58:20,721  INFO AnnotationConfiguration.secondPassCompile:350 - Hibernate Validator not found: ignoring
+2011-08-16 15:58:20,727  INFO C3P0ConnectionProvider.configure:81 - C3P0 using driver: org.postgresql.Driver at URL: jdbc:postgresql://localhost:5432/appform
+2011-08-16 15:58:20,728  INFO C3P0ConnectionProvider.configure:82 - Connection properties: {user=gcomesana, password=****, autocommit=false}
+2011-08-16 15:58:20,728  INFO C3P0ConnectionProvider.configure:85 - autocommit mode: false
+2011-08-16 15:58:20,741  INFO MLog.<clinit>:80 - MLog clients using log4j logging.
+2011-08-16 15:58:20,924  INFO C3P0Registry.banner:204 - Initializing c3p0-0.9.1 [built 16-January-2007 14:46:42; debug? true; trace: 10]
+2011-08-16 15:58:20,969  INFO AbstractPoolBackedDataSource.getPoolManager:462 - Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@abb00ece [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@13de8117 [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 30ke438h1mih8lamxkixr|25e222e, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 300, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 20, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@b5215c81 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 30ke438h1mih8lamxkixr|54671f95, jdbcUrl -> jdbc:postgresql://localhost:5432/appform, properties -> {user=******, password=******, autocommit=false} ], preferredTestQuery -> null, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 30ke438h1mih8lamxkixr|44ed904, numHelperThreads -> 3 ]
+2011-08-16 15:58:21,069  INFO SettingsFactory.buildSettings:89 - RDBMS: PostgreSQL, version: 8.2.5
+2011-08-16 15:58:21,070  INFO SettingsFactory.buildSettings:90 - JDBC driver: PostgreSQL Native Driver, version: PostgreSQL 8.1 JDBC3 with SSL (build 411)
+2011-08-16 15:58:21,079  INFO Dialect.<init>:152 - Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2011-08-16 15:58:21,083  INFO TransactionFactoryFactory.buildTransactionFactory:31 - Using default transaction strategy (direct JDBC transactions)
+2011-08-16 15:58:21,084  INFO TransactionManagerLookupFactory.getTransactionManagerLookup:33 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2011-08-16 15:58:21,084  INFO SettingsFactory.buildSettings:143 - Automatic flush during beforeCompletion(): disabled
+2011-08-16 15:58:21,085  INFO SettingsFactory.buildSettings:147 - Automatic session close at end of transaction: disabled
+2011-08-16 15:58:21,085  INFO SettingsFactory.buildSettings:154 - JDBC batch size: 15
+2011-08-16 15:58:21,085  INFO SettingsFactory.buildSettings:157 - JDBC batch updates for versioned data: disabled
+2011-08-16 15:58:21,085  INFO SettingsFactory.buildSettings:162 - Scrollable result sets: enabled
+2011-08-16 15:58:21,086  INFO SettingsFactory.buildSettings:170 - JDBC3 getGeneratedKeys(): disabled
+2011-08-16 15:58:21,086  INFO SettingsFactory.buildSettings:178 - Connection release mode: auto
+2011-08-16 15:58:21,086  INFO SettingsFactory.buildSettings:202 - Maximum outer join fetch depth: 3
+2011-08-16 15:58:21,087  INFO SettingsFactory.buildSettings:205 - Default batch fetch size: 1
+2011-08-16 15:58:21,087  INFO SettingsFactory.buildSettings:209 - Generate SQL with comments: enabled
+2011-08-16 15:58:21,087  INFO SettingsFactory.buildSettings:213 - Order SQL updates by primary key: disabled
+2011-08-16 15:58:21,087  INFO SettingsFactory.buildSettings:217 - Order SQL inserts for batching: disabled
+2011-08-16 15:58:21,087  INFO SettingsFactory.createQueryTranslatorFactory:386 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2011-08-16 15:58:21,089  INFO ASTQueryTranslatorFactory.<init>:24 - Using ASTQueryTranslatorFactory
+2011-08-16 15:58:21,089  INFO SettingsFactory.buildSettings:225 - Query language substitutions: {yes='Y', no='N'}
+2011-08-16 15:58:21,089  INFO SettingsFactory.buildSettings:230 - JPA-QL strict compliance: disabled
+2011-08-16 15:58:21,089  INFO SettingsFactory.buildSettings:235 - Second-level cache: enabled
+2011-08-16 15:58:21,089  INFO SettingsFactory.buildSettings:239 - Query cache: disabled
+2011-08-16 15:58:21,089  INFO SettingsFactory.createCacheProvider:373 - Cache provider: org.hibernate.cache.NoCacheProvider
+2011-08-16 15:58:21,090  INFO SettingsFactory.buildSettings:254 - Optimize cache for minimal puts: disabled
+2011-08-16 15:58:21,090  INFO SettingsFactory.buildSettings:263 - Structured second-level cache entries: disabled
+2011-08-16 15:58:21,093  INFO SettingsFactory.buildSettings:290 - Statistics: disabled
+2011-08-16 15:58:21,093  INFO SettingsFactory.buildSettings:294 - Deleted entity synthetic identifier rollback: disabled
+2011-08-16 15:58:21,093  INFO SettingsFactory.buildSettings:309 - Default entity-mode: pojo
+2011-08-16 15:58:21,094  INFO SettingsFactory.buildSettings:313 - Named query checking : enabled
+2011-08-16 15:58:21,110  INFO SessionFactoryImpl.<init>:161 - building session factory
+2011-08-16 15:58:21,428  INFO SessionFactoryObjectFactory.addInstance:82 - Not binding factory to JNDI, no JNDI name configured
+2011-08-16 15:58:21,429  INFO SchemaUpdate.execute:115 - Running hbm2ddl schema update
+2011-08-16 15:58:21,430  INFO SchemaUpdate.execute:126 - fetching database metadata
+2011-08-16 15:58:21,439  INFO SchemaUpdate.execute:138 - updating schema
+2011-08-16 15:58:21,440  INFO AnnotationConfiguration.secondPassCompile:350 - Hibernate Validator not found: ignoring
+2011-08-16 15:58:21,464  INFO TableMetadata.<init>:39 - table found: public.answertype
+2011-08-16 15:58:21,465  INFO TableMetadata.<init>:40 - columns: [idanstype, pattern]
+2011-08-16 15:58:21,465  INFO TableMetadata.<init>:42 - foreign keys: [fkb00210386a4127c5, fk_answerty_isoneof_answer_i]
+2011-08-16 15:58:21,465  INFO TableMetadata.<init>:43 - indexes: [pk_answertype]
+2011-08-16 15:58:21,481  INFO TableMetadata.<init>:39 - table found: public.enumtype
+2011-08-16 15:58:21,482  INFO TableMetadata.<init>:40 - columns: [idenumtype, numitems]
+2011-08-16 15:58:21,482  INFO TableMetadata.<init>:42 - foreign keys: [fk84a1bbbbda39f0f6, fk886d93fbda39f0f6, fk_enumtype_isoneof2_answer_i]
+2011-08-16 15:58:21,482  INFO TableMetadata.<init>:43 - indexes: [pk_enumtype]
+2011-08-16 15:58:21,501  INFO TableMetadata.<init>:39 - table found: public.patient
+2011-08-16 15:58:21,501  INFO TableMetadata.<init>:40 - columns: [phone, u_date, codpat, address, name, codhosp, codprj, c_date, codpatient, cod_type_subject, numhc, idpat]
+2011-08-16 15:58:21,501  INFO TableMetadata.<init>:42 - foreign keys: []
+2011-08-16 15:58:21,501  INFO TableMetadata.<init>:43 - indexes: [patient_codpatient_key, pk_patient]
+2011-08-16 15:58:21,517  INFO TableMetadata.<init>:39 - table found: public.role
+2011-08-16 15:58:21,517  INFO TableMetadata.<init>:40 - columns: [u_date, description, idrole, name, c_date]
+2011-08-16 15:58:21,518  INFO TableMetadata.<init>:42 - foreign keys: []
+2011-08-16 15:58:21,518  INFO TableMetadata.<init>:43 - indexes: [pk_role]
+2011-08-16 15:58:21,533  INFO TableMetadata.<init>:39 - table found: public.text
+2011-08-16 15:58:21,533  INFO TableMetadata.<init>:40 - columns: [idtext, highlighted]
+2011-08-16 15:58:21,533  INFO TableMetadata.<init>:42 - foreign keys: [fk27b94df0028e8c, fk_text_itemisa_item]
+2011-08-16 15:58:21,533  INFO TableMetadata.<init>:43 - indexes: [pk_text]
+2011-08-16 15:58:21,549  INFO TableMetadata.<init>:39 - table found: public.answer
+2011-08-16 15:58:21,549  INFO TableMetadata.<init>:40 - columns: [thevalue, codansitem, lastupdated, datecreated, idanswer, answer_order]
+2011-08-16 15:58:21,550  INFO TableMetadata.<init>:42 - foreign keys: [fk_answer_rel_answ__answer_i]
+2011-08-16 15:58:21,550  INFO TableMetadata.<init>:43 - indexes: [pk_answer]
+2011-08-16 15:58:21,566  INFO TableMetadata.<init>:39 - table found: public.answer_item
+2011-08-16 15:58:21,566  INFO TableMetadata.<init>:40 - columns: [idansitem, for_clone, description, name, codintrv, answer_order]
+2011-08-16 15:58:21,566  INFO TableMetadata.<init>:42 - foreign keys: [fk_ansitem_intrv]
+2011-08-16 15:58:21,566  INFO TableMetadata.<init>:43 - indexes: [pk_answer_item]
+2011-08-16 15:58:21,582  INFO TableMetadata.<init>:39 - table found: public.appgroup
+2011-08-16 15:58:21,582  INFO TableMetadata.<init>:40 - columns: [tmpl_holder, idgroup, name, parent, codgroup_type, codgroup]
+2011-08-16 15:58:21,582  INFO TableMetadata.<init>:42 - foreign keys: [fk_parent_group, fk_grouptype]
+2011-08-16 15:58:21,582  INFO TableMetadata.<init>:43 - indexes: [pk_appgroup]
+2011-08-16 15:58:21,598  INFO TableMetadata.<init>:39 - table found: public.applog
+2011-08-16 15:58:21,598  INFO TableMetadata.<init>:40 - columns: [intrvid, patientid, logmsg, thetime, userid, lastip, sessionid, logid]
+2011-08-16 15:58:21,598  INFO TableMetadata.<init>:42 - foreign keys: []
+2011-08-16 15:58:21,598  INFO TableMetadata.<init>:43 - indexes: [applog_pkey]
+2011-08-16 15:58:21,616  INFO TableMetadata.<init>:39 - table found: public.appuser
+2011-08-16 15:58:21,616  INFO TableMetadata.<init>:40 - columns: [iduser, passwd, loggedfrom, u_date, codhosp, lastname, firstname, c_date, country, username, email, loggedin, last_passwd_change, login_attempts, removed]
+2011-08-16 15:58:21,616  INFO TableMetadata.<init>:42 - foreign keys: [fk_hospital_user]
+2011-08-16 15:58:21,616  INFO TableMetadata.<init>:43 - indexes: [appuser_username_key, pk_appuser]
+2011-08-16 15:58:21,632  INFO TableMetadata.<init>:39 - table found: public.enumitem
+2011-08-16 15:58:21,632  INFO TableMetadata.<init>:40 - columns: [thevalue, codenumtype, listorder, description, name, idenumitem]
+2011-08-16 15:58:21,633  INFO TableMetadata.<init>:42 - foreign keys: [fk_enumitem_contains_enumtype]
+2011-08-16 15:58:21,633  INFO TableMetadata.<init>:43 - indexes: [pk_enumitem]
+2011-08-16 15:58:21,648  INFO TableMetadata.<init>:39 - table found: public.enumtypes_view
+2011-08-16 15:58:21,648  INFO TableMetadata.<init>:40 - columns: [idansit, theorder, typename, idenitem, ansitname, typevalue, codintrv]
+2011-08-16 15:58:21,648  INFO TableMetadata.<init>:42 - foreign keys: []
+2011-08-16 15:58:21,648  INFO TableMetadata.<init>:43 - indexes: []
+2011-08-16 15:58:21,664  INFO TableMetadata.<init>:39 - table found: public.grouptype
+2011-08-16 15:58:21,664  INFO TableMetadata.<init>:40 - columns: [description, name, idgrouptype]
+2011-08-16 15:58:21,664  INFO TableMetadata.<init>:42 - foreign keys: []
+2011-08-16 15:58:21,664  INFO TableMetadata.<init>:43 - indexes: [pk_grouptype]
+2011-08-16 15:58:21,681  INFO TableMetadata.<init>:39 - table found: public.interview
+2011-08-16 15:58:21,682  INFO TableMetadata.<init>:40 - columns: [can_shorten, source, u_date, description, can_create_subject, name, idinterview, codusr, codprj, c_date, is_sample_intrv]
+2011-08-16 15:58:21,682  INFO TableMetadata.<init>:42 - foreign keys: [fk_interview_is_formed_project, fk_interview_belongs_user, fk_cloned_from]
+2011-08-16 15:58:21,682  INFO TableMetadata.<init>:43 - indexes: [pk_interview]
+2011-08-16 15:58:21,697  INFO TableMetadata.<init>:39 - table found: public.intrv_group
+2011-08-16 15:58:21,697  INFO TableMetadata.<init>:40 - columns: [idintrv_group, codgroup, codintrv]
+2011-08-16 15:58:21,697  INFO TableMetadata.<init>:42 - foreign keys: [fk_intrvgroup_intrv, fk_intrvgroup_group]
+2011-08-16 15:58:21,697  INFO TableMetadata.<init>:43 - indexes: [pk_intrv_group]
+2011-08-16 15:58:21,717  INFO TableMetadata.<init>:39 - table found: public.item
+2011-08-16 15:58:21,717  INFO TableMetadata.<init>:40 - columns: [content, item_order, ite_iditem, idsection, u_date, repeatable, highlight, c_date, iditem]
+2011-08-16 15:58:21,717  INFO TableMetadata.<init>:42 - foreign keys: [fk_item_is_formed_section, fk_item_contains_item]
+2011-08-16 15:58:21,718  INFO TableMetadata.<init>:43 - indexes: [pk_item]
+2011-08-16 15:58:21,733  INFO TableMetadata.<init>:39 - table found: public.perf_history
+2011-08-16 15:58:21,733  INFO TableMetadata.<init>:40 - columns: [codperf, thetimestamp, idhistory, coduser, justification, iduser_role]
+2011-08-16 15:58:21,734  INFO TableMetadata.<init>:42 - foreign keys: [user_history_fk, perf_history_fk]
+2011-08-16 15:58:21,734  INFO TableMetadata.<init>:43 - indexes: [perf_history_pkey]
+2011-08-16 15:58:21,751  INFO TableMetadata.<init>:39 - table found: public.performance
+2011-08-16 15:58:21,752  INFO TableMetadata.<init>:40 - columns: [date_end, codinterview, num_order, codpat, date_ini, coduser, place, last_sec, codgroup, idperformance]
+2011-08-16 15:58:21,752  INFO TableMetadata.<init>:42 - foreign keys: [fk_performa_rel_intrv_intervie, fk_performa_rel_appus_appuser, fk_performa_rel_pat_p_patient, fk_performa_rel_group]
+2011-08-16 15:58:21,752  INFO TableMetadata.<init>:43 - indexes: [pk_performance, perf_unique_intrv-pat-grp]
+2011-08-16 15:58:21,767  INFO TableMetadata.<init>:39 - table found: public.project
+2011-08-16 15:58:21,767  INFO TableMetadata.<init>:40 - columns: [u_date, description, name, project_code, c_date, idprj]
+2011-08-16 15:58:21,768  INFO TableMetadata.<init>:42 - foreign keys: []
+2011-08-16 15:58:21,768  INFO TableMetadata.<init>:43 - indexes: [pk_project]
+2011-08-16 15:58:21,784  INFO TableMetadata.<init>:39 - table found: public.pat_gives_answer2ques
+2011-08-16 15:58:21,785  INFO TableMetadata.<init>:40 - columns: [codquestion, codanswer, codpat, idp_a_q, answer_number, answer_grp, answer_order]
+2011-08-16 15:58:21,785  INFO TableMetadata.<init>:42 - foreign keys: [fk_pat_give_rel_ans_p_answer, fk_pat_give_rel_pat_a_patient, fk_pat_give_rel_ques__question]
+2011-08-16 15:58:21,785  INFO TableMetadata.<init>:43 - indexes: [pk_pat_gives_answer2ques]
+2011-08-16 15:58:21,801  INFO TableMetadata.<init>:39 - table found: public.question
+2011-08-16 15:58:21,801  INFO TableMetadata.<init>:40 - columns: [codquestion, mandatory, repeatable, idquestion]
+2011-08-16 15:58:21,802  INFO TableMetadata.<init>:42 - foreign keys: [fk_question_itemisa2_item, fkba823be6e7b3fc5]
+2011-08-16 15:58:21,802  INFO TableMetadata.<init>:43 - indexes: [pk_question]
+2011-08-16 15:58:21,818  INFO TableMetadata.<init>:39 - table found: public.question_ansitem
+2011-08-16 15:58:21,818  INFO TableMetadata.<init>:40 - columns: [id, codquestion, pattern, codansitem, answer_order]
+2011-08-16 15:58:21,818  INFO TableMetadata.<init>:42 - foreign keys: [fk_answer_item, fk_question]
+2011-08-16 15:58:21,819  INFO TableMetadata.<init>:43 - indexes: [pk_question_ansitem]
+2011-08-16 15:58:21,834  INFO TableMetadata.<init>:39 - table found: public.rel_grp_appusr
+2011-08-16 15:58:21,835  INFO TableMetadata.<init>:40 - columns: [idgrp_usr, coduser, active, codgroup]
+2011-08-16 15:58:21,835  INFO TableMetadata.<init>:42 - foreign keys: [fk_rel_grp__rel_grp_a_appgroup, fk_rel_grp__rel_grp_a_appuser]
+2011-08-16 15:58:21,835  INFO TableMetadata.<init>:43 - indexes: [pk_rel_grp_appusr]
+2011-08-16 15:58:21,850  INFO TableMetadata.<init>:39 - table found: public.rel_prj_appusers
+2011-08-16 15:58:21,850  INFO TableMetadata.<init>:40 - columns: [coduser, idprj_usrs, codprj]
+2011-08-16 15:58:21,850  INFO TableMetadata.<init>:42 - foreign keys: [fk_rel_prj__rel_prj_a_project, fk_rel_prj__rel_prj_a_appuser]
+2011-08-16 15:58:21,850  INFO TableMetadata.<init>:43 - indexes: [pk_rel_prj_appusers]
+2011-08-16 15:58:21,866  INFO TableMetadata.<init>:39 - table found: public.section
+2011-08-16 15:58:21,867  INFO TableMetadata.<init>:40 - columns: [codinterview, idsection, u_date, description, name, c_date, section_order]
+2011-08-16 15:58:21,867  INFO TableMetadata.<init>:42 - foreign keys: [fk_section_is_formed_interview]
+2011-08-16 15:58:21,867  INFO TableMetadata.<init>:43 - indexes: [pk_section]
+2011-08-16 15:58:21,881  INFO TableMetadata.<init>:39 - table found: public.simpletypes_view
+2011-08-16 15:58:21,882  INFO TableMetadata.<init>:40 - columns: [idansitem, name, codintrv]
+2011-08-16 15:58:21,882  INFO TableMetadata.<init>:42 - foreign keys: []
+2011-08-16 15:58:21,882  INFO TableMetadata.<init>:43 - indexes: []
+2011-08-16 15:58:21,898  INFO TableMetadata.<init>:39 - table found: public.user_role
+2011-08-16 15:58:21,898  INFO TableMetadata.<init>:40 - columns: [username, codrole, rolename, coduser, iduser_role]
+2011-08-16 15:58:21,898  INFO TableMetadata.<init>:42 - foreign keys: [fk_userrole_user, fk_userrole_role]
+2011-08-16 15:58:21,898  INFO TableMetadata.<init>:43 - indexes: [pk_user_role]
+2011-08-16 15:58:21,906 ERROR SchemaUpdate.execute:155 - Unsuccessful: alter table enumtypes_view add constraint FK6306066C34D3EC6D foreign key (codintrv) references interview
+2011-08-16 15:58:21,906 ERROR SchemaUpdate.execute:156 - ERROR: "enumtypes_view" is not a table
+2011-08-16 15:58:21,907 ERROR SchemaUpdate.execute:155 - Unsuccessful: alter table simpletypes_view add constraint FK921B39DD34D3EC6D foreign key (codintrv) references interview
+2011-08-16 15:58:21,908 ERROR SchemaUpdate.execute:156 - ERROR: "simpletypes_view" is not a table
+2011-08-16 15:58:21,908  INFO SchemaUpdate.execute:160 - schema update complete
+2011-08-16 15:58:21,956  INFO LogFile.info:92 - IntrvController.createInterview ()!!!
+2011-08-16 15:58:22,165  WARN JDBCExceptionReporter.logExceptions:77 - SQL Error: 0, SQLState: null
+2011-08-16 15:58:22,166 ERROR JDBCExceptionReporter.logExceptions:78 - Batch entry 0 /* insert org.cnio.appform.entity.Interview */ insert into interview (can_create_subject, can_shorten, description, is_sample_intrv, name, codprj, source, codusr, idinterview) values (1, 0, a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. , 1, Test Sample Go!, NULL, NULL, 101, 5950) was aborted.  Call getNextException to see the cause.
+2011-08-16 15:58:22,166  WARN JDBCExceptionReporter.logExceptions:77 - SQL Error: 0, SQLState: 22001
+2011-08-16 15:58:22,166 ERROR JDBCExceptionReporter.logExceptions:78 - ERROR: value too long for type character varying(128)
+2011-08-16 15:58:22,167 ERROR AbstractFlushingEventListener.performExecutions:301 - Could not synchronize database state with session
+org.hibernate.exception.DataException: Could not execute JDBC batch update
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:77)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:43)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:253)
+	at org.hibernate.jdbc.AbstractBatcher.prepareStatement(AbstractBatcher.java:92)
+	at org.hibernate.jdbc.AbstractBatcher.prepareStatement(AbstractBatcher.java:87)
+	at org.hibernate.jdbc.AbstractBatcher.prepareBatchStatement(AbstractBatcher.java:222)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2229)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2665)
+	at org.hibernate.action.EntityInsertAction.execute(EntityInsertAction.java:60)
+	at org.hibernate.engine.ActionQueue.execute(ActionQueue.java:279)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:263)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:167)
+	at org.hibernate.event.def.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:298)
+	at org.hibernate.event.def.DefaultAutoFlushEventListener.onAutoFlush(DefaultAutoFlushEventListener.java:41)
+	at org.hibernate.impl.SessionImpl.autoFlushIfRequired(SessionImpl.java:969)
+	at org.hibernate.impl.SessionImpl.list(SessionImpl.java:1114)
+	at org.hibernate.impl.QueryImpl.list(QueryImpl.java:79)
+	at org.cnio.appform.util.IntrvController.defaultTypes(IntrvController.java:786)
+	at org.cnio.appform.util.IntrvController.createInterview(IntrvController.java:872)
+	at org.cnio.appform.util.IntrvController.createInterview(IntrvController.java:822)
+	at org.cnio.appform.test.ClassTest.main(ClassTest.java:173)
+Caused by: java.sql.BatchUpdateException: Batch entry 0 /* insert org.cnio.appform.entity.Interview */ insert into interview (can_create_subject, can_shorten, description, is_sample_intrv, name, codprj, source, codusr, idinterview) values (1, 0, a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. , 1, Test Sample Go!, NULL, NULL, 101, 5950) was aborted.  Call getNextException to see the cause.
+	at org.postgresql.jdbc2.AbstractJdbc2Statement$BatchResultHandler.handleError(AbstractJdbc2Statement.java:2516)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1325)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:349)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeBatch(AbstractJdbc2Statement.java:2578)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeBatch(NewProxyPreparedStatement.java:1723)
+	at org.hibernate.jdbc.BatchingBatcher.doExecuteBatch(BatchingBatcher.java:48)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:246)
+	... 18 more
+2011-08-16 15:58:39,325  INFO Version.<clinit>:15 - Hibernate Annotations 3.3.0.GA
+2011-08-16 15:58:39,336  INFO Environment.<clinit>:514 - Hibernate 3.2.6
+2011-08-16 15:58:39,339  INFO Environment.<clinit>:547 - hibernate.properties not found
+2011-08-16 15:58:39,342  INFO Environment.buildBytecodeProvider:681 - Bytecode provider name : cglib
+2011-08-16 15:58:39,347  INFO Environment.<clinit>:598 - using JDK 1.4 java.sql.Timestamp handling
+2011-08-16 15:58:39,405  INFO Configuration.configure:1432 - configuring from resource: /hibernate.cfg.xml
+2011-08-16 15:58:39,405  INFO Configuration.getConfigurationInputStream:1409 - Configuration resource: /hibernate.cfg.xml
+2011-08-16 15:58:39,450  INFO Configuration.doConfigure:1547 - Configured SessionFactory: null
+2011-08-16 15:58:39,507  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Project
+2011-08-16 15:58:39,533  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Project on table project
+2011-08-16 15:58:39,588  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Interview
+2011-08-16 15:58:39,588  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Interview on table interview
+2011-08-16 15:58:39,603  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Section
+2011-08-16 15:58:39,603  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Section on table section
+2011-08-16 15:58:39,606  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.AbstractItem
+2011-08-16 15:58:39,607  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.AbstractItem on table item
+2011-08-16 15:58:39,611  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Question
+2011-08-16 15:58:39,612  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Question on table question
+2011-08-16 15:58:39,621  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Text
+2011-08-16 15:58:39,621  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Text on table Text
+2011-08-16 15:58:39,622  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.QuestionsAnsItems
+2011-08-16 15:58:39,622  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.QuestionsAnsItems on table question_ansitem
+2011-08-16 15:58:39,625  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.AnswerItem
+2011-08-16 15:58:39,625  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.AnswerItem on table answer_item
+2011-08-16 15:58:39,629  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.AnswerType
+2011-08-16 15:58:39,629  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.AnswerType on table AnswerType
+2011-08-16 15:58:39,630  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.EnumType
+2011-08-16 15:58:39,630  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.EnumType on table EnumType
+2011-08-16 15:58:39,632  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.EnumItem
+2011-08-16 15:58:39,632  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.EnumItem on table enumitem
+2011-08-16 15:58:39,638  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Answer
+2011-08-16 15:58:39,638  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Answer on table answer
+2011-08-16 15:58:39,641  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Patient
+2011-08-16 15:58:39,641  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Patient on table Patient
+2011-08-16 15:58:39,646  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Role
+2011-08-16 15:58:39,646  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Role on table Role
+2011-08-16 15:58:39,648  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.AppUser
+2011-08-16 15:58:39,648  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.AppUser on table appuser
+2011-08-16 15:58:39,657  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.AppuserRole
+2011-08-16 15:58:39,657  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.AppuserRole on table user_role
+2011-08-16 15:58:39,659  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.RelIntrvGroup
+2011-08-16 15:58:39,659  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.RelIntrvGroup on table intrv_group
+2011-08-16 15:58:39,661  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.GroupType
+2011-08-16 15:58:39,661  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.GroupType on table grouptype
+2011-08-16 15:58:39,663  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.AppDBLogger
+2011-08-16 15:58:39,663  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.AppDBLogger on table applog
+2011-08-16 15:58:39,669  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.AppGroup
+2011-08-16 15:58:39,669  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.AppGroup on table appgroup
+2011-08-16 15:58:39,676  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.PatGivesAns2Ques
+2011-08-16 15:58:39,676  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.PatGivesAns2Ques on table pat_gives_answer2ques
+2011-08-16 15:58:39,679  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Performance
+2011-08-16 15:58:39,680  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Performance on table performance
+2011-08-16 15:58:39,684  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.RelGrpAppuser
+2011-08-16 15:58:39,684  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.RelGrpAppuser on table rel_grp_appusr
+2011-08-16 15:58:39,686  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.RelPrjAppusers
+2011-08-16 15:58:39,687  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.RelPrjAppusers on table rel_prj_appusers
+2011-08-16 15:58:39,688  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.PerfUserHistory
+2011-08-16 15:58:39,688  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.PerfUserHistory on table perf_history
+2011-08-16 15:58:39,691  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.EnumTypesView
+2011-08-16 15:58:39,691  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.EnumTypesView on table enumtypes_view
+2011-08-16 15:58:39,693  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.SimpleTypesView
+2011-08-16 15:58:39,693  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.SimpleTypesView on table simpletypes_view
+2011-08-16 15:58:39,731  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Project.interviews -> interview
+2011-08-16 15:58:39,732  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Project.relPrjAppuserses -> rel_prj_appusers
+2011-08-16 15:58:39,732  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Interview.answerItems -> answer_item
+2011-08-16 15:58:39,732  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Interview.children -> interview
+2011-08-16 15:58:39,732  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Interview.performances -> performance
+2011-08-16 15:58:39,733  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Interview.relIntrvGrps -> intrv_group
+2011-08-16 15:58:39,733  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Interview.sections -> section
+2011-08-16 15:58:39,733  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Section.items -> item
+2011-08-16 15:58:39,733  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AbstractItem.containees -> item
+2011-08-16 15:58:39,734  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Question.patAnsQues -> pat_gives_answer2ques
+2011-08-16 15:58:39,734  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Question.questionAnsItems -> question_ansitem
+2011-08-16 15:58:39,734  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AnswerItem.answers -> answer
+2011-08-16 15:58:39,735  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AnswerItem.questionsAnsItems -> question_ansitem
+2011-08-16 15:58:39,735  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.EnumType.items -> enumitem
+2011-08-16 15:58:39,735  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Answer.patAnsQues -> pat_gives_answer2ques
+2011-08-16 15:58:39,735  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Patient.patAnsQues -> pat_gives_answer2ques
+2011-08-16 15:58:39,736  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Patient.performances -> performance
+2011-08-16 15:58:39,736  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Role.userRoles -> user_role
+2011-08-16 15:58:39,736  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppUser.interviews -> interview
+2011-08-16 15:58:39,736  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppUser.performances -> performance
+2011-08-16 15:58:39,737  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppUser.relGrpAppusrs -> rel_grp_appusr
+2011-08-16 15:58:39,737  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppUser.relPrjAppuserses -> rel_prj_appusers
+2011-08-16 15:58:39,737  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppUser.userPerformances -> perf_history
+2011-08-16 15:58:39,737  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppUser.userRoles -> user_role
+2011-08-16 15:58:39,738  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.GroupType.groups -> appgroup
+2011-08-16 15:58:39,738  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppGroup.containees -> appgroup
+2011-08-16 15:58:39,738  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppGroup.performances -> performance
+2011-08-16 15:58:39,738  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppGroup.relGrpAppusrs -> rel_grp_appusr
+2011-08-16 15:58:39,739  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppGroup.relGrpIntrvs -> intrv_group
+2011-08-16 15:58:39,739  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Performance.performanceUsers -> perf_history
+2011-08-16 15:58:39,740  INFO AnnotationConfiguration.secondPassCompile:350 - Hibernate Validator not found: ignoring
+2011-08-16 15:58:39,746  INFO C3P0ConnectionProvider.configure:81 - C3P0 using driver: org.postgresql.Driver at URL: jdbc:postgresql://localhost:5432/appform
+2011-08-16 15:58:39,746  INFO C3P0ConnectionProvider.configure:82 - Connection properties: {user=gcomesana, password=****, autocommit=false}
+2011-08-16 15:58:39,746  INFO C3P0ConnectionProvider.configure:85 - autocommit mode: false
+2011-08-16 15:58:39,759  INFO MLog.<clinit>:80 - MLog clients using log4j logging.
+2011-08-16 15:58:39,898  INFO C3P0Registry.banner:204 - Initializing c3p0-0.9.1 [built 16-January-2007 14:46:42; debug? true; trace: 10]
+2011-08-16 15:58:39,948  INFO AbstractPoolBackedDataSource.getPoolManager:462 - Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@f77a0396 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@ebb4ae1b [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 30ke438h1mihn8d1o439nt|3cecb67f, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 300, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 20, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@4abe0279 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 30ke438h1mihn8d1o439nt|1b0deb5f, jdbcUrl -> jdbc:postgresql://localhost:5432/appform, properties -> {user=******, password=******, autocommit=false} ], preferredTestQuery -> null, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 30ke438h1mihn8d1o439nt|343a9d95, numHelperThreads -> 3 ]
+2011-08-16 15:58:40,050  INFO SettingsFactory.buildSettings:89 - RDBMS: PostgreSQL, version: 8.2.5
+2011-08-16 15:58:40,050  INFO SettingsFactory.buildSettings:90 - JDBC driver: PostgreSQL Native Driver, version: PostgreSQL 8.1 JDBC3 with SSL (build 411)
+2011-08-16 15:58:40,060  INFO Dialect.<init>:152 - Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2011-08-16 15:58:40,064  INFO TransactionFactoryFactory.buildTransactionFactory:31 - Using default transaction strategy (direct JDBC transactions)
+2011-08-16 15:58:40,065  INFO TransactionManagerLookupFactory.getTransactionManagerLookup:33 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2011-08-16 15:58:40,065  INFO SettingsFactory.buildSettings:143 - Automatic flush during beforeCompletion(): disabled
+2011-08-16 15:58:40,065  INFO SettingsFactory.buildSettings:147 - Automatic session close at end of transaction: disabled
+2011-08-16 15:58:40,066  INFO SettingsFactory.buildSettings:154 - JDBC batch size: 15
+2011-08-16 15:58:40,066  INFO SettingsFactory.buildSettings:157 - JDBC batch updates for versioned data: disabled
+2011-08-16 15:58:40,066  INFO SettingsFactory.buildSettings:162 - Scrollable result sets: enabled
+2011-08-16 15:58:40,066  INFO SettingsFactory.buildSettings:170 - JDBC3 getGeneratedKeys(): disabled
+2011-08-16 15:58:40,067  INFO SettingsFactory.buildSettings:178 - Connection release mode: auto
+2011-08-16 15:58:40,067  INFO SettingsFactory.buildSettings:202 - Maximum outer join fetch depth: 3
+2011-08-16 15:58:40,067  INFO SettingsFactory.buildSettings:205 - Default batch fetch size: 1
+2011-08-16 15:58:40,067  INFO SettingsFactory.buildSettings:209 - Generate SQL with comments: enabled
+2011-08-16 15:58:40,068  INFO SettingsFactory.buildSettings:213 - Order SQL updates by primary key: disabled
+2011-08-16 15:58:40,068  INFO SettingsFactory.buildSettings:217 - Order SQL inserts for batching: disabled
+2011-08-16 15:58:40,068  INFO SettingsFactory.createQueryTranslatorFactory:386 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2011-08-16 15:58:40,069  INFO ASTQueryTranslatorFactory.<init>:24 - Using ASTQueryTranslatorFactory
+2011-08-16 15:58:40,070  INFO SettingsFactory.buildSettings:225 - Query language substitutions: {yes='Y', no='N'}
+2011-08-16 15:58:40,070  INFO SettingsFactory.buildSettings:230 - JPA-QL strict compliance: disabled
+2011-08-16 15:58:40,070  INFO SettingsFactory.buildSettings:235 - Second-level cache: enabled
+2011-08-16 15:58:40,070  INFO SettingsFactory.buildSettings:239 - Query cache: disabled
+2011-08-16 15:58:40,070  INFO SettingsFactory.createCacheProvider:373 - Cache provider: org.hibernate.cache.NoCacheProvider
+2011-08-16 15:58:40,070  INFO SettingsFactory.buildSettings:254 - Optimize cache for minimal puts: disabled
+2011-08-16 15:58:40,071  INFO SettingsFactory.buildSettings:263 - Structured second-level cache entries: disabled
+2011-08-16 15:58:40,073  INFO SettingsFactory.buildSettings:290 - Statistics: disabled
+2011-08-16 15:58:40,074  INFO SettingsFactory.buildSettings:294 - Deleted entity synthetic identifier rollback: disabled
+2011-08-16 15:58:40,074  INFO SettingsFactory.buildSettings:309 - Default entity-mode: pojo
+2011-08-16 15:58:40,075  INFO SettingsFactory.buildSettings:313 - Named query checking : enabled
+2011-08-16 15:58:40,090  INFO SessionFactoryImpl.<init>:161 - building session factory
+2011-08-16 15:58:40,412  INFO SessionFactoryObjectFactory.addInstance:82 - Not binding factory to JNDI, no JNDI name configured
+2011-08-16 15:58:40,414  INFO SchemaUpdate.execute:115 - Running hbm2ddl schema update
+2011-08-16 15:58:40,414  INFO SchemaUpdate.execute:126 - fetching database metadata
+2011-08-16 15:58:40,423  INFO SchemaUpdate.execute:138 - updating schema
+2011-08-16 15:58:40,424  INFO AnnotationConfiguration.secondPassCompile:350 - Hibernate Validator not found: ignoring
+2011-08-16 15:58:40,448  INFO TableMetadata.<init>:39 - table found: public.answertype
+2011-08-16 15:58:40,448  INFO TableMetadata.<init>:40 - columns: [idanstype, pattern]
+2011-08-16 15:58:40,448  INFO TableMetadata.<init>:42 - foreign keys: [fkb00210386a4127c5, fk_answerty_isoneof_answer_i]
+2011-08-16 15:58:40,448  INFO TableMetadata.<init>:43 - indexes: [pk_answertype]
+2011-08-16 15:58:40,465  INFO TableMetadata.<init>:39 - table found: public.enumtype
+2011-08-16 15:58:40,465  INFO TableMetadata.<init>:40 - columns: [idenumtype, numitems]
+2011-08-16 15:58:40,465  INFO TableMetadata.<init>:42 - foreign keys: [fk84a1bbbbda39f0f6, fk886d93fbda39f0f6, fk_enumtype_isoneof2_answer_i]
+2011-08-16 15:58:40,465  INFO TableMetadata.<init>:43 - indexes: [pk_enumtype]
+2011-08-16 15:58:40,484  INFO TableMetadata.<init>:39 - table found: public.patient
+2011-08-16 15:58:40,484  INFO TableMetadata.<init>:40 - columns: [phone, u_date, codpat, address, name, codhosp, codprj, c_date, codpatient, cod_type_subject, numhc, idpat]
+2011-08-16 15:58:40,484  INFO TableMetadata.<init>:42 - foreign keys: []
+2011-08-16 15:58:40,484  INFO TableMetadata.<init>:43 - indexes: [patient_codpatient_key, pk_patient]
+2011-08-16 15:58:40,500  INFO TableMetadata.<init>:39 - table found: public.role
+2011-08-16 15:58:40,501  INFO TableMetadata.<init>:40 - columns: [u_date, description, idrole, name, c_date]
+2011-08-16 15:58:40,501  INFO TableMetadata.<init>:42 - foreign keys: []
+2011-08-16 15:58:40,501  INFO TableMetadata.<init>:43 - indexes: [pk_role]
+2011-08-16 15:58:40,517  INFO TableMetadata.<init>:39 - table found: public.text
+2011-08-16 15:58:40,517  INFO TableMetadata.<init>:40 - columns: [idtext, highlighted]
+2011-08-16 15:58:40,517  INFO TableMetadata.<init>:42 - foreign keys: [fk27b94df0028e8c, fk_text_itemisa_item]
+2011-08-16 15:58:40,517  INFO TableMetadata.<init>:43 - indexes: [pk_text]
+2011-08-16 15:58:40,534  INFO TableMetadata.<init>:39 - table found: public.answer
+2011-08-16 15:58:40,534  INFO TableMetadata.<init>:40 - columns: [thevalue, codansitem, lastupdated, datecreated, idanswer, answer_order]
+2011-08-16 15:58:40,534  INFO TableMetadata.<init>:42 - foreign keys: [fk_answer_rel_answ__answer_i]
+2011-08-16 15:58:40,534  INFO TableMetadata.<init>:43 - indexes: [pk_answer]
+2011-08-16 15:58:40,550  INFO TableMetadata.<init>:39 - table found: public.answer_item
+2011-08-16 15:58:40,550  INFO TableMetadata.<init>:40 - columns: [idansitem, for_clone, description, name, codintrv, answer_order]
+2011-08-16 15:58:40,550  INFO TableMetadata.<init>:42 - foreign keys: [fk_ansitem_intrv]
+2011-08-16 15:58:40,550  INFO TableMetadata.<init>:43 - indexes: [pk_answer_item]
+2011-08-16 15:58:40,566  INFO TableMetadata.<init>:39 - table found: public.appgroup
+2011-08-16 15:58:40,566  INFO TableMetadata.<init>:40 - columns: [tmpl_holder, idgroup, name, parent, codgroup_type, codgroup]
+2011-08-16 15:58:40,566  INFO TableMetadata.<init>:42 - foreign keys: [fk_parent_group, fk_grouptype]
+2011-08-16 15:58:40,567  INFO TableMetadata.<init>:43 - indexes: [pk_appgroup]
+2011-08-16 15:58:40,582  INFO TableMetadata.<init>:39 - table found: public.applog
+2011-08-16 15:58:40,583  INFO TableMetadata.<init>:40 - columns: [intrvid, patientid, logmsg, thetime, userid, lastip, sessionid, logid]
+2011-08-16 15:58:40,583  INFO TableMetadata.<init>:42 - foreign keys: []
+2011-08-16 15:58:40,583  INFO TableMetadata.<init>:43 - indexes: [applog_pkey]
+2011-08-16 15:58:40,600  INFO TableMetadata.<init>:39 - table found: public.appuser
+2011-08-16 15:58:40,600  INFO TableMetadata.<init>:40 - columns: [iduser, passwd, loggedfrom, u_date, codhosp, lastname, firstname, c_date, country, username, email, loggedin, last_passwd_change, login_attempts, removed]
+2011-08-16 15:58:40,601  INFO TableMetadata.<init>:42 - foreign keys: [fk_hospital_user]
+2011-08-16 15:58:40,601  INFO TableMetadata.<init>:43 - indexes: [appuser_username_key, pk_appuser]
+2011-08-16 15:58:40,616  INFO TableMetadata.<init>:39 - table found: public.enumitem
+2011-08-16 15:58:40,617  INFO TableMetadata.<init>:40 - columns: [thevalue, codenumtype, listorder, description, name, idenumitem]
+2011-08-16 15:58:40,617  INFO TableMetadata.<init>:42 - foreign keys: [fk_enumitem_contains_enumtype]
+2011-08-16 15:58:40,617  INFO TableMetadata.<init>:43 - indexes: [pk_enumitem]
+2011-08-16 15:58:40,632  INFO TableMetadata.<init>:39 - table found: public.enumtypes_view
+2011-08-16 15:58:40,633  INFO TableMetadata.<init>:40 - columns: [idansit, theorder, typename, idenitem, ansitname, typevalue, codintrv]
+2011-08-16 15:58:40,633  INFO TableMetadata.<init>:42 - foreign keys: []
+2011-08-16 15:58:40,633  INFO TableMetadata.<init>:43 - indexes: []
+2011-08-16 15:58:40,647  INFO TableMetadata.<init>:39 - table found: public.grouptype
+2011-08-16 15:58:40,648  INFO TableMetadata.<init>:40 - columns: [description, name, idgrouptype]
+2011-08-16 15:58:40,648  INFO TableMetadata.<init>:42 - foreign keys: []
+2011-08-16 15:58:40,648  INFO TableMetadata.<init>:43 - indexes: [pk_grouptype]
+2011-08-16 15:58:40,666  INFO TableMetadata.<init>:39 - table found: public.interview
+2011-08-16 15:58:40,666  INFO TableMetadata.<init>:40 - columns: [can_shorten, source, u_date, description, can_create_subject, name, idinterview, codusr, codprj, c_date, is_sample_intrv]
+2011-08-16 15:58:40,666  INFO TableMetadata.<init>:42 - foreign keys: [fk_interview_is_formed_project, fk_interview_belongs_user, fk_cloned_from]
+2011-08-16 15:58:40,666  INFO TableMetadata.<init>:43 - indexes: [pk_interview]
+2011-08-16 15:58:40,685  INFO TableMetadata.<init>:39 - table found: public.intrv_group
+2011-08-16 15:58:40,685  INFO TableMetadata.<init>:40 - columns: [idintrv_group, codgroup, codintrv]
+2011-08-16 15:58:40,685  INFO TableMetadata.<init>:42 - foreign keys: [fk_intrvgroup_intrv, fk_intrvgroup_group]
+2011-08-16 15:58:40,685  INFO TableMetadata.<init>:43 - indexes: [pk_intrv_group]
+2011-08-16 15:58:40,702  INFO TableMetadata.<init>:39 - table found: public.item
+2011-08-16 15:58:40,702  INFO TableMetadata.<init>:40 - columns: [content, item_order, ite_iditem, idsection, u_date, repeatable, highlight, c_date, iditem]
+2011-08-16 15:58:40,702  INFO TableMetadata.<init>:42 - foreign keys: [fk_item_is_formed_section, fk_item_contains_item]
+2011-08-16 15:58:40,702  INFO TableMetadata.<init>:43 - indexes: [pk_item]
+2011-08-16 15:58:40,718  INFO TableMetadata.<init>:39 - table found: public.perf_history
+2011-08-16 15:58:40,719  INFO TableMetadata.<init>:40 - columns: [codperf, thetimestamp, idhistory, coduser, justification, iduser_role]
+2011-08-16 15:58:40,719  INFO TableMetadata.<init>:42 - foreign keys: [user_history_fk, perf_history_fk]
+2011-08-16 15:58:40,719  INFO TableMetadata.<init>:43 - indexes: [perf_history_pkey]
+2011-08-16 15:58:40,736  INFO TableMetadata.<init>:39 - table found: public.performance
+2011-08-16 15:58:40,736  INFO TableMetadata.<init>:40 - columns: [date_end, codinterview, num_order, codpat, date_ini, coduser, place, last_sec, codgroup, idperformance]
+2011-08-16 15:58:40,737  INFO TableMetadata.<init>:42 - foreign keys: [fk_performa_rel_intrv_intervie, fk_performa_rel_appus_appuser, fk_performa_rel_pat_p_patient, fk_performa_rel_group]
+2011-08-16 15:58:40,737  INFO TableMetadata.<init>:43 - indexes: [pk_performance, perf_unique_intrv-pat-grp]
+2011-08-16 15:58:40,752  INFO TableMetadata.<init>:39 - table found: public.project
+2011-08-16 15:58:40,752  INFO TableMetadata.<init>:40 - columns: [u_date, description, name, project_code, c_date, idprj]
+2011-08-16 15:58:40,752  INFO TableMetadata.<init>:42 - foreign keys: []
+2011-08-16 15:58:40,752  INFO TableMetadata.<init>:43 - indexes: [pk_project]
+2011-08-16 15:58:40,769  INFO TableMetadata.<init>:39 - table found: public.pat_gives_answer2ques
+2011-08-16 15:58:40,769  INFO TableMetadata.<init>:40 - columns: [codquestion, codanswer, codpat, idp_a_q, answer_number, answer_grp, answer_order]
+2011-08-16 15:58:40,769  INFO TableMetadata.<init>:42 - foreign keys: [fk_pat_give_rel_ans_p_answer, fk_pat_give_rel_pat_a_patient, fk_pat_give_rel_ques__question]
+2011-08-16 15:58:40,769  INFO TableMetadata.<init>:43 - indexes: [pk_pat_gives_answer2ques]
+2011-08-16 15:58:40,785  INFO TableMetadata.<init>:39 - table found: public.question
+2011-08-16 15:58:40,785  INFO TableMetadata.<init>:40 - columns: [codquestion, mandatory, repeatable, idquestion]
+2011-08-16 15:58:40,785  INFO TableMetadata.<init>:42 - foreign keys: [fk_question_itemisa2_item, fkba823be6e7b3fc5]
+2011-08-16 15:58:40,786  INFO TableMetadata.<init>:43 - indexes: [pk_question]
+2011-08-16 15:58:40,801  INFO TableMetadata.<init>:39 - table found: public.question_ansitem
+2011-08-16 15:58:40,801  INFO TableMetadata.<init>:40 - columns: [id, codquestion, pattern, codansitem, answer_order]
+2011-08-16 15:58:40,801  INFO TableMetadata.<init>:42 - foreign keys: [fk_answer_item, fk_question]
+2011-08-16 15:58:40,802  INFO TableMetadata.<init>:43 - indexes: [pk_question_ansitem]
+2011-08-16 15:58:40,817  INFO TableMetadata.<init>:39 - table found: public.rel_grp_appusr
+2011-08-16 15:58:40,818  INFO TableMetadata.<init>:40 - columns: [idgrp_usr, coduser, active, codgroup]
+2011-08-16 15:58:40,818  INFO TableMetadata.<init>:42 - foreign keys: [fk_rel_grp__rel_grp_a_appgroup, fk_rel_grp__rel_grp_a_appuser]
+2011-08-16 15:58:40,818  INFO TableMetadata.<init>:43 - indexes: [pk_rel_grp_appusr]
+2011-08-16 15:58:40,833  INFO TableMetadata.<init>:39 - table found: public.rel_prj_appusers
+2011-08-16 15:58:40,833  INFO TableMetadata.<init>:40 - columns: [coduser, idprj_usrs, codprj]
+2011-08-16 15:58:40,833  INFO TableMetadata.<init>:42 - foreign keys: [fk_rel_prj__rel_prj_a_project, fk_rel_prj__rel_prj_a_appuser]
+2011-08-16 15:58:40,833  INFO TableMetadata.<init>:43 - indexes: [pk_rel_prj_appusers]
+2011-08-16 15:58:40,849  INFO TableMetadata.<init>:39 - table found: public.section
+2011-08-16 15:58:40,849  INFO TableMetadata.<init>:40 - columns: [codinterview, idsection, u_date, description, name, c_date, section_order]
+2011-08-16 15:58:40,849  INFO TableMetadata.<init>:42 - foreign keys: [fk_section_is_formed_interview]
+2011-08-16 15:58:40,849  INFO TableMetadata.<init>:43 - indexes: [pk_section]
+2011-08-16 15:58:40,864  INFO TableMetadata.<init>:39 - table found: public.simpletypes_view
+2011-08-16 15:58:40,864  INFO TableMetadata.<init>:40 - columns: [idansitem, name, codintrv]
+2011-08-16 15:58:40,864  INFO TableMetadata.<init>:42 - foreign keys: []
+2011-08-16 15:58:40,864  INFO TableMetadata.<init>:43 - indexes: []
+2011-08-16 15:58:40,881  INFO TableMetadata.<init>:39 - table found: public.user_role
+2011-08-16 15:58:40,882  INFO TableMetadata.<init>:40 - columns: [username, codrole, rolename, coduser, iduser_role]
+2011-08-16 15:58:40,882  INFO TableMetadata.<init>:42 - foreign keys: [fk_userrole_user, fk_userrole_role]
+2011-08-16 15:58:40,882  INFO TableMetadata.<init>:43 - indexes: [pk_user_role]
+2011-08-16 15:58:40,889 ERROR SchemaUpdate.execute:155 - Unsuccessful: alter table enumtypes_view add constraint FK6306066C34D3EC6D foreign key (codintrv) references interview
+2011-08-16 15:58:40,890 ERROR SchemaUpdate.execute:156 - ERROR: "enumtypes_view" is not a table
+2011-08-16 15:58:40,891 ERROR SchemaUpdate.execute:155 - Unsuccessful: alter table simpletypes_view add constraint FK921B39DD34D3EC6D foreign key (codintrv) references interview
+2011-08-16 15:58:40,891 ERROR SchemaUpdate.execute:156 - ERROR: "simpletypes_view" is not a table
+2011-08-16 15:58:40,891  INFO SchemaUpdate.execute:160 - schema update complete
+2011-08-16 15:58:40,940  INFO LogFile.info:92 - IntrvController.createInterview ()!!!
+2011-08-16 16:01:16,490  INFO Version.<clinit>:15 - Hibernate Annotations 3.3.0.GA
+2011-08-16 16:01:16,503  INFO Environment.<clinit>:514 - Hibernate 3.2.6
+2011-08-16 16:01:16,506  INFO Environment.<clinit>:547 - hibernate.properties not found
+2011-08-16 16:01:16,509  INFO Environment.buildBytecodeProvider:681 - Bytecode provider name : cglib
+2011-08-16 16:01:16,514  INFO Environment.<clinit>:598 - using JDK 1.4 java.sql.Timestamp handling
+2011-08-16 16:01:16,585  INFO Configuration.configure:1432 - configuring from resource: /hibernate.cfg.xml
+2011-08-16 16:01:16,585  INFO Configuration.getConfigurationInputStream:1409 - Configuration resource: /hibernate.cfg.xml
+2011-08-16 16:01:16,633  INFO Configuration.doConfigure:1547 - Configured SessionFactory: null
+2011-08-16 16:01:16,697  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Project
+2011-08-16 16:01:16,725  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Project on table project
+2011-08-16 16:01:16,787  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Interview
+2011-08-16 16:01:16,788  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Interview on table interview
+2011-08-16 16:01:16,805  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Section
+2011-08-16 16:01:16,805  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Section on table section
+2011-08-16 16:01:16,808  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.AbstractItem
+2011-08-16 16:01:16,809  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.AbstractItem on table item
+2011-08-16 16:01:16,813  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Question
+2011-08-16 16:01:16,814  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Question on table question
+2011-08-16 16:01:16,826  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Text
+2011-08-16 16:01:16,826  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Text on table Text
+2011-08-16 16:01:16,827  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.QuestionsAnsItems
+2011-08-16 16:01:16,827  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.QuestionsAnsItems on table question_ansitem
+2011-08-16 16:01:16,830  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.AnswerItem
+2011-08-16 16:01:16,831  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.AnswerItem on table answer_item
+2011-08-16 16:01:16,839  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.AnswerType
+2011-08-16 16:01:16,839  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.AnswerType on table AnswerType
+2011-08-16 16:01:16,841  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.EnumType
+2011-08-16 16:01:16,841  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.EnumType on table EnumType
+2011-08-16 16:01:16,843  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.EnumItem
+2011-08-16 16:01:16,843  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.EnumItem on table enumitem
+2011-08-16 16:01:16,846  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Answer
+2011-08-16 16:01:16,846  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Answer on table answer
+2011-08-16 16:01:16,849  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Patient
+2011-08-16 16:01:16,850  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Patient on table Patient
+2011-08-16 16:01:16,856  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Role
+2011-08-16 16:01:16,856  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Role on table Role
+2011-08-16 16:01:16,858  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.AppUser
+2011-08-16 16:01:16,859  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.AppUser on table appuser
+2011-08-16 16:01:16,869  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.AppuserRole
+2011-08-16 16:01:16,869  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.AppuserRole on table user_role
+2011-08-16 16:01:16,871  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.RelIntrvGroup
+2011-08-16 16:01:16,872  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.RelIntrvGroup on table intrv_group
+2011-08-16 16:01:16,873  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.GroupType
+2011-08-16 16:01:16,874  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.GroupType on table grouptype
+2011-08-16 16:01:16,876  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.AppDBLogger
+2011-08-16 16:01:16,876  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.AppDBLogger on table applog
+2011-08-16 16:01:16,883  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.AppGroup
+2011-08-16 16:01:16,883  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.AppGroup on table appgroup
+2011-08-16 16:01:16,892  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.PatGivesAns2Ques
+2011-08-16 16:01:16,892  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.PatGivesAns2Ques on table pat_gives_answer2ques
+2011-08-16 16:01:16,895  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.Performance
+2011-08-16 16:01:16,896  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.Performance on table performance
+2011-08-16 16:01:16,901  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.RelGrpAppuser
+2011-08-16 16:01:16,901  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.RelGrpAppuser on table rel_grp_appusr
+2011-08-16 16:01:16,903  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.RelPrjAppusers
+2011-08-16 16:01:16,904  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.RelPrjAppusers on table rel_prj_appusers
+2011-08-16 16:01:16,906  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.PerfUserHistory
+2011-08-16 16:01:16,906  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.PerfUserHistory on table perf_history
+2011-08-16 16:01:16,908  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.EnumTypesView
+2011-08-16 16:01:16,909  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.EnumTypesView on table enumtypes_view
+2011-08-16 16:01:16,911  INFO AnnotationBinder.bindClass:398 - Binding entity from annotated class: org.cnio.appform.entity.SimpleTypesView
+2011-08-16 16:01:16,912  INFO EntityBinder.bindTable:420 - Bind entity org.cnio.appform.entity.SimpleTypesView on table simpletypes_view
+2011-08-16 16:01:16,952  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Project.interviews -> interview
+2011-08-16 16:01:16,954  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Project.relPrjAppuserses -> rel_prj_appusers
+2011-08-16 16:01:16,954  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Interview.answerItems -> answer_item
+2011-08-16 16:01:16,954  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Interview.children -> interview
+2011-08-16 16:01:16,955  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Interview.performances -> performance
+2011-08-16 16:01:16,955  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Interview.relIntrvGrps -> intrv_group
+2011-08-16 16:01:16,955  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Interview.sections -> section
+2011-08-16 16:01:16,955  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Section.items -> item
+2011-08-16 16:01:16,956  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AbstractItem.containees -> item
+2011-08-16 16:01:16,956  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Question.patAnsQues -> pat_gives_answer2ques
+2011-08-16 16:01:16,956  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Question.questionAnsItems -> question_ansitem
+2011-08-16 16:01:16,957  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AnswerItem.answers -> answer
+2011-08-16 16:01:16,957  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AnswerItem.questionsAnsItems -> question_ansitem
+2011-08-16 16:01:16,957  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.EnumType.items -> enumitem
+2011-08-16 16:01:16,957  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Answer.patAnsQues -> pat_gives_answer2ques
+2011-08-16 16:01:16,958  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Patient.patAnsQues -> pat_gives_answer2ques
+2011-08-16 16:01:16,958  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Patient.performances -> performance
+2011-08-16 16:01:16,958  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Role.userRoles -> user_role
+2011-08-16 16:01:16,959  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppUser.interviews -> interview
+2011-08-16 16:01:16,959  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppUser.performances -> performance
+2011-08-16 16:01:16,959  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppUser.relGrpAppusrs -> rel_grp_appusr
+2011-08-16 16:01:16,959  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppUser.relPrjAppuserses -> rel_prj_appusers
+2011-08-16 16:01:16,960  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppUser.userPerformances -> perf_history
+2011-08-16 16:01:16,960  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppUser.userRoles -> user_role
+2011-08-16 16:01:16,960  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.GroupType.groups -> appgroup
+2011-08-16 16:01:16,961  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppGroup.containees -> appgroup
+2011-08-16 16:01:16,961  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppGroup.performances -> performance
+2011-08-16 16:01:16,961  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppGroup.relGrpAppusrs -> rel_grp_appusr
+2011-08-16 16:01:16,961  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.AppGroup.relGrpIntrvs -> intrv_group
+2011-08-16 16:01:16,962  INFO CollectionBinder.bindOneToManySecondPass:627 - Mapping collection: org.cnio.appform.entity.Performance.performanceUsers -> perf_history
+2011-08-16 16:01:16,963  INFO AnnotationConfiguration.secondPassCompile:350 - Hibernate Validator not found: ignoring
+2011-08-16 16:01:16,970  INFO C3P0ConnectionProvider.configure:81 - C3P0 using driver: org.postgresql.Driver at URL: jdbc:postgresql://localhost:5432/appform
+2011-08-16 16:01:16,970  INFO C3P0ConnectionProvider.configure:82 - Connection properties: {user=gcomesana, password=****, autocommit=false}
+2011-08-16 16:01:16,971  INFO C3P0ConnectionProvider.configure:85 - autocommit mode: false
+2011-08-16 16:01:16,985  INFO MLog.<clinit>:80 - MLog clients using log4j logging.
+2011-08-16 16:01:17,182  INFO C3P0Registry.banner:204 - Initializing c3p0-0.9.1 [built 16-January-2007 14:46:42; debug? true; trace: 10]
+2011-08-16 16:01:17,236  INFO AbstractPoolBackedDataSource.getPoolManager:462 - Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@56f0220b [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@ccc3dfe7 [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 30ke438h1mil0l6xil8gf|6243487e, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 300, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 20, maxStatements -> 50, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@f2e1e95c [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 30ke438h1mil0l6xil8gf|7cd2b918, jdbcUrl -> jdbc:postgresql://localhost:5432/appform, properties -> {user=******, password=******, autocommit=false} ], preferredTestQuery -> null, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 30ke438h1mil0l6xil8gf|5ee771f3, numHelperThreads -> 3 ]
+2011-08-16 16:01:17,348  INFO SettingsFactory.buildSettings:89 - RDBMS: PostgreSQL, version: 8.2.5
+2011-08-16 16:01:17,348  INFO SettingsFactory.buildSettings:90 - JDBC driver: PostgreSQL Native Driver, version: PostgreSQL 8.1 JDBC3 with SSL (build 411)
+2011-08-16 16:01:17,358  INFO Dialect.<init>:152 - Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2011-08-16 16:01:17,362  INFO TransactionFactoryFactory.buildTransactionFactory:31 - Using default transaction strategy (direct JDBC transactions)
+2011-08-16 16:01:17,364  INFO TransactionManagerLookupFactory.getTransactionManagerLookup:33 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+2011-08-16 16:01:17,364  INFO SettingsFactory.buildSettings:143 - Automatic flush during beforeCompletion(): disabled
+2011-08-16 16:01:17,364  INFO SettingsFactory.buildSettings:147 - Automatic session close at end of transaction: disabled
+2011-08-16 16:01:17,364  INFO SettingsFactory.buildSettings:154 - JDBC batch size: 15
+2011-08-16 16:01:17,364  INFO SettingsFactory.buildSettings:157 - JDBC batch updates for versioned data: disabled
+2011-08-16 16:01:17,365  INFO SettingsFactory.buildSettings:162 - Scrollable result sets: enabled
+2011-08-16 16:01:17,365  INFO SettingsFactory.buildSettings:170 - JDBC3 getGeneratedKeys(): disabled
+2011-08-16 16:01:17,365  INFO SettingsFactory.buildSettings:178 - Connection release mode: auto
+2011-08-16 16:01:17,366  INFO SettingsFactory.buildSettings:202 - Maximum outer join fetch depth: 3
+2011-08-16 16:01:17,366  INFO SettingsFactory.buildSettings:205 - Default batch fetch size: 1
+2011-08-16 16:01:17,366  INFO SettingsFactory.buildSettings:209 - Generate SQL with comments: enabled
+2011-08-16 16:01:17,367  INFO SettingsFactory.buildSettings:213 - Order SQL updates by primary key: disabled
+2011-08-16 16:01:17,367  INFO SettingsFactory.buildSettings:217 - Order SQL inserts for batching: disabled
+2011-08-16 16:01:17,367  INFO SettingsFactory.createQueryTranslatorFactory:386 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+2011-08-16 16:01:17,368  INFO ASTQueryTranslatorFactory.<init>:24 - Using ASTQueryTranslatorFactory
+2011-08-16 16:01:17,369  INFO SettingsFactory.buildSettings:225 - Query language substitutions: {yes='Y', no='N'}
+2011-08-16 16:01:17,369  INFO SettingsFactory.buildSettings:230 - JPA-QL strict compliance: disabled
+2011-08-16 16:01:17,369  INFO SettingsFactory.buildSettings:235 - Second-level cache: enabled
+2011-08-16 16:01:17,369  INFO SettingsFactory.buildSettings:239 - Query cache: disabled
+2011-08-16 16:01:17,369  INFO SettingsFactory.createCacheProvider:373 - Cache provider: org.hibernate.cache.NoCacheProvider
+2011-08-16 16:01:17,370  INFO SettingsFactory.buildSettings:254 - Optimize cache for minimal puts: disabled
+2011-08-16 16:01:17,370  INFO SettingsFactory.buildSettings:263 - Structured second-level cache entries: disabled
+2011-08-16 16:01:17,373  INFO SettingsFactory.buildSettings:290 - Statistics: disabled
+2011-08-16 16:01:17,373  INFO SettingsFactory.buildSettings:294 - Deleted entity synthetic identifier rollback: disabled
+2011-08-16 16:01:17,374  INFO SettingsFactory.buildSettings:309 - Default entity-mode: pojo
+2011-08-16 16:01:17,374  INFO SettingsFactory.buildSettings:313 - Named query checking : enabled
+2011-08-16 16:01:17,391  INFO SessionFactoryImpl.<init>:161 - building session factory
+2011-08-16 16:01:17,747  INFO SessionFactoryObjectFactory.addInstance:82 - Not binding factory to JNDI, no JNDI name configured
+2011-08-16 16:01:17,749  INFO SchemaUpdate.execute:115 - Running hbm2ddl schema update
+2011-08-16 16:01:17,749  INFO SchemaUpdate.execute:126 - fetching database metadata
+2011-08-16 16:01:17,759  INFO SchemaUpdate.execute:138 - updating schema
+2011-08-16 16:01:17,760  INFO AnnotationConfiguration.secondPassCompile:350 - Hibernate Validator not found: ignoring
+2011-08-16 16:01:17,785  INFO TableMetadata.<init>:39 - table found: public.answertype
+2011-08-16 16:01:17,786  INFO TableMetadata.<init>:40 - columns: [idanstype, pattern]
+2011-08-16 16:01:17,786  INFO TableMetadata.<init>:42 - foreign keys: [fkb00210386a4127c5, fk_answerty_isoneof_answer_i]
+2011-08-16 16:01:17,786  INFO TableMetadata.<init>:43 - indexes: [pk_answertype]
+2011-08-16 16:01:17,802  INFO TableMetadata.<init>:39 - table found: public.enumtype
+2011-08-16 16:01:17,803  INFO TableMetadata.<init>:40 - columns: [idenumtype, numitems]
+2011-08-16 16:01:17,803  INFO TableMetadata.<init>:42 - foreign keys: [fk84a1bbbbda39f0f6, fk886d93fbda39f0f6, fk_enumtype_isoneof2_answer_i]
+2011-08-16 16:01:17,803  INFO TableMetadata.<init>:43 - indexes: [pk_enumtype]
+2011-08-16 16:01:17,823  INFO TableMetadata.<init>:39 - table found: public.patient
+2011-08-16 16:01:17,823  INFO TableMetadata.<init>:40 - columns: [phone, u_date, codpat, address, name, codhosp, codprj, c_date, codpatient, cod_type_subject, numhc, idpat]
+2011-08-16 16:01:17,823  INFO TableMetadata.<init>:42 - foreign keys: []
+2011-08-16 16:01:17,823  INFO TableMetadata.<init>:43 - indexes: [patient_codpatient_key, pk_patient]
+2011-08-16 16:01:17,839  INFO TableMetadata.<init>:39 - table found: public.role
+2011-08-16 16:01:17,840  INFO TableMetadata.<init>:40 - columns: [u_date, description, idrole, name, c_date]
+2011-08-16 16:01:17,840  INFO TableMetadata.<init>:42 - foreign keys: []
+2011-08-16 16:01:17,840  INFO TableMetadata.<init>:43 - indexes: [pk_role]
+2011-08-16 16:01:17,855  INFO TableMetadata.<init>:39 - table found: public.text
+2011-08-16 16:01:17,856  INFO TableMetadata.<init>:40 - columns: [idtext, highlighted]
+2011-08-16 16:01:17,856  INFO TableMetadata.<init>:42 - foreign keys: [fk27b94df0028e8c, fk_text_itemisa_item]
+2011-08-16 16:01:17,856  INFO TableMetadata.<init>:43 - indexes: [pk_text]
+2011-08-16 16:01:17,872  INFO TableMetadata.<init>:39 - table found: public.answer
+2011-08-16 16:01:17,872  INFO TableMetadata.<init>:40 - columns: [thevalue, codansitem, lastupdated, datecreated, idanswer, answer_order]
+2011-08-16 16:01:17,872  INFO TableMetadata.<init>:42 - foreign keys: [fk_answer_rel_answ__answer_i]
+2011-08-16 16:01:17,872  INFO TableMetadata.<init>:43 - indexes: [pk_answer]
+2011-08-16 16:01:17,889  INFO TableMetadata.<init>:39 - table found: public.answer_item
+2011-08-16 16:01:17,889  INFO TableMetadata.<init>:40 - columns: [idansitem, for_clone, description, name, codintrv, answer_order]
+2011-08-16 16:01:17,889  INFO TableMetadata.<init>:42 - foreign keys: [fk_ansitem_intrv]
+2011-08-16 16:01:17,889  INFO TableMetadata.<init>:43 - indexes: [pk_answer_item]
+2011-08-16 16:01:17,905  INFO TableMetadata.<init>:39 - table found: public.appgroup
+2011-08-16 16:01:17,906  INFO TableMetadata.<init>:40 - columns: [tmpl_holder, idgroup, name, parent, codgroup_type, codgroup]
+2011-08-16 16:01:17,906  INFO TableMetadata.<init>:42 - foreign keys: [fk_parent_group, fk_grouptype]
+2011-08-16 16:01:17,906  INFO TableMetadata.<init>:43 - indexes: [pk_appgroup]
+2011-08-16 16:01:17,922  INFO TableMetadata.<init>:39 - table found: public.applog
+2011-08-16 16:01:17,922  INFO TableMetadata.<init>:40 - columns: [intrvid, patientid, logmsg, thetime, userid, lastip, sessionid, logid]
+2011-08-16 16:01:17,922  INFO TableMetadata.<init>:42 - foreign keys: []
+2011-08-16 16:01:17,922  INFO TableMetadata.<init>:43 - indexes: [applog_pkey]
+2011-08-16 16:01:17,941  INFO TableMetadata.<init>:39 - table found: public.appuser
+2011-08-16 16:01:17,941  INFO TableMetadata.<init>:40 - columns: [iduser, passwd, loggedfrom, u_date, codhosp, lastname, firstname, c_date, country, username, email, loggedin, last_passwd_change, login_attempts, removed]
+2011-08-16 16:01:17,941  INFO TableMetadata.<init>:42 - foreign keys: [fk_hospital_user]
+2011-08-16 16:01:17,941  INFO TableMetadata.<init>:43 - indexes: [appuser_username_key, pk_appuser]
+2011-08-16 16:01:17,957  INFO TableMetadata.<init>:39 - table found: public.enumitem
+2011-08-16 16:01:17,958  INFO TableMetadata.<init>:40 - columns: [thevalue, codenumtype, listorder, description, name, idenumitem]
+2011-08-16 16:01:17,958  INFO TableMetadata.<init>:42 - foreign keys: [fk_enumitem_contains_enumtype]
+2011-08-16 16:01:17,958  INFO TableMetadata.<init>:43 - indexes: [pk_enumitem]
+2011-08-16 16:01:17,974  INFO TableMetadata.<init>:39 - table found: public.enumtypes_view
+2011-08-16 16:01:17,974  INFO TableMetadata.<init>:40 - columns: [idansit, theorder, typename, idenitem, ansitname, typevalue, codintrv]
+2011-08-16 16:01:17,974  INFO TableMetadata.<init>:42 - foreign keys: []
+2011-08-16 16:01:17,974  INFO TableMetadata.<init>:43 - indexes: []
+2011-08-16 16:01:17,990  INFO TableMetadata.<init>:39 - table found: public.grouptype
+2011-08-16 16:01:17,990  INFO TableMetadata.<init>:40 - columns: [description, name, idgrouptype]
+2011-08-16 16:01:17,990  INFO TableMetadata.<init>:42 - foreign keys: []
+2011-08-16 16:01:17,990  INFO TableMetadata.<init>:43 - indexes: [pk_grouptype]
+2011-08-16 16:01:18,008  INFO TableMetadata.<init>:39 - table found: public.interview
+2011-08-16 16:01:18,009  INFO TableMetadata.<init>:40 - columns: [can_shorten, source, u_date, description, can_create_subject, name, idinterview, codusr, codprj, c_date, is_sample_intrv]
+2011-08-16 16:01:18,009  INFO TableMetadata.<init>:42 - foreign keys: [fk_interview_is_formed_project, fk_interview_belongs_user, fk_cloned_from]
+2011-08-16 16:01:18,012  INFO TableMetadata.<init>:43 - indexes: [pk_interview]
+2011-08-16 16:01:18,028  INFO TableMetadata.<init>:39 - table found: public.intrv_group
+2011-08-16 16:01:18,028  INFO TableMetadata.<init>:40 - columns: [idintrv_group, codgroup, codintrv]
+2011-08-16 16:01:18,028  INFO TableMetadata.<init>:42 - foreign keys: [fk_intrvgroup_intrv, fk_intrvgroup_group]
+2011-08-16 16:01:18,028  INFO TableMetadata.<init>:43 - indexes: [pk_intrv_group]
+2011-08-16 16:01:18,047  INFO TableMetadata.<init>:39 - table found: public.item
+2011-08-16 16:01:18,047  INFO TableMetadata.<init>:40 - columns: [content, item_order, ite_iditem, idsection, u_date, repeatable, highlight, c_date, iditem]
+2011-08-16 16:01:18,047  INFO TableMetadata.<init>:42 - foreign keys: [fk_item_is_formed_section, fk_item_contains_item]
+2011-08-16 16:01:18,047  INFO TableMetadata.<init>:43 - indexes: [pk_item]
+2011-08-16 16:01:18,064  INFO TableMetadata.<init>:39 - table found: public.perf_history
+2011-08-16 16:01:18,064  INFO TableMetadata.<init>:40 - columns: [codperf, thetimestamp, idhistory, coduser, justification, iduser_role]
+2011-08-16 16:01:18,064  INFO TableMetadata.<init>:42 - foreign keys: [user_history_fk, perf_history_fk]
+2011-08-16 16:01:18,064  INFO TableMetadata.<init>:43 - indexes: [perf_history_pkey]
+2011-08-16 16:01:18,082  INFO TableMetadata.<init>:39 - table found: public.performance
+2011-08-16 16:01:18,082  INFO TableMetadata.<init>:40 - columns: [date_end, codinterview, num_order, codpat, date_ini, coduser, place, last_sec, codgroup, idperformance]
+2011-08-16 16:01:18,082  INFO TableMetadata.<init>:42 - foreign keys: [fk_performa_rel_intrv_intervie, fk_performa_rel_appus_appuser, fk_performa_rel_pat_p_patient, fk_performa_rel_group]
+2011-08-16 16:01:18,083  INFO TableMetadata.<init>:43 - indexes: [pk_performance, perf_unique_intrv-pat-grp]
+2011-08-16 16:01:18,098  INFO TableMetadata.<init>:39 - table found: public.project
+2011-08-16 16:01:18,099  INFO TableMetadata.<init>:40 - columns: [u_date, description, name, project_code, c_date, idprj]
+2011-08-16 16:01:18,099  INFO TableMetadata.<init>:42 - foreign keys: []
+2011-08-16 16:01:18,099  INFO TableMetadata.<init>:43 - indexes: [pk_project]
+2011-08-16 16:01:18,116  INFO TableMetadata.<init>:39 - table found: public.pat_gives_answer2ques
+2011-08-16 16:01:18,116  INFO TableMetadata.<init>:40 - columns: [codquestion, codanswer, codpat, idp_a_q, answer_number, answer_grp, answer_order]
+2011-08-16 16:01:18,116  INFO TableMetadata.<init>:42 - foreign keys: [fk_pat_give_rel_ans_p_answer, fk_pat_give_rel_pat_a_patient, fk_pat_give_rel_ques__question]
+2011-08-16 16:01:18,116  INFO TableMetadata.<init>:43 - indexes: [pk_pat_gives_answer2ques]
+2011-08-16 16:01:18,132  INFO TableMetadata.<init>:39 - table found: public.question
+2011-08-16 16:01:18,132  INFO TableMetadata.<init>:40 - columns: [codquestion, mandatory, repeatable, idquestion]
+2011-08-16 16:01:18,132  INFO TableMetadata.<init>:42 - foreign keys: [fk_question_itemisa2_item, fkba823be6e7b3fc5]
+2011-08-16 16:01:18,132  INFO TableMetadata.<init>:43 - indexes: [pk_question]
+2011-08-16 16:01:18,148  INFO TableMetadata.<init>:39 - table found: public.question_ansitem
+2011-08-16 16:01:18,148  INFO TableMetadata.<init>:40 - columns: [id, codquestion, pattern, codansitem, answer_order]
+2011-08-16 16:01:18,149  INFO TableMetadata.<init>:42 - foreign keys: [fk_answer_item, fk_question]
+2011-08-16 16:01:18,149  INFO TableMetadata.<init>:43 - indexes: [pk_question_ansitem]
+2011-08-16 16:01:18,164  INFO TableMetadata.<init>:39 - table found: public.rel_grp_appusr
+2011-08-16 16:01:18,164  INFO TableMetadata.<init>:40 - columns: [idgrp_usr, coduser, active, codgroup]
+2011-08-16 16:01:18,165  INFO TableMetadata.<init>:42 - foreign keys: [fk_rel_grp__rel_grp_a_appgroup, fk_rel_grp__rel_grp_a_appuser]
+2011-08-16 16:01:18,165  INFO TableMetadata.<init>:43 - indexes: [pk_rel_grp_appusr]
+2011-08-16 16:01:18,180  INFO TableMetadata.<init>:39 - table found: public.rel_prj_appusers
+2011-08-16 16:01:18,180  INFO TableMetadata.<init>:40 - columns: [coduser, idprj_usrs, codprj]
+2011-08-16 16:01:18,181  INFO TableMetadata.<init>:42 - foreign keys: [fk_rel_prj__rel_prj_a_project, fk_rel_prj__rel_prj_a_appuser]
+2011-08-16 16:01:18,181  INFO TableMetadata.<init>:43 - indexes: [pk_rel_prj_appusers]
+2011-08-16 16:01:18,198  INFO TableMetadata.<init>:39 - table found: public.section
+2011-08-16 16:01:18,198  INFO TableMetadata.<init>:40 - columns: [codinterview, idsection, u_date, description, name, c_date, section_order]
+2011-08-16 16:01:18,199  INFO TableMetadata.<init>:42 - foreign keys: [fk_section_is_formed_interview]
+2011-08-16 16:01:18,199  INFO TableMetadata.<init>:43 - indexes: [pk_section]
+2011-08-16 16:01:18,215  INFO TableMetadata.<init>:39 - table found: public.simpletypes_view
+2011-08-16 16:01:18,215  INFO TableMetadata.<init>:40 - columns: [idansitem, name, codintrv]
+2011-08-16 16:01:18,215  INFO TableMetadata.<init>:42 - foreign keys: []
+2011-08-16 16:01:18,215  INFO TableMetadata.<init>:43 - indexes: []
+2011-08-16 16:01:18,232  INFO TableMetadata.<init>:39 - table found: public.user_role
+2011-08-16 16:01:18,232  INFO TableMetadata.<init>:40 - columns: [username, codrole, rolename, coduser, iduser_role]
+2011-08-16 16:01:18,232  INFO TableMetadata.<init>:42 - foreign keys: [fk_userrole_user, fk_userrole_role]
+2011-08-16 16:01:18,232  INFO TableMetadata.<init>:43 - indexes: [pk_user_role]
+2011-08-16 16:01:18,240 ERROR SchemaUpdate.execute:155 - Unsuccessful: alter table enumtypes_view add constraint FK6306066C34D3EC6D foreign key (codintrv) references interview
+2011-08-16 16:01:18,240 ERROR SchemaUpdate.execute:156 - ERROR: "enumtypes_view" is not a table
+2011-08-16 16:01:18,242 ERROR SchemaUpdate.execute:155 - Unsuccessful: alter table simpletypes_view add constraint FK921B39DD34D3EC6D foreign key (codintrv) references interview
+2011-08-16 16:01:18,242 ERROR SchemaUpdate.execute:156 - ERROR: "simpletypes_view" is not a table
+2011-08-16 16:01:18,242  INFO SchemaUpdate.execute:160 - schema update complete
+2011-08-16 16:01:18,315  INFO LogFile.info:92 - IntrvController.createInterview ()!!!
+2011-08-16 16:04:19,093  WARN JDBCExceptionReporter.logExceptions:77 - SQL Error: 0, SQLState: null
+2011-08-16 16:04:19,095 ERROR JDBCExceptionReporter.logExceptions:78 - Batch entry 0 /* insert org.cnio.appform.entity.Interview */ insert into interview (can_create_subject, can_shorten, description, is_sample_intrv, name, codprj, source, codusr, idinterview) values (1, 0, a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. , 1, Test Sample Go!, NULL, NULL, 101, 6050) was aborted.  Call getNextException to see the cause.
+2011-08-16 16:04:19,098  WARN JDBCExceptionReporter.logExceptions:77 - SQL Error: 0, SQLState: 22001
+2011-08-16 16:04:19,100 ERROR JDBCExceptionReporter.logExceptions:78 - ERROR: value too long for type character varying(128)
+2011-08-16 16:04:19,103 ERROR AbstractFlushingEventListener.performExecutions:301 - Could not synchronize database state with session
+org.hibernate.exception.DataException: Could not execute JDBC batch update
+	at org.hibernate.exception.SQLStateConverter.convert(SQLStateConverter.java:77)
+	at org.hibernate.exception.JDBCExceptionHelper.convert(JDBCExceptionHelper.java:43)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:253)
+	at org.hibernate.jdbc.AbstractBatcher.prepareStatement(AbstractBatcher.java:92)
+	at org.hibernate.jdbc.AbstractBatcher.prepareStatement(AbstractBatcher.java:87)
+	at org.hibernate.jdbc.AbstractBatcher.prepareBatchStatement(AbstractBatcher.java:222)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2229)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:2665)
+	at org.hibernate.action.EntityInsertAction.execute(EntityInsertAction.java:60)
+	at org.hibernate.engine.ActionQueue.execute(ActionQueue.java:279)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:263)
+	at org.hibernate.engine.ActionQueue.executeActions(ActionQueue.java:167)
+	at org.hibernate.event.def.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:298)
+	at org.hibernate.event.def.DefaultAutoFlushEventListener.onAutoFlush(DefaultAutoFlushEventListener.java:41)
+	at org.hibernate.impl.SessionImpl.autoFlushIfRequired(SessionImpl.java:969)
+	at org.hibernate.impl.SessionImpl.list(SessionImpl.java:1114)
+	at org.hibernate.impl.QueryImpl.list(QueryImpl.java:79)
+	at org.cnio.appform.util.IntrvController.defaultTypes(IntrvController.java:786)
+	at org.cnio.appform.util.IntrvController.createInterview(IntrvController.java:872)
+	at org.cnio.appform.util.IntrvController.createInterview(IntrvController.java:822)
+	at org.cnio.appform.test.ClassTest.main(ClassTest.java:173)
+Caused by: java.sql.BatchUpdateException: Batch entry 0 /* insert org.cnio.appform.entity.Interview */ insert into interview (can_create_subject, can_shorten, description, is_sample_intrv, name, codprj, source, codusr, idinterview) values (1, 0, a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. a–ldsnf–ajk bn–aoiuhpa–dg. , 1, Test Sample Go!, NULL, NULL, 101, 6050) was aborted.  Call getNextException to see the cause.
+	at org.postgresql.jdbc2.AbstractJdbc2Statement$BatchResultHandler.handleError(AbstractJdbc2Statement.java:2516)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:1325)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:349)
+	at org.postgresql.jdbc2.AbstractJdbc2Statement.executeBatch(AbstractJdbc2Statement.java:2578)
+	at com.mchange.v2.c3p0.impl.NewProxyPreparedStatement.executeBatch(NewProxyPreparedStatement.java:1723)
+	at org.hibernate.jdbc.BatchingBatcher.doExecuteBatch(BatchingBatcher.java:48)
+	at org.hibernate.jdbc.AbstractBatcher.executeBatch(AbstractBatcher.java:246)
+	... 18 more

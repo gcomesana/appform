@@ -1,0 +1,172 @@
+
+/**
+ * This is actually a singleton because an object is being defined using 
+ * the syntax:
+ * var Dom = {attr1:val1, attr2:val2, ..., attr_n:val_n}
+ * 
+ * To "define a class" (actually a object), the syntax to use is the module
+ * pattern syntax
+ */
+
+var Dom = {
+  get: function(el) {
+    if (typeof el === 'string') {
+      return document.getElementById(el);
+    } else {
+      return el;
+    }
+  },
+  
+  add: function(el, dest) {
+    var elem = this.get(el);
+    var dest = this.get(dest);
+    dest.appendChild(elem);
+  },
+  
+  remove: function(el) {
+    var el = this.get(el);
+    el.parentNode.removeChild(el);
+  }
+};
+ 
+ 
+var Event = {
+  add: function() {
+    if (window.addEventListener) {
+      return function(el, type, fn) {
+        Dom.get(el).addEventListener(type, fn, false);
+      };
+    } 
+    
+    else if (window.attachEvent) {
+      return function(el, type, fn) {
+        var f = function() {
+          fn.call(Dom.get(el), window.event);
+        };
+        Dom.get(el).attachEvent('on' + type, f);
+      };
+    }
+  }()
+};
+
+
+// http://www.quirksmode.org/js/detect.html /////////////////////////////////
+// This is mostly a JSON object as
+// BrowserDetect = {init:x, searchString:f, searchVersion:f, getBrowser:f,dataBrowser:[]}
+BrowserDetect = {
+	init: function () {
+		this.browser = this.searchString(this.dataBrowser) || "An unknown browser";
+		this.version = this.searchVersion(navigator.userAgent) || 
+									 this.searchVersion(navigator.appVersion)	|| 
+									 "an unknown version";
+									 
+		this.OS = this.searchString(this.dataOS) || "an unknown OS";
+	},
+	
+	
+	searchString: function (data) {
+		for (var i=0;i<data.length;i++)	{
+			var dataString = data[i].string;
+			var dataProp = data[i].prop;
+			this.versionSearchString = data[i].versionSearch || data[i].identity;
+			
+			if (dataString) {
+				if (dataString.indexOf(data[i].subString) != -1)
+					return data[i].identity;
+			}
+			else if (dataProp)
+				return data[i].identity;
+		}
+	},
+	
+	searchVersion: function (dataString) {
+		var index = dataString.indexOf(this.versionSearchString);
+		if (index == -1) return;
+		return parseFloat(dataString.substring(index+this.versionSearchString.length+1));
+	},
+	
+	
+	getBrowser: function () {
+		return this.browser;
+	},
+	
+	
+	dataBrowser: [
+		{ 	string: navigator.userAgent,
+			subString: "OmniWeb",
+			versionSearch: "OmniWeb/",
+			identity: "OmniWeb"
+		}, {
+			string: navigator.vendor,
+			subString: "Apple",
+			identity: "Safari"
+		}, {
+			prop: window.opera,
+			identity: "Opera"
+		}, {
+			string: navigator.vendor,
+			subString: "iCab",
+			identity: "iCab"
+		}, {
+			string: navigator.vendor,
+			subString: "KDE",
+			identity: "Konqueror"
+		}, {
+			string: navigator.userAgent,
+			subString: "Firefox",
+			identity: "Firefox"
+		}, {
+			string: navigator.vendor,
+			subString: "Camino",
+			identity: "Camino"
+		}, {		// for newer Netscapes (6+)
+			string: navigator.userAgent,
+			subString: "Netscape",
+			identity: "Netscape"
+		}, {
+			string: navigator.userAgent,
+			subString: "MSIE",
+			identity: "Explorer",
+			versionSearch: "MSIE"
+		}, {
+			string: navigator.userAgent,
+			subString: "Gecko",
+			identity: "Mozilla",
+			versionSearch: "rv"
+		}, { 		// for older Netscapes (4-)
+			string: navigator.userAgent,
+			subString: "Mozilla",
+			identity: "Netscape",
+			versionSearch: "Mozilla"
+		}
+	],
+	
+	dataOS : [
+		{
+			string: navigator.platform,
+			subString: "Win",
+			identity: "Windows"
+		}, 
+		{
+			string: navigator.platform,
+			subString: "Mac",
+			identity: "Mac"
+		}, 
+		{
+			string: navigator.platform,
+			subString: "Linux",
+			identity: "Linux"
+		}
+	]
+};
+
+// switches to control the custom objects instantiation
+// as the files are included depending on the part of the applicaton loaded, different
+// objects will have to be instantiated, but not some others
+isSecFormCtrlLoaded = false;
+isListItemCtrlLoaded = false;
+isFormItemCtrlLoaded = false;
+isprjFormCtrlLoaded = false;
+isintrFormCtrlLoaded = false;
+
+

@@ -1,0 +1,240 @@
+*/********************** CUSTOM STYLES FOR FORMS **********************/
+/********** LAYOUT STYLE *********************************************/
+#regionA {
+/*    margin: 0 70% 0px 0; */
+   margin: 0 75% 0px 0;
+   *margin: 0 69% 0px 0;
+   padding: 10px 5px 10px 5px; /*        border-right: 1px solid #ccc;
+   border-bottom: 1px solid #ccc;
+   font: medium Verdana, Geneva, Arial, Helvetica, sans-serif; */
+   border: 1px solid Black;
+   background-color: White;
+   min-height: 300px;
+   *height: 300px;
+}
+
+#regionA a
+{
+	text-decoration:none;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+#regionB {
+   float:right;
+/*    width: 68%; */
+   width: 73%;
+   margin: 0 0 10px 0;
+   padding: 10px 5px 10px 5px;
+   border: 1px solid Black;
+   background-color: White;
+   min-height: 300px;
+}
+
+
+
+p#infotext {
+   font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+   font-size: 12px;
+   line-height: 15px;
+}
+
+p#stmt {
+   font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+   font-size: 12px;
+}
+
+div#formIntro {
+   text-align: right;
+   font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+   font-size: 12px;
+}
+
+
+div#divFrmBtns {
+   /*    background-color:#ffffff;*/
+   border:none;
+}
+
+
+div#navigation-aux {
+ margin: 0;
+   padding-left: 300px;
+   min-width: 550px;
+   z-index: 100; /* added for submenu hover */
+   position: relative; /* added for submenu hover */
+}
+
+
+div#navigation {
+//    float: left;
+   margin-left: -1px;
+   margin-top: 74px;
+   margin-right: 0px;
+   line-height: 16px;
+   padding: 0px;
+   border-right: 1px solid #72828E;
+   border-left: 1px solid #72828E;
+   font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;
+   font-size:13px;
+  //    background-color: red;
+}
+
+
+table#elemtable {
+   border: 1px solid black;
+}
+
+
+td {
+   font-family:Arial, Helvetica, sans-serif;;
+   font-size: 12px;
+   font-color: red;
+}
+
+tr#elemtable {
+/*    border-top: 1px solid darkgray;*/
+   background-color: red;
+   height: auto;
+}
+
+textarea {
+   font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;
+// Arial, Helvetica, sans-serif;
+   font-size:11px;
+   width:80%;
+   border: 1px solid darkblue;
+}
+
+
+select {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 11px;
+   width: 100%;
+   border: 1px solid darkblue;
+}
+
+.optHigh {
+   font-weight: bolder;
+}
+
+input {
+   border: 1px solid darkblue;
+   background-color: white;
+}
+
+span {
+   font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+   font-size: 11px;
+}
+
+span#error {
+   font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+   font-size: 11px;
+   font-color: red;
+}
+
+#qFormTit {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 18px;
+   color: #000033;
+   font-weight: bold;
+}
+
+
+#qFormDiv {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 10px;
+   color: #000000;
+   padding: 7px;
+   text-align: left;
+}
+
+
+
+
+/*****************************
+* JBoss Theme CSS *
+******************************/
+* html {
+   overflow-y:hidden;
+   *overflow-y:hidden;
+}
+
+#body {
+   /*   background-image: url( img/portal_background.gif ); */
+   background-color: silver;
+   margin: 0px;
+   padding: 0px;
+   width: 100%;
+}
+*
+/* TABLE that contains all regions. does not include header */
+#content-container {
+   /* height: 100%; */
+   width: 98%;
+   *width: 100%;
+   /*margin:1em auto;
+   border: 1px solid black;*/
+   text-align: left;
+   max-width: 1600px;
+   min-width: 800px;
+   /*     border: 1px solid yellow; */
+   margin: 10px 1% 0px 1%;
+/*part of below IE hack
+   padding: 0 350px 0 350px;*/
+}
+
+#regionC {
+/* inclusion of 3rd region - comment out for 2 region testing
+   padding: 0px;
+   width: 27%;
+   float: left;*/
+   display: none;
+   height: 300px;
+}
+
+#footer-container {
+   /* margin: 30px 25% 0 25%;*/
+   text-align: center;
+   /*   width: 99.5%; to demonstrate the decimal point in percentages */
+   width: 98%;
+   *width: 100%;
+   margin: 0px 1% 10px 1%;
+   padding: 5px 0 5px;
+   /*     border: 1px solid pink; */
+   border: 1px solid black;
+   background-color: white;
+   clear: both;
+}
+
+#dashboardnav {
+   float: right;
+   font-size: 10px;
+   font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+   padding: 5px 10px 5px 10px;
+   color: #000000;
+   z-index: 200;
+/*
+   border-bottom: 1px black solid;
+   border-left: 1px black solid;
+*/
+   background-color: white;
+}
+
+#dashboardnav a {
+   color: #FFFFFF;
+}
+
+#formA
+{
+	display:inline;
+}
+#formB
+{
+/* 	position:absolute; */
+	display:none;
+}
+#formC
+{
+	display:none;
+}

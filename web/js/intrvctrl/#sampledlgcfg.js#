@@ -1,0 +1,338 @@
+
+
+/**
+ * This is the preconfigured class for the combo for groups which is used to 
+ * select the groups corresponding to a user
+ * @param {Object} config
+ */
+Sampledlg.MyCombo = Ext.extend (Ext.form.ComboBox, {
+	
+	constructor: function (config) {
+		var myCfg = {
+			allowBlank: false,
+			tpl: '<tpl for="."><div ext:qtip="{name:htmlEncode}" class="x-combo-list-item">{name:htmlDecode}</div></tpl>',
+			fieldLabel: 'Groups',
+			emptyText: 'Select a hospital...',
+			labelSeparator: '',
+//			labelStyle: "font-weight:bold; color:#15428b; margin-left: 10px;",
+			
+    	store: new Sampledlg.GrpStore ({
+				storeId:'grpStore', 
+				usrid: IntroDlg.appCfg.usrid
+			}),
+			
+			displayField: 'name',
+			valueField: 'cod',
+			mode: 'local',
+			
+			id: 'comboGrp',
+			name: 'comboGrp',
+			 
+			forceSelection: true,
+			triggerAction: 'all',
+			typeAhead: true,
+			selectOnFocus: true,
+			listWidth: 250,
+			disabled: false,
+			
+			style: {
+				marginLeft:'5px'
+			},
+			labelWidth: 110,
+			
+			listeners: {
+				select: IntroDlg.onChangeGrp,
+				valid: IntroDlg.subjectValid,
+			} 
+    }; // eo myCfg object
+     
+		Sampledlg.MyCombo.superclass.constructor.call (this, Ext.apply (myCfg, config));
+		
+		
+	}, // EO constructor	  
+	
+	
+	onRender: function (comp) {
+    this.store.load();
+
+    Sampledlg.MyCombo.superclass.onRender.apply(this, arguments);
+  } // eo function onRender
+});
+Ext.reg ('grpcombo', Sampledlg.MyCombo);
+////////////////////////////////////////////////////////////////////////////
+
+
+
+/**
+ * This is the combo for the subject type.
+ * @param {Object} config, the configuration object
+ */
+Sampledlg.SubjCombo = Ext.extend (Ext.form.ComboBox, {
+//		xtype: 'combo',
+	constructor: function (config) {
+		var myCfg = {
+			fieldLabel: 'Type',
+			allowBlank: false,
+			labelSeparator: '',
+			emptyText: 'Choose...',
+			
+			store: Sampledlg.typeJsonSt,
+			displayField: 'name',
+			valueField: 'id',
+			mode: 'local',
+			
+			id: 'typeCombo',
+			name: 'typeCombo',
+			
+			forceSelection: true,
+			triggerAction: 'all',
+			typeAhead: true,
+			selectOnFocus: true,
+			
+			listeners: {
+				valid: IntroDlg.subjectValid,
+			}
+			
+		};
+		
+		Sampledlg.SubjCombo.superclass.constructor.call (this, Ext.apply (myCfg, config));
+	} // eo constructor
+});
+Ext.reg ('subjcombo', Sampledlg.SubjCombo);
+////////////////////////////////////////////////////////////////////////////
+
+	
+
+/**
+ * Preconfigured class to support a textfield to input code using textfield
+ * validation
+ * @param {Object} config
+ */
+Sampledlg.TxtCode = Ext.extend(Ext.form.TextField, {
+	
+	constructor: function (config) {
+		
+		var codeSize = config.codeSize? config.codeSize: 11;
+		var maxChars = '"'+codeSize+'"';
+		var myregex = new RegExp('\\d{'+codeSize+'}');
+		var myCfg = {
+	// validation
+			maskRe: /\d/,
+			regex: myregex,
+			allowBlank: false,
+			minLength: codeSize,
+			maxLength: codeSize,
+			
+	// validation messages
+			emptyText: 'Sample code ('+codeSize+' digits)',
+			minLengthText: 'The sample code has to be EXACTLY '+codeSize+' digit long',
+			maxLengthText: 'The sample code has to be EXACTLY '+codeSize+' digit long',
+			regexText: 'Characters different than digits are not allowed',
+			fieldLabel: 'Sample code',
+			labelSeparator: '',
+//			width: calcWidth,
+			id:'samplecode',
+			name: 'samplecode',
+			
+			disabled: true,
+			
+			style: {
+				marginLeft: '5px'
+			},
+			
+			listeners: {
+				valid: IntroDlg.chkSample,
+//				focus: IntroDlg.clearInvalid
+				invalid: IntroDlg.goInvalid,
+			}
+		};
+		
+		Sampledlg.TxtCode.superclass.constructor.call (this, Ext.apply(myCfg, config));
+	}
+});
+Ext.reg ('txtsamplecode', Sampledlg.TxtCode);
+////////////////////////////////////////////////////////////////////////////
+
+
+/**
+ * This is the textfield to support three digit code to use with user
+ * @param {Object} config
+ */
+Sampledlg.TxtSubj = Ext.extend (Sampledlg.TxtCode, {
+	
+	constructor: function (config) {
+		var myCfg = {
+			codeSize: 3,
+			emptyText: 'ddd',
+			minLengthText: '',
+			maxLengthText: '',
+			fieldLabel: 'Subject code',			 
+			
+			id:'subjCode',
+			name: 'subjCode',
+			
+			disabled: false,
+			
+			listeners: {
+				valid: IntroDlg.subjectValid,
+				invalid: IntroDlg.goInvalid,
+q			}
+		};
+		
+		Sampledlg.TxtSubj.superclass.constructor.call (this, Ext.apply (myCfg, config));
+	}
+});
+Ext.reg ('txtsubjectcode', Sampledlg.TxtSubj);
+////////////////////////////////////////////////////////////////////////////
+
+
+/**
+ * This is a preconfigured panel to support two form components. 
+ * Two config options have to be passed in: leftComp and rightComp (the side
+ * by side components). If not found, textfield components are supposed
+ * @param {Object} config
+ */
+Sampledlg.TwoColsPanel = Ext.extend (Ext.Panel, {
+	
+	constructor: function (config) {
+		var leftComp = config.leftComp, rightComp = config.rightComp;
+		if (!leftComp)
+			leftComp = 'textfield'
+			
+		if (!rightComp)
+			rightComp = 'textfield'
+			
+		var myCfg = {
+//			title: 'Subject code',
+			layout: 'column',
+			border: true,
+			defaults: {
+//				xtype: 'panel',
+				header: false,
+				border: false,
+				columnWidth: 0.5,
+				layout: 'form',
+				xtype: 'panel',
+				labelStyle: "font-weight:bold; color:#15428b; margin-left: 10px;",
+			},
+			
+			style: {
+				marginTop: '5px',
+				marginBottom: '5px',
+			},
+			
+			items: [{
+				style: {},
+				defaults: {
+					labelStyle: "font-weight:bold; color:#15428b; margin-left: 10px;"
+				},
+				items: [{xtype: leftComp, width:100}] // eo items for first panel
+			}, {
+				style: {},
+				defaults: {
+					labelStyle: "font-weight:bold; color:#15428b; margin-left: 10px;"
+				},
+				items: [{xtype: rightComp, width:100}]
+					
+			}]
+			
+		};
+		
+		Sampledlg.TwoColsPanel.superclass.constructor.call (this, Ext.apply(myCfg, config));
+	}
+});
+Ext.reg ('twopanel', Sampledlg.TwoColsPanel);
+////////////////////////////////////////////////////////////////////////////
+
+
+
+
+Sampledlg.PanelForm = Ext.extend (Ext.form.FormPanel, {
+	
+	constructor: function (config) {
+		var myCfg = {
+			header: false,
+			id: 'introForm',
+			name: 'introForm',
+			monitorValid: true,
+	//		autoHeight: true,
+			autoWidth: true,
+	//		labelAlign: 'right',
+			buttonAlign: 'center',
+	//		layout: 'column',
+			labelWidth: 80,
+			
+			defaults: {
+//				layout: 'form', 
+				border: false, 
+				frame: true,
+				labelStyle: "font-weight:bold; color:#15428b; margin-left: 10px;",
+			},
+//			items: [{xtype:'subjcombo'}, {xtype:'txtsubjectcode'}],
+			items: [{
+				xtype:'grpcombo',
+			}, {
+				xtype:'twopanel', 
+				rightComp:'txtsubjectcode', 
+				leftComp:'subjcombo',
+			}, {
+				xtype: 'txtsamplecode'
+			}],
+	
+			buttons: [{
+				id: 'btnOk',
+				text: 'Ok',
+				style: 'margin: 0 5px',
+				handler: IntroDlg.btnHandler,
+				disabled: true
+//				formBind: true
+			}, {
+				id: 'btnCancel',
+				text: 'Cancel',
+				style: 'margin: 0 0 0 5px',
+				handler: IntroDlg.btnHandler
+			}]
+		} // eo confdig
+		
+		Sampledlg.PanelForm.superclass.constructor.call (this, Ext.apply(myCfg, config));
+		
+	}
+	
+});
+Ext.reg ('panelform', Sampledlg.PanelForm);
+
+
+// PRECONFIGURED WINDOW ////////////////////////////////////////
+Sampledlg.Dialog = Ext.extend (Ext.Window, {
+
+	initComponent: function() {
+    var config = {
+			frame: true,
+			closable: false,
+			resizable: false,
+//				height: 350,
+			autoHeight: true,
+			width: 500,
+			title: 'Sample questionnaire configuration',
+			modal: true,
+			draggable: false,
+			
+			defaults: {frame:true, autoHeight: true},
+			items: [{xtype: 'panelform'}]
+    }; // eo config object
+
+    // apply config
+    Ext.apply(this, Ext.apply(this.initialConfig, config));
+    Sampledlg.Dialog.superclass.initComponent.apply (this, arguments);
+  }, // eo function initComponent
+  
+	
+	onRender: function() {
+      Sampledlg.Dialog.superclass.onRender.apply (this, arguments);
+  } // eo function onRender	
+  
+	
+});
+// Ext.reg ('dlgform', Sampledlg.Dialog);
+
+

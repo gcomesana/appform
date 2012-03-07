@@ -1,0 +1,6 @@
+Bug fixed in RenderEng to allow render items when the highlight is null (for legacy questionnaires)
+AppLoginModule was removed the control for concurrent login
+--Esta línea y las que están debajo serán ignoradas--
+
+M    util/RenderEng.java
+M    jaas/AppLoginModule.java

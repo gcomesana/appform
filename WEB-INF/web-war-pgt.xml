@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4"
+			xmlns="http://java.sun.com/xml/ns/j2ee"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	<display-name>Application Form Tool</display-name>
+	
+	<context-param>
+		<description>Database server name</description>
+    <param-name>dbServerName</param-name>
+    <param-value>localhost</param-value>
+  </context-param>
+	
+	<context-param>
+    <description>Database Username</description>
+    <param-name>dbUserName</param-name>
+    <param-value>epiquestusr</param-value>
+  </context-param>
+	
+	<context-param>
+    <description>Database Password</description>
+    <param-name>dbPassword</param-name>
+    <param-value>3piqu3st</param-value>
+  </context-param>
+	
+	<context-param>
+    <description>Database name</description>
+    <param-name>dbName</param-name>
+    <param-value>epiquestdb</param-value>
+  </context-param>
+
+
+<!--
+	<session-config>
+    <session-timeout>2</session-timeout>
+  </session-config>
+-->	
+<!-- FILTER DECLARATION (just before listener declaration) -->
+	<filter>
+    <filter-name>AuthenticationFilter</filter-name>
+    <display-name>AuthenticationFilter</display-name>
+    <description></description>
+    <filter-class>
+    	org.cnio.appform.servlet.filter.AuthenticationFilter
+		</filter-class>
+		<init-param>
+			<param-name>docroot</param-name>
+			<param-value>/jsp/index.jsp</param-value>
+		</init-param>
+ 	</filter>
+	
+	<filter-mapping>
+    <filter-name>AuthenticationFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+
+<!-- LISTENER DECLARATION (just before servlet declarations and after filters) -->
+	<listener>
+    <listener-class>
+    org.cnio.appform.audit.AppSessionListener
+    </listener-class>
+	</listener>
+
+<!-- ALL SERVLETS DECLARATION -->
+	<servlet>
+		<display-name>Apache-Axis Servlet</display-name>
+		<servlet-name>AxisServlet</servlet-name>
+		<servlet-class>org.apache.axis.transport.http.AxisServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>Axis Admin Servlet</display-name>
+		<servlet-name>AdminServlet</servlet-name>
+		<servlet-class>org.apache.axis.transport.http.AdminServlet</servlet-class>
+		<load-on-startup>100</load-on-startup>
+	</servlet>
+	
+<!-- this is to declare the JaasServlet used for authentication 
+		 the init param is to be able to locate the jaas config file -->
+	<servlet>
+		<display-name>JAAS Login SErvlet</display-name>
+		<servlet-name>JaasServlet</servlet-name>
+		<servlet-class>org.cnio.appform.servlet.JaasServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+		
+		<init-param>
+			<param-name>jaasconfig.file</param-name>
+			<param-value>appform.props</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>jaastest</param-name>
+			<param-value>thisisonlyatest</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>max_login_attempts</param-name>
+			<param-value>5</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet>
+		<servlet-name>AjaxUtilServlet</servlet-name>
+		<servlet-class>org.cnio.appform.servlet.AjaxUtilServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<description>This servlet handles ajax request for performance development</description>
+		<display-name>IntrvServlet</display-name>
+		
+		<servlet-name>IntrvServlet</servlet-name>
+		<servlet-class>org.cnio.appform.servlet.IntrvServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<description>"Simple" servlet to set the active groups</description>
+		<display-name>MngGroupsServlet</display-name>
+		
+		<servlet-name>MngGroupsServlet</servlet-name>
+		<servlet-class>org.cnio.appform.servlet.MngGroupsServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<description>Servlet to manage the data manager queries</description>
+		<display-name>Query Servlet</display-name>
+		
+		<servlet-name>QryServlet</servlet-name>
+		<servlet-class>org.cnio.appform.servlet.QryServlet</servlet-class>
+	</servlet>
+	
+<!-- the two next servlets are used in password recovery protocol -->
+	<servlet>
+    <servlet-name>jcaptcha</servlet-name>
+    <servlet-class>org.cnio.appform.servlet.ImgCaptchaServlet</servlet-class>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+	
+	<servlet>
+    <servlet-name>MngPasswordServlet</servlet-name>
+    <servlet-class>org.cnio.appform.servlet.MngPasswordServlet</servlet-class>
+    <load-on-startup>0</load-on-startup>
+		
+		<init-param>
+			<param-name>urlPassGet</param-name>
+			<param-value>http://pgt.bioinfo.cnio.es/epibuilder/users/getpasswd?digest=</param-value>
+		</init-param>
+		
+		<init-param>
+			<param-name>resetPasswdLoc</param-name>
+			<param-value>/epibuilder/getpass</param-value>
+		</init-param>
+  </servlet>
+	
+<!-- SERVLET MAPPINGS -->
+	<servlet-mapping>
+		<servlet-name>AxisServlet</servlet-name>
+		<url-pattern>/servlet/AxisServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AxisServlet</servlet-name>
+		<url-pattern>*.jws</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AxisServlet</servlet-name>
+		<url-pattern>/services/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>JaasServlet</servlet-name>
+		<url-pattern>/servlet/JaasServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>AdminServlet</servlet-name>
+		<url-pattern>/servlet/AdminServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>AjaxUtilServlet</servlet-name>
+		<url-pattern>/servlet/AjaxUtilServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>IntrvServlet</servlet-name>
+		<url-pattern>/servlet/IntrvServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>MngGroupsServlet</servlet-name>
+		<url-pattern>/servlet/MngGroupsServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>QryServlet</servlet-name>
+		<url-pattern>/servlet/QryServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+    <servlet-name>jcaptcha</servlet-name>
+    <url-pattern>/jcaptcha</url-pattern>
+  </servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>MngPasswordServlet</servlet-name>
+		<url-pattern>/users/getpasswd</url-pattern>
+	</servlet-mapping>
+	
+
+	<security-constraint>
+		<display-name>Security Constraint</display-name>
+		<web-resource-collection>
+			<web-resource-name>Protected Area</web-resource-name>
+
+			<url-pattern>/jsp/*</url-pattern>
+			<url-pattern>/admintool/*</url-pattern>
+			<url-pattern>/display/*</url-pattern>
+			<url-pattern>/servlet/*</url-pattern>
+			<!-- 
+			<url-pattern>/js/*</url-pattern>
+			<url-pattern>/html/*</url-pattern>
+			<url-pattern>/META-INF/*</url-pattern>
+			<url-pattern>/WEB-INF/*</url-pattern>
+			<url-pattern>/sql/*</url-pattern>
+			<url-pattern>/misc/*</url-pattern>
+			<url-pattern>/src/*</url-pattern>
+			-->
+	 
+			<http-method>GET</http-method>
+			<http-method>POST</http-method>
+			<http-method>HEAD</http-method>
+			<http-method>PUT</http-method>
+		</web-resource-collection>
+		
+		<auth-constraint>
+			<role-name>admin</role-name>
+			<role-name>editor</role-name>
+-			<role-name>interviewer</role-name>
+			<role-name>project coordinator</role-name>
+			<role-name>country coordinator</role-name>
+			<role-name>node coordinator</role-name>
+			<role-name>hospital coordinator</role-name>
+			
+			<role-name>curator</role-name>
+			<role-name>datamanager</role-name>
+			<role-name>guest</role-name>
+		</auth-constraint>
+		
+		<user-data-constraint>
+			<transport-guarantee>NONE</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+    
+        <!-- Default login configuration uses form-based authentication -->
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<realm-name>Form-Based Authentication Area</realm-name>
+		<form-login-config>
+			<form-login-page>/login.jsp</form-login-page>
+			<form-error-page>/error.jsp</form-error-page>
+		</form-login-config>
+	</login-config>
+	
+	<security-role>
+		<description>An administrator</description>
+		<role-name>admin</role-name>
+	</security-role>
+	<security-role>
+		<description>An editor</description>
+		<role-name>editor</role-name>
+	</security-role>
+	<security-role>
+		<description> An interviewer</description>
+		<role-name>interviewer</role-name>
+	</security-role>
+	<security-role>
+		<description>Role to grant read access to all data in a project</description>
+		<role-name>project coordinator</role-name>
+	</security-role>
+	<security-role>
+		<description>Role to grant read access to all interview data in a hospital</description>
+		<role-name>hospital coordinator</role-name>
+	</security-role>
+	<security-role>
+		<description>Role to grant read access to all interview data in a set of hospitals</description>
+		<role-name>node coordinator</role-name>
+	</security-role>
+	<security-role>
+		<description>Role to gran read access to all interview data belonging to a country</description>
+		<role-name>country coordinator</role-name>
+	</security-role>
+	
+	<security-role>
+		<description> A curator to assure the data quality and consistency</description>
+		<role-name>curator</role-name>
+	</security-role>
+	<security-role>
+		<description> A data supervisor and/or manager</description>
+		<role-name>datamanager</role-name>
+	</security-role>
+	<security-role>
+		<description>A guest to see the application without doing anything</description>
+		<role-name>guest</role-name>
+	</security-role>
+	
+ 	
+</web-app>

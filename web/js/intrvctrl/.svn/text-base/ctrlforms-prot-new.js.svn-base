@@ -1,0 +1,488 @@
+var intrvFormCtrl;
+var overlay;
+
+
+ControlForms = function (intrvId) {
+	//  this.overlay = new Overlay();
+	this.ajaxResp = new IntrvAjaxResponse();
+	
+	// sign up as a listener for the events fired by the ajaxResp object
+	//    ajaxResp.subscribeSecs (this.loadForm, this);
+	//    ajaxResp.subscribeForm (this.loadSection, this);
+	this.ajaxResp.subscribeSecs(this.testEvent, this);
+	this.ajaxResp.subscribeForm(this.onFormComplete, this);
+	
+	this.intrvId = intrvId;
+	this.numbersOk = true;
+	
+	this.pauseIntrv = 0;
+	
+}
+
+
+ControlForms.prototype.init = function (intrvId) {
+//  this.intrvId = intrvId;
+	
+	$("#toolDiv").css("visibility", "hidden");
+	$("#listLabs").change (function () {
+// alert ("binding change with intrvFormCtrl.changeGroup");
+
+		return intrvFormCtrl.changeGroup ();
+	});
+}
+
+
+
+/**
+ * This is a method to response the change events over the list groups
+ */
+ControlForms.prototype.changeGroup = function () {
+	var optSel = $("#listLabs option:selected");
+	var grpId = $(optSel).val();
+	
+	var postdata;
+  var xReq = new AjaxReq ();
+	xReq.setMethod ("POST");
+  
+  xReq.setUrl ("/appform/servlet/MngGroupsServlet");
+ 
+  xReq.setPostdata("grpid="+grpId);
+	xReq.setCallback (this.ajaxResp.onGrpChanged, this.ajaxResp.onFail,
+										this.ajaxResp, null);
+	xReq.startReq();
+}
+
+
+
+ControlForms.prototype.chkLabel = function (label) {
+     
+}
+
+
+
+ControlForms.prototype.onfocus = function (textName) {
+	var text = document.getElementsByName(textName);
+	text[0].style.border = "3px solid yellow"
+	text[0].style.background = "white";
+}
+
+
+
+ControlForms.prototype.onBlur = function (textName) {
+	var text = document.getElementsByName(textName);
+	var patientElem = document.getElementById('patId');
+	
+	text[0].style.border = "1px solid darkblue";
+	text[0].style.background = "white";
+	
+	var theVal = text[0].value;
+// alert (text[0].name + " is "+theVal);
+	var postdata = "patid="+patientElem.value+"&q="+textName+"&val="+theVal;
+  var xReq = new AjaxReq ();
+	xReq.setMethod ("POST");
+  
+  xReq.setUrl ("/appform/servlet/SaveQuestionsServlet");
+ 
+  xReq.setPostdata(postdata);
+	xReq.setCallback (this.ajaxResp.onGrpChanged, this.ajaxResp.onFail,
+										this.ajaxResp, null);
+//	xReq.startReq();
+	
+}
+
+
+/**
+ * This method set an error color on a textbox with some previous input err
+ * @param {Object} textName, the html component with the err
+ */
+ControlForms.prototype.onInputErr = function (textName) {
+	var text = document.getElementsByName(textName);
+	text[0].style.border = "3px solid red";
+	text[0].style.background = "#FFCC99";
+}
+
+
+ControlForms.prototype.chkNumber = function (text, min, max, exc) {
+// alert ("chkNumber: "+text.name);
+  var numRegExp = /^\d*$/g;
+  var res = text.value.search(numRegExp); 
+	this.numbersOk = true;
+  
+// check if text.value is a number   
+  if (res == -1) {
+    alert("A number has to be introduced instead "+text.value);
+    text.value = "";
+		
+    this.numbersOk = false;
+    return false;
+  }
+  var myVal = parseInt (text.value, 10);
+   
+// check if text.value is the exception or falls between min and max
+  var exceptions = exc.split(',');
+  var k;
+  for (k=0; k<exceptions.length; k++) {
+    var myExc = parseInt (exceptions[k]);
+    if (isFinite(myExc)) {
+      if (myVal == myExc)
+        return;
+    }
+  }
+  
+  var myMin = parseInt (min, 10);
+  if (isFinite(myMin)) {
+    if (myVal < myMin) {
+      alert ("Value below range: "+myVal+" < "+myMin);
+      text.value = "";
+			this.onInputErr (text.name);
+			
+			this.numbersOk = false;
+      return false;
+    }
+  }
+  
+  var myMax = parseInt (max, 10);
+  if (isFinite(myMax)) {
+    if (myVal > myMax) {
+      alert ("Value over range: "+myVal+" > "+myMax);
+      text.value = "";
+			this.onInputErr (text.name);
+			
+			this.numbersOk = false;
+      return false;
+    }
+  }
+  
+	if (this.numbersOk == true) {
+		this.onBlur(text.name);
+	}
+	else {
+		text.focus();
+	}
+}
+
+
+
+
+ControlForms.prototype.chkDecimal = function (text, min, max, exc) {
+  var numRegExp = /^[-+]?\d*\.?\d*$/g;
+  var res = text.value.search(numRegExp);
+   
+  if (res == -1) {
+    alert("A decimal number has to be introduced instead "+text.value);
+    text.value = "";
+     
+    return;
+  }
+  var myVal = parseFloat (text.value);
+   
+// check if text.value is the exception or falls between min and max
+  var exceptions = exc.split(',');
+  var k;
+  for (k=0; k<exceptions.length; k++) {
+    var myExc = parseFloat (exceptions[k]);
+    if (isFinite(myExc)) {
+      if (myVal == myExc)
+        return;
+    }
+  }
+  
+  var myMin = parseFloat (min);
+  if (isFinite(myMin)) {
+    if (myVal < myMin) {
+      alert ("Value below range: "+myVal+" < "+myMin);
+      text.value = "";
+			this.onBlur(text.name);
+      return;
+    }
+  }
+  
+  var myMax = parseFloat (max);
+  if (isFinite(myMax)) {
+    if (myVal > myMax) {
+      alert ("Value over range: "+myVal+" > "+myMax);
+      text.value = "";
+			this.onBlur(text.name);
+      return;
+    }
+  }
+  
+	this.onBlur(text.name);
+}
+
+
+ControlForms.prototype.showTooltip = function (option) {
+	var toolDiv = $("#toolDiv");
+	var posx = getMouseCoord (null, x), posy = getMouseCoord (null, y);
+	
+	$(toolDiv).html("<b>"+option.text+"</b>");
+	$(toolDiv).height(10);
+	$(toolDiv).width(option.text.length()*5);
+	
+	$(toolDiv).position ({left:posx,top:posy});
+	$(toolDiv).css ("visibility", "visible");
+}
+
+
+function getMouseCoord (e, what) {
+  var posx = 0;
+  var posy = 0;
+	
+  if (!e) 
+    var e = window.event;
+		
+  if (e.pageX || e.pageY) {
+    posx = e.pageX;
+    posy = e.pageY;
+  }
+  else if (e.clientX || e.clientY) {
+    posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+    posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+  }
+//You have the coordinates in the posx and posY variables
+//You can do whatever you want with them after this point
+
+	return (what.toLowerCase() == 'x')? posx: posy;
+}
+
+
+
+ControlForms.prototype.chkIntroForm = function (theForm) {
+  var elems = theForm.elements;
+   var i, patCodeElem;
+// get the first textfield element, which will have to be the patient code     
+   for (i=0; i<elems.length; i++) {
+     if (elems[i].getAttribute("type") == "text") {
+       patCodeElem = i;
+       break;
+     }
+   }
+   
+// check if the patient code is semantically correct
+	 var hospCod = theForm.hospCod.value;
+	 var patCode1 = elems[i].value;
+	 var caseControl = patCode1.substring(2,3);
+	 patCode1 = patCode1.substring(0,2);
+	 if (patCode1 != hospCod) {
+	 	var msg = "Patient code incorrect. Two first HOSPITAL CODE digits wrong: ";
+		msg += patCode1 + " (It should be "+hospCod+")";
+		 
+	 	alert (msg);
+		return false;
+	 }
+	 
+	 if (caseControl != 1 && caseControl != 2) {
+	 	var msg = "Patient code incorrect. Third number has to be 1 (for cases) or ";
+		msg += "2 (for controls)";
+		 
+	 	alert (msg);
+		return false;
+	 }	 
+	 
+   if (elems[i].value != elems[i+1].value || 
+       elems[i].value.length == 0 ||
+       elems[i+1].value.length == 0) {
+     alert ("Both patient codes must match and they can not be empty");
+     return false;
+   }
+
+   return true;
+}
+  
+
+
+
+/**
+ * send method
+ * Sends the forms to the server scrips doing a check in advance.
+ * @param {Object} theForm, the reference to the form in the web page
+ */
+ControlForms.prototype.send = function (theForm) {
+	
+	if (this.numbersOk == true) {
+		var xReq = new AjaxReq();
+		xReq.setMethod("POST");
+		
+		if (theForm.name.toUpperCase() == "INTROFORM") {
+			var res = this.chkIntroForm(theForm);
+			if (res) {
+		  	this.pauseIntrv = 0;
+				$('#linkGrp').remove();
+				$('#grpSpan').html("Hospital or Lab:");
+
+		  	xReq.setUrl("ajaxjsp/saveintro.jsp");
+		  }
+		  else 
+		  	return;
+		}
+		else 
+			if (theForm.name.toUpperCase() == "SECTIONFORM") {
+				//      outForm (theForm);
+				xReq.setUrl("ajaxjsp/saveform.jsp");
+			}
+			
+			else 
+				xReq.setUrl("ajaxjsp/saveform.jsp");
+		
+		//		xReq.setPostdata("frmid="+intrvId);
+		// alert ("Sending and applying theForm");
+		if (confirm("Are you sure to confirm these data?")) {
+			xReq.setForm(theForm);
+			xReq.setCallback(this.ajaxResp.onSaveForm, this.ajaxResp.onFail, this.ajaxResp, null);
+			xReq.startReq();
+		}
+		
+// This is to be aware when the interview is paused or finished in order to be
+// able to change the group
+		if (this.pauseIntrv == 1) {
+			var spanTag = $('#grpSpan');
+//			$('#grpSpan').add("a").attr("href", "setprimarygrp.jsp?typegroup=SEC").add('id', 'linkGrp');
+			var spanLnk = '<a href="setsecondarygrp.jsp?typegroup=SEC" id="linkGrp">'+
+										$(spanTag).html()+'</a>';
+			$(spanTag).html(spanLnk);
+		}
+	}
+}
+
+
+
+
+/**************************************************************************
+ * Finish the interview for this session. To do that, all session variables 
+ * (except) the user, has to be invalidated
+ * @param {Object} theForm
+ */  
+ControlForms.prototype.finish = function (theForm, lastSec) {
+/*    
+    var theDoc = theForm.ownerDocument;
+    var endHidden = theDoc.createElement('input');
+    endHidden.type = 'hidden ';
+    endHidden.name = 'finish';
+    endHidden.value = '1';
+    theForm.appendChild (endHidden);
+*/
+  if (confirm("Are you sure to finish/interrupt this interview?")) {
+		
+		
+    theForm.elements['finish'].value = "1";
+// creates a new hidden element to hold the last section visited
+    var lastSec = document.createElement("input");
+    lastSec.setAttribute("type", "hidden");
+    lastSec.setAttribute("name", "frmLastSec");
+    lastSec.setAttribute("value", lastSec);    
+    theForm.appendChild (lastSec);
+    
+		this.pauseIntrv = 1;
+		
+    this.send(theForm);
+  }
+}
+
+
+
+ControlForms.prototype.prevForm = function (secId, patId) {
+  var postdata;
+  var xReq = new AjaxReq ();
+	xReq.setMethod ("GET");
+  
+  xReq.setUrl("ajaxjsp/prevform.jsp");
+ 
+  xReq.setPostdata("secId="+secId+"&patId="+patId);
+	xReq.setCallback (this.ajaxResp.onPrevForm, this.ajaxResp.onFail,
+										this.ajaxResp, null);
+	xReq.startReq();
+}
+
+
+
+/**
+ * getForm method
+ * Makes an ajax petition to get the form for the section with id secId
+ * @param {Object} secId, the id of the section which contains the form
+ */    
+ControlForms.prototype.getForm = function (idSec) {
+    
+    var xReq = new AjaxReq ();
+		xReq.setMethod ("GET");
+    
+//      outForm (theForm);
+    xReq.setUrl("ajaxjsp/items4sec.jsp");
+   
+//		xReq.setPostdata("frmid="+intrvId);
+// alert ("Sending and applying theForm");
+    xReq.setPostdata("frmid="+secId);
+		xReq.setCallback (this.ajaxResp.onGetForm, this.ajaxResp.onFail,
+											this.ajaxResp, null);
+		xReq.startReq();
+}
+
+
+/**
+ * loadSection ()
+ * Makes an ajax request to get the all sections for this interview template.
+ */
+ControlForms.prototype.loadSection = function (intrvId) {
+  var xReq = new AjaxReq ();
+	xReq.setUrl ("ajaxjsp/secs4intrv.jsp");
+	xReq.setMethod ("GET");    
+	xReq.setPostdata("frmid="+intrvId);
+	xReq.setCallback (this.ajaxResp.onSecs4Intrv, this.ajaxResp.onFail,
+										this.ajaxResp, null);
+	xReq.startReq();
+}
+
+
+
+ControlForms.prototype.onFormComplete = function (type, args, me) {
+// alert ("controlForms.onFormComplete, before calling loadSec");  
+  me.loadSection (me.intrvId);
+}
+
+
+
+ControlForms.prototype.loadForm = function (secId) {
+  var xReq = new AjaxReq ();
+	xReq.setUrl ("ajaxjsp/items4sec.jsp");
+	xReq.setMethod ("GET");
+	xReq.setPostdata("frmid="+secId);
+	xReq.setCallback (this.ajaxResp.onItems4Sec, this.ajaxResp.onFail,
+										this.ajaxResp, null);
+	
+	xReq.startReq();
+}
+
+
+
+ControlForms.prototype.testEvent = function (type, args, me) {
+//  alert ("ControlForms.testEvent: eventType: "+ type + " msg: "+args);
+}
+
+
+
+  
+///////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////// 
+  
+/**
+ * Initialize the javascript application by loading init form and sections
+ * @param {Object} intrvId
+ * @param {Object} secId
+ * @param {Object} preview
+ */
+function onReady (intrvId, secId, preview) {
+  overlay = new Overlay();
+  
+  intrvFormCtrl = new ControlForms (intrvId);
+  intrvFormCtrl.init (intrvId);
+  
+  intrvFormCtrl.loadSection (intrvId);
+  intrvFormCtrl.loadForm (secId);
+	
+	ctrl = new FormManager ();
+  ctrl.init();
+  
+// for the class which duplicates elements
+//  ctrl = new FormManager ();
+//  ctrl.init();
+  
+}

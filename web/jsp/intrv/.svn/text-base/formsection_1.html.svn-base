@@ -1,0 +1,97 @@
+    
+
+
+
+
+								
+								
+
+	
+<h3>Section Section A - Demographics</h3>
+<table>
+<form>
+<input type="hidden" name="patId" value="null" />
+<input type="hidden" name="secId" value="50" />
+<tr><td><b>Vamos a empezar con algunas preguntas acerca de sus antecedentes:</b><br></td></tr>
+<tr><td>&iquest;Cu&aacute;l es su fecha de nacimiento (D-M-Y)?</td></tr>
+<tr><td>
+&nbsp;<input type="text" name="q51-null" maxlength="10" size="12" onblur="chkNumber(this.value)"/>
+&nbsp;-&nbsp;&nbsp;<input type="text" name="q51-null" maxlength="10" size="12" onblur="chkNumber(this.value)"/>
+
+&nbsp;-&nbsp;&nbsp;<input type="text" name="q51-null" maxlength="10" size="12" onblur="chkNumber(this.value)"/>
+</td></tr>
+
+<tr><td><b>Si no sabe la fecha de nacimiento pregunte:</b><br></td></tr>
+<tr><td>A1a. &iquest;Podr&iacute;a decirme su edad?</td></tr>
+<tr><td>
+&nbsp;<input type="text" name="q53-null" maxlength="10" size="12" onblur="chkNumber(this.value)"/>
+</td></tr>
+
+<tr><td><b>Si la edad no es sabida o rechazada, obtenga la edad a partir del formulario de identificaci&oacute;n o del formulario de control de selecci&oacute;n</b><br></td></tr>
+
+<tr><td>A2. Codificar sexo sin preguntar:
+			</td></tr>
+<tr><td>
+&nbsp;<select name="q100-null">
+<option value='1'>Hombre</option>
+<option value='2'>Mujer</option>
+</select></td></tr>
+
+</form>
+</table>
+
+
+<!-- 
+<form>
+<h3>SECTION A: DEMOGRAPHICS</h3>
+<table>
+	<tr><td>We will start with some questions about your background:</td></tr>
+	<tr><td>What is your date of birth?</td><td><input type="text"/></td><td><input type="text" /></td><td><input type="text"></td></tr>
+	
+	<tr><td>If the date of birth is unknown, ask:</td></tr>
+	<tr><td>Could you tell me your age?</td><td><input type="text" /></td></tr>
+	
+	<tr><td>If the age is not known or not given, get the age from the identification form or the control selection form</td></tr>
+	<tr><td>Code gender without asking:</td><td><select>
+<option>MALE</option>
+<option>FEMALE</option>
+</select></td></tr>
+	<tr><td>Could you tell me what ethnic group you belong to?</td><td><select>
+<option>WHITE
+<option>BLACK
+<option>ASIAN
+<option>CHINESE
+<option>IRISH TRAVELLER
+<option>MIXED
+<option>OTHER
+</select></td></tr>
+	<tr><td>How many years of full time education have you completed(include primary, secondary and tertiary education)?</td><td><input type="text"></td></tr>
+	<tr><td>Are you currently single, married or living with a partner, widowed, separated or divorced?</td><td><select>
+<option>SINGLE, NEVER MARRIED
+<option>MARRIED OR LIVING WITH A PARTNER
+<option>WIDOWED
+<option>SEPARATED OR DIVORCED
+</select></td></tr>
+	<tr><td>What is your height?</td><td>M/CM: <input type="text"></td><td><input type="text"></td></tr>
+	<tr><td>What was your weight 2 years ago?</td><td><input type="text"></td></tr>
+	<tr><td>What was your weight when you were 50 years old?</td><td><input type="text"></td></tr>
+	<tr><td>What was your weight when you were 20 years old?</td><td><input type="text"></td></tr>
+	<tr><td>When you were born, were you a small, medium or large baby?</td><td><select>
+<option>Small (<2.5kg)
+<option>Medium (between 2.5 and 3.9kg)
+<option>Large (>=4.0kg)
+<option>DK
+</select></td></tr>
+	<tr><td>A11. When you put on weight, do you tend to put it on</td><td><select>
+<option>Hips and thighs mostly
+<option>Waist and stomach mostly
+<option>Breast and upper body mostly
+<option>Buttocks mostly
+<option>All over equally
+<option>Never carried any extra weight
+</select></td></tr>
+
+</table>
+<input type='submit' value='send' onclick="send();"/>
+</form>
+-->

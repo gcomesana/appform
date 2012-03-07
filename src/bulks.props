@@ -1,0 +1,26 @@
+# aqu’ se puede poner el nombre de la query
+prj1: PanGen-Eu
+grp1: Hospital del Mar
+sec1: 1
+intrv1: QES
+filename1: query.csv
+
+# aqu’ sin grupo
+prj2:ISBlaC
+intrv2:Recogida_Muestra_ES
+sec2:1
+filename2: query2.csv
+
+prj3:PanGen-Eu
+grp3: Hospital Ram—n y Cajal
+sec3:1
+intrv3:QES
+filename3: query3.csv
+
+# para tu pergunta
+prj4: ISBlaC
+intrv4: Recogida_Muestra_ES
+sec4: 1
+grp4: Hospital del Mar
+ques4: A1
+filename4: query4.csv

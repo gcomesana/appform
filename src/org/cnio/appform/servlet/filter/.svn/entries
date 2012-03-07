@@ -1,0 +1,41 @@
+8
+
+dir
+78
+svn+ssh://gcomesana@gredos/home/gcomesana/Development/svn-repo/appform/src/org/cnio/appform/servlet/filter
+svn+ssh://gcomesana@gredos/home/gcomesana/Development/svn-repo
+
+
+
+2009-10-05T16:03:39.264528Z
+78
+gcomesana
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+4aadde07-169c-4302-b40d-08daa5913de5
+
+AuthenticationFilter.java
+file
+
+
+
+
+2009-10-07T09:07:58.000000Z
+4576cb2cff7e0b33e5244033d0a02b2a
+2009-10-05T16:03:39.264528Z
+78
+gcomesana
+has-props
+

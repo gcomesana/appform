@@ -1,0 +1,21 @@
+<!-- PRODUCTION application context file -->
+<!--
+<Context path="/appform" docBase="${catalina.home}/webapps/admtool"
+        debug="0" privileged="true" reloadable="true">
+
+    <Realm  className="org.apache.catalina.realm.JDBCRealm" debug="99"
+             driverName="org.postgresql.Driver"
+        connectionURL="jdbc:postgresql://padme.cnio.es:5432/appform" 
+        connectionName="gcomesana" connectionPassword="appform"
+     userTable="appuser" userNameCol="username" userCredCol="passwd"
+       userRoleTable="user_role" roleNameCol="rolename" />
+                       
+</Context>
+-->
+
+<Context path="/epibuilder" docBase="${catalina.home}/webapps/epibuilder" debug="0" privileged="true" reloadable="true">
+    <Realm className="org.apache.catalina.realm.JAASRealm" debug="99"
+           appName="epibuilder" userClassNames="org.cnio.appform.jaas.AppPrincipal" 
+           roleClassNames="org.cnio.appform.jaas.AppPrincipalRole"
+           userContextClassLoader="false" />
+</Context>

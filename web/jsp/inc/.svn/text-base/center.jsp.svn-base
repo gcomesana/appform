@@ -1,0 +1,271 @@
+<!-- **************** START CONTENT AREA (REGION b)**************** -->
+<%@ page language="java" contentType="text/html;charset=UTF-8"%>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+<%@page import="org.hibernate.Session, java.util.Collection, 
+								java.util.Iterator, java.util.ArrayList, java.util.List,
+								java.util.Enumeration"  %>
+								
+<%@page import="org.cnio.appform.entity.AbstractItem,
+								org.cnio.appform.entity.Text, org.cnio.appform.entity.Question, 
+								org.cnio.appform.entity.Project, org.cnio.appform.entity.Section,
+								org.cnio.appform.entity.Interview, 
+								org.cnio.appform.entity.AnswerItem,
+								org.cnio.appform.util.HibernateUtil,
+								org.cnio.appform.util.HibController,
+								org.cnio.appform.util.IntrvController" %>	
+<%
+//	Session hibSes = HibernateUtil.getSessionFactory().openSession();
+	boolean existOp = false;
+	Enumeration<String> en;
+	
+	for (en = request.getParameterNames(); en.hasMoreElements(); ) {
+		String elem = en.nextElement();
+		
+		if (elem.equalsIgnoreCase ("op")) {
+			existOp = true;
+			break;
+		}
+	}
+	
+	pageContext.setAttribute ("existOp", existOp);
+
+// page vars necessary to check the permissions	
+	String roles = (String)session.getAttribute("roles");
+	int action = AppUserCtrl.ACTION_R;
+	boolean granted = false;
+%>
+
+
+<%-- detailsec and mngsec seems to be the same with diffrent type --%>
+<c:choose>
+	<c:when test="${param.t eq 'sec'}"> <%-- SECTION management --%>
+		
+		<c:choose>
+			<c:when test="${existOp && (param.op eq 'DET' || param.op eq 'det')}">
+				
+				<jsp:include page="detailsec.jsp" />
+			</c:when>
+			<c:when test="${(not existOp && empty param.res) || 
+											(existOp && not empty param.res)}"> 
+				<c:set var="res" value="${param.res}"/>
+				<jsp:include page="mngsec.jsp" />
+				<%-- <jsp:include page="inc/mngsec.jsp" /> --%>
+			</c:when>
+			<c:otherwise>
+				<%-- <jsp:include page="inc/editsec.jsp" /> --%>
+				<jsp:include page="editsec.jsp" />
+			</c:otherwise>
+		</c:choose>
+				
+	</c:when>
+	
+	<c:when test="${param.t eq 'ele'}"> <%--ELEMENT management --%>
+		<c:choose>
+			<c:when test="${not empty param.res}"> 
+				<%
+					granted = AppUserCtrl.elemPermissions(roles, action);
+					if (!granted) {
+				%>
+					<%@include file="nogranted.jsp" %>
+				<%
+						return;
+					}
+				%>
+				<c:set var="res" value="${param.res}"/>
+				<jsp:include page="detailsec.jsp" />
+				<%-- <jsp:include page="inc/mngsec.jsp" /> --%>
+			</c:when>
+			
+			<c:when test="${existOp && (param.op eq 'new' || param.op eq 'NEW')}">
+				<%
+					granted = AppUserCtrl.elemPermissions(roles, action);
+					if (!granted) {
+				%>
+					<%@include file="nogranted.jsp" %>
+				<%
+						return;
+					}
+				%>
+
+				<jsp:include page="editelem.jsp" />
+			</c:when>
+			
+<%-- Here we use det because the details for an item and the update is the same
+			in this particular case --%>			
+			<c:when test="${existOp && (param.op eq 'upd' || param.op eq 'UPD' ||
+											param.op eq 'det' || param.op eq 'DET')}">
+				<%
+					granted = AppUserCtrl.elemPermissions(roles, action);
+// out.println("<!-- granted: "+granted+" for "+roles+" and "+action+" -->");
+					if (!granted) {
+				%>
+					<%@include file="nogranted.jsp" %>
+				<%
+						return;
+					}
+				%>
+				<jsp:include page="editelem.jsp" />
+			</c:when>
+		</c:choose>
+	</c:when>
+	
+	<c:when test="${param.t eq 'prj'}"> <%-- PROJECT management --%>
+		<c:choose>
+			<c:when test="${existOp && (param.op eq 'DET' || param.op eq 'det')}">
+				<%
+					granted = AppUserCtrl.projectPermissions(roles, action);
+					if (!granted) {
+				%>
+					<%@include file="nogranted.jsp" %>
+				<%
+					return;
+					}
+				%>
+				<jsp:include page="detailprj.jsp" />
+			</c:when>
+			<c:when test="${(not existOp && empty param.res) || 
+											(existOp && not empty param.res)}"> 
+				<%
+					granted = AppUserCtrl.projectPermissions(roles, action);
+					if (!granted) {
+				%>
+					<%@include file="nogranted.jsp" %>
+				<%
+					return;
+					}
+				%>
+				<c:set var="res" value="${param.res}"/>
+				<jsp:include page="prjlist.jsp" />
+				<%-- <jsp:include page="inc/mngsec.jsp" /> --%>
+			</c:when>
+			<c:otherwise>
+				<%-- <jsp:include page="inc/editsec.jsp" /> --%>
+				<%
+					action = AppUserCtrl.ACTION_U;
+					granted = AppUserCtrl.projectPermissions(roles, action);
+					action = AppUserCtrl.ACTION_C;
+					granted &= AppUserCtrl.projectPermissions(roles, action);
+					if (!granted) {
+				%>
+					<%@include file="nogranted.jsp" %>
+				<%
+					return;
+					}
+				%>
+				<jsp:include page="editprj.jsp" />
+			</c:otherwise>
+		</c:choose>
+	</c:when>
+		
+	<c:when test="${param.t eq 'int'}"> <%-- INTERVIEW management --%>
+		<c:choose>
+			<c:when test="${existOp && (param.op eq 'DET' || param.op eq 'det')}">
+<%--				<%@include file="detailintr.jsp" %> --%>
+				<%
+					granted = AppUserCtrl.intrvPermissions(roles, action);
+					if (!granted) {
+				%>
+					<%@include file="nogranted.jsp" %>
+				<%
+					return;
+					}
+				%>
+				<jsp:include page="mngsec.jsp" />
+			</c:when>
+			
+			<c:when test="${(not existOp && empty param.res) || 
+											(existOp && not empty param.res)}"> 
+				<c:set var="res" value="${param.res}"/>
+<%--				<%@include file="intrlist.jsp" %> --%>
+				<%
+					granted = AppUserCtrl.intrvPermissions(roles, action);
+					if (!granted) {
+				%>
+					<%@include file="nogranted.jsp" %>
+				<%
+					return;
+					}
+				%>
+				<jsp:include page="mngsec.jsp" /> 
+			</c:when>
+			
+			<c:otherwise>
+				<%
+					action = AppUserCtrl.ACTION_C;
+					granted = AppUserCtrl.intrvPermissions(roles, action);
+					action = AppUserCtrl.ACTION_U;
+					granted &= AppUserCtrl.intrvPermissions(roles, action);
+System.out.println("center.jsp: intrv granted? " + granted +" for roles: "+roles);
+					if (!granted) {
+				%>
+					<%@include file="nogranted.jsp" %>
+				<%
+						return;
+					}
+				%>
+				<jsp:include page="editintr.jsp" />
+			</c:otherwise>
+		</c:choose>
+	</c:when>
+	
+	<c:otherwise>
+<%--  	 
+<div id='regionB'>
+<br/>
+<form id="formIntro" name="formIntro" method="post" action="">
+<p align="right" id="stmt">N&uacute;mero de ID: 
+
+		<select name="idPatient" id="idPatient">
+		 <option value="-1">Choose one...</option> <!-- 
+		 <c:forEach items="${myresults}" var="item">
+				<option val="${item[0]}">${item[1]}</option>
+		 </c:forEach> -->
+		</select>
+</p>
+<div id="formIntro">
+Nombre y apellidos:
+	<input name="firstName" type="text" id="firstName" size="10" maxlength="64" /> 
+	<input name="midName" type="text" id="midName" size="10" maxlength="64" />
+	<input name="lastName" type="text" id="lastName" size="10" maxlength="64" />
+</div>
+
+<p align="right" id="stmt">N&uacute;mero Historia	Cl&iacute;nica: 
+						<input name="NHC" type="text" id="NHC" size="20" maxlength="64" />
+</p>
+<p align="right" id="stmt">Entrevistador:
+	<input name="interviewer" type="text" id="interviewer" size="32" maxlength="128"/></p>
+<p align="right" id="stmt">Fecha en que la entrevista fue terminada (dd/mm/yyyy):
+						<input name="day" type="text" id="day" size="3" maxlength="2" />
+/						
+<input name="month" type="text" id="month" size="3" maxlength="2" />
+/					
+<input name="year" type="text" id="year" size="5" maxlength="4" />
+</p>
+<p align="right" id="stmt">Hora en que la entrevista empez&oacute;: 
+<input name="hour" type="text" id="day2" size="3" maxlength="2" />
+:
+<input name="min" type="text" id="day3" size="3" maxlength="2" />
+</p>
+<br/>
+<p align="center"><b>Estudio Espa&ntilde;ol sobre Enfermedades Digestivas y Gen&eacute;tica</b></p><br/><br/>
+<b>INTRODUCCI&Oacute;N</b>
+<br/>
+<p id="infotext">
+Le agrademos que acepte participar en este estudio. Durante la entrevista, le preguntar&eacute; sobre los trabajos que ha realizado, su historial m&eacute;dico	y otras preguntas sobre su pasado. Su participaci&oacute;n en este estudio	es voluntaria y en cualquier momento puede no contestar una pregunta si as&iacute; lo	desea. Su cooperaci&oacute;n es muy importante para este estudio de investigaci&oacute;n, ya que nos ayudar&aacute; a conocer m&aacute;s sobre la salud en personas adultas.<br/>
+						Introducir&eacute; sus respuestas en el ordenador. Me gustar&iacute;a recordarle que la informaci&oacute;n que usted nos proporcione ser&aacute; absolutamente confidencial. Si usted no entiende alguna cosa pregunte, por favor. Estas preguntas tienen una duraci&oacute;n de 60 minutos aproximadamente, pero podemos hacer una pausa si usted se cansa. Empezamos, &iquest;le parece?
+</p>
+</form>
+					 </div> <!-- regionB -->
+--%>					 
+	<span style="font-color:red">Error params: please contact with administrator
+	</span>
+	</c:otherwise>
+</c:choose>
+
+<%
+//	hibSes.close();
+%>
+<!-- ****************** END CONTENT AREA (REGION B) ***************** -->

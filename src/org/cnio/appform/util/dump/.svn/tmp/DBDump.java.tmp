@@ -1,0 +1,281 @@
+package org.cnio.appform.util.dump;
+
+
+import java.util.Hashtable;
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+
+public class DBDump {
+	
+// Query types:
+// * normal is the typicals dump of values for a interview, section and all subjects
+// * totals are the totals for interview and hospitals
+// * questotals, are the totals for an interview, hostpital regarding to one question
+	public static final String QRY_NORMAL = "normal";
+	public static final String QRY_TOTALS ="totals";
+	public static final String QRY_ALL_TOTALS	= "alltotals";
+	public static final String QRY_QUES_TOTALS =	"questotals";
+	
+	private String prjName = ""; 
+	private String intrvName = "";
+	private String grpName = ""; 
+	private Integer orderSec = -1;
+	private String codQues[] = new String [MainDump.MAX_QUESTIONS];
+	private String qryType = QRY_NORMAL;
+	private String fileName = "";
+	private int sortOrd = 0;
+	
+	private int fileErr = 0;
+	
+<<<<<<< .mine
+// the mapping for the variable names. it will contain pairs in the shape
+// (questionCode-1-order,variableName-1-order)
+	private Hashtable<String,String> varsmap;
+	
+	private final String VARS_SEP = ";";
+	private final int ERR_FNF = 1;
+	
+	public static String PATH_2_DUMP = 
+		"/Users/bioinfo/Development/Projects/appform/custom-dumps";
+	
+	
+
+/**
+ * Constructor method to set up the parameters used for this dump
+ * @param prj, the project to retrieve the data
+ * @param intrv, the questionnaire
+ * @param grp, the group which data we are interested
+ * @param orderSec, the order of the section of the interview to retrieve the data
+ * @param sortOrder, the sort method, which can be items order or amount of 
+ * answers order (this is useful for sections with very extreme features)
+ * @param file, the file where the data is to be dumped
+ * @param fileVars, the file storing the variable names. It is optional
+ */
+	public DBDump (String prj, String intrv, String grp, Integer orderSec,
+								 Integer sortOrder, String qCodes, String qrytype, 
+								 String file, String fileVars) {
+=======
+	public DBDump (String prj, String intrv, String grp, Integer orderSec,
+								 Integer sortOrder, String file) {
+>>>>>>> .r132
+		prjName = prj;
+		intrvName = intrv;
+		grpName = grp;
+		this.orderSec = orderSec;
+		sortOrd = sortOrder;
+		fileName = file;
+		qryType = qrytype;
+		codQues = qCodes.split(",");
+		
+		varsmap = buildMap (fileVars);
+	}
+	
+
+	public DBDump (String fileVars) {
+		if (fileVars != null && fileVars.length() > 0)
+			varsmap = buildMap (fileVars);
+	}
+	
+	
+	public DBDump () {
+		
+	}
+	
+	
+
+<<<<<<< .mine
+/**
+ * Gets a name of a file with the mapped variable names, read the variables and
+ * builds a hashtable with the appropriate mapping
+ * @param filename, a filename
+ * @return a hashtable with the mapping quesion codes - variable names or null
+ * if the file does not exist or is malformed
+ */
+	private Hashtable<String, String> buildMap (String filename) {
+		
+		BufferedReader reader;
+		Hashtable<String,String> map = new Hashtable<String,String>();
+		int order = 1;
+		
+=======
+//		DynamicRetriever dumper = new DynamicRetriever (PATH_2_DUMP);
+		NewRetriever dumper = new NewRetriever (PATH_2_DUMP);
+>>>>>>> .r132
+		try {
+			reader = new BufferedReader (new FileReader (filename));
+			String line = reader.readLine(), oldQCode = "";
+			String pair[], pairKey, pairVal;
+			
+<<<<<<< .mine
+			line = reader.readLine(); // skip the first line
+			while (line != null) {
+				pair = line.split(VARS_SEP);
+				
+				if (pair.length < 2) {
+					line = reader.readLine();
+					continue;
+				}
+					
+// if only one line is 'unpaired', return null as everything can fail later
+				if (pair[0].equals("") || pair[1].equals(""))
+					return null;
+				
+// build the key and the value taking the order into account
+// if the question code found is similar to the previous one, it means the current
+// one is the next in order (not in number, which is for repeatable) and then
+// the order variable is increased by 1
+				order = pair[0].equalsIgnoreCase (oldQCode)? (order+1): 1;
+				pairKey = pair[0]+"-1-"+order;
+				pairVal = pair[1]+"-1-"+order;
+				map.put(pairKey, pairVal);
+// assing the current to the old to calculate the order in the next iteration				
+				oldQCode = pair[0];
+				line = reader.readLine();
+			}
+			
+=======
+			dumper.getDump(prjName, intrvName, grpName, orderSec, sortOrd, fileName);
+>>>>>>> .r132
+		}
+		catch (FileNotFoundException fnfEx) {
+			fileErr = ERR_FNF;
+			return null;
+			
+		}
+		catch (IOException ioEx) {
+			return null;
+		}
+		
+		return map;
+	}
+	
+	
+	
+	
+	
+	public Hashtable<String, String> getVarsmap() {
+		return varsmap;
+	}
+	
+	public void setVarsMap (String fileVars) {
+		if (fileVars != null && fileVars.length() > 0) {
+			varsmap.clear();
+			varsmap = buildMap (fileVars);
+		}
+	}
+
+
+	public void setPrjName(String prjName) {
+		this.prjName = prjName;
+	}
+
+
+	public void setIntrvName(String intrvName) {
+		this.intrvName = intrvName;
+	}
+
+
+	public void setGrpName(String grpName) {
+		this.grpName = grpName;
+	}
+
+
+	public String[] getCodQues() {
+		return codQues;
+	}
+
+
+	public void setCodQues(String codQues) {
+		this.codQues = codQues.split(",");
+	}
+
+
+	public String getQryType() {
+		return qryType;
+	}
+
+
+	public void setQryType(String qryType) {
+		this.qryType = qryType;
+	}
+
+
+	public void setOrderSec(Integer orderSec) {
+		this.orderSec = orderSec;
+	}
+
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+	
+	
+	
+	public void spitInfo () {
+		String questions = "";
+		System.out.println ("Getting data with parameters:");
+		System.out.println ("\tProject: "+prjName);
+		System.out.println ("\tQuestionnaire: "+intrvName);
+		System.out.println ("\tGroup: "+grpName);
+		System.out.println ("\tSection: "+orderSec);
+		System.out.println ("\tQuery type: "+qryType);
+		if (codQues.length > 0) {
+			for (int i=0; i<codQues.length; i++)
+				questions += codQues[i]+",";
+			
+			questions = questions.substring(0, questions.length()-1);
+			System.out.println ("\tQuestions: "+questions);
+		}
+		
+		System.out.println ("\tOutput file: "+fileName);
+		if (varsmap == null || varsmap.size() == 0)
+			System.out.println ("No Variable Names file provide");
+	}
+	
+	
+	
+	
+	
+/**
+ * Interface method to the core dump logic. It set the retriever up, which is
+ * going to do all processing
+ * @return -1 in the case of a FileNotFountException is raised; -2 if any
+ * read/write error occurs; 0 if everything is ok
+ */
+	public int dump () {
+
+//		NewRetriever dumper = new NewRetriever (PATH_2_DUMP, varsmap);
+		DataRetriever retriever = new DataRetriever (PATH_2_DUMP, varsmap);
+		try {
+			spitInfo ();
+			
+			if (qryType.equalsIgnoreCase(DBDump.QRY_TOTALS))
+				retriever.getTotals(fileName);
+			
+			if (qryType.equalsIgnoreCase(DBDump.QRY_ALL_TOTALS))
+				retriever.getAllTotals(fileName);
+			
+			if (qryType.equalsIgnoreCase(DBDump.QRY_NORMAL))
+				retriever.getDump(prjName, intrvName, grpName, orderSec, sortOrd, fileName);
+							
+			if (qryType.equalsIgnoreCase(DBDump.QRY_QUES_TOTALS))
+				retriever.getQuestionTotals(fileName, prjName, intrvName, codQues);
+			
+		}
+		catch (java.io.FileNotFoundException ex) {
+			System.err.println("The directory to store the dump file does not exists");
+			return -1;
+		}
+		catch (java.io.IOException ioEx) {
+			System.err.println(ioEx.getMessage());
+			return -2;
+//			ioEx.printStackTrace();
+		}
+		return 0;
+	}
+
+
+	
+}

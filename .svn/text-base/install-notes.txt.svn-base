@@ -1,0 +1,9 @@
+Be aware of:
+- conf/Catalina/localhost/appform.xml
+- postgres-xxxxxxx.jar, which should be in /lib dir in a exclusive way
+- servlets must be configured properly in web.xml
+- hibernate.xml has to have the proper database server
+- take care of log4j system
+- also take care of database permissions, sometimes a table can not be written as
+the permissions are not correct for the user gcomesana:appform (us:pw)
+- MIND THE ENABLED FOR TRIGGERS WHEN THE DATABASE IS IMPORTED VIA DUMP SCRIPT!!

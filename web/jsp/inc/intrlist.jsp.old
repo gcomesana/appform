@@ -1,0 +1,77 @@
+<!-- intrlist.jsp modified: display the interviews for a project -->
+<%-- This snippet list the sections based on some parameter
+--%>
+<%
+// 	Session hibSes = HibernateUtil.getSessionFactory().openSession();
+	Collection<Interview> intrCol; 
+	Collection<AbstractItem> itemsSec;
+	
+// userId will be used to use as index for the project's owner	
+	String userId = request.getParameter("userId"),
+				prjId = request.getParameter ("frmId");
+		
+	
+	
+	intrCol = HibernateUtil.getIntr4Proj(hibSes, Integer.decode(prjId), -1);
+	pageContext.setAttribute("interviews", intrCol);
+%>
+
+
+<!-- **************** START CONTENT AREA (REGION b)**************** -->		 
+           <div id='regionB'>
+
+<h3>Interview List</h3>
+<table cellpadding="2" cellspacing="1" border="1" width="400">
+<form id="formSecs" name="formSecs" method="post">
+	
+	<tr>
+	<td rowspan="3" valign="top">
+	Choose one...
+	<table border="0">
+		<tr><td rowspan="3">
+			<select id="frmListPrjs" name="frmListPrjs" size="5" style="width:200px">
+				<c:if test="${not empty interviews}">
+					<c:forEach items="${interviews}" var="aIntr">
+						<option value="${aIntr.id}" 
+										ondblclick="prjFormCtrl.goItemProps(${aIntr.id},'int');">
+						${aIntr.name}
+						</option>
+					</c:forEach>
+				</c:if>
+			</select>
+			</td>
+			<td><!-- 
+				<input type="button" name="btnUp" id="btnUp" value="  Up  "
+							onclick="PrjFormCtrl.moveUp(this.form.frmListPrjs);"/> -->
+			</td>
+		</tr>
+		
+		<tr><td><!-- 
+			<input type="button" name="btnDown" id="btnDown" value=" Down "
+					onclick="PrjFormCtrl.moveDown(this.form.frmListPrjs);"/>-->
+		</td></tr>
+		<tr><td><!-- 
+			<input type="button" name="btnReord" id="btnReord" value=" Re-sort "
+					onclick="PrjFormCtrl.onRearrange(this.form.frmListPrjs);"/> -->
+		</td></tr>
+	</table>
+	
+	</td>
+	<td align="left">
+		<input type="button" name="btnNew" value=" New " 
+					onclick="prjFormCtrl.listProjects(this.form, 'NEW');"/>
+	</td>
+	</tr>
+	
+	<tr><td align="left">
+		<input type="button" name="btnUpd" value=" Modify "
+					onclick="prjFormCtrl.listInterviews(this.form, 'UPD');"/>
+	</td></tr>
+	<tr><td align="left">
+		<input type="button" name="btnDel" value = " Delete "
+					onclick="prjFormCtrl.listInterviews(this.form, 'DEL');"/>
+	</td></tr>
+</form>
+</table>
+					 </div> <!-- regionB -->
+<!-- ****************** END CONTENT AREA (REGION B) ***************** -->

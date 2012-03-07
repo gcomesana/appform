@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Tue May 17 15:33:12 CEST 2011
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=/Users/bioinfo/Development/deploy/appform/batch/padme-appdumper.jar
+manifest.mergeall=true
+manifest.mainclass=org.cnio.appform.util.dump.MainDump
+manifest.file=<createnew>
+jarname.isextern=true
+onejar.expand=
+excludes=<jar|jcaptcha-1.0-all.jar>;<jar|gmock-0.8.0.jar>;<jar|aspectjrt.jar>;<jar|imap.jar>;<jar|pop3.jar>;<jar|catalina-ant.jar>;<jar|catalina-ha.jar>;<jar|catalina-tribes.jar>;<jar|catalina.jar>;<jar|el-api.jar>;<jar|jasper-el.jar>;<jar|jasper-jdt.jar>;<jar|jasper.jar>;<jar|jsp-api.jar>;<jar|servlet-api.jar>;<jar|tomcat-coyote.jar>;<jar|tomcat-dbcp.jar>;<jar|tomcat-i18n-es.jar>;<jar|tomcat-i18n-fr.jar>;<jar|tomcat-i18n-ja.jar>;<jar|formrenderer.jar>
+includes=

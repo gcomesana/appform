@@ -1,0 +1,19 @@
+		<form>
+		<h3>SECTION B: SHIFT WORK</h3>
+		<table>
+			<tr><td>Id like you to think back over all the jobs youve had in your lifetime.</td></tr>
+			<tr><td>B1. Have you ever had a job where you spent 6 months or more on night-shifts or grave-yard shifts only</td><td><select>
+		<option>YES
+		<option>NO
+		<option>DK
+		</select></td></tr>
+			
+			<tr><td>Prompt: By night-shifts, I mean any job in which the working hours started 8pm or later and finished at 4am or later)</td></tr>
+			<tr><td>B2. Have you ever spent 6 months or more in a job that required switching between night-shifts and other shifts - that is, rotating shifts? </td><td><select>
+		<option>YES
+		<option>NO
+		<option>DK
+		</select></td></tr>
+		</table>
+		<input type='submit' value='send' onclick="send();"/>
+		</form>

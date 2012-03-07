@@ -1,0 +1,151 @@
+package org.cnio.appform.entity;
+
+import java.util.Collection;
+import java.util.ArrayList;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import static javax.persistence.InheritanceType.JOINED;
+import javax.persistence.Inheritance;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.GeneratedValue;
+import static javax.persistence.GenerationType.AUTO;
+import static javax.persistence.GenerationType.IDENTITY;
+import static javax.persistence.GenerationType.SEQUENCE;
+import javax.persistence.ManyToOne;
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
+
+
+@Entity
+@Table(name="answer_item")
+@Inheritance(strategy=JOINED)
+public abstract class AnswerItem implements java.io.Serializable, Cloneable {
+	@Column(name="idansitem")
+	@Id
+	@SequenceGenerator(sequenceName="answer_item_idansitem_seq", name = "AnsItemSeqGen")
+	@GeneratedValue(generator="AnsItemSeqGen", strategy = SEQUENCE)
+	private Long id;
+	@Column(name="name")
+	private String name;
+	@Column(name="description")
+	private String description;
+	
+	@Column(name="answer_order")
+	private Long answerOrder;
+
+	@OneToMany(mappedBy="theAnswerItem", cascade={CascadeType.ALL})
+	private Collection<QuestionsAnsItems> questionsAnsItems;
+	
+// This is to know what is the type of answer for an answer	
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "answerItem")
+	private Collection<Answer> answers; 
+	
+// Many interviews belong to a project	
+	@ManyToOne(targetEntity=Interview.class)
+	@JoinColumn(name="codintrv")
+	private Interview intrvOwner;
+	
+	
+	public AnswerItem () { 
+		questionsAnsItems = new ArrayList<QuestionsAnsItems>();
+		answers = new ArrayList<Answer>();
+	}
+	
+	
+	public AnswerItem (String name) {
+		this ();
+		this.name = name;
+	}
+	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+
+	public Collection<QuestionsAnsItems> getQuestionsAnsItems() {
+		return questionsAnsItems;
+	}
+
+
+	public void setQuestionsAnsItems(Collection<QuestionsAnsItems> questionsAnsItems) {
+		this.questionsAnsItems = questionsAnsItems;
+	}
+
+
+	public Long getAnswerOrder() {
+  	return answerOrder;
+  }
+
+
+	public void setAnswerOrder(Long answerOrder) {
+  	this.answerOrder = answerOrder;
+  }
+
+	
+	public Collection<Answer> getAnswers() {
+  	return answers;
+  }
+
+
+	public void setAnswers(Collection<Answer> answers) {
+  	this.answers = answers;
+  	
+  }
+
+
+	public Interview getIntrvOwner() {
+		return intrvOwner;
+	}
+
+
+	public void setIntrvOwner(Interview intrvOwner) {
+		
+		if (intrvOwner != null) {
+			this.intrvOwner = intrvOwner;
+			intrvOwner.getAnswerItems().add(this);
+		}
+		else {
+			this.intrvOwner.getAnswerItems().remove(this);
+			this.intrvOwner = null;
+		}
+	}
+	
+	
+	public Object clone () throws CloneNotSupportedException {
+		return super.clone();
+	}
+
+	
+	public boolean equals (Object o) {
+		if (o == null)
+			return false;
+		
+		return ((AnswerItem)o).getName().equals(this.name)? true: false;
+	}
+}

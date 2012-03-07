@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+<%@page import="org.hibernate.Session, java.util.Collection, 
+								java.util.Iterator, java.util.ArrayList, 
+								java.util.Enumeration"  %>
+								
+<%@page import="org.cnio.appform.entity.AbstractItem, 
+								org.cnio.appform.entity.Section, org.cnio.appform.entity.Text, 
+								org.cnio.appform.entity.Question, 
+								org.cnio.appform.entity.AnswerItem,
+								org.cnio.appform.util.HibernateUtil,
+								org.cnio.appform.util.HibController" %>
+								
+<%
+	Session hibSes = HibernateUtil.getSessionFactory().openSession();
+	
+	String itemId = request.getParameter("selSecItems");
+out.write("<!-- itemId received: "+itemId+" -->");
+
+	AbstractItem absIt = 
+			(AbstractItem)hibSes.get(AbstractItem.class, Long.decode(itemId));
+	pageContext.setAttribute("theItem", absIt);
+
+	String itemClass, chkRepeat = "", chkMandat = "";
+	itemClass = (absIt instanceof Question)? "Q": "T";
+	if (absIt instanceof Question) {
+		chkMandat = ((Question)absIt).getMandatory() != 0? "checked=\"true\"": "";
+		chkRepeat = ((Question)absIt).getRepeteable() != 0? "checked=\"true\"": "";
+	}
+	
+	Collection<AnswerItem> ansTypesCol = 
+						HibController.ItemManager.getAnswerTypes4Question(hibSes, absIt);
+	
+	Collection<AbstractItem> itemChildren = 
+						HibController.ItemManager.getOrderedContainees(hibSes, absIt);
+	
+	pageContext.setAttribute("itemType", itemClass);
+	pageContext.setAttribute("qMandatory", chkMandat);
+	pageContext.setAttribute("qRepeat", chkRepeat);
+	pageContext.setAttribute("answerCol", ansTypesCol);
+	pageContext.setAttribute("containees", itemChildren);
+		
+%>	
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Forms test</title>
+<script type="text/javascript" src="/miniappform/js/controller.js"></script>
+</head>
+
+<body onload="ItemJspCtrl.onReady ();">
+
+<form id="formItem" name="formItem" method="get" action="">
+<input type="hidden" id="frmIdItem" name="frmIditem" value="${theItem.id}"/>
+	<table width="200">
+		<tr>
+			<td>
+				<input type="radio" name="frmItemType" value="t" id="frmItemTxt" 
+				<c:if test="${itemType == 'T'}">checked="checked"</c:if> />
+				Text
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="radio" name="frmItemType" value="q" id="frmItemQue" 
+				<c:if test="${itemType == 'Q'}">checked="checked"</c:if> />
+				Question
+		</td>
+		<input type="hidden" name="hidItemType" id="hidItemType" value=""/>
+		</tr>
+	</table>
+	<p>&nbsp;</p>
+	<table width="100%" border="1" cellspacing="3" cellpadding="3">
+		<tr>
+			<td width="38%"><p>Content</p>
+				<p>
+					<textarea name="frmContent" id="frmContent" cols="45" rows="5">${fn:trim(theItem.content)}
+					</textarea>
+				</p></td>
+			<td width="4%">&nbsp;</td>
+			<td width="58%" valign="top"><p>
+			<c:if test="${not empty theItem.parentSec}">
+			Parent section: <b>${theItem.parentSec.name}</b><br/>
+			<input type="hidden" name="frmParentSec" id="frmParentSec" value="${theItem.parentSec.id}" />
+			</c:if>
+			<c:if test="${not empty theItem.container}">
+			Container item: <b>${theItem.container.content}</b>
+			<input type="hidden" name="frmContainer" id="frmContainer" value="${theItem.container.id}" />
+			</c:if>
+			</p>
+			<c:if test="${not empty containees}">
+			<p>Contained items
+				<select name="frmSecItems" id="frmSecItems">
+				<option value="-1">Items...</option>
+				<c:forEach items="${containees}" var="child">
+					<option value="${child.id}">${fn:substring(child.content, 0, 18)}</option>
+				</c:forEach>
+				</select>
+			</p>
+			</c:if>
+			</td>
+		</tr>
+		<tr>
+			<td><p>Answer type
+					<select name="frmAnsItem" id="frmAnsItem">
+						<c:forEach items="${answerCol}" var="aType">
+							<option value="${aType.id}">${aType.name}</option>
+						</c:forEach>
+					</select>&nbsp;&nbsp;
+			</p>
+			<p>
+				<input type="checkbox" name="frmMandatory" id="frmMandatory" ${qMandatory}/>
+			Mandatory</p>
+			<p>
+				<input type="checkbox" name="frmRepeatable" id="frmRepeatable" ${qRepeat} />
+			Repeatable</p></td>
+			<td>&nbsp;</td>
+			<td>
+        <input type="button" value=" Cancel " id="btnCancel" name="btnCancel" 
+        	onclick="ItemJspCtrl.onCancel();"/>
+        &nbsp;
+        <input type="button" value=" Ok " id="btnOk" name="btnOk" 
+        	onclick="ItemJspCtrl.onOk(this.form);"/>
+      </td>
+		</tr>
+	</table>
+	<p>&nbsp;</p>
+</form>
+
+<!-- div to manage the answer types...  -->
+<div style="z-index:200;visibility:hidden; background:blue; width:300px; height: 200px; top:500px; left:100px"
+	id="divTypes">
+hi crap<br/>
+<a onclick="this.parent.style.visibility='hidden'">Hide</a>
+</div>
+</body>
+</html>
