@@ -19,10 +19,10 @@ import java.util.List;
 @PrimaryKeyJoinColumn(name="idquestion")
 public class Question extends AbstractItem implements Cloneable {
 /*	@Column(name="mandatory")
-	private Integer mandatory; */
-	@Column(name="repeatable")
+	private Integer mandatory; 
+	@Column(name="repeatable", insertable=false, updatable=false)
 	private Integer repeatable;
-
+*/
 // This column means a question either can or cant be deleted from the admin
 // Primarily, this is the method to avoid the Patient code can be deleted
 	@Column(name="mandatory")
