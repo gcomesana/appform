@@ -517,6 +517,7 @@ System.out.println ("\nResultSet query:\n"+sqlqry);
   			" order by 1";
   	
   	List<Object[]> rows = execQuery (sqlQry, -1, -1);
+<<<<<<< master
 System.out.println ("patients4Intrv query: "+sqlQry);
 /*
   	List<String> patients = 
@@ -527,6 +528,9 @@ System.out.println ("patients4Intrv query: "+sqlQry);
   		patients.add(codPatient);
   	}
 */  	
+=======
+
+>>>>>>> local
   	return rows;
   }
   

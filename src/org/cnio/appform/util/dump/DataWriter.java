@@ -321,6 +321,142 @@ System.out.println ("Writing out data");
  * This method writes out the results in the file in the correct place, which is,
  * matching with the file header (it means, matching answers with questions). 
  * It takes and additional list of subjects with any performance for the interview
+<<<<<<< master
+=======
+ * but NO questions at all and put them in the output file with the entire row blank
+ * @param patients, the list of patients with any performance for the requested
+ * interview
+ * @param codes, the ordered set for question codes
+ * @param rs, the resultset, a list of patient,group, interview, section and 
+ * answer parameters, all of them encapsulated in an Object[]
+ * @param file, the output file
+ * @throws java.io.IOException if there is any problem with file
+ */  
+  public void buildResult (List<Object[]> patients, LinkedHashMap<String,String> codes, 
+  							List<Object[]> rs, BufferedWriter file) throws java.io.IOException {
+
+		StringBuilder out = new StringBuilder();
+		String patRef = "", grpRef = "";
+		int countPats = 0;
+		
+System.out.println("Writing out result:");
+		
+// As the treemap is going to be used and it is the same than used when
+// yielding the header, it is better clear the values
+		for (Map.Entry<String, String> entry : codes.entrySet())
+			codes.put(entry.getKey(), "");
+
+		String grpName = "", intrvName = "", secName = "";
+		Object[] patient = patients.get(countPats);
+		patRef = (String)patient[0];
+		grpRef = (String)patient[1];
+		int countRows = 0;
+		
+// loop over the resultset
+		for (Object[] row : rs) {
+			countRows++;
+			Object[] innRow = row;
+  			
+		while (((String)innRow[0]).equalsIgnoreCase(patRef) == false) {
+			
+// writeout the current patient
+			if (out.length() > 0) {
+				for (Map.Entry<String, String> entry : codes.entrySet()) {
+      	  out.append(entry.getValue()+CSV_SEP);
+      	  codes.put(entry.getKey(), "");
+      	}
+			}
+			else {
+				out.append("\""+patRef+"\""+CSV_SEP);
+	      out.append("\""+grpRef+"\""+CSV_SEP);
+	      out.append("\""+intrvName+"\""+CSV_SEP);
+	      out.append("\""+secName+"\""+CSV_SEP);
+	      
+	      for (int i=0; i<numFields; i++)
+	      	out.append ("|");
+			}
+			
+			out.setCharAt(out.length()-1, '\n');
+			if (file != null) {
+				System.out.print("#");
+				file.append(out.toString());
+        file.flush();
+			}
+			countPats++;
+      out.delete(0, out.length());
+				
+			// read the new patRef
+      if (countPats < patients.size()) {
+				patient = patients.get(countPats);
+				patRef = (String)patient[0];
+				grpRef = (String)patient[1];
+      }
+      else {
+      	System.out.println("\n\nTotal subjects collected: " + countPats);
+      	return;
+      }
+		} // EO new patient detected: current patcode != patref code
+		
+// new patient with list of results
+		if (out.length() == 0) {
+			intrvName = (String)innRow[2];
+      secName = (String)innRow[3];
+
+      out.append("\""+patRef+"\""+CSV_SEP);
+      out.append("\""+grpRef+"\""+CSV_SEP);
+      out.append("\""+intrvName+"\""+CSV_SEP);
+      out.append("\""+secName+"\""+CSV_SEP);
+		}
+		
+// get the answer value and put it in the codes hashtable to keep the answers 
+// in an ordered fashion
+		String ansVal = (String) innRow[5], codq = (String) innRow[4];
+		Integer num = (Integer) innRow[9], ord = (Integer) innRow[8];
+		Integer itOrd = (Integer) innRow[7];
+		// String keyField = itOrd+"."+codq+"-"+num+"-"+ord;
+		String keyField = itOrd + "." + num + "." + ord;
+		String newkeyField = num + "." + itOrd + "." + codq + "." + ord;
+
+		
+		ansVal = "\"" + ansVal + "\"";
+		if (codes.containsKey(keyField))
+			codes.put(keyField, ansVal);
+		else
+			System.err.println("No key for question: " + keyField);
+
+	} // EO for row, ResultSet loop
+		
+// System.out.println ("\n** Rows processed: "+countRows);
+// here i have to write the very last subject retrieved
+	if (out.length() > 0) { // spit everything
+
+		for (Map.Entry<String, String> entry : codes.entrySet()) {
+			out.append(entry.getValue() + CSV_SEP);
+			codes.put(entry.getKey(), "");
+		}
+
+		out.setCharAt(out.length() - 1, '\n');
+		//System.out.println(out.toString());
+		if (file != null) {
+			file.append(out.toString());
+			file.flush();
+		}
+		countPats++;
+	}
+	System.out.println("\n\nTotal subjects collected: " + countPats);
+} // EO buildResultSet  
+    
+    
+  
+  
+  
+  
+  
+/**
+ * This method writes out the results in the file in the correct place, which is,
+ * matching with the file header (it means, matching answers with questions). 
+ * It takes and additional list of subjects with any performance for the interview
+>>>>>>> local
  * but NO questions at all and put them in the output file with the entire row blank.
  * The proccess is patients-driven, in such a way that a patient is taken from patients
  * list and, from its code, the answers are retrieved from the resultset and therefore
