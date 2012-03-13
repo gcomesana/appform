@@ -10,6 +10,8 @@ import java.util.TreeMap;
 import java.util.LinkedHashMap;
 import java.util.Hashtable;
 
+import org.hibernate.ScrollableResults;
+
 public class DataWriter {
 	
   private final String CSV_SEP = "|";
@@ -25,6 +27,15 @@ public class DataWriter {
   
 // the total number of fields to output in the buld download
   private int numFields = 0;
+  
+/**
+ * This is used to keep a track of processed rows for a entire resultset
+ * It is reset when class is created and when a resulset is fully processed
+ * (the very last patiend is written out a file).
+ * It is used to set when that very last patient has to be written out. The condition
+ * is that accumRows + rs.size() >= fullResultsetSize
+ */
+  private int accumRows = 0;
   
   public DataWriter (Hashtable map) {
   	mapNames = map;
@@ -211,36 +222,48 @@ System.out.println ("Writing out rows ("+rows.size()+" rows)");
   
   
   
-  
-/**
- * This method writes out the results in the file in the correct place, which is,
- * matching with the file header (it means, matching answers with questions)
- * @param codes, this is the ordered set or question codes
- * @param rs, the resultset for the results query
- * @param file, the output file where writing the results
- */
-  public void buildResultSet (LinkedHashMap<String,String> codes, List<Object[]> rs,
-  														BufferedWriter file) throws java.io.IOException {
+ /**
+  * Build the final resultset based on a java.sql.ResultSet object with all rows
+  * retrieved. Cursors are internally used to run along the resultset
+  * @param patients
+  * @param codes
+  * @param rs the resulset as a java.sql.ResultSet object
+  * @param file
+  * @throws java.io.IOException
+  * @throws java.sql.SQLException
+  */ 
+  public void buildResultSet (List<Object[]> patients, LinkedHashMap<String,String> codes, 
+  									java.sql.ResultSet rs, BufferedWriter file) 
+  									throws java.io.IOException, java.sql.SQLException {
   	
   	StringBuilder out = new StringBuilder ();
-  	String patRef = "";
+  	String patRef = "", grpRef = "";
   	int countPats = 0;
 System.out.println ("Writing out data");
   	
-// As the treemap is going to be used and it is the same than used when 
-// yielding the header, it is better clear the values
-  	for (Map.Entry<String, String> entry : codes.entrySet()) 
-  	  codes.put(entry.getKey(), "");
-  	
+//As the treemap is going to be used and it is the same than used when
+//yielding the header, it is better clear the values
+		for (Map.Entry<String, String> entry : codes.entrySet())
+			codes.put(entry.getKey(), "");
+	
+		String grpName = "", intrvName = "", secName = "";
+		Object[] patient = patients.get(countPats);
+		patRef = (String)patient[0];
+		grpRef = (String)patient[1];
+	  	
+	  	
+	 	java.sql.ResultSetMetaData rmd = rs.getMetaData();
+	  int columnCount = rmd.getColumnCount(), countRows = 0;
   	
 // loop over the resultset  	
-  	for (Object[] row: rs) {
+  	while (rs.next()) {
+  		countRows++;
 
-  		Object[] innRow = row;
-    	String grpName = "", intrvName = "", secName = "";
-    	
-// check if subject (patient code) changes
-      if (((String)innRow[0]).equalsIgnoreCase(patRef) == false) {
+  		Object[] innRow = new Object[columnCount];
+  		for (int cols=0; cols < columnCount; cols++) 
+  			innRow[cols] = rs.getObject(cols+1);
+  		
+      while (((String)innRow[0]).equalsIgnoreCase(patRef) == false) {
 //finish the previous subject and start the next one (if so)
         if (out.length() > 0) { // spit everything
         	
@@ -248,28 +271,50 @@ System.out.println ("Writing out data");
         	  out.append(entry.getValue()+CSV_SEP);
         	  codes.put(entry.getKey(), "");
         	}
+        }	
+      	else {
+  				out.append("\""+patRef+"\""+CSV_SEP);
+  	      out.append("\""+grpRef+"\""+CSV_SEP);
+  	      out.append("\""+intrvName+"\""+CSV_SEP);
+  	      out.append("\""+secName+"\""+CSV_SEP);
+  	      
+  	      for (int i=0; i<numFields; i++)
+  	      	out.append ("|");
+  			}
+      	out.setCharAt(out.length()-1, '\n');
 
-        	out.setCharAt(out.length()-1, '\n');
-// System.out.println(out.toString());
-					if (file != null) {
-						System.out.print("#");
-						file.append(out.toString());
-	          file.flush();
-					}
-					countPats++;
-          out.delete(0, out.length());
+				if (file != null) {
+					System.out.print("#");
+					file.append(out.toString());
+          file.flush();
+				}
+				countPats++;
+        out.delete(0, out.length());
+        
+        if (countPats < patients.size()) {
+        	patient = patients.get(countPats);
+        	patRef = (String)patient[0];
+          grpName = (String)patient[1];
+//          intrvName = (String)innRow[2];
+//          secName = (String)innRow[3];
         }
-        patRef = (String)innRow[0];
-        grpName = (String)innRow[1];
-        intrvName = (String)innRow[2];
+        else {
+        	System.out.println("\n\nTotal subjects collected: " + countPats);
+        	return;
+        }
+      } // eo while (...) => new patient detected
+
+      
+// new patient with list of results
+  		if (out.length() == 0) {
+  			intrvName = (String)innRow[2];
         secName = (String)innRow[3];
 
         out.append("\""+patRef+"\""+CSV_SEP);
-        out.append("\""+grpName+"\""+CSV_SEP);
+        out.append("\""+grpRef+"\""+CSV_SEP);
         out.append("\""+intrvName+"\""+CSV_SEP);
         out.append("\""+secName+"\""+CSV_SEP);
-      } // eo new patient detected
-
+  		}
       
 // get the value of the answer and its keyField to put it in the codes hashtable
       String ansVal = (String)innRow[5], codq = (String)innRow[4];
@@ -292,6 +337,7 @@ System.out.println ("Writing out data");
     } // EO for row
   	
   	
+System.out.println ("\n ** Rows processed from java.sql.ResultSet: "+countRows);  	
 // here i have to write the very last subject retrieved
   	if (out.length() > 0) { // spit everything
     	
@@ -321,11 +367,7 @@ System.out.println ("Writing out data");
  * This method writes out the results in the file in the correct place, which is,
  * matching with the file header (it means, matching answers with questions). 
  * It takes and additional list of subjects with any performance for the interview
- * but NO questions at all and put them in the output file with the entire row blank.
- * The proccess is patients-driven, in such a way that a patient is taken from patients
- * list and, from its code, the answers are retrieved from the resultset and therefore
- * building up the row with all questions which will be written out to file
- * 
+ * but NO questions at all and put them in the output file with the entire row blank
  * @param patients, the list of patients with any performance for the requested
  * interview
  * @param codes, the ordered set for question codes
@@ -339,10 +381,148 @@ System.out.println ("Writing out data");
 
 		StringBuilder out = new StringBuilder();
 		String patRef = "", grpRef = "";
-		int countPats = 0, countRows = 0, rowsForLastPat = 0;
+		int countPats = 0;
+		
+System.out.println("Writing out result:");
+		
+// As the treemap is going to be used and it is the same than used when
+// yielding the header, it is better clear the values
+		for (Map.Entry<String, String> entry : codes.entrySet())
+			codes.put(entry.getKey(), "");
+
+		String grpName = "", intrvName = "", secName = "";
+		Object[] patient = patients.get(countPats);
+		patRef = (String)patient[0];
+		grpRef = (String)patient[1];
+		int countRows = 0;
+		
+// loop over the resultset
+		for (Object[] row : rs) {
+			countRows++;
+			Object[] innRow = row;
+  			
+		while (((String)innRow[0]).equalsIgnoreCase(patRef) == false) {
+			
+// writeout the current patient
+			if (out.length() > 0) {
+				for (Map.Entry<String, String> entry : codes.entrySet()) {
+      	  out.append(entry.getValue()+CSV_SEP);
+      	  codes.put(entry.getKey(), "");
+      	}
+			}
+			else {
+				out.append("\""+patRef+"\""+CSV_SEP);
+	      out.append("\""+grpRef+"\""+CSV_SEP);
+	      out.append("\""+intrvName+"\""+CSV_SEP);
+	      out.append("\""+secName+"\""+CSV_SEP);
+	      
+	      for (int i=0; i<numFields; i++)
+	      	out.append ("|");
+			}
+			
+			out.setCharAt(out.length()-1, '\n');
+			if (file != null) {
+				System.out.print("#");
+				file.append(out.toString());
+        file.flush();
+			}
+			countPats++;
+      out.delete(0, out.length());
+				
+			// read the new patRef
+      if (countPats < patients.size()) {
+				patient = patients.get(countPats);
+				patRef = (String)patient[0];
+				grpRef = (String)patient[1];
+      }
+      else {
+      	System.out.println("\n\nTotal subjects collected: " + countPats);
+      	return;
+      }
+		} // EO new patient detected: current patcode != patref code
+		
+// new patient with list of results
+		if (out.length() == 0) {
+			intrvName = (String)innRow[2];
+      secName = (String)innRow[3];
+
+      out.append("\""+patRef+"\""+CSV_SEP);
+      out.append("\""+grpRef+"\""+CSV_SEP);
+      out.append("\""+intrvName+"\""+CSV_SEP);
+      out.append("\""+secName+"\""+CSV_SEP);
+		}
+		
+// get the answer value and put it in the codes hashtable to keep the answers 
+// in an ordered fashion
+		String ansVal = (String) innRow[5], codq = (String) innRow[4];
+		Integer num = (Integer) innRow[9], ord = (Integer) innRow[8];
+		Integer itOrd = (Integer) innRow[7];
+		// String keyField = itOrd+"."+codq+"-"+num+"-"+ord;
+		String keyField = itOrd + "." + num + "." + ord;
+		String newkeyField = num + "." + itOrd + "." + codq + "." + ord;
+
+		
+		ansVal = "\"" + ansVal + "\"";
+		if (codes.containsKey(keyField))
+			codes.put(keyField, ansVal);
+		else
+			System.err.println("No key for question: " + keyField);
+
+	} // EO for row, ResultSet loop
+		
+System.out.println ("\n** Rows processed: "+countRows);
+// here i have to write the very last subject retrieved
+	if (out.length() > 0) { // spit everything
+
+		for (Map.Entry<String, String> entry : codes.entrySet()) {
+			out.append(entry.getValue() + CSV_SEP);
+			codes.put(entry.getKey(), "");
+		}
+
+		out.setCharAt(out.length() - 1, '\n');
+		//System.out.println(out.toString());
+		if (file != null) {
+			file.append(out.toString());
+			file.flush();
+		}
+		countPats++;
+	}
+	System.out.println("\n\nTotal subjects collected: " + countPats);
+} // EO buildResultSet  
+    
+    
+  
+  
+  
+  
+  
+/**
+ * This method writes out the results in the file in the correct place, which is,
+ * matching with the file header (it means, matching answers with questions). 
+ * It takes and additional list of subjects with any performance for the interview
+ * but NO questions at all and put them in the output file with the entire row blank.
+ * The proccess is patients-driven, in such a way that a patient is taken from patients
+ * list and, from its code, the answers are retrieved from the resultset and therefore
+ * building up the row with all questions which will be written out to file
+ * 
+ * @param patients, the list of patients with any performance for the requested
+ * interview
+ * @param codes, the ordered set for question codes
+ * @param rs, the resultset, a list of patient,group, interview, section and 
+ * answer parameters, all of them encapsulated in an Object[]
+ * @param file, the output file
+ * @return the processed rows, that is, the diff between the current resultset
+ * portion size and the no processed rows for the last incomplete patient
+ * @throws java.io.IOException if there is any problem with file
+ */  
+  public int buildResult (List<Object[]> patients, LinkedHashMap<String,String> codes, 
+  							List<Object[]> rs, int fullRSSize, BufferedWriter file) throws java.io.IOException {
+
+		StringBuilder out = new StringBuilder();
+		String patRef = "", grpRef = "";
+		int countPats = 0, rowsForLastPat = 0;
 		
 System.out.println("Writing out result");
-		
 		// As the treemap is going to be used and it is the same than used when
 		// yielding the header, it is better clear the values
 		for (Map.Entry<String, String> entry : codes.entrySet())
@@ -362,7 +542,7 @@ System.out.print ("Resultset progress: ");
 		for (Object[] row : rs) {
 // System.out.print(".");
 			Object[] innRow = row;
-			countRows++;
+			this.accumRows++;
 
 // patRef loop
 // in order to properly dump the patients, the very last patient has to be
@@ -405,9 +585,8 @@ System.out.print ("Resultset progress: ");
         }
         else {
         	System.out.println("\n\nTotal subjects collected: " + countPats);
-        	return;
+        	return rs.size();
         }
-        
 			} // EO while (patRef == false)
 			
 // new patient with list of results
@@ -431,7 +610,6 @@ System.out.print ("Resultset progress: ");
 			String newkeyField = num + "." + itOrd + "." + codq + "." + ord;
 
 			ansVal = "\"" + ansVal + "\"";
-
 			if (codes.containsKey(keyField))
 				codes.put(keyField, ansVal);
 			else
@@ -439,10 +617,10 @@ System.out.print ("Resultset progress: ");
 
 			rowsForLastPat++;
 		} // EO for row, ResultSet loop
-		
 
-// here i have to write the very last subject retrieved
-		if (out.length() > 0) { // spit everything
+// here i have to write the very last subject retrieved only if 
+// rs.length() < MAX_ROWS, which means t
+		if (out.length() > 0 && this.accumRows == fullRSSize) { // spit everything
 
 			for (Map.Entry<String, String> entry : codes.entrySet()) {
 				out.append(entry.getValue() + CSV_SEP);
@@ -459,6 +637,8 @@ System.out.print ("Resultset progress: ");
 		}
 		System.out.println ();
 		System.out.println("\n\nTotal subjects collected: " + countPats);
+		
+		return rs.size() - rowsForLastPat; // processed rows
 	} // EO buildResultSet
 
 
