@@ -55,6 +55,10 @@ public class SqlDataRetriever {
 	      "and s.section_order = " + secParam +
 	      " order by 1, 7, 10, 8, 5, 9";
       
+<<<<<<< HEAD
+=======
+System.out.println ("\nSqlDataRetriever => ResultSet query:\n"+sqlqry);      
+>>>>>>> develop
       ResultSet rs = stmt.executeQuery(sqlqry);
       
       return rs;

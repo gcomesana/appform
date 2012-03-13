@@ -4,6 +4,7 @@ import java.io.*;
 import org.cnio.appform.entity.*;
 
 import org.cnio.appform.util.*;
+import org.cnio.appform.util.dump.*;
 import org.cnio.appform.audit.*;
 
 import org.hibernate.Session;
@@ -27,7 +28,8 @@ import java.util.Vector;
 import java.io.UnsupportedEncodingException;
 import java.net.*;
 
-import javax.servlet.http.HttpSession;
+// import javax.servlet.http.HttpSession;
+
 
 import org.apache.commons.lang.StringEscapeUtils;
 
@@ -171,21 +173,17 @@ System.out.println("Starting script...");
 		
 //		int intrvid = intrCtrl.createInterview("Test Sample Go!", testStr, 351, 101, false, true, true);
 		
-		Interview clonedIntrv;
-		
-		test.cloneIntrv(101);
+//		Interview clonedIntrv;
+//		test.cloneIntrv(101);
 	
-/*	
-		Integer newIntrvId = -1;
-		newIntrvId = intrCtrl.createInterview("1st Demo Questionnaire", "", 50, usrId, false, true, false);
 		
-		if (newIntrvId != -1) {
-			Interview newIntrv = (Interview)test.getHibSes().get(Interview.class, newIntrvId);
-			
-			System.out.println("new intrv: "+newIntrv.getName()+" ("+newIntrv.getId()+")");
-		}
-*/
+		SqlDataRetriever sqldr = new SqlDataRetriever();
 		
+		java.sql.ResultSet rs = sqldr.getResultSet("188", 4100, null, 3);
+		
+		sqldr.printResultsetOut(rs);
+		
+
 /*		
 		Interview idcIntrv = (Interview)test.getHibSes().get(Interview.class, 1301),
 				ispIntrv = (Interview)test.getHibSes().get(Interview.class, 1750),

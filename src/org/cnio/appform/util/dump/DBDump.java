@@ -196,7 +196,14 @@ public class DBDump
       }
       
       if (this.qryType.equalsIgnoreCase("normal") || this.qryType.length() == 0) {
-        retriever.getDump(this.prjName, this.intrvName, this.grpName, this.orderSec, Integer.valueOf(this.sortOrd), this.fileName);
+      	String prjName = this.prjName;
+      	String intrvName = this.intrvName;
+      	String grpName = this.grpName;
+      	int orderSec = this.orderSec;
+      	int sortOrd = Integer.valueOf(this.sortOrd);
+      	String myFilename = this.fileName;
+      	
+        retriever.getDump(prjName, intrvName, grpName, orderSec, sortOrd, myFilename);
       }
       
       if (this.qryType.equalsIgnoreCase("questotals"))

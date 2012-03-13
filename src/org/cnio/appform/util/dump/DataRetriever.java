@@ -421,22 +421,79 @@ System.out.println();
   	Set<Map.Entry<String, String>> singleSet = singlesMap.entrySet(), 
 										repSet = repMap.entrySet();
   	
-/*  	
-System.out.println ("repMap");
-for (Map.Entry<String, String> entry : repSet) {
-	String akey = entry.getKey().toString();
-System.out.print(akey+"|");
-}
-System.out.println();  	
-System.out.println ("singlesmap");
-for (Map.Entry<String, String> entry : singleSet) {
-	String akey = entry.getKey().toString();
-System.out.print(akey+"|");
-}
-System.out.println();  	
-*/  	
 		LinkedHashMap<String,String> fullMap = buildFullMap (singleSet, repSet);
   	return fullMap;
+  }
+  
+  
+  
+/**
+ * It gets the total rows retrieved for the full resultset, not constrained by
+ * offset and maxRows parameters  
+ * @param prjCode, the project code
+ * @param intrvId, the database interview id
+ * @param grpId, the database group id, if so
+ * @param secOrder, the section within the interview
+ * 
+ * @return the number of rows composing the entire full resultset
+ */
+  public int getFullResultsetSize (String prjCode, Integer intrvId, Integer grpId,
+														Integer secOrder) {
+  	int count = 0;
+  	String secParam = (secOrder == null)?"s.section_order ": secOrder.toString();
+  	String grpParam = (grpId == null? "1=1 ": "g.idgroup = "+grpId);
+  	
+    String sqlqry = "select count(*) as resultset_size " +
+	 		"from (" +
+	 		"select p.codpatient, g.name as grpname, "+
+	    "i.name as intrvname, s.name as secname, "+
+	    "q.codquestion as codq, a.thevalue, s.section_order, "+
+	    "it.item_order, pga.answer_order, pga.answer_number, it.\"repeatable\" as itrep "+
+	    "from patient p, pat_gives_answer2ques pga, appgroup g,	performance pf, "+
+	      "question q, answer a, interview i, item it, section s, project pj "+
+	    "where "+ grpParam +
+	    " and i.idinterview = "+intrvId +
+	    " and pj.project_code = '"+prjCode+"' " +
+	    "and pj.idprj = i.codprj "+
+	    "and pf.codinterview = i.idinterview "+
+	    "and pf.codgroup = g.idgroup "+
+	    "and s.codinterview = i.idinterview "+
+	    "and pf.codpat = p.idpat "+
+	    "and pga.codpat = p.idpat "+
+	    "and pga.codquestion = q.idquestion "+
+	    "and pga.codanswer = a.idanswer "+
+	    "and q.idquestion = it.iditem "+
+	    "and it.idsection = s.idsection " +
+	    "and s.section_order = " + secParam +
+	    ") a;";
+
+    
+    Session myHibSes = HibernateUtil.getSessionFactory().openSession();
+    Transaction tx = null;
+    List<Object[]> rows = null;
+
+    try {
+      tx = myHibSes.beginTransaction();
+      SQLQuery sqlQry = myHibSes.createSQLQuery(sqlqry);
+      
+      List <BigInteger> uniqueCount = sqlQry.list();
+      BigInteger qryCount = uniqueCount.get(0);
+      count = qryCount.intValue();
+      
+//      count = ((BigInteger)uniqueCount.get(0)[0]).intValue();
+      tx.commit();
+    }
+    catch (HibernateException ex) {
+      if (tx != null)
+        tx.rollback();
+
+      System.out.println(ex.getMessage());
+      ex.printStackTrace ();
+    }
+    finally {
+      myHibSes.close();
+    }
+  	return count;
   }
   
   
@@ -492,6 +549,72 @@ System.out.println ("\nResultSet query:\n"+sqlqry);
   
   
   
+/**
+ * 
+ * @param prjCode
+ * @param intrvId
+ * @param grpId
+ * @param secOrder
+ * @return an iterator over the resulset
+ */
+  private Iterator<Object[]> getResultSetIterator (String prjCode, Integer intrvId, Integer grpId,
+          																	Integer secOrder) {
+  	
+  	Iterator<Object[]> sqlIt = null;
+  	String secParam = (secOrder == null)?"s.section_order ": secOrder.toString();
+  	String grpParam = (grpId == null? "1=1 ": "g.idgroup = "+grpId);
+  	
+    String sqlqry = "select p.codpatient, g.name as grpname, "+
+        "i.name as intrvname, s.name as secname, "+
+      "q.codquestion as codq, a.thevalue, s.section_order, "+
+      "it.item_order, pga.answer_order, pga.answer_number, it.\"repeatable\" as itrep "+
+      "from patient p, pat_gives_answer2ques pga, appgroup g,	performance pf, "+
+        "question q, answer a, interview i, item it, section s, project pj "+
+      "where "+ grpParam +
+      " and i.idinterview = "+intrvId +
+      " and pj.project_code = '"+prjCode+"' " +
+      "and pj.idprj = i.codprj "+
+      "and pf.codinterview = i.idinterview "+
+      "and pf.codgroup = g.idgroup "+
+      "and s.codinterview = i.idinterview "+
+      "and pf.codpat = p.idpat "+
+      "and pga.codpat = p.idpat "+
+      "and pga.codquestion = q.idquestion "+
+      "and pga.codanswer = a.idanswer "+
+      "and q.idquestion = it.iditem "+
+      "and it.idsection = s.idsection " +
+      "and s.section_order = " + secParam +
+      " order by 1, 7, 10, 8, 5, 9";
+     
+    Session myHibSes = HibernateUtil.getSessionFactory().openSession();
+    Transaction tx = null;
+    List<Object[]> rows = null;
+
+    try {
+      tx = myHibSes.beginTransaction();
+       SQLQuery sqlQry = myHibSes.createSQLQuery(sqlqry);
+       
+      sqlIt = sqlQry.iterate();
+      tx.commit();
+    }
+    catch (HibernateException ex) {
+      if (tx != null)
+        tx.rollback();
+
+      System.out.println(ex.getMessage());
+      ex.printStackTrace ();
+    }
+    finally {
+      myHibSes.close();
+    }
+  	
+  	
+  	return sqlIt;
+  	
+  }
+  
+  
+  
   
 /**
  * Gets all patients which have a performance BUT no questions for that performance 
@@ -517,6 +640,7 @@ System.out.println ("\nResultSet query:\n"+sqlqry);
   			" order by 1";
   	
   	List<Object[]> rows = execQuery (sqlQry, -1, -1);
+<<<<<<< HEAD
 <<<<<<< master
 System.out.println ("patients4Intrv query: "+sqlQry);
 /*
@@ -531,6 +655,10 @@ System.out.println ("patients4Intrv query: "+sqlQry);
 =======
 
 >>>>>>> local
+=======
+System.out.println (rows.size() + " patiens for \npatients4Intrv query: "+sqlQry);
+
+>>>>>>> develop
   	return rows;
   }
   
@@ -744,23 +872,43 @@ System.out.println ("patients4Intrv query: "+sqlQry);
 		  	fileOut.flush();
 		  	
 		  	List<Object[]> patients = getPats4Intrv(prjCode, intrvId, grpId);
-		  	int maxRows = DataRetriever.MAX_ROWS, offset = 0, numOfResults;
+		  	int resultsetSize = 
+	  					this.getFullResultsetSize(prjCode, intrvId, grpId, orderSec);
+		  	int maxRows = DataRetriever.MAX_ROWS, offset = 0, rowsProcessed;
 		  	boolean moreResults = true;
 		  	List<Object[]> resultSet;
+		  	
+////////////////////////////////////////////////////
+//		  	resultSet = getResultSet (prjCode, intrvId, grpId, orderSec, -1, -1);
+//		  	dw.buildResult (patients, listMapHdr, resultSet, fileOut);
+
+		  	SqlDataRetriever sqldr = new SqlDataRetriever();
+		  	java.sql.ResultSet rs = sqldr.getResultSet(prjCode, intrvId, grpId, orderSec);
+		  	try {
+		  		dw.buildResultSet(patients, listMapHdr, rs, fileOut);
+		  	}
+		  	catch (Exception ex) {
+		  		ex.printStackTrace();
+		  	}		  	
+
+		  	
+/*
 		  	while (moreResults) {
 		  		resultSet = getResultSet (prjCode, intrvId, grpId, orderSec, offset, maxRows);
-		  		dw.buildResult(patients, listMapHdr, resultSet, fileOut);
+		  		rowsProcessed = dw.buildResult(patients, listMapHdr, resultSet, resultsetSize, fileOut);
 		  		
-System.out.println ("num of results: "+resultSet.size());		  		
-		  		moreResults = resultSet.size() == maxRows;
-		  		offset += maxRows+1;
+System.out.println ("num of results: "+resultSet.size());
+//					offset += maxRows+1;
+					offset += rowsProcessed;
+		  		moreResults = resultSet.size() > offset;
+		  		
 		  		resultSet.clear();
 		  	}		  	
 //		  	List<Object[]> resultSet = getResultSet (prjCode, intrvId, grpId, orderSec);
 		  	
-		  	
 //		  	dw.buildResultSet (listMapHdr, resultSet, fileOut);
 //		  	dw.buildResult(patients, listMapHdr, resultSet, fileOut);
+ */
 			}
 	    fileOut.close(); 
 	  }
