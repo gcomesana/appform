@@ -82,6 +82,7 @@ var AjaxReq = (function () {
 		setTimeout (function (o) { lastReq.successCallback (o) }, 10, o)
 
 		var newReq = requestQueue.length > 0? requestQueue[0]: null;
+		overlay.hide()
 		if (newReq != null) {
 			newReq.startReq(this.overlay)
 		}
@@ -100,6 +101,7 @@ var AjaxReq = (function () {
 		setTimeout(lastReq.failureCallback, 10, o)
 
 		var newReq = requestQueue.length > 0? requestQueue[0]: null;
+		overlay.hide()
 		if (newReq != null)
 			newReq.startReq(this.overlay)
 	}
