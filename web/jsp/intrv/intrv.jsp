@@ -141,6 +141,8 @@
 	<script type="text/javascript" src="../../js/yahoo/connection-debug.js" charset="UTF-8"></script>
 	<script type="text/javascript" src="../../js/yahoo/json-debug.js" charset="UTF-8"></script>
 	<script type="text/javascript" src="../../js/overlay.js" charset="UTF-8"></script>
+	
+	<script type="text/javascript" src="../../js/lib/sha.js" charset="UTF-8"></script>
 	<script type="text/javascript" src="../../js/yahoo/ajaxreq.js" charset="UTF-8"></script>
 	
 	<script type="text/javascript" src="../../js/jquery/jquery-1.3.js" charset="UTF-8"></script>

@@ -215,7 +215,7 @@ var ListAjaxResponse = function () {
     overlay.hide();
 		try {
 			// Zero, deactivate control feedback
-			if(onChangeHandler!=undefined) {
+			if(onChangeHandler!==undefined) {
 				try {
 					selectTypes.removeEventListener('change',onChangeHandler,false);
 				} catch(e) {
@@ -285,6 +285,8 @@ var ListAjaxResponse = function () {
 	}
 };
 // END OF LISTAJAXRESPONSE "INNER CLASS" //////////////////////////////////////	
+
+
 
 
 
