@@ -39,6 +39,8 @@
 	<script type="text/javascript" src="../js/yahoo/connection-debug.js"></script>
 	<script type="text/javascript" src="../js/yahoo/json-debug.js"></script>
 	<script type="text/javascript" src="../js/overlay.js" charset="UTF-8"></script>
+	
+	<script type="text/javascript" src="../js/lib/sha.js"  charset="UTF-8"></script>
 	<script type="text/javascript" src="../js/yahoo/ajaxreq.js"  charset="UTF-8"></script>
 	<script type="text/javascript" src="../js/core.js"  charset="UTF-8"></script>
 	<script type="text/javascript" src="../js/ajaxresponses.js"  charset="UTF-8"></script>

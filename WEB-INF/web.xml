@@ -222,7 +222,7 @@
 	</servlet-mapping>
 	
 	<session-config>
-    <session-timeout>3</session-timeout>
+    <session-timeout>13</session-timeout>
   </session-config>
 
 	<security-constraint>

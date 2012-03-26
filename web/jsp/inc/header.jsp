@@ -425,6 +425,8 @@ System.out.println("header.jsp: hibSes: "+hibSes.hashCode());
 	<script type="text/javascript" src="../js/yahoo/connection-debug.js"></script>
 	<script type="text/javascript" src="../js/yahoo/json-debug.js"></script>
 	<script type="text/javascript" src="../js/overlay.js"></script>
+	
+	<script type="text/javascript" src="../js/lib/sha.js"></script>
 	<script type="text/javascript" src="../js/yahoo/ajaxreq.js"></script>
 	
 <!-- These are the YUI files necessary to implement a modal simple dialog -->

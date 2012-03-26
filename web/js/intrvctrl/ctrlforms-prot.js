@@ -309,7 +309,6 @@ ControlForms.prototype.onBlur = function (textName) {
 	text[0].style.color = "black";
 	
 	var theVal = text[0].value;
-
 }
 
 
@@ -435,6 +434,7 @@ ControlForms.prototype.chkIntroForm = function (theForm) {
 
 
 /**
+ * Somethingx more...
  * This method sends the item value to be processed by a servlet. It is the 
  * real time answer sending implementation. First the method check the value
  * of the item and, if it is ok, send them to servlet for processing
