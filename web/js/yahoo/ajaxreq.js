@@ -120,7 +120,8 @@ var AjaxReq = (function () {
  */
 	var startRequest = function(theOverlay) {
 		YAHOO.util.Connect.initHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8")
-
+		this.overlay = theOverlay
+		
 // access to private members is allowed as this (named) closure has access to
 // their outer functions variables and params
 		var callerName = startRequest.caller.toString().match(/__on\w*Callback/)
@@ -161,8 +162,9 @@ var AjaxReq = (function () {
 
 
 
+
 /**
- * Constructor function, whichi will be returned
+ * Constructor function, which will be returned
  */
 	var ajaxreq = function () {
 
