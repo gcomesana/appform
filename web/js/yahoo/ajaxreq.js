@@ -84,7 +84,7 @@ var AjaxReq = (function () {
 		var newReq = requestQueue.length > 0? requestQueue[0]: null;
 		overlay.hide()
 		if (newReq != null) {
-			newReq.startReq(this.overlay)
+			newReq.startReq(newReq.overlay)
 		}
 	}
 
@@ -103,7 +103,7 @@ var AjaxReq = (function () {
 		var newReq = requestQueue.length > 0? requestQueue[0]: null;
 		overlay.hide()
 		if (newReq != null)
-			newReq.startReq(this.overlay)
+			newReq.startReq(newReq.overlay)
 	}
 
 
