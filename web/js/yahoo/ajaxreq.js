@@ -78,11 +78,13 @@ var AjaxReq = (function () {
 //	var __onSuccessCallback = function (o) {
 	function __onSuccessCallback (o) {
 		var lastReq = requestQueue.shift()
-//		setTimeout(lastReq.successCallback, 10, o)
+
 		setTimeout (function (o) { lastReq.successCallback (o) }, 10, o)
 
 		var newReq = requestQueue.length > 0? requestQueue[0]: null;
-		overlay.hide()
+		if (lastReq.overlay == 1)
+			overlay.hide() 
+			
 		if (newReq != null) {
 			newReq.startReq(newReq.overlay)
 		}
@@ -101,7 +103,9 @@ var AjaxReq = (function () {
 		setTimeout(lastReq.failureCallback, 10, o)
 
 		var newReq = requestQueue.length > 0? requestQueue[0]: null;
-		overlay.hide()
+		if (lastReq.overlay == 1)
+			overlay.hide()
+			
 		if (newReq != null)
 			newReq.startReq(newReq.overlay)
 	}
@@ -120,14 +124,21 @@ var AjaxReq = (function () {
  */
 	var startRequest = function(theOverlay) {
 		YAHOO.util.Connect.initHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8")
-		this.overlay = theOverlay
+		this.overlay = theOverlay === undefined? 1: theOverlay
 		
+// by default, overlay is showed, if any argument is got then it is supossed
+// to mean not to show the overlay
+    if (arguments.length == 0 || this.overlay != 0) {
+			overlay.show();
+// alert ('after showing display, visibility: ' + document.getElementById("overlay").style.visibility)
+		}
+			
 // access to private members is allowed as this (named) closure has access to
 // their outer functions variables and params
+
+// depending on the caller, this request has to be enqueued: 
+// it won't be enqueued if the caller is the callback method '__on\w*Callback'
 		var callerName = startRequest.caller.toString().match(/__on\w*Callback/)
-// hay que meterlo en la cola (casi) siempre (se quita luego)
-// no se mete en la cola si viene del __onXXXXCallback
-// si hay alguno en la cola, no se ejecuta la llamada (ya se hará)
 		if (callerName == null) {
 			if (requestQueue.length > 0) {
 				requestQueue.push (this)
@@ -156,8 +167,10 @@ var AjaxReq = (function () {
 
 // by default, overlay is showed, if any argument is got then it is supossed
 // to mean not to show the overlay
+/*
     if (arguments.length == 0 || this.overlay != 0)
 			overlay.show();
+*/
   }
 
 
@@ -169,7 +182,7 @@ var AjaxReq = (function () {
 	var ajaxreq = function () {
 
 		if (arguments.length == 0) {
-			this.overlay = 1
+			this.overlay = 1 // overlay=1 => show overlay!!
 			this.postData = null
 			this.method = 'GET'
 			this.url = null
