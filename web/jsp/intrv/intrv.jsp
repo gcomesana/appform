@@ -135,8 +135,11 @@
   <link rel="stylesheet" type="text/css" href="../../css/theme/ui.combobox.css"/>
 -->  
   <link href="../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-  <link href="../../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />	
-<!-- treeview and yahoo event, dom and connection files -->	
+  <link href="../../img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  	
+<!-- treeview and yahoo event, dom and connection files -->
+	<script type="text/javascript" src="../../js/jquery/jquery-1.3.2.js" charset="UTF-8"></script>
+	
 	<script type="text/javascript" src="../../js/yahoo/yahoo-dom-event.js" charset="UTF-8"></script>
 	<script type="text/javascript" src="../../js/yahoo/connection-debug.js" charset="UTF-8"></script>
 	<script type="text/javascript" src="../../js/yahoo/json-debug.js" charset="UTF-8"></script>
@@ -145,7 +148,6 @@
 	<script type="text/javascript" src="../../js/lib/sha.js" charset="UTF-8"></script>
 	<script type="text/javascript" src="../../js/yahoo/ajaxreq.js" charset="UTF-8"></script>
 	
-	<script type="text/javascript" src="../../js/jquery/jquery-1.3.js" charset="UTF-8"></script>
 	<script type="text/javascript" src="../../js/jquery/ui/ui.core.js" charset="UTF-8"></script>
 <!--	<script type="text/javascript" src="../../js/jquery/ui/ui.combobox.js" charset="UTF-8"></script> -->
 

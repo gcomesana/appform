@@ -574,13 +574,14 @@ ControlForms.prototype.send = function (theForm, fromSectionClick, showDlg) {
 			else
 				msgDlg = "Are you sure to confirm these data?"
 */						
+
 			if (confirm (msgDlg)) {
 				xReq.startReq();
 				return true;
 			}
 			else
 				return false;
-		}
+		} // EO if showDlg
 		else
 			xReq.startReq()
 		

@@ -1,14 +1,23 @@
 
 var Overlay = function () {
 
+	var isShowed = false
+	
   function show () {
+		if (!isShowed) {
   		el = document.getElementById("overlay");
   		el.style.visibility =  "visible";
+			isShowed = true
+		}
   };
   
   function hide () {
-    el = document.getElementById("overlay");
-  	el.style.visibility =  "hidden";    
+		
+		if (isShowed) {
+    	el = document.getElementById("overlay");
+  		el.style.visibility =  "hidden";
+			isShowed = false
+		}    
   }
   
   
@@ -17,6 +26,12 @@ var Overlay = function () {
   	el.style.visibility = 
           (el.style.visibility == "visible")? "hidden": "visible";
   }
+	
+	
+	function isDisplayed () {
+		return isShowed
+	}
+	
   
   function test () {
     alert ("overlay is reachable!!!");
