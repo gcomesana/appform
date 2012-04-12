@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Thu Apr 12 14:04:41 CEST 2012
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=false
+onejar.checkbox=false
+jarname=/Users/bioinfo/Development/deploy/appform/batch/padme-sqldumper.jar
+manifest.mergeall=false
+manifest.mainclass=org.cnio.appform.util.dump.MainDump
+manifest.file=<createnew>
+jarname.isextern=true
+onejar.expand=
+excludes=<jar|catalina-ant.jar>;<jar|catalina-ha.jar>;<jar|catalina-tribes.jar>;<jar|catalina.jar>;<jar|glassboxMonitor.jar>;<jar|jasper-el.jar>;<jar|jasper-jdt.jar>;<jar|jasper.jar>;<jar|jsp-api.jar>;<jar|jipViewer.jar>;<jar|profile.jar>;<jar|servlet-api.jar>;<jar|tomcat-coyote.jar>;<jar|tomcat-dbcp.jar>;<jar|tomcat-i18n-es.jar>;<jar|tomcat-i18n-fr.jar>;<jar|tomcat-i18n-ja.jar>;<jar|formrenderer.jar>;<jar|junit-4.9b2.jar>
+includes=
