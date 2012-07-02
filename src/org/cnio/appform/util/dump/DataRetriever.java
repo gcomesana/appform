@@ -640,31 +640,13 @@ System.out.println ("\nResultSet query:\n"+sqlqry);
   			" order by 1";
   	
   	List<Object[]> rows = execQuery (sqlQry, -1, -1);
-<<<<<<< HEAD
-<<<<<<< master
-System.out.println ("patients4Intrv query: "+sqlQry);
-/*
-  	List<String> patients = 
-  					(rows == null || rows.size() == 0)? null: new ArrayList<String>();
-  	
-  	for (Object[] row: rows) {
-  		String codPatient = (String)row[0];
-  		patients.add(codPatient);
-  	}
-*/  	
-=======
 
->>>>>>> local
-=======
 System.out.println (rows.size() + " patiens for \npatients4Intrv query: "+sqlQry);
+ 
 
->>>>>>> develop
   	return rows;
   }
-  
-  
-  
-  
+
   
   
   

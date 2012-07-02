@@ -23,7 +23,7 @@
     <property name="connection.password">3piqu3st</property>
 -->
 		<property name="connection.url">
- 			jdbc:postgresql://localhost:5432/appform 
+ 			jdbc:postgresql://localhost:4321/appform 
 		</property> 		
     <property name="connection.username">gcomesana</property>
  		<property name="connection.password">appform</property>

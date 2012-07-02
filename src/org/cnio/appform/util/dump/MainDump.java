@@ -374,9 +374,16 @@ System.out.println("Perform batch job...");
 //			dumper.spitInfo();
 			dumper.dump();
 System.out.println ("=================================================");
-		}
+		} // EO for (ParametersModel...)
 			
 	} // EO batch method
+	
+	
+	
+	public void publicBatch (String pathFileName) throws IOException {
+		
+		this.batch(pathFileName);
+	}
 	
 	
 	

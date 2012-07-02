@@ -294,7 +294,8 @@ System.out.println ("Writing out data");
         if (countPats < patients.size()) {
         	patient = patients.get(countPats);
         	patRef = (String)patient[0];
-          grpName = (String)patient[1];
+//          grpName = (String)patient[1];
+        	grpRef = (String)patient[1];
 //          intrvName = (String)innRow[2];
 //          secName = (String)innRow[3];
         }
@@ -334,7 +335,7 @@ System.out.println ("Writing out data");
       	System.err.println("No key for question: "+keyField);
       
 //      out.append(ansVal+CSV_SEP);
-    } // EO for row
+    } // EO while (rs.next()), loop over resultset
   	
   	
 System.out.println ("\n ** Rows processed from java.sql.ResultSet: "+countRows);  	
@@ -474,12 +475,15 @@ System.out.println("Writing out result:");
 			System.err.println("No key for question: " + keyField);
 
 	} // EO for row, ResultSet loop
-		
+/*		
+ * 
 <<<<<<< HEAD
 // System.out.println ("\n** Rows processed: "+countRows);
 =======
 System.out.println ("\n** Rows processed: "+countRows);
 >>>>>>> develop
+
+*/
 // here i have to write the very last subject retrieved
 	if (out.length() > 0) { // spit everything
 
