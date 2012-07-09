@@ -258,7 +258,7 @@ var AjaxReq = (function () {
 	ajaxreq.prototype = {
 		constructor: ajaxreq, // reference to ajaxreq function above: constructor determines what is the constructor function
 		toString: function () {
-			console.log ("say something")
+//			console.log ("say something")
 		},
 
 //		getNumOfCalls: getCallCount,
