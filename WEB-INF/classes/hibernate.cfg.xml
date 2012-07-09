@@ -22,6 +22,7 @@
     <property name="connection.username">epiquestusr</property>
     <property name="connection.password">3piqu3st</property>
 -->
+
 		<property name="connection.url">
  			jdbc:postgresql://localhost:4321/appform 
 		</property> 		

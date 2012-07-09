@@ -879,6 +879,7 @@
 				<zipfileset dir="${temp.dir}/jsp" prefix="jsp" />
 				<zipfileset dir="${temp.dir}/css" prefix="css" />
 				<zipfileset dir="${temp.dir}/js" prefix="js" />
+				<zipfileset dir="${temp.dir}/js/lib" prefix="js/lib" />
 				<zipfileset dir="${temp.dir}/img" prefix="img" />
 				<zipfileset dir="${temp.dir}/html" prefix="html" />
 				<zipfileset dir="${temp.dir.meta-inf}" includes="**/context.xml" prefix="META-INF"/>

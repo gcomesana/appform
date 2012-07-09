@@ -288,7 +288,7 @@ System.out.println (i+" -> group: "+groupStr+" for key: "+key);
  * - qrytypei, 
  * @param propsName, the name of the properties file with the batch actions coded
  */
-	private void batch (String propsName) throws IOException {
+	private void batch (String propsName) throws IOException, NullPointerException {
 		Properties props = new Properties ();
 		props.load(new FileInputStream (propsName));
 		
@@ -331,7 +331,7 @@ System.out.println (i+" -> group: "+groupStr+" for key: "+key);
 			pm.insertVal(key.substring(0, indexNum), val);
 			if (pmIndex == -1)
 				bulksList.add(pm);
-		}
+		} // while more key elements
 		
 System.out.println("Perform batch job...");
 		DBDump dumper = new DBDump ();
@@ -374,9 +374,16 @@ System.out.println("Perform batch job...");
 //			dumper.spitInfo();
 			dumper.dump();
 System.out.println ("=================================================");
-		}
+		} // EO for (ParametersModel...)
 			
 	} // EO batch method
+	
+	
+	
+	public void publicBatch (String pathFileName) throws IOException {
+		
+		this.batch(pathFileName);
+	}
 	
 	
 	
@@ -459,7 +466,9 @@ System.out.println ("=================================================");
 					fileVars += fileVars.equals("")? arg: " "+arg;
 				
 				if (lastArg.equalsIgnoreCase(MainDump.BATCH_ARG)) {
+					java.io.PrintWriter pw = null;
 					try {
+						pw = new java.io.PrintWriter ("props_error.log");
 						String propsFile = arg;
 //						rep.batch (propsDir + "/" + MainDump.PROPS_FILE	);
 						rep.batch(propsFile);
@@ -467,7 +476,23 @@ System.out.println ("=================================================");
 						return;
 					}
 					catch (IOException ioEx) {
-						ioEx.printStackTrace();
+						String msg = "Error while reading properties file.";
+						msg += "Check the props_error.log to get more information";
+						System.err.println (msg);
+//						ioEx.printStackTrace();
+						ioEx.printStackTrace(pw);
+						pw.close();
+						return;
+					}
+					catch (NullPointerException nullEx) {
+						String msg = "Error while reading properties file. ";
+						msg += "Probably something is wroing in the properties file. ";
+						msg += "Review your file and/or check the props_error.log file.";
+							
+						System.err.println (msg);
+//					ioEx.printStackTrace();
+						nullEx.printStackTrace(pw);
+						pw.close();
 						return;
 					}
 				}

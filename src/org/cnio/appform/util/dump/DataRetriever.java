@@ -640,14 +640,13 @@ System.out.println ("\nResultSet query:\n"+sqlqry);
   			" order by 1";
   	
   	List<Object[]> rows = execQuery (sqlQry, -1, -1);
+
 System.out.println (rows.size() + " patiens for \npatients4Intrv query: "+sqlQry);
+ 
 
   	return rows;
   }
-  
-  
-  
-  
+
   
   
   

@@ -294,7 +294,8 @@ System.out.println ("Writing out data");
         if (countPats < patients.size()) {
         	patient = patients.get(countPats);
         	patRef = (String)patient[0];
-          grpName = (String)patient[1];
+//          grpName = (String)patient[1];
+        	grpRef = (String)patient[1];
 //          intrvName = (String)innRow[2];
 //          secName = (String)innRow[3];
         }
@@ -334,7 +335,7 @@ System.out.println ("Writing out data");
       	System.err.println("No key for question: "+keyField);
       
 //      out.append(ansVal+CSV_SEP);
-    } // EO for row
+    } // EO while (rs.next()), loop over resultset
   	
   	
 System.out.println ("\n ** Rows processed from java.sql.ResultSet: "+countRows);  	
@@ -367,6 +368,11 @@ System.out.println ("\n ** Rows processed from java.sql.ResultSet: "+countRows);
  * This method writes out the results in the file in the correct place, which is,
  * matching with the file header (it means, matching answers with questions). 
  * It takes and additional list of subjects with any performance for the interview
+<<<<<<< HEAD
+<<<<<<< master
+=======
+=======
+>>>>>>> develop
  * but NO questions at all and put them in the output file with the entire row blank
  * @param patients, the list of patients with any performance for the requested
  * interview
@@ -469,8 +475,15 @@ System.out.println("Writing out result:");
 			System.err.println("No key for question: " + keyField);
 
 	} // EO for row, ResultSet loop
-		
+/*		
+ * 
+<<<<<<< HEAD
+// System.out.println ("\n** Rows processed: "+countRows);
+=======
 System.out.println ("\n** Rows processed: "+countRows);
+>>>>>>> develop
+
+*/
 // here i have to write the very last subject retrieved
 	if (out.length() > 0) { // spit everything
 
@@ -500,6 +513,10 @@ System.out.println ("\n** Rows processed: "+countRows);
  * This method writes out the results in the file in the correct place, which is,
  * matching with the file header (it means, matching answers with questions). 
  * It takes and additional list of subjects with any performance for the interview
+<<<<<<< HEAD
+>>>>>>> local
+=======
+>>>>>>> develop
  * but NO questions at all and put them in the output file with the entire row blank.
  * The proccess is patients-driven, in such a way that a patient is taken from patients
  * list and, from its code, the answers are retrieved from the resultset and therefore

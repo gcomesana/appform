@@ -537,7 +537,7 @@ ControlForms.prototype.send = function (theForm, fromSectionClick, showDlg) {
 	if (this.sending == true)
 		return;
 		
-	this.sending = true
+// this.sending = true
 	
 	if (this.chkMandatory() == false) {
 		alert ("There are items (red higlighted) which have to be answered");
@@ -577,13 +577,16 @@ ControlForms.prototype.send = function (theForm, fromSectionClick, showDlg) {
 
 			if (confirm (msgDlg)) {
 				xReq.startReq();
+				this.sending = true
 				return true;
 			}
 			else
 				return false;
 		} // EO if showDlg
-		else
+		else {
+			this.sending = true
 			xReq.startReq()
+		}
 		
 		
 // This is to be aware when the interview is paused or finished in order to be
@@ -651,7 +654,6 @@ ControlForms.prototype.finish = function (theForm, lastSec) {
 	}
 	
   if (confirm("Are you sure to finish/interrupt this interview?")) {
-		
 		
     theForm.elements['finish'].value = "1";
 // creates a new hidden element to hold the last section visited
