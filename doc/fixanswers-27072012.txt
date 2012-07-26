@@ -1,0 +1,5478 @@
+/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/bin/java -Dgroovy.home=/usr/local/groovy-1.7.0 -Dgroovy.starter.conf=/usr/local/groovy-1.7.0/conf/groovy-starter.conf -Dtools.jar=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/tools.jar -Dfile.encoding=UTF-8 -classpath /usr/local/groovy-1.7.0/embeddable/groovy-all-1.7.0.jar org.codehaus.groovy.tools.GroovyStarter --main groovy.ui.GroovyMain --conf /usr/local/groovy-1.7.0/conf/groovy-starter.conf --classpath /Users/bioinfo/Development/groovy/SqlFixer/bin/production:/usr/local/groovy-1.7.0/lib/jsp-api-2.0.jar:/usr/local/groovy-1.7.0/lib/junit-4.7.jar:/usr/local/groovy-1.7.0/lib/asm-analysis-3.2.jar:/usr/local/groovy-1.7.0/lib/commons-cli-1.2.jar:/usr/local/groovy-1.7.0/lib/ant-junit-1.7.1.jar:/usr/local/groovy-1.7.0/lib/asm-3.2.jar:/usr/local/groovy-1.7.0/lib/ant-1.7.1.jar:/usr/local/groovy-1.7.0/lib/commons-logging-1.1.1.jar:/usr/local/groovy-1.7.0/lib/asm-tree-3.2.jar:/usr/local/groovy-1.7.0/lib/asm-commons-3.2.jar:/usr/local/groovy-1.7.0/lib/ant-launcher-1.7.1.jar:/usr/local/groovy-1.7.0/lib/ivy-2.1.0.jar:/usr/local/groovy-1.7.0/lib/bsf-2.4.0.jar:/usr/local/groovy-1.7.0/lib/jline-0.9.94.jar:/usr/local/groovy-1.7.0/lib/servlet-api-2.4.jar:/usr/local/groovy-1.7.0/lib/antlr-2.7.7.jar:/usr/local/groovy-1.7.0/lib/xstream-1.3.1.jar:/usr/local/groovy-1.7.0/lib/asm-util-3.2.jar:/Users/bioinfo/Tools/lib/postgresql-8.3-603.jdbc3.jar: --encoding=UTF-8 /Users/bioinfo/Development/groovy/SqlFixer/src/FixAnswersScript.groovy sim 0
+Fixing repetad answers for jdbc:postgresql://padme:5432/appform...
+Running database LIVE update...
+============xxxxxxxxxxxxxxxx==============
+(q51-1-1) 5132935-1-1 -> created: 2012-03-19 17:47:01.0; updated: 2012-03-19 17:47:16.0
+(q51-1-1) 5132936-1-1 -> created: 2012-03-19 17:47:02.0; updated: null
+1st sort
+5132936 = 9999 (2012-03-19 17:47:02.0)
+5132935 = 25 (2012-03-19 17:47:01.0)
+***************
+2nd sort
+5132935 = 25 (2012-03-19 17:47:16.0)
+5132936 = 9999 (null)
+===============
+itemRef -> 5132935: 25
+#2#.- delete from answer where idanswer=5132936
+============xxxxxxxxxxxxxxxx==============
+(q704-1-1) 5140175-1-1 -> created: 2012-03-20 17:54:56.0; updated: 2012-03-20 17:57:35.0
+(q704-1-1) 5140174-1-1 -> created: 2012-03-20 17:54:56.0; updated: null
+1st sort
+5140174 = 3 (2012-03-20 17:54:56.0)
+5140175 = 8 (2012-03-20 17:54:56.0)
+***************
+2nd sort
+5140175 = 8 (2012-03-20 17:57:35.0)
+5140174 = 3 (null)
+===============
+itemRef -> 5140175: 8
+#4#.- delete from answer where idanswer=5140174
+============xxxxxxxxxxxxxxxx==============
+(q858-1-1) 5137455-1-1 -> created: 2012-03-20 16:07:29.0; updated: 2012-03-20 16:08:06.0
+(q858-1-1) 5137456-1-1 -> created: 2012-03-20 16:07:29.0; updated: null
+1st sort
+5137455 = 1 (2012-03-20 16:07:29.0)
+5137456 = 9999 (2012-03-20 16:07:29.0)
+***************
+2nd sort
+5137455 = 1 (2012-03-20 16:08:06.0)
+5137456 = 9999 (null)
+===============
+itemRef -> 5137455: 1
+#6#.- delete from answer where idanswer=5137456
+============xxxxxxxxxxxxxxxx==============
+(q1363-1-1) 5133061-1-1 -> created: 2012-03-19 17:54:39.0; updated: null
+(q1363-1-1) 5133111-1-1 -> created: 2012-03-19 17:54:39.0; updated: null
+1st sort
+5133061 = 9999 (2012-03-19 17:54:39.0)
+5133111 = 9999 (2012-03-19 17:54:39.0)
+***************
+2nd sort
+5133061 = 9999 (null)
+5133111 = 9999 (null)
+===============
+itemRef -> 5133061: 9999
+#8#.- delete from answer where idanswer=5133111
+============xxxxxxxxxxxxxxxx==============
+(q1377-1-1) 5119363-1-1 -> created: 2012-03-13 14:50:49.0; updated: null
+(q1377-1-1) 5119364-1-1 -> created: 2012-03-13 14:50:49.0; updated: null
+1st sort
+5119363 = 9999 (2012-03-13 14:50:49.0)
+5119364 = 9999 (2012-03-13 14:50:49.0)
+***************
+2nd sort
+5119363 = 9999 (null)
+5119364 = 9999 (null)
+===============
+itemRef -> 5119363: 9999
+#10#.- delete from answer where idanswer=5119364
+============xxxxxxxxxxxxxxxx==============
+(q1377-1-2) 5119365-1-2 -> created: 2012-03-13 14:50:49.0; updated: null
+(q1377-1-2) 5119362-1-2 -> created: 2012-03-13 14:50:49.0; updated: null
+1st sort
+5119362 = 9999 (2012-03-13 14:50:49.0)
+5119365 = 9999 (2012-03-13 14:50:49.0)
+***************
+2nd sort
+5119362 = 9999 (null)
+5119365 = 9999 (null)
+===============
+itemRef -> 5119362: 9999
+#12#.- delete from answer where idanswer=5119365
+============xxxxxxxxxxxxxxxx==============
+(q1434-1-1) 5117277-1-1 -> created: 2012-03-12 17:54:36.0; updated: 2012-03-12 17:54:48.0
+(q1434-1-1) 5117278-1-1 -> created: 2012-03-12 17:54:36.0; updated: 2012-03-12 17:55:49.0
+1st sort
+5117277 = 2 (2012-03-12 17:54:36.0)
+5117278 = 2 (2012-03-12 17:54:36.0)
+***************
+2nd sort
+5117278 = 2 (2012-03-12 17:55:49.0)
+5117277 = 2 (2012-03-12 17:54:48.0)
+===============
+itemRef -> 5117278: 2
+#14#.- delete from answer where idanswer=5117277
+============xxxxxxxxxxxxxxxx==============
+(q1676-1-1) 5139613-1-1 -> created: 2012-03-20 17:30:22.0; updated: null
+(q1676-1-1) 5139614-1-1 -> created: 2012-03-20 17:30:23.0; updated: 2012-03-20 17:30:36.0
+1st sort
+5139614 = 2 (2012-03-20 17:30:23.0)
+5139613 = 9999 (2012-03-20 17:30:22.0)
+***************
+2nd sort
+5139614 = 2 (2012-03-20 17:30:36.0)
+5139613 = 9999 (null)
+===============
+itemRef -> 5139614: 2
+#16#.- delete from answer where idanswer=5139613
+============xxxxxxxxxxxxxxxx==============
+(q1983-1-1) 5120435-1-1 -> created: 2012-03-13 18:37:18.0; updated: null
+(q1983-1-1) 5120436-1-1 -> created: 2012-03-13 18:37:18.0; updated: null
+1st sort
+5120435 = 2 (2012-03-13 18:37:18.0)
+5120436 = 2 (2012-03-13 18:37:18.0)
+***************
+2nd sort
+5120435 = 2 (null)
+5120436 = 2 (null)
+===============
+itemRef -> 5120435: 2
+#18#.- delete from answer where idanswer=5120436
+============xxxxxxxxxxxxxxxx==============
+(q3000-1-1) 5140809-1-1 -> created: 2012-03-20 18:37:11.0; updated: null
+(q3000-1-1) 5140808-1-1 -> created: 2012-03-20 18:37:11.0; updated: null
+1st sort
+5140808 = 9999 (2012-03-20 18:37:11.0)
+5140809 = 9999 (2012-03-20 18:37:11.0)
+***************
+2nd sort
+5140808 = 9999 (null)
+5140809 = 9999 (null)
+===============
+itemRef -> 5140808: 9999
+#20#.- delete from answer where idanswer=5140809
+============xxxxxxxxxxxxxxxx==============
+(q4889-2-1) 4841321-2-1 -> created: 2011-12-01 14:03:24.0; updated: null
+(q4889-2-1) 5241288-2-1 -> created: 2012-05-18 16:25:09.0; updated: null
+(q4889-2-1) 5243329-2-1 -> created: 2012-05-23 14:48:50.0; updated: null
+1st sort
+5243329 = null (2012-05-23 14:48:50.0)
+5241288 = 9999 (2012-05-18 16:25:09.0)
+4841321 = null (2011-12-01 14:03:24.0)
+***************
+2nd sort
+5243329 = null (null)
+5241288 = 9999 (null)
+4841321 = null (null)
+===============
+itemRef -> 5241288: 9999
+#23#.- delete from answer where idanswer=5243329
+#23#.- delete from answer where idanswer=4841321
+============xxxxxxxxxxxxxxxx==============
+(q4889-2-2) 4841320-2-2 -> created: 2011-12-01 14:03:24.0; updated: null
+(q4889-2-2) 5241287-2-2 -> created: 2012-05-18 16:25:09.0; updated: null
+(q4889-2-2) 5243328-2-2 -> created: 2012-05-23 14:48:50.0; updated: null
+1st sort
+5243328 = null (2012-05-23 14:48:50.0)
+5241287 = 9999 (2012-05-18 16:25:09.0)
+4841320 = null (2011-12-01 14:03:24.0)
+***************
+2nd sort
+5243328 = null (null)
+5241287 = 9999 (null)
+4841320 = null (null)
+===============
+itemRef -> 5241287: 9999
+#26#.- delete from answer where idanswer=5243328
+#26#.- delete from answer where idanswer=4841320
+============xxxxxxxxxxxxxxxx==============
+(q4889-3-1) 4841366-3-1 -> created: 2011-12-01 14:03:24.0; updated: null
+(q4889-3-1) 5241297-3-1 -> created: 2012-05-18 16:25:10.0; updated: null
+(q4889-3-1) 5243334-3-1 -> created: 2012-05-23 14:48:58.0; updated: null
+1st sort
+5243334 = null (2012-05-23 14:48:58.0)
+5241297 = 9999 (2012-05-18 16:25:10.0)
+4841366 = null (2011-12-01 14:03:24.0)
+***************
+2nd sort
+5243334 = null (null)
+5241297 = 9999 (null)
+4841366 = null (null)
+===============
+itemRef -> 5241297: 9999
+#29#.- delete from answer where idanswer=5243334
+#29#.- delete from answer where idanswer=4841366
+============xxxxxxxxxxxxxxxx==============
+(q4889-4-1) 4841352-4-1 -> created: 2011-12-01 14:03:24.0; updated: null
+(q4889-4-1) 5241295-4-1 -> created: 2012-05-18 16:25:10.0; updated: null
+(q4889-4-1) 5243333-4-1 -> created: 2012-05-23 14:48:56.0; updated: null
+1st sort
+5243333 = null (2012-05-23 14:48:56.0)
+5241295 = 9999 (2012-05-18 16:25:10.0)
+4841352 = null (2011-12-01 14:03:24.0)
+***************
+2nd sort
+5243333 = null (null)
+5241295 = 9999 (null)
+4841352 = null (null)
+===============
+itemRef -> 5241295: 9999
+#32#.- delete from answer where idanswer=5243333
+#32#.- delete from answer where idanswer=4841352
+============xxxxxxxxxxxxxxxx==============
+(q4890-2-1) 4841350-2-1 -> created: 2011-12-01 14:03:24.0; updated: null
+(q4890-2-1) 5241293-2-1 -> created: 2012-05-18 16:25:10.0; updated: null
+(q4890-2-1) 5243332-2-1 -> created: 2012-05-23 14:48:54.0; updated: null
+1st sort
+5243332 = null (2012-05-23 14:48:54.0)
+5241293 = 9999 (2012-05-18 16:25:10.0)
+4841350 = null (2011-12-01 14:03:24.0)
+***************
+2nd sort
+5243332 = null (null)
+5241293 = 9999 (null)
+4841350 = null (null)
+===============
+itemRef -> 5241293: 9999
+#35#.- delete from answer where idanswer=5243332
+#35#.- delete from answer where idanswer=4841350
+============xxxxxxxxxxxxxxxx==============
+(q4890-3-1) 4841332-3-1 -> created: 2011-12-01 14:03:24.0; updated: null
+(q4890-3-1) 5241290-3-1 -> created: 2012-05-18 16:25:09.0; updated: null
+(q4890-3-1) 5243330-3-1 -> created: 2012-05-23 14:48:52.0; updated: null
+1st sort
+5243330 = null (2012-05-23 14:48:52.0)
+5241290 = 9999 (2012-05-18 16:25:09.0)
+4841332 = null (2011-12-01 14:03:24.0)
+***************
+2nd sort
+5243330 = null (null)
+5241290 = 9999 (null)
+4841332 = null (null)
+===============
+itemRef -> 5241290: 9999
+#38#.- delete from answer where idanswer=5243330
+#38#.- delete from answer where idanswer=4841332
+============xxxxxxxxxxxxxxxx==============
+(q4890-4-1) 4841319-4-1 -> created: 2011-12-01 14:03:24.0; updated: null
+(q4890-4-1) 5241286-4-1 -> created: 2012-05-18 16:25:09.0; updated: null
+(q4890-4-1) 5243327-4-1 -> created: 2012-05-23 14:48:50.0; updated: null
+1st sort
+5243327 = null (2012-05-23 14:48:50.0)
+5241286 = 9999 (2012-05-18 16:25:09.0)
+4841319 = null (2011-12-01 14:03:24.0)
+***************
+2nd sort
+5243327 = null (null)
+5241286 = 9999 (null)
+4841319 = null (null)
+===============
+itemRef -> 5241286: 9999
+#41#.- delete from answer where idanswer=5243327
+#41#.- delete from answer where idanswer=4841319
+============xxxxxxxxxxxxxxxx==============
+(q4902-1-1) 4841347-1-1 -> created: 2011-12-01 14:03:24.0; updated: null
+(q4902-1-1) 5241291-1-1 -> created: 2012-05-18 16:25:09.0; updated: null
+(q4902-1-1) 5243331-1-1 -> created: 2012-05-23 14:48:52.0; updated: null
+1st sort
+5243331 = null (2012-05-23 14:48:52.0)
+5241291 = 9999 (2012-05-18 16:25:09.0)
+4841347 = null (2011-12-01 14:03:24.0)
+***************
+2nd sort
+5243331 = null (null)
+5241291 = 9999 (null)
+4841347 = null (null)
+===============
+itemRef -> 5241291: 9999
+#44#.- delete from answer where idanswer=5243331
+#44#.- delete from answer where idanswer=4841347
+============xxxxxxxxxxxxxxxx==============
+(q7466-1-1) 5114951-1-1 -> created: 2012-03-12 11:25:38.0; updated: null
+(q7466-1-1) 5114949-1-1 -> created: 2012-03-12 11:25:38.0; updated: null
+1st sort
+5114949 = 4 (2012-03-12 11:25:38.0)
+5114951 = 4 (2012-03-12 11:25:38.0)
+***************
+2nd sort
+5114949 = 4 (null)
+5114951 = 4 (null)
+===============
+itemRef -> 5114949: 4
+#46#.- delete from answer where idanswer=5114951
+============xxxxxxxxxxxxxxxx==============
+(q15542-3-2) 5150453-3-2 -> created: 2012-03-26 22:43:54.0; updated: null
+(q15542-3-2) 5154711-3-2 -> created: 2012-03-27 11:15:14.0; updated: null
+(q15542-3-2) 5173981-3-2 -> created: 2012-04-02 12:46:49.0; updated: null
+1st sort
+5173981 = null (2012-04-02 12:46:49.0)
+5154711 = 9999 (2012-03-27 11:15:14.0)
+5150453 = null (2012-03-26 22:43:54.0)
+***************
+2nd sort
+5173981 = null (null)
+5154711 = 9999 (null)
+5150453 = null (null)
+===============
+itemRef -> 5154711: 9999
+#49#.- delete from answer where idanswer=5173981
+#49#.- delete from answer where idanswer=5150453
+============xxxxxxxxxxxxxxxx==============
+(q15542-7-2) 5150451-7-2 -> created: 2012-03-26 22:43:52.0; updated: null
+(q15542-7-2) 5154709-7-2 -> created: 2012-03-27 11:15:14.0; updated: null
+(q15542-7-2) 5173980-7-2 -> created: 2012-04-02 12:46:47.0; updated: null
+1st sort
+5173980 = null (2012-04-02 12:46:47.0)
+5154709 = 9999 (2012-03-27 11:15:14.0)
+5150451 = null (2012-03-26 22:43:52.0)
+***************
+2nd sort
+5173980 = null (null)
+5154709 = 9999 (null)
+5150451 = null (null)
+===============
+itemRef -> 5154709: 9999
+#52#.- delete from answer where idanswer=5173980
+#52#.- delete from answer where idanswer=5150451
+============xxxxxxxxxxxxxxxx==============
+(q15542-10-2) 5150444-10-2 -> created: 2012-03-26 22:43:44.0; updated: null
+(q15542-10-2) 5154703-10-2 -> created: 2012-03-27 11:15:14.0; updated: null
+(q15542-10-2) 5173982-10-2 -> created: 2012-04-02 12:46:49.0; updated: null
+1st sort
+5173982 = null (2012-04-02 12:46:49.0)
+5154703 = 9999 (2012-03-27 11:15:14.0)
+5150444 = null (2012-03-26 22:43:44.0)
+***************
+2nd sort
+5173982 = null (null)
+5154703 = 9999 (null)
+5150444 = null (null)
+===============
+itemRef -> 5154703: 9999
+#55#.- delete from answer where idanswer=5173982
+#55#.- delete from answer where idanswer=5150444
+============xxxxxxxxxxxxxxxx==============
+(q15542-6-2) 5150457-6-2 -> created: 2012-03-26 22:48:21.0; updated: null
+(q15542-6-2) 5154732-6-2 -> created: 2012-03-27 11:18:32.0; updated: null
+(q15542-6-2) 5154748-6-2 -> created: 2012-03-27 11:19:02.0; updated: null
+(q15542-6-2) 5155212-6-2 -> created: 2012-03-27 11:39:27.0; updated: null
+1st sort
+5155212 = null (2012-03-27 11:39:27.0)
+5154748 = null (2012-03-27 11:19:02.0)
+5154732 = 9999 (2012-03-27 11:18:32.0)
+5150457 = null (2012-03-26 22:48:21.0)
+***************
+2nd sort
+5155212 = null (null)
+5154748 = null (null)
+5154732 = 9999 (null)
+5150457 = null (null)
+===============
+itemRef -> 5154732: 9999
+#59#.- delete from answer where idanswer=5155212
+#59#.- delete from answer where idanswer=5154748
+#59#.- delete from answer where idanswer=5150457
+============xxxxxxxxxxxxxxxx==============
+(q15542-7-2) 5150471-7-2 -> created: 2012-03-26 22:48:37.0; updated: null
+(q15542-7-2) 5154745-7-2 -> created: 2012-03-27 11:18:32.0; updated: null
+(q15542-7-2) 5154754-7-2 -> created: 2012-03-27 11:19:17.0; updated: null
+(q15542-7-2) 5155223-7-2 -> created: 2012-03-27 11:39:33.0; updated: null
+1st sort
+5155223 = null (2012-03-27 11:39:33.0)
+5154754 = null (2012-03-27 11:19:17.0)
+5154745 = 9999 (2012-03-27 11:18:32.0)
+5150471 = null (2012-03-26 22:48:37.0)
+***************
+2nd sort
+5155223 = null (null)
+5154754 = null (null)
+5154745 = 9999 (null)
+5150471 = null (null)
+===============
+itemRef -> 5154745: 9999
+#63#.- delete from answer where idanswer=5155223
+#63#.- delete from answer where idanswer=5154754
+#63#.- delete from answer where idanswer=5150471
+============xxxxxxxxxxxxxxxx==============
+(q15542-9-2) 5150461-9-2 -> created: 2012-03-26 22:48:26.0; updated: null
+(q15542-9-2) 5154736-9-2 -> created: 2012-03-27 11:18:32.0; updated: null
+(q15542-9-2) 5154750-9-2 -> created: 2012-03-27 11:19:06.0; updated: null
+(q15542-9-2) 5155215-9-2 -> created: 2012-03-27 11:39:30.0; updated: null
+1st sort
+5155215 = null (2012-03-27 11:39:30.0)
+5154750 = null (2012-03-27 11:19:06.0)
+5154736 = 9999 (2012-03-27 11:18:32.0)
+5150461 = null (2012-03-26 22:48:26.0)
+***************
+2nd sort
+5155215 = null (null)
+5154750 = null (null)
+5154736 = 9999 (null)
+5150461 = null (null)
+===============
+itemRef -> 5154736: 9999
+#67#.- delete from answer where idanswer=5155215
+#67#.- delete from answer where idanswer=5154750
+#67#.- delete from answer where idanswer=5150461
+============xxxxxxxxxxxxxxxx==============
+(q15542-13-2) 5150462-13-2 -> created: 2012-03-26 22:48:27.0; updated: null
+(q15542-13-2) 5154737-13-2 -> created: 2012-03-27 11:18:32.0; updated: null
+(q15542-13-2) 5154751-13-2 -> created: 2012-03-27 11:19:06.0; updated: null
+(q15542-13-2) 5155216-13-2 -> created: 2012-03-27 11:39:30.0; updated: null
+1st sort
+5155216 = null (2012-03-27 11:39:30.0)
+5154751 = null (2012-03-27 11:19:06.0)
+5154737 = 9999 (2012-03-27 11:18:32.0)
+5150462 = null (2012-03-26 22:48:27.0)
+***************
+2nd sort
+5155216 = null (null)
+5154751 = null (null)
+5154737 = 9999 (null)
+5150462 = null (null)
+===============
+itemRef -> 5154737: 9999
+#71#.- delete from answer where idanswer=5155216
+#71#.- delete from answer where idanswer=5154751
+#71#.- delete from answer where idanswer=5150462
+============xxxxxxxxxxxxxxxx==============
+(q15542-15-2) 5150470-15-2 -> created: 2012-03-26 22:48:36.0; updated: null
+(q15542-15-2) 5154744-15-2 -> created: 2012-03-27 11:18:32.0; updated: null
+(q15542-15-2) 5154753-15-2 -> created: 2012-03-27 11:19:17.0; updated: null
+(q15542-15-2) 5155222-15-2 -> created: 2012-03-27 11:39:33.0; updated: null
+1st sort
+5155222 = null (2012-03-27 11:39:33.0)
+5154753 = null (2012-03-27 11:19:17.0)
+5154744 = 9999 (2012-03-27 11:18:32.0)
+5150470 = null (2012-03-26 22:48:36.0)
+***************
+2nd sort
+5155222 = null (null)
+5154753 = null (null)
+5154744 = 9999 (null)
+5150470 = null (null)
+===============
+itemRef -> 5154744: 9999
+#75#.- delete from answer where idanswer=5155222
+#75#.- delete from answer where idanswer=5154753
+#75#.- delete from answer where idanswer=5150470
+============xxxxxxxxxxxxxxxx==============
+(q15542-2-2) 5097982-2-2 -> created: 2012-03-05 23:52:55.0; updated: null
+(q15542-2-2) 5154970-2-2 -> created: 2012-03-27 11:29:26.0; updated: null
+1st sort
+5154970 = 9999 (2012-03-27 11:29:26.0)
+5097982 = null (2012-03-05 23:52:55.0)
+***************
+2nd sort
+5154970 = 9999 (null)
+5097982 = null (null)
+===============
+itemRef -> 5154970: 9999
+#77#.- delete from answer where idanswer=5097982
+============xxxxxxxxxxxxxxxx==============
+(q15542-3-2) 5097996-3-2 -> created: 2012-03-05 23:53:09.0; updated: null
+(q15542-3-2) 5154983-3-2 -> created: 2012-03-27 11:29:26.0; updated: null
+1st sort
+5154983 = 9999 (2012-03-27 11:29:26.0)
+5097996 = null (2012-03-05 23:53:09.0)
+***************
+2nd sort
+5154983 = 9999 (null)
+5097996 = null (null)
+===============
+itemRef -> 5154983: 9999
+#79#.- delete from answer where idanswer=5097996
+============xxxxxxxxxxxxxxxx==============
+(q15542-4-2) 5097991-4-2 -> created: 2012-03-05 23:53:04.0; updated: null
+(q15542-4-2) 5154978-4-2 -> created: 2012-03-27 11:29:26.0; updated: null
+1st sort
+5154978 = 9999 (2012-03-27 11:29:26.0)
+5097991 = null (2012-03-05 23:53:04.0)
+***************
+2nd sort
+5154978 = 9999 (null)
+5097991 = null (null)
+===============
+itemRef -> 5154978: 9999
+#81#.- delete from answer where idanswer=5097991
+============xxxxxxxxxxxxxxxx==============
+(q15542-5-2) 5097986-5-2 -> created: 2012-03-05 23:52:59.0; updated: null
+(q15542-5-2) 5154974-5-2 -> created: 2012-03-27 11:29:26.0; updated: null
+1st sort
+5154974 = 9999 (2012-03-27 11:29:26.0)
+5097986 = null (2012-03-05 23:52:59.0)
+***************
+2nd sort
+5154974 = 9999 (null)
+5097986 = null (null)
+===============
+itemRef -> 5154974: 9999
+#83#.- delete from answer where idanswer=5097986
+============xxxxxxxxxxxxxxxx==============
+(q15542-6-2) 5097980-6-2 -> created: 2012-03-05 23:52:52.0; updated: null
+(q15542-6-2) 5154968-6-2 -> created: 2012-03-27 11:29:26.0; updated: null
+1st sort
+5154968 = 9999 (2012-03-27 11:29:26.0)
+5097980 = null (2012-03-05 23:52:52.0)
+***************
+2nd sort
+5154968 = 9999 (null)
+5097980 = null (null)
+===============
+itemRef -> 5154968: 9999
+#85#.- delete from answer where idanswer=5097980
+============xxxxxxxxxxxxxxxx==============
+(q15542-7-2) 5097994-7-2 -> created: 2012-03-05 23:53:07.0; updated: null
+(q15542-7-2) 5154981-7-2 -> created: 2012-03-27 11:29:26.0; updated: null
+1st sort
+5154981 = 9999 (2012-03-27 11:29:26.0)
+5097994 = null (2012-03-05 23:53:07.0)
+***************
+2nd sort
+5154981 = 9999 (null)
+5097994 = null (null)
+===============
+itemRef -> 5154981: 9999
+#87#.- delete from answer where idanswer=5097994
+============xxxxxxxxxxxxxxxx==============
+(q15542-8-2) 5097989-8-2 -> created: 2012-03-05 23:53:01.0; updated: null
+(q15542-8-2) 5154976-8-2 -> created: 2012-03-27 11:29:26.0; updated: null
+1st sort
+5154976 = 9999 (2012-03-27 11:29:26.0)
+5097989 = null (2012-03-05 23:53:01.0)
+***************
+2nd sort
+5154976 = 9999 (null)
+5097989 = null (null)
+===============
+itemRef -> 5154976: 9999
+#89#.- delete from answer where idanswer=5097989
+============xxxxxxxxxxxxxxxx==============
+(q15542-9-2) 5097984-9-2 -> created: 2012-03-05 23:52:57.0; updated: null
+(q15542-9-2) 5154972-9-2 -> created: 2012-03-27 11:29:26.0; updated: null
+1st sort
+5154972 = 9999 (2012-03-27 11:29:26.0)
+5097984 = null (2012-03-05 23:52:57.0)
+***************
+2nd sort
+5154972 = 9999 (null)
+5097984 = null (null)
+===============
+itemRef -> 5154972: 9999
+#91#.- delete from answer where idanswer=5097984
+============xxxxxxxxxxxxxxxx==============
+(q15542-10-2) 5097981-10-2 -> created: 2012-03-05 23:52:53.0; updated: null
+(q15542-10-2) 5154969-10-2 -> created: 2012-03-27 11:29:26.0; updated: null
+1st sort
+5154969 = 9999 (2012-03-27 11:29:26.0)
+5097981 = null (2012-03-05 23:52:53.0)
+***************
+2nd sort
+5154969 = 9999 (null)
+5097981 = null (null)
+===============
+itemRef -> 5154969: 9999
+#93#.- delete from answer where idanswer=5097981
+============xxxxxxxxxxxxxxxx==============
+(q15542-11-2) 5097995-11-2 -> created: 2012-03-05 23:53:08.0; updated: null
+(q15542-11-2) 5154982-11-2 -> created: 2012-03-27 11:29:26.0; updated: null
+1st sort
+5154982 = 9999 (2012-03-27 11:29:26.0)
+5097995 = null (2012-03-05 23:53:08.0)
+***************
+2nd sort
+5154982 = 9999 (null)
+5097995 = null (null)
+===============
+itemRef -> 5154982: 9999
+#95#.- delete from answer where idanswer=5097995
+============xxxxxxxxxxxxxxxx==============
+(q15542-12-2) 5097990-12-2 -> created: 2012-03-05 23:53:03.0; updated: null
+(q15542-12-2) 5154977-12-2 -> created: 2012-03-27 11:29:26.0; updated: null
+1st sort
+5154977 = 9999 (2012-03-27 11:29:26.0)
+5097990 = null (2012-03-05 23:53:03.0)
+***************
+2nd sort
+5154977 = 9999 (null)
+5097990 = null (null)
+===============
+itemRef -> 5154977: 9999
+#97#.- delete from answer where idanswer=5097990
+============xxxxxxxxxxxxxxxx==============
+(q15542-13-2) 5097985-13-2 -> created: 2012-03-05 23:52:58.0; updated: null
+(q15542-13-2) 5154973-13-2 -> created: 2012-03-27 11:29:26.0; updated: null
+1st sort
+5154973 = 9999 (2012-03-27 11:29:26.0)
+5097985 = null (2012-03-05 23:52:58.0)
+***************
+2nd sort
+5154973 = 9999 (null)
+5097985 = null (null)
+===============
+itemRef -> 5154973: 9999
+#99#.- delete from answer where idanswer=5097985
+============xxxxxxxxxxxxxxxx==============
+(q15542-14-2) 5097979-14-2 -> created: 2012-03-05 23:52:51.0; updated: null
+(q15542-14-2) 5154967-14-2 -> created: 2012-03-27 11:29:26.0; updated: null
+1st sort
+5154967 = 9999 (2012-03-27 11:29:26.0)
+5097979 = null (2012-03-05 23:52:51.0)
+***************
+2nd sort
+5154967 = 9999 (null)
+5097979 = null (null)
+===============
+itemRef -> 5154967: 9999
+#101#.- delete from answer where idanswer=5097979
+============xxxxxxxxxxxxxxxx==============
+(q15542-15-2) 5097993-15-2 -> created: 2012-03-05 23:53:06.0; updated: null
+(q15542-15-2) 5154980-15-2 -> created: 2012-03-27 11:29:26.0; updated: null
+1st sort
+5154980 = 9999 (2012-03-27 11:29:26.0)
+5097993 = null (2012-03-05 23:53:06.0)
+***************
+2nd sort
+5154980 = 9999 (null)
+5097993 = null (null)
+===============
+itemRef -> 5154980: 9999
+#103#.- delete from answer where idanswer=5097993
+============xxxxxxxxxxxxxxxx==============
+(q15542-16-2) 5097988-16-2 -> created: 2012-03-05 23:53:00.0; updated: null
+(q15542-16-2) 5154975-16-2 -> created: 2012-03-27 11:29:26.0; updated: null
+1st sort
+5154975 = 9999 (2012-03-27 11:29:26.0)
+5097988 = null (2012-03-05 23:53:00.0)
+***************
+2nd sort
+5154975 = 9999 (null)
+5097988 = null (null)
+===============
+itemRef -> 5154975: 9999
+#105#.- delete from answer where idanswer=5097988
+============xxxxxxxxxxxxxxxx==============
+(q15542-17-2) 5097983-17-2 -> created: 2012-03-05 23:52:56.0; updated: null
+(q15542-17-2) 5154971-17-2 -> created: 2012-03-27 11:29:26.0; updated: null
+1st sort
+5154971 = 9999 (2012-03-27 11:29:26.0)
+5097983 = null (2012-03-05 23:52:56.0)
+***************
+2nd sort
+5154971 = 9999 (null)
+5097983 = null (null)
+===============
+itemRef -> 5154971: 9999
+#107#.- delete from answer where idanswer=5097983
+============xxxxxxxxxxxxxxxx==============
+(q15542-18-2) 5097978-18-2 -> created: 2012-03-05 23:52:50.0; updated: null
+(q15542-18-2) 5154966-18-2 -> created: 2012-03-27 11:29:26.0; updated: null
+1st sort
+5154966 = 9999 (2012-03-27 11:29:26.0)
+5097978 = null (2012-03-05 23:52:50.0)
+***************
+2nd sort
+5154966 = 9999 (null)
+5097978 = null (null)
+===============
+itemRef -> 5154966: 9999
+#109#.- delete from answer where idanswer=5097978
+============xxxxxxxxxxxxxxxx==============
+(q15542-19-2) 5097992-19-2 -> created: 2012-03-05 23:53:05.0; updated: null
+(q15542-19-2) 5154979-19-2 -> created: 2012-03-27 11:29:26.0; updated: null
+1st sort
+5154979 = 9999 (2012-03-27 11:29:26.0)
+5097992 = null (2012-03-05 23:53:05.0)
+***************
+2nd sort
+5154979 = 9999 (null)
+5097992 = null (null)
+===============
+itemRef -> 5154979: 9999
+#111#.- delete from answer where idanswer=5097992
+============xxxxxxxxxxxxxxxx==============
+(q15542-2-2) 5100433-2-2 -> created: 2012-03-06 14:10:52.0; updated: null
+(q15542-2-2) 5155160-2-2 -> created: 2012-03-27 11:35:18.0; updated: null
+1st sort
+5155160 = 9999 (2012-03-27 11:35:18.0)
+5100433 = null (2012-03-06 14:10:52.0)
+***************
+2nd sort
+5155160 = 9999 (null)
+5100433 = null (null)
+===============
+itemRef -> 5155160: 9999
+#113#.- delete from answer where idanswer=5100433
+============xxxxxxxxxxxxxxxx==============
+(q15542-3-2) 5100446-3-2 -> created: 2012-03-06 14:11:06.0; updated: null
+(q15542-3-2) 5155172-3-2 -> created: 2012-03-27 11:35:18.0; updated: null
+1st sort
+5155172 = 9999 (2012-03-27 11:35:18.0)
+5100446 = null (2012-03-06 14:11:06.0)
+***************
+2nd sort
+5155172 = 9999 (null)
+5100446 = null (null)
+===============
+itemRef -> 5155172: 9999
+#115#.- delete from answer where idanswer=5100446
+============xxxxxxxxxxxxxxxx==============
+(q15542-4-2) 5100442-4-2 -> created: 2012-03-06 14:11:01.0; updated: null
+(q15542-4-2) 5155168-4-2 -> created: 2012-03-27 11:35:18.0; updated: null
+1st sort
+5155168 = 9999 (2012-03-27 11:35:18.0)
+5100442 = null (2012-03-06 14:11:01.0)
+***************
+2nd sort
+5155168 = 9999 (null)
+5100442 = null (null)
+===============
+itemRef -> 5155168: 9999
+#117#.- delete from answer where idanswer=5100442
+============xxxxxxxxxxxxxxxx==============
+(q15542-5-2) 5100437-5-2 -> created: 2012-03-06 14:10:56.0; updated: null
+(q15542-5-2) 5155164-5-2 -> created: 2012-03-27 11:35:18.0; updated: null
+1st sort
+5155164 = 9999 (2012-03-27 11:35:18.0)
+5100437 = null (2012-03-06 14:10:56.0)
+***************
+2nd sort
+5155164 = 9999 (null)
+5100437 = null (null)
+===============
+itemRef -> 5155164: 9999
+#119#.- delete from answer where idanswer=5100437
+============xxxxxxxxxxxxxxxx==============
+(q15542-6-2) 5100431-6-2 -> created: 2012-03-06 14:10:49.0; updated: null
+(q15542-6-2) 5155158-6-2 -> created: 2012-03-27 11:35:18.0; updated: null
+1st sort
+5155158 = 9999 (2012-03-27 11:35:18.0)
+5100431 = null (2012-03-06 14:10:49.0)
+***************
+2nd sort
+5155158 = 9999 (null)
+5100431 = null (null)
+===============
+itemRef -> 5155158: 9999
+#121#.- delete from answer where idanswer=5100431
+============xxxxxxxxxxxxxxxx==============
+(q15542-7-2) 5100444-7-2 -> created: 2012-03-06 14:11:03.0; updated: null
+(q15542-7-2) 5155170-7-2 -> created: 2012-03-27 11:35:18.0; updated: null
+1st sort
+5155170 = 9999 (2012-03-27 11:35:18.0)
+5100444 = null (2012-03-06 14:11:03.0)
+***************
+2nd sort
+5155170 = 9999 (null)
+5100444 = null (null)
+===============
+itemRef -> 5155170: 9999
+#123#.- delete from answer where idanswer=5100444
+============xxxxxxxxxxxxxxxx==============
+(q15542-8-2) 5100440-8-2 -> created: 2012-03-06 14:10:59.0; updated: null
+(q15542-8-2) 5155166-8-2 -> created: 2012-03-27 11:35:18.0; updated: null
+1st sort
+5155166 = 9999 (2012-03-27 11:35:18.0)
+5100440 = null (2012-03-06 14:10:59.0)
+***************
+2nd sort
+5155166 = 9999 (null)
+5100440 = null (null)
+===============
+itemRef -> 5155166: 9999
+#125#.- delete from answer where idanswer=5100440
+============xxxxxxxxxxxxxxxx==============
+(q15542-9-2) 5100435-9-2 -> created: 2012-03-06 14:10:54.0; updated: null
+(q15542-9-2) 5155162-9-2 -> created: 2012-03-27 11:35:18.0; updated: null
+1st sort
+5155162 = 9999 (2012-03-27 11:35:18.0)
+5100435 = null (2012-03-06 14:10:54.0)
+***************
+2nd sort
+5155162 = 9999 (null)
+5100435 = null (null)
+===============
+itemRef -> 5155162: 9999
+#127#.- delete from answer where idanswer=5100435
+============xxxxxxxxxxxxxxxx==============
+(q15542-10-2) 5100432-10-2 -> created: 2012-03-06 14:10:50.0; updated: null
+(q15542-10-2) 5155159-10-2 -> created: 2012-03-27 11:35:18.0; updated: null
+1st sort
+5155159 = 9999 (2012-03-27 11:35:18.0)
+5100432 = null (2012-03-06 14:10:50.0)
+***************
+2nd sort
+5155159 = 9999 (null)
+5100432 = null (null)
+===============
+itemRef -> 5155159: 9999
+#129#.- delete from answer where idanswer=5100432
+============xxxxxxxxxxxxxxxx==============
+(q15542-11-2) 5100445-11-2 -> created: 2012-03-06 14:11:05.0; updated: null
+(q15542-11-2) 5155171-11-2 -> created: 2012-03-27 11:35:18.0; updated: null
+1st sort
+5155171 = 9999 (2012-03-27 11:35:18.0)
+5100445 = null (2012-03-06 14:11:05.0)
+***************
+2nd sort
+5155171 = 9999 (null)
+5100445 = null (null)
+===============
+itemRef -> 5155171: 9999
+#131#.- delete from answer where idanswer=5100445
+============xxxxxxxxxxxxxxxx==============
+(q15542-12-2) 5100441-12-2 -> created: 2012-03-06 14:11:00.0; updated: null
+(q15542-12-2) 5155167-12-2 -> created: 2012-03-27 11:35:18.0; updated: null
+1st sort
+5155167 = 9999 (2012-03-27 11:35:18.0)
+5100441 = null (2012-03-06 14:11:00.0)
+***************
+2nd sort
+5155167 = 9999 (null)
+5100441 = null (null)
+===============
+itemRef -> 5155167: 9999
+#133#.- delete from answer where idanswer=5100441
+============xxxxxxxxxxxxxxxx==============
+(q15542-13-2) 5100436-13-2 -> created: 2012-03-06 14:10:55.0; updated: null
+(q15542-13-2) 5155163-13-2 -> created: 2012-03-27 11:35:18.0; updated: null
+1st sort
+5155163 = 9999 (2012-03-27 11:35:18.0)
+5100436 = null (2012-03-06 14:10:55.0)
+***************
+2nd sort
+5155163 = 9999 (null)
+5100436 = null (null)
+===============
+itemRef -> 5155163: 9999
+#135#.- delete from answer where idanswer=5100436
+============xxxxxxxxxxxxxxxx==============
+(q15542-14-2) 5100430-14-2 -> created: 2012-03-06 14:10:48.0; updated: null
+(q15542-14-2) 5155157-14-2 -> created: 2012-03-27 11:35:18.0; updated: null
+1st sort
+5155157 = 9999 (2012-03-27 11:35:18.0)
+5100430 = null (2012-03-06 14:10:48.0)
+***************
+2nd sort
+5155157 = 9999 (null)
+5100430 = null (null)
+===============
+itemRef -> 5155157: 9999
+#137#.- delete from answer where idanswer=5100430
+============xxxxxxxxxxxxxxxx==============
+(q15542-15-2) 5100443-15-2 -> created: 2012-03-06 14:11:02.0; updated: null
+(q15542-15-2) 5155169-15-2 -> created: 2012-03-27 11:35:18.0; updated: null
+1st sort
+5155169 = 9999 (2012-03-27 11:35:18.0)
+5100443 = null (2012-03-06 14:11:02.0)
+***************
+2nd sort
+5155169 = 9999 (null)
+5100443 = null (null)
+===============
+itemRef -> 5155169: 9999
+#139#.- delete from answer where idanswer=5100443
+============xxxxxxxxxxxxxxxx==============
+(q15542-16-2) 5100439-16-2 -> created: 2012-03-06 14:10:57.0; updated: null
+(q15542-16-2) 5155165-16-2 -> created: 2012-03-27 11:35:18.0; updated: null
+1st sort
+5155165 = 9999 (2012-03-27 11:35:18.0)
+5100439 = null (2012-03-06 14:10:57.0)
+***************
+2nd sort
+5155165 = 9999 (null)
+5100439 = null (null)
+===============
+itemRef -> 5155165: 9999
+#141#.- delete from answer where idanswer=5100439
+============xxxxxxxxxxxxxxxx==============
+(q15542-17-2) 5100434-17-2 -> created: 2012-03-06 14:10:53.0; updated: null
+(q15542-17-2) 5155161-17-2 -> created: 2012-03-27 11:35:18.0; updated: null
+1st sort
+5155161 = 9999 (2012-03-27 11:35:18.0)
+5100434 = null (2012-03-06 14:10:53.0)
+***************
+2nd sort
+5155161 = 9999 (null)
+5100434 = null (null)
+===============
+itemRef -> 5155161: 9999
+#143#.- delete from answer where idanswer=5100434
+============xxxxxxxxxxxxxxxx==============
+(q15542-18-2) 5100429-18-2 -> created: 2012-03-06 14:10:47.0; updated: null
+(q15542-18-2) 5155156-18-2 -> created: 2012-03-27 11:35:18.0; updated: null
+1st sort
+5155156 = 9999 (2012-03-27 11:35:18.0)
+5100429 = null (2012-03-06 14:10:47.0)
+***************
+2nd sort
+5155156 = 9999 (null)
+5100429 = null (null)
+===============
+itemRef -> 5155156: 9999
+#145#.- delete from answer where idanswer=5100429
+============xxxxxxxxxxxxxxxx==============
+(q15542-2-2) 5100448-2-2 -> created: 2012-03-06 14:12:25.0; updated: null
+(q15542-2-2) 5150550-2-2 -> created: 2012-03-27 08:12:48.0; updated: null
+(q15542-2-2) 5155226-2-2 -> created: 2012-03-27 11:41:09.0; updated: null
+1st sort
+5155226 = null (2012-03-27 11:41:09.0)
+5150550 = 9999 (2012-03-27 08:12:48.0)
+5100448 = null (2012-03-06 14:12:25.0)
+***************
+2nd sort
+5155226 = null (null)
+5150550 = 9999 (null)
+5100448 = null (null)
+===============
+itemRef -> 5150550: 9999
+#148#.- delete from answer where idanswer=5155226
+#148#.- delete from answer where idanswer=5100448
+============xxxxxxxxxxxxxxxx==============
+(q15542-2-2) 5150478-2-2 -> created: 2012-03-26 23:01:03.0; updated: null
+(q15542-2-2) 5155191-2-2 -> created: 2012-03-27 11:37:21.0; updated: null
+(q15542-2-2) 5163716-2-2 -> created: 2012-03-27 15:41:04.0; updated: null
+(q15542-2-2) 5163730-2-2 -> created: 2012-03-27 15:41:35.0; updated: null
+1st sort
+5163730 = null (2012-03-27 15:41:35.0)
+5163716 = null (2012-03-27 15:41:04.0)
+5155191 = 9999 (2012-03-27 11:37:21.0)
+5150478 = null (2012-03-26 23:01:03.0)
+***************
+2nd sort
+5163730 = null (null)
+5163716 = null (null)
+5155191 = 9999 (null)
+5150478 = null (null)
+===============
+itemRef -> 5155191: 9999
+#152#.- delete from answer where idanswer=5163730
+#152#.- delete from answer where idanswer=5163716
+#152#.- delete from answer where idanswer=5150478
+============xxxxxxxxxxxxxxxx==============
+(q15542-3-2) 5150489-3-2 -> created: 2012-03-26 23:01:15.0; updated: null
+(q15542-3-2) 5155201-3-2 -> created: 2012-03-27 11:37:21.0; updated: null
+(q15542-3-2) 5163723-3-2 -> created: 2012-03-27 15:41:10.0; updated: null
+(q15542-3-2) 5163739-3-2 -> created: 2012-03-27 15:41:44.0; updated: null
+1st sort
+5163739 = null (2012-03-27 15:41:44.0)
+5163723 = null (2012-03-27 15:41:10.0)
+5155201 = 9999 (2012-03-27 11:37:21.0)
+5150489 = null (2012-03-26 23:01:15.0)
+***************
+2nd sort
+5163739 = null (null)
+5163723 = null (null)
+5155201 = 9999 (null)
+5150489 = null (null)
+===============
+itemRef -> 5155201: 9999
+#156#.- delete from answer where idanswer=5163739
+#156#.- delete from answer where idanswer=5163723
+#156#.- delete from answer where idanswer=5150489
+============xxxxxxxxxxxxxxxx==============
+(q15542-4-2) 5150485-4-2 -> created: 2012-03-26 23:01:11.0; updated: null
+(q15542-4-2) 5155197-4-2 -> created: 2012-03-27 11:37:21.0; updated: null
+(q15542-4-2) 5163720-4-2 -> created: 2012-03-27 15:41:08.0; updated: null
+(q15542-4-2) 5163736-4-2 -> created: 2012-03-27 15:41:38.0; updated: null
+1st sort
+5163736 = null (2012-03-27 15:41:38.0)
+5163720 = null (2012-03-27 15:41:08.0)
+5155197 = 9999 (2012-03-27 11:37:21.0)
+5150485 = null (2012-03-26 23:01:11.0)
+***************
+2nd sort
+5163736 = null (null)
+5163720 = null (null)
+5155197 = 9999 (null)
+5150485 = null (null)
+===============
+itemRef -> 5155197: 9999
+#160#.- delete from answer where idanswer=5163736
+#160#.- delete from answer where idanswer=5163720
+#160#.- delete from answer where idanswer=5150485
+============xxxxxxxxxxxxxxxx==============
+(q15542-8-2) 5150483-8-2 -> created: 2012-03-26 23:01:08.0; updated: null
+(q15542-8-2) 5155195-8-2 -> created: 2012-03-27 11:37:21.0; updated: null
+(q15542-8-2) 5163718-8-2 -> created: 2012-03-27 15:41:08.0; updated: null
+(q15542-8-2) 5163734-8-2 -> created: 2012-03-27 15:41:38.0; updated: null
+1st sort
+5163734 = null (2012-03-27 15:41:38.0)
+5163718 = null (2012-03-27 15:41:08.0)
+5155195 = 9999 (2012-03-27 11:37:21.0)
+5150483 = null (2012-03-26 23:01:08.0)
+***************
+2nd sort
+5163734 = null (null)
+5163718 = null (null)
+5155195 = 9999 (null)
+5150483 = null (null)
+===============
+itemRef -> 5155195: 9999
+#164#.- delete from answer where idanswer=5163734
+#164#.- delete from answer where idanswer=5163718
+#164#.- delete from answer where idanswer=5150483
+============xxxxxxxxxxxxxxxx==============
+(q15542-10-2) 5150477-10-2 -> created: 2012-03-26 23:01:02.0; updated: null
+(q15542-10-2) 5155190-10-2 -> created: 2012-03-27 11:37:21.0; updated: null
+(q15542-10-2) 5163715-10-2 -> created: 2012-03-27 15:41:04.0; updated: null
+(q15542-10-2) 5163729-10-2 -> created: 2012-03-27 15:41:35.0; updated: null
+1st sort
+5163729 = null (2012-03-27 15:41:35.0)
+5163715 = null (2012-03-27 15:41:04.0)
+5155190 = 9999 (2012-03-27 11:37:21.0)
+5150477 = null (2012-03-26 23:01:02.0)
+***************
+2nd sort
+5163729 = null (null)
+5163715 = null (null)
+5155190 = 9999 (null)
+5150477 = null (null)
+===============
+itemRef -> 5155190: 9999
+#168#.- delete from answer where idanswer=5163729
+#168#.- delete from answer where idanswer=5163715
+#168#.- delete from answer where idanswer=5150477
+============xxxxxxxxxxxxxxxx==============
+(q15542-12-2) 5150484-12-2 -> created: 2012-03-26 23:01:09.0; updated: null
+(q15542-12-2) 5155196-12-2 -> created: 2012-03-27 11:37:21.0; updated: null
+(q15542-12-2) 5163719-12-2 -> created: 2012-03-27 15:41:08.0; updated: null
+(q15542-12-2) 5163735-12-2 -> created: 2012-03-27 15:41:38.0; updated: null
+1st sort
+5163735 = null (2012-03-27 15:41:38.0)
+5163719 = null (2012-03-27 15:41:08.0)
+5155196 = 9999 (2012-03-27 11:37:21.0)
+5150484 = null (2012-03-26 23:01:09.0)
+***************
+2nd sort
+5163735 = null (null)
+5163719 = null (null)
+5155196 = 9999 (null)
+5150484 = null (null)
+===============
+itemRef -> 5155196: 9999
+#172#.- delete from answer where idanswer=5163735
+#172#.- delete from answer where idanswer=5163719
+#172#.- delete from answer where idanswer=5150484
+============xxxxxxxxxxxxxxxx==============
+(q15542-2-2) 5150496-2-2 -> created: 2012-03-26 23:03:00.0; updated: null
+(q15542-2-2) 5155124-2-2 -> created: 2012-03-27 11:32:56.0; updated: null
+(q15542-2-2) 5201775-2-2 -> created: 2012-04-24 12:05:31.0; updated: null
+(q15542-2-2) 5201787-2-2 -> created: 2012-04-24 12:20:51.0; updated: null
+1st sort
+5201787 = null (2012-04-24 12:20:51.0)
+5201775 = null (2012-04-24 12:05:31.0)
+5155124 = 9999 (2012-03-27 11:32:56.0)
+5150496 = null (2012-03-26 23:03:00.0)
+***************
+2nd sort
+5201787 = null (null)
+5201775 = null (null)
+5155124 = 9999 (null)
+5150496 = null (null)
+===============
+itemRef -> 5155124: 9999
+#176#.- delete from answer where idanswer=5201787
+#176#.- delete from answer where idanswer=5201775
+#176#.- delete from answer where idanswer=5150496
+============xxxxxxxxxxxxxxxx==============
+(q15542-4-2) 5150506-4-2 -> created: 2012-03-26 23:03:11.0; updated: null
+(q15542-4-2) 5155133-4-2 -> created: 2012-03-27 11:32:56.0; updated: null
+(q15542-4-2) 5201780-4-2 -> created: 2012-04-24 12:05:40.0; updated: null
+(q15542-4-2) 5201795-4-2 -> created: 2012-04-24 12:20:54.0; updated: null
+1st sort
+5201795 = null (2012-04-24 12:20:54.0)
+5201780 = null (2012-04-24 12:05:40.0)
+5155133 = 9999 (2012-03-27 11:32:56.0)
+5150506 = null (2012-03-26 23:03:11.0)
+***************
+2nd sort
+5201795 = null (null)
+5201780 = null (null)
+5155133 = 9999 (null)
+5150506 = null (null)
+===============
+itemRef -> 5155133: 9999
+#180#.- delete from answer where idanswer=5201795
+#180#.- delete from answer where idanswer=5201780
+#180#.- delete from answer where idanswer=5150506
+============xxxxxxxxxxxxxxxx==============
+(q15542-9-2) 5150499-9-2 -> created: 2012-03-26 23:03:04.0; updated: null
+(q15542-9-2) 5155127-9-2 -> created: 2012-03-27 11:32:56.0; updated: null
+(q15542-9-2) 5201776-9-2 -> created: 2012-04-24 12:05:35.0; updated: null
+(q15542-9-2) 5201790-9-2 -> created: 2012-04-24 12:20:51.0; updated: null
+1st sort
+5201790 = null (2012-04-24 12:20:51.0)
+5201776 = null (2012-04-24 12:05:35.0)
+5155127 = 9999 (2012-03-27 11:32:56.0)
+5150499 = null (2012-03-26 23:03:04.0)
+***************
+2nd sort
+5201790 = null (null)
+5201776 = null (null)
+5155127 = 9999 (null)
+5150499 = null (null)
+===============
+itemRef -> 5155127: 9999
+#184#.- delete from answer where idanswer=5201790
+#184#.- delete from answer where idanswer=5201776
+#184#.- delete from answer where idanswer=5150499
+============xxxxxxxxxxxxxxxx==============
+(q15542-11-2) 5150510-11-2 -> created: 2012-03-26 23:03:16.0; updated: null
+(q15542-11-2) 5155137-11-2 -> created: 2012-03-27 11:32:56.0; updated: null
+(q15542-11-2) 5201781-11-2 -> created: 2012-04-24 12:05:46.0; updated: null
+(q15542-11-2) 5201799-11-2 -> created: 2012-04-24 12:20:54.0; updated: null
+1st sort
+5201799 = null (2012-04-24 12:20:54.0)
+5201781 = null (2012-04-24 12:05:46.0)
+5155137 = 9999 (2012-03-27 11:32:56.0)
+5150510 = null (2012-03-26 23:03:16.0)
+***************
+2nd sort
+5201799 = null (null)
+5201781 = null (null)
+5155137 = 9999 (null)
+5150510 = null (null)
+===============
+itemRef -> 5155137: 9999
+#188#.- delete from answer where idanswer=5201799
+#188#.- delete from answer where idanswer=5201781
+#188#.- delete from answer where idanswer=5150510
+============xxxxxxxxxxxxxxxx==============
+(q15542-13-2) 5150500-13-2 -> created: 2012-03-26 23:03:05.0; updated: null
+(q15542-13-2) 5155128-13-2 -> created: 2012-03-27 11:32:56.0; updated: null
+(q15542-13-2) 5201777-13-2 -> created: 2012-04-24 12:05:35.0; updated: null
+(q15542-13-2) 5201791-13-2 -> created: 2012-04-24 12:20:51.0; updated: null
+1st sort
+5201791 = null (2012-04-24 12:20:51.0)
+5201777 = null (2012-04-24 12:05:35.0)
+5155128 = 9999 (2012-03-27 11:32:56.0)
+5150500 = null (2012-03-26 23:03:05.0)
+***************
+2nd sort
+5201791 = null (null)
+5201777 = null (null)
+5155128 = 9999 (null)
+5150500 = null (null)
+===============
+itemRef -> 5155128: 9999
+#192#.- delete from answer where idanswer=5201791
+#192#.- delete from answer where idanswer=5201777
+#192#.- delete from answer where idanswer=5150500
+============xxxxxxxxxxxxxxxx==============
+(q15542-14-2) 5150493-14-2 -> created: 2012-03-26 23:02:57.0; updated: null
+(q15542-14-2) 5155121-14-2 -> created: 2012-03-27 11:32:56.0; updated: null
+(q15542-14-2) 5201774-14-2 -> created: 2012-04-24 12:05:27.0; updated: null
+(q15542-14-2) 5201784-14-2 -> created: 2012-04-24 12:20:51.0; updated: null
+1st sort
+5201784 = null (2012-04-24 12:20:51.0)
+5201774 = null (2012-04-24 12:05:27.0)
+5155121 = 9999 (2012-03-27 11:32:56.0)
+5150493 = null (2012-03-26 23:02:57.0)
+***************
+2nd sort
+5201784 = null (null)
+5201774 = null (null)
+5155121 = 9999 (null)
+5150493 = null (null)
+===============
+itemRef -> 5155121: 9999
+#196#.- delete from answer where idanswer=5201784
+#196#.- delete from answer where idanswer=5201774
+#196#.- delete from answer where idanswer=5150493
+============xxxxxxxxxxxxxxxx==============
+(q15542-16-2) 5150503-16-2 -> created: 2012-03-26 23:03:07.0; updated: null
+(q15542-16-2) 5155130-16-2 -> created: 2012-03-27 11:32:56.0; updated: null
+(q15542-16-2) 5201779-16-2 -> created: 2012-04-24 12:05:35.0; updated: null
+(q15542-16-2) 5201792-16-2 -> created: 2012-04-24 12:20:54.0; updated: null
+1st sort
+5201792 = null (2012-04-24 12:20:54.0)
+5201779 = null (2012-04-24 12:05:35.0)
+5155130 = 9999 (2012-03-27 11:32:56.0)
+5150503 = null (2012-03-26 23:03:07.0)
+***************
+2nd sort
+5201792 = null (null)
+5201779 = null (null)
+5155130 = 9999 (null)
+5150503 = null (null)
+===============
+itemRef -> 5155130: 9999
+#200#.- delete from answer where idanswer=5201792
+#200#.- delete from answer where idanswer=5201779
+#200#.- delete from answer where idanswer=5150503
+============xxxxxxxxxxxxxxxx==============
+(q15542-18-2) 5150492-18-2 -> created: 2012-03-26 23:02:55.0; updated: null
+(q15542-18-2) 5155120-18-2 -> created: 2012-03-27 11:32:56.0; updated: null
+(q15542-18-2) 5201773-18-2 -> created: 2012-04-24 12:05:27.0; updated: null
+(q15542-18-2) 5201783-18-2 -> created: 2012-04-24 12:20:51.0; updated: null
+1st sort
+5201783 = null (2012-04-24 12:20:51.0)
+5201773 = null (2012-04-24 12:05:27.0)
+5155120 = 9999 (2012-03-27 11:32:56.0)
+5150492 = null (2012-03-26 23:02:55.0)
+***************
+2nd sort
+5201783 = null (null)
+5201773 = null (null)
+5155120 = 9999 (null)
+5150492 = null (null)
+===============
+itemRef -> 5155120: 9999
+#204#.- delete from answer where idanswer=5201783
+#204#.- delete from answer where idanswer=5201773
+#204#.- delete from answer where idanswer=5150492
+============xxxxxxxxxxxxxxxx==============
+(q15542-21-2) 5150491-21-2 -> created: 2012-03-26 23:02:54.0; updated: null
+(q15542-21-2) 5155119-21-2 -> created: 2012-03-27 11:32:56.0; updated: null
+(q15542-21-2) 5201772-21-2 -> created: 2012-04-24 12:05:27.0; updated: null
+(q15542-21-2) 5201782-21-2 -> created: 2012-04-24 12:20:51.0; updated: null
+1st sort
+5201782 = null (2012-04-24 12:20:51.0)
+5201772 = null (2012-04-24 12:05:27.0)
+5155119 = 9999 (2012-03-27 11:32:56.0)
+5150491 = null (2012-03-26 23:02:54.0)
+***************
+2nd sort
+5201782 = null (null)
+5201772 = null (null)
+5155119 = 9999 (null)
+5150491 = null (null)
+===============
+itemRef -> 5155119: 9999
+#208#.- delete from answer where idanswer=5201782
+#208#.- delete from answer where idanswer=5201772
+#208#.- delete from answer where idanswer=5150491
+============xxxxxxxxxxxxxxxx==============
+(q15542-2-2) 5150517-2-2 -> created: 2012-03-26 23:04:29.0; updated: null
+(q15542-2-2) 5155273-2-2 -> created: 2012-03-27 11:54:13.0; updated: null
+1st sort
+5155273 = 9999 (2012-03-27 11:54:13.0)
+5150517 = null (2012-03-26 23:04:29.0)
+***************
+2nd sort
+5155273 = 9999 (null)
+5150517 = null (null)
+===============
+itemRef -> 5155273: 9999
+#210#.- delete from answer where idanswer=5150517
+============xxxxxxxxxxxxxxxx==============
+(q15542-3-2) 5150531-3-2 -> created: 2012-03-26 23:04:44.0; updated: null
+(q15542-3-2) 5155286-3-2 -> created: 2012-03-27 11:54:14.0; updated: null
+1st sort
+5155286 = 9999 (2012-03-27 11:54:14.0)
+5150531 = null (2012-03-26 23:04:44.0)
+***************
+2nd sort
+5155286 = 9999 (null)
+5150531 = null (null)
+===============
+itemRef -> 5155286: 9999
+#212#.- delete from answer where idanswer=5150531
+============xxxxxxxxxxxxxxxx==============
+(q15542-4-2) 5150526-4-2 -> created: 2012-03-26 23:04:38.0; updated: null
+(q15542-4-2) 5155281-4-2 -> created: 2012-03-27 11:54:13.0; updated: null
+1st sort
+5155281 = 9999 (2012-03-27 11:54:13.0)
+5150526 = null (2012-03-26 23:04:38.0)
+***************
+2nd sort
+5155281 = 9999 (null)
+5150526 = null (null)
+===============
+itemRef -> 5155281: 9999
+#214#.- delete from answer where idanswer=5150526
+============xxxxxxxxxxxxxxxx==============
+(q15542-5-2) 5150521-5-2 -> created: 2012-03-26 23:04:34.0; updated: null
+(q15542-5-2) 5155277-5-2 -> created: 2012-03-27 11:54:13.0; updated: null
+1st sort
+5155277 = 9999 (2012-03-27 11:54:13.0)
+5150521 = null (2012-03-26 23:04:34.0)
+***************
+2nd sort
+5155277 = 9999 (null)
+5150521 = null (null)
+===============
+itemRef -> 5155277: 9999
+#216#.- delete from answer where idanswer=5150521
+============xxxxxxxxxxxxxxxx==============
+(q15542-6-2) 5150515-6-2 -> created: 2012-03-26 23:04:26.0; updated: null
+(q15542-6-2) 5155271-6-2 -> created: 2012-03-27 11:54:13.0; updated: null
+1st sort
+5155271 = 9999 (2012-03-27 11:54:13.0)
+5150515 = null (2012-03-26 23:04:26.0)
+***************
+2nd sort
+5155271 = 9999 (null)
+5150515 = null (null)
+===============
+itemRef -> 5155271: 9999
+#218#.- delete from answer where idanswer=5150515
+============xxxxxxxxxxxxxxxx==============
+(q15542-7-2) 5150529-7-2 -> created: 2012-03-26 23:04:42.0; updated: null
+(q15542-7-2) 5155284-7-2 -> created: 2012-03-27 11:54:14.0; updated: null
+1st sort
+5155284 = 9999 (2012-03-27 11:54:14.0)
+5150529 = null (2012-03-26 23:04:42.0)
+***************
+2nd sort
+5155284 = 9999 (null)
+5150529 = null (null)
+===============
+itemRef -> 5155284: 9999
+#220#.- delete from answer where idanswer=5150529
+============xxxxxxxxxxxxxxxx==============
+(q15542-8-2) 5150524-8-2 -> created: 2012-03-26 23:04:36.0; updated: null
+(q15542-8-2) 5155279-8-2 -> created: 2012-03-27 11:54:13.0; updated: null
+1st sort
+5155279 = 9999 (2012-03-27 11:54:13.0)
+5150524 = null (2012-03-26 23:04:36.0)
+***************
+2nd sort
+5155279 = 9999 (null)
+5150524 = null (null)
+===============
+itemRef -> 5155279: 9999
+#222#.- delete from answer where idanswer=5150524
+============xxxxxxxxxxxxxxxx==============
+(q15542-9-2) 5150519-9-2 -> created: 2012-03-26 23:04:31.0; updated: null
+(q15542-9-2) 5155275-9-2 -> created: 2012-03-27 11:54:13.0; updated: null
+1st sort
+5155275 = 9999 (2012-03-27 11:54:13.0)
+5150519 = null (2012-03-26 23:04:31.0)
+***************
+2nd sort
+5155275 = 9999 (null)
+5150519 = null (null)
+===============
+itemRef -> 5155275: 9999
+#224#.- delete from answer where idanswer=5150519
+============xxxxxxxxxxxxxxxx==============
+(q15542-10-2) 5150516-10-2 -> created: 2012-03-26 23:04:28.0; updated: null
+(q15542-10-2) 5155272-10-2 -> created: 2012-03-27 11:54:13.0; updated: null
+1st sort
+5155272 = 9999 (2012-03-27 11:54:13.0)
+5150516 = null (2012-03-26 23:04:28.0)
+***************
+2nd sort
+5155272 = 9999 (null)
+5150516 = null (null)
+===============
+itemRef -> 5155272: 9999
+#226#.- delete from answer where idanswer=5150516
+============xxxxxxxxxxxxxxxx==============
+(q15542-11-2) 5150530-11-2 -> created: 2012-03-26 23:04:43.0; updated: null
+(q15542-11-2) 5155285-11-2 -> created: 2012-03-27 11:54:14.0; updated: null
+1st sort
+5155285 = 9999 (2012-03-27 11:54:14.0)
+5150530 = null (2012-03-26 23:04:43.0)
+***************
+2nd sort
+5155285 = 9999 (null)
+5150530 = null (null)
+===============
+itemRef -> 5155285: 9999
+#228#.- delete from answer where idanswer=5150530
+============xxxxxxxxxxxxxxxx==============
+(q15542-12-2) 5150525-12-2 -> created: 2012-03-26 23:04:37.0; updated: null
+(q15542-12-2) 5155280-12-2 -> created: 2012-03-27 11:54:13.0; updated: null
+1st sort
+5155280 = 9999 (2012-03-27 11:54:13.0)
+5150525 = null (2012-03-26 23:04:37.0)
+***************
+2nd sort
+5155280 = 9999 (null)
+5150525 = null (null)
+===============
+itemRef -> 5155280: 9999
+#230#.- delete from answer where idanswer=5150525
+============xxxxxxxxxxxxxxxx==============
+(q15542-13-2) 5150520-13-2 -> created: 2012-03-26 23:04:32.0; updated: null
+(q15542-13-2) 5155276-13-2 -> created: 2012-03-27 11:54:13.0; updated: null
+1st sort
+5155276 = 9999 (2012-03-27 11:54:13.0)
+5150520 = null (2012-03-26 23:04:32.0)
+***************
+2nd sort
+5155276 = 9999 (null)
+5150520 = null (null)
+===============
+itemRef -> 5155276: 9999
+#232#.- delete from answer where idanswer=5150520
+============xxxxxxxxxxxxxxxx==============
+(q15542-14-2) 5150514-14-2 -> created: 2012-03-26 23:04:25.0; updated: null
+(q15542-14-2) 5155270-14-2 -> created: 2012-03-27 11:54:13.0; updated: null
+1st sort
+5155270 = 9999 (2012-03-27 11:54:13.0)
+5150514 = null (2012-03-26 23:04:25.0)
+***************
+2nd sort
+5155270 = 9999 (null)
+5150514 = null (null)
+===============
+itemRef -> 5155270: 9999
+#234#.- delete from answer where idanswer=5150514
+============xxxxxxxxxxxxxxxx==============
+(q15542-15-2) 5150528-15-2 -> created: 2012-03-26 23:04:41.0; updated: null
+(q15542-15-2) 5155283-15-2 -> created: 2012-03-27 11:54:13.0; updated: null
+1st sort
+5155283 = 9999 (2012-03-27 11:54:13.0)
+5150528 = null (2012-03-26 23:04:41.0)
+***************
+2nd sort
+5155283 = 9999 (null)
+5150528 = null (null)
+===============
+itemRef -> 5155283: 9999
+#236#.- delete from answer where idanswer=5150528
+============xxxxxxxxxxxxxxxx==============
+(q15542-16-2) 5150523-16-2 -> created: 2012-03-26 23:04:35.0; updated: null
+(q15542-16-2) 5155278-16-2 -> created: 2012-03-27 11:54:13.0; updated: null
+1st sort
+5155278 = 9999 (2012-03-27 11:54:13.0)
+5150523 = null (2012-03-26 23:04:35.0)
+***************
+2nd sort
+5155278 = 9999 (null)
+5150523 = null (null)
+===============
+itemRef -> 5155278: 9999
+#238#.- delete from answer where idanswer=5150523
+============xxxxxxxxxxxxxxxx==============
+(q15542-17-2) 5150518-17-2 -> created: 2012-03-26 23:04:30.0; updated: null
+(q15542-17-2) 5155274-17-2 -> created: 2012-03-27 11:54:13.0; updated: null
+1st sort
+5155274 = 9999 (2012-03-27 11:54:13.0)
+5150518 = null (2012-03-26 23:04:30.0)
+***************
+2nd sort
+5155274 = 9999 (null)
+5150518 = null (null)
+===============
+itemRef -> 5155274: 9999
+#240#.- delete from answer where idanswer=5150518
+============xxxxxxxxxxxxxxxx==============
+(q15542-18-2) 5150513-18-2 -> created: 2012-03-26 23:04:24.0; updated: null
+(q15542-18-2) 5155269-18-2 -> created: 2012-03-27 11:54:13.0; updated: null
+1st sort
+5155269 = 9999 (2012-03-27 11:54:13.0)
+5150513 = null (2012-03-26 23:04:24.0)
+***************
+2nd sort
+5155269 = 9999 (null)
+5150513 = null (null)
+===============
+itemRef -> 5155269: 9999
+#242#.- delete from answer where idanswer=5150513
+============xxxxxxxxxxxxxxxx==============
+(q15542-19-2) 5150527-19-2 -> created: 2012-03-26 23:04:40.0; updated: null
+(q15542-19-2) 5155282-19-2 -> created: 2012-03-27 11:54:13.0; updated: null
+1st sort
+5155282 = 9999 (2012-03-27 11:54:13.0)
+5150527 = null (2012-03-26 23:04:40.0)
+***************
+2nd sort
+5155282 = 9999 (null)
+5150527 = null (null)
+===============
+itemRef -> 5155282: 9999
+#244#.- delete from answer where idanswer=5150527
+============xxxxxxxxxxxxxxxx==============
+(q15769-1-2) 5118135-1-2 -> created: 2012-03-13 14:16:42.0; updated: null
+(q15769-1-2) 5118136-1-2 -> created: 2012-03-13 14:16:43.0; updated: null
+1st sort
+5118136 = 9999 (2012-03-13 14:16:43.0)
+5118135 = 9999 (2012-03-13 14:16:42.0)
+***************
+2nd sort
+5118136 = 9999 (null)
+5118135 = 9999 (null)
+===============
+itemRef -> 5118136: 9999
+#246#.- delete from answer where idanswer=5118135
+============xxxxxxxxxxxxxxxx==============
+(q15769-1-2) 5123805-1-2 -> created: 2012-03-14 14:43:25.0; updated: null
+(q15769-1-2) 5123804-1-2 -> created: 2012-03-14 14:43:25.0; updated: null
+1st sort
+5123804 = 9999 (2012-03-14 14:43:25.0)
+5123805 = 9999 (2012-03-14 14:43:25.0)
+***************
+2nd sort
+5123804 = 9999 (null)
+5123805 = 9999 (null)
+===============
+itemRef -> 5123804: 9999
+#248#.- delete from answer where idanswer=5123805
+============xxxxxxxxxxxxxxxx==============
+(q15772-1-1) 5242287-1-1 -> created: 2012-05-22 15:45:29.0; updated: null
+(q15772-1-1) 3828017-1-1 -> created: null; updated: null
+1st sort
+5242287 = 9999 (2012-05-22 15:45:29.0)
+3828017 = 0 (null)
+***************
+2nd sort
+5242287 = 9999 (null)
+3828017 = 0 (null)
+===============
+itemRef -> 3828017: 0
+#250#.- delete from answer where idanswer=5242287
+============xxxxxxxxxxxxxxxx==============
+(q15772-1-2) 5242286-1-2 -> created: 2012-05-22 15:45:29.0; updated: null
+(q15772-1-2) 3828018-1-2 -> created: null; updated: null
+1st sort
+5242286 = 9999 (2012-05-22 15:45:29.0)
+3828018 = 9999 (null)
+***************
+2nd sort
+5242286 = 9999 (null)
+3828018 = 9999 (null)
+===============
+itemRef -> 5242286: 9999
+#252#.- delete from answer where idanswer=3828018
+============xxxxxxxxxxxxxxxx==============
+(q15773-1-1) 5242281-1-1 -> created: 2012-05-22 15:45:28.0; updated: null
+(q15773-1-1) 3828019-1-1 -> created: null; updated: null
+1st sort
+5242281 = 9999 (2012-05-22 15:45:28.0)
+3828019 = 1 (null)
+***************
+2nd sort
+5242281 = 9999 (null)
+3828019 = 1 (null)
+===============
+itemRef -> 3828019: 1
+#254#.- delete from answer where idanswer=5242281
+============xxxxxxxxxxxxxxxx==============
+(q15773-1-2) 5242280-1-2 -> created: 2012-05-22 15:45:28.0; updated: null
+(q15773-1-2) 3828020-1-2 -> created: null; updated: null
+1st sort
+5242280 = 9999 (2012-05-22 15:45:28.0)
+3828020 = 1 (null)
+***************
+2nd sort
+5242280 = 9999 (null)
+3828020 = 1 (null)
+===============
+itemRef -> 3828020: 1
+#256#.- delete from answer where idanswer=5242280
+============xxxxxxxxxxxxxxxx==============
+(q15774-1-1) 5242275-1-1 -> created: 2012-05-22 15:45:27.0; updated: null
+(q15774-1-1) 3828021-1-1 -> created: null; updated: null
+1st sort
+5242275 = 9999 (2012-05-22 15:45:27.0)
+3828021 = 0 (null)
+***************
+2nd sort
+5242275 = 9999 (null)
+3828021 = 0 (null)
+===============
+itemRef -> 3828021: 0
+#258#.- delete from answer where idanswer=5242275
+============xxxxxxxxxxxxxxxx==============
+(q15774-1-2) 5242274-1-2 -> created: 2012-05-22 15:45:27.0; updated: null
+(q15774-1-2) 3828022-1-2 -> created: null; updated: null
+1st sort
+5242274 = 9999 (2012-05-22 15:45:27.0)
+3828022 = 9999 (null)
+***************
+2nd sort
+5242274 = 9999 (null)
+3828022 = 9999 (null)
+===============
+itemRef -> 5242274: 9999
+#260#.- delete from answer where idanswer=3828022
+============xxxxxxxxxxxxxxxx==============
+(q15775-1-1) 5242271-1-1 -> created: 2012-05-22 15:45:26.0; updated: null
+(q15775-1-1) 3828023-1-1 -> created: null; updated: null
+1st sort
+5242271 = 9999 (2012-05-22 15:45:26.0)
+3828023 = 0 (null)
+***************
+2nd sort
+5242271 = 9999 (null)
+3828023 = 0 (null)
+===============
+itemRef -> 3828023: 0
+#262#.- delete from answer where idanswer=5242271
+============xxxxxxxxxxxxxxxx==============
+(q15775-1-2) 5242270-1-2 -> created: 2012-05-22 15:45:26.0; updated: null
+(q15775-1-2) 3828024-1-2 -> created: null; updated: null
+1st sort
+5242270 = 9999 (2012-05-22 15:45:26.0)
+3828024 = 9999 (null)
+***************
+2nd sort
+5242270 = 9999 (null)
+3828024 = 9999 (null)
+===============
+itemRef -> 5242270: 9999
+#264#.- delete from answer where idanswer=3828024
+============xxxxxxxxxxxxxxxx==============
+(q15776-1-1) 5242330-1-1 -> created: 2012-05-22 15:45:37.0; updated: null
+(q15776-1-1) 3828025-1-1 -> created: null; updated: null
+1st sort
+5242330 = 9999 (2012-05-22 15:45:37.0)
+3828025 = 0 (null)
+***************
+2nd sort
+5242330 = 9999 (null)
+3828025 = 0 (null)
+===============
+itemRef -> 3828025: 0
+#266#.- delete from answer where idanswer=5242330
+============xxxxxxxxxxxxxxxx==============
+(q15776-1-2) 5242329-1-2 -> created: 2012-05-22 15:45:37.0; updated: null
+(q15776-1-2) 3828026-1-2 -> created: null; updated: null
+1st sort
+5242329 = 9999 (2012-05-22 15:45:37.0)
+3828026 = 9999 (null)
+***************
+2nd sort
+5242329 = 9999 (null)
+3828026 = 9999 (null)
+===============
+itemRef -> 5242329: 9999
+#268#.- delete from answer where idanswer=3828026
+============xxxxxxxxxxxxxxxx==============
+(q15778-1-1) 5242314-1-1 -> created: 2012-05-22 15:45:35.0; updated: null
+(q15778-1-1) 3828027-1-1 -> created: null; updated: null
+1st sort
+5242314 = 9999 (2012-05-22 15:45:35.0)
+3828027 = 1 (null)
+***************
+2nd sort
+5242314 = 9999 (null)
+3828027 = 1 (null)
+===============
+itemRef -> 3828027: 1
+#270#.- delete from answer where idanswer=5242314
+============xxxxxxxxxxxxxxxx==============
+(q15778-1-2) 5242313-1-2 -> created: 2012-05-22 15:45:34.0; updated: null
+(q15778-1-2) 3828028-1-2 -> created: null; updated: null
+1st sort
+5242313 = 9999 (2012-05-22 15:45:34.0)
+3828028 = 1 (null)
+***************
+2nd sort
+5242313 = 9999 (null)
+3828028 = 1 (null)
+===============
+itemRef -> 3828028: 1
+#272#.- delete from answer where idanswer=5242313
+============xxxxxxxxxxxxxxxx==============
+(q15779-1-1) 5242308-1-1 -> created: 2012-05-22 15:45:34.0; updated: null
+(q15779-1-1) 3828029-1-1 -> created: null; updated: null
+1st sort
+5242308 = 9999 (2012-05-22 15:45:34.0)
+3828029 = 0 (null)
+***************
+2nd sort
+5242308 = 9999 (null)
+3828029 = 0 (null)
+===============
+itemRef -> 3828029: 0
+#274#.- delete from answer where idanswer=5242308
+============xxxxxxxxxxxxxxxx==============
+(q15779-1-2) 5242307-1-2 -> created: 2012-05-22 15:45:34.0; updated: null
+(q15779-1-2) 3828030-1-2 -> created: null; updated: null
+1st sort
+5242307 = 9999 (2012-05-22 15:45:34.0)
+3828030 = 9999 (null)
+***************
+2nd sort
+5242307 = 9999 (null)
+3828030 = 9999 (null)
+===============
+itemRef -> 5242307: 9999
+#276#.- delete from answer where idanswer=3828030
+============xxxxxxxxxxxxxxxx==============
+(q15780-1-1) 5242285-1-1 -> created: 2012-05-22 15:45:29.0; updated: null
+(q15780-1-1) 3828031-1-1 -> created: null; updated: null
+1st sort
+5242285 = 9999 (2012-05-22 15:45:29.0)
+3828031 = 5 (null)
+***************
+2nd sort
+5242285 = 9999 (null)
+3828031 = 5 (null)
+===============
+itemRef -> 3828031: 5
+#278#.- delete from answer where idanswer=5242285
+============xxxxxxxxxxxxxxxx==============
+(q15780-1-2) 5242284-1-2 -> created: 2012-05-22 15:45:29.0; updated: null
+(q15780-1-2) 3828032-1-2 -> created: null; updated: null
+1st sort
+5242284 = 9999 (2012-05-22 15:45:29.0)
+3828032 = 4 (null)
+***************
+2nd sort
+5242284 = 9999 (null)
+3828032 = 4 (null)
+===============
+itemRef -> 3828032: 4
+#280#.- delete from answer where idanswer=5242284
+============xxxxxxxxxxxxxxxx==============
+(q15781-1-1) 5242279-1-1 -> created: 2012-05-22 15:45:28.0; updated: null
+(q15781-1-1) 3828033-1-1 -> created: null; updated: null
+1st sort
+5242279 = 9999 (2012-05-22 15:45:28.0)
+3828033 = 1 (null)
+***************
+2nd sort
+5242279 = 9999 (null)
+3828033 = 1 (null)
+===============
+itemRef -> 3828033: 1
+#282#.- delete from answer where idanswer=5242279
+============xxxxxxxxxxxxxxxx==============
+(q15781-1-2) 5242278-1-2 -> created: 2012-05-22 15:45:28.0; updated: null
+(q15781-1-2) 3828034-1-2 -> created: null; updated: null
+1st sort
+5242278 = 9999 (2012-05-22 15:45:28.0)
+3828034 = 2 (null)
+***************
+2nd sort
+5242278 = 9999 (null)
+3828034 = 2 (null)
+===============
+itemRef -> 3828034: 2
+#284#.- delete from answer where idanswer=5242278
+============xxxxxxxxxxxxxxxx==============
+(q15782-1-1) 5242273-1-1 -> created: 2012-05-22 15:45:27.0; updated: null
+(q15782-1-1) 3828035-1-1 -> created: null; updated: null
+1st sort
+5242273 = 9999 (2012-05-22 15:45:27.0)
+3828035 = 0 (null)
+***************
+2nd sort
+5242273 = 9999 (null)
+3828035 = 0 (null)
+===============
+itemRef -> 3828035: 0
+#286#.- delete from answer where idanswer=5242273
+============xxxxxxxxxxxxxxxx==============
+(q15782-1-2) 5242272-1-2 -> created: 2012-05-22 15:45:27.0; updated: null
+(q15782-1-2) 3828036-1-2 -> created: null; updated: null
+1st sort
+5242272 = 9999 (2012-05-22 15:45:27.0)
+3828036 = 9999 (null)
+***************
+2nd sort
+5242272 = 9999 (null)
+3828036 = 9999 (null)
+===============
+itemRef -> 5242272: 9999
+#288#.- delete from answer where idanswer=3828036
+============xxxxxxxxxxxxxxxx==============
+(q15783-1-1) 5242269-1-1 -> created: 2012-05-22 15:45:26.0; updated: null
+(q15783-1-1) 3828037-1-1 -> created: null; updated: null
+1st sort
+5242269 = 9999 (2012-05-22 15:45:26.0)
+3828037 = 1 (null)
+***************
+2nd sort
+5242269 = 9999 (null)
+3828037 = 1 (null)
+===============
+itemRef -> 3828037: 1
+#290#.- delete from answer where idanswer=5242269
+============xxxxxxxxxxxxxxxx==============
+(q15783-1-2) 5242268-1-2 -> created: 2012-05-22 15:45:26.0; updated: null
+(q15783-1-2) 3828038-1-2 -> created: null; updated: null
+1st sort
+5242268 = 9999 (2012-05-22 15:45:26.0)
+3828038 = 1 (null)
+***************
+2nd sort
+5242268 = 9999 (null)
+3828038 = 1 (null)
+===============
+itemRef -> 3828038: 1
+#292#.- delete from answer where idanswer=5242268
+============xxxxxxxxxxxxxxxx==============
+(q15784-1-1) 5242328-1-1 -> created: 2012-05-22 15:45:36.0; updated: null
+(q15784-1-1) 3828039-1-1 -> created: null; updated: null
+1st sort
+5242328 = 9999 (2012-05-22 15:45:36.0)
+3828039 = 1 (null)
+***************
+2nd sort
+5242328 = 9999 (null)
+3828039 = 1 (null)
+===============
+itemRef -> 3828039: 1
+#294#.- delete from answer where idanswer=5242328
+============xxxxxxxxxxxxxxxx==============
+(q15784-1-2) 5242327-1-2 -> created: 2012-05-22 15:45:36.0; updated: null
+(q15784-1-2) 3828040-1-2 -> created: null; updated: null
+1st sort
+5242327 = 9999 (2012-05-22 15:45:36.0)
+3828040 = 3 (null)
+***************
+2nd sort
+5242327 = 9999 (null)
+3828040 = 3 (null)
+===============
+itemRef -> 3828040: 3
+#296#.- delete from answer where idanswer=5242327
+============xxxxxxxxxxxxxxxx==============
+(q15786-1-1) 5242312-1-1 -> created: 2012-05-22 15:45:34.0; updated: null
+(q15786-1-1) 3828041-1-1 -> created: null; updated: null
+1st sort
+5242312 = 9999 (2012-05-22 15:45:34.0)
+3828041 = 0 (null)
+***************
+2nd sort
+5242312 = 9999 (null)
+3828041 = 0 (null)
+===============
+itemRef -> 3828041: 0
+#298#.- delete from answer where idanswer=5242312
+============xxxxxxxxxxxxxxxx==============
+(q15786-1-2) 5242311-1-2 -> created: 2012-05-22 15:45:34.0; updated: null
+(q15786-1-2) 3828042-1-2 -> created: null; updated: null
+1st sort
+5242311 = 9999 (2012-05-22 15:45:34.0)
+3828042 = 9999 (null)
+***************
+2nd sort
+5242311 = 9999 (null)
+3828042 = 9999 (null)
+===============
+itemRef -> 5242311: 9999
+#300#.- delete from answer where idanswer=3828042
+============xxxxxxxxxxxxxxxx==============
+(q15787-1-1) 5242306-1-1 -> created: 2012-05-22 15:45:33.0; updated: null
+(q15787-1-1) 3828043-1-1 -> created: null; updated: null
+1st sort
+5242306 = 9999 (2012-05-22 15:45:33.0)
+3828043 = 1 (null)
+***************
+2nd sort
+5242306 = 9999 (null)
+3828043 = 1 (null)
+===============
+itemRef -> 3828043: 1
+#302#.- delete from answer where idanswer=5242306
+============xxxxxxxxxxxxxxxx==============
+(q15787-1-2) 5242305-1-2 -> created: 2012-05-22 15:45:33.0; updated: null
+(q15787-1-2) 3828044-1-2 -> created: null; updated: null
+1st sort
+5242305 = 9999 (2012-05-22 15:45:33.0)
+3828044 = 3 (null)
+***************
+2nd sort
+5242305 = 9999 (null)
+3828044 = 3 (null)
+===============
+itemRef -> 3828044: 3
+#304#.- delete from answer where idanswer=5242305
+============xxxxxxxxxxxxxxxx==============
+(q15788-1-1) 5242300-1-1 -> created: 2012-05-22 15:45:32.0; updated: null
+(q15788-1-1) 3828045-1-1 -> created: null; updated: null
+1st sort
+5242300 = 9999 (2012-05-22 15:45:32.0)
+3828045 = 0 (null)
+***************
+2nd sort
+5242300 = 9999 (null)
+3828045 = 0 (null)
+===============
+itemRef -> 3828045: 0
+#306#.- delete from answer where idanswer=5242300
+============xxxxxxxxxxxxxxxx==============
+(q15788-1-2) 5242299-1-2 -> created: 2012-05-22 15:45:32.0; updated: null
+(q15788-1-2) 3828046-1-2 -> created: null; updated: null
+1st sort
+5242299 = 9999 (2012-05-22 15:45:32.0)
+3828046 = 9999 (null)
+***************
+2nd sort
+5242299 = 9999 (null)
+3828046 = 9999 (null)
+===============
+itemRef -> 5242299: 9999
+#308#.- delete from answer where idanswer=3828046
+============xxxxxxxxxxxxxxxx==============
+(q15789-1-1) 5242292-1-1 -> created: 2012-05-22 15:45:31.0; updated: null
+(q15789-1-1) 3828047-1-1 -> created: null; updated: null
+1st sort
+5242292 = 9999 (2012-05-22 15:45:31.0)
+3828047 = 0 (null)
+***************
+2nd sort
+5242292 = 9999 (null)
+3828047 = 0 (null)
+===============
+itemRef -> 3828047: 0
+#310#.- delete from answer where idanswer=5242292
+============xxxxxxxxxxxxxxxx==============
+(q15789-1-2) 5242291-1-2 -> created: 2012-05-22 15:45:30.0; updated: null
+(q15789-1-2) 3828048-1-2 -> created: null; updated: null
+1st sort
+5242291 = 9999 (2012-05-22 15:45:30.0)
+3828048 = 9999 (null)
+***************
+2nd sort
+5242291 = 9999 (null)
+3828048 = 9999 (null)
+===============
+itemRef -> 5242291: 9999
+#312#.- delete from answer where idanswer=3828048
+============xxxxxxxxxxxxxxxx==============
+(q15791-1-1) 5242267-1-1 -> created: 2012-05-22 15:45:26.0; updated: null
+(q15791-1-1) 3828049-1-1 -> created: null; updated: null
+1st sort
+5242267 = 9999 (2012-05-22 15:45:26.0)
+3828049 = 0 (null)
+***************
+2nd sort
+5242267 = 9999 (null)
+3828049 = 0 (null)
+===============
+itemRef -> 3828049: 0
+#314#.- delete from answer where idanswer=5242267
+============xxxxxxxxxxxxxxxx==============
+(q15791-1-2) 5242266-1-2 -> created: 2012-05-22 15:45:26.0; updated: null
+(q15791-1-2) 3828050-1-2 -> created: null; updated: null
+1st sort
+5242266 = 9999 (2012-05-22 15:45:26.0)
+3828050 = 9999 (null)
+***************
+2nd sort
+5242266 = 9999 (null)
+3828050 = 9999 (null)
+===============
+itemRef -> 5242266: 9999
+#316#.- delete from answer where idanswer=3828050
+============xxxxxxxxxxxxxxxx==============
+(q15792-1-1) 5242326-1-1 -> created: 2012-05-22 15:45:36.0; updated: null
+(q15792-1-1) 3828051-1-1 -> created: null; updated: null
+1st sort
+5242326 = 9999 (2012-05-22 15:45:36.0)
+3828051 = 1 (null)
+***************
+2nd sort
+5242326 = 9999 (null)
+3828051 = 1 (null)
+===============
+itemRef -> 3828051: 1
+#318#.- delete from answer where idanswer=5242326
+============xxxxxxxxxxxxxxxx==============
+(q15792-1-2) 5242325-1-2 -> created: 2012-05-22 15:45:36.0; updated: null
+(q15792-1-2) 3828052-1-2 -> created: null; updated: null
+1st sort
+5242325 = 9999 (2012-05-22 15:45:36.0)
+3828052 = 3 (null)
+***************
+2nd sort
+5242325 = 9999 (null)
+3828052 = 3 (null)
+===============
+itemRef -> 3828052: 3
+#320#.- delete from answer where idanswer=5242325
+============xxxxxxxxxxxxxxxx==============
+(q15793-1-1) 5242318-1-1 -> created: 2012-05-22 15:45:35.0; updated: null
+(q15793-1-1) 3828053-1-1 -> created: null; updated: null
+1st sort
+5242318 = 9999 (2012-05-22 15:45:35.0)
+3828053 = 6 (null)
+***************
+2nd sort
+5242318 = 9999 (null)
+3828053 = 6 (null)
+===============
+itemRef -> 3828053: 6
+#322#.- delete from answer where idanswer=5242318
+============xxxxxxxxxxxxxxxx==============
+(q15793-1-2) 5242317-1-2 -> created: 2012-05-22 15:45:35.0; updated: null
+(q15793-1-2) 3828054-1-2 -> created: null; updated: null
+1st sort
+5242317 = 9999 (2012-05-22 15:45:35.0)
+3828054 = 4 (null)
+***************
+2nd sort
+5242317 = 9999 (null)
+3828054 = 4 (null)
+===============
+itemRef -> 3828054: 4
+#324#.- delete from answer where idanswer=5242317
+============xxxxxxxxxxxxxxxx==============
+(q15794-1-1) 5242310-1-1 -> created: 2012-05-22 15:45:34.0; updated: null
+(q15794-1-1) 3828055-1-1 -> created: null; updated: null
+1st sort
+5242310 = 9999 (2012-05-22 15:45:34.0)
+3828055 = 0 (null)
+***************
+2nd sort
+5242310 = 9999 (null)
+3828055 = 0 (null)
+===============
+itemRef -> 3828055: 0
+#326#.- delete from answer where idanswer=5242310
+============xxxxxxxxxxxxxxxx==============
+(q15794-1-2) 5242309-1-2 -> created: 2012-05-22 15:45:34.0; updated: null
+(q15794-1-2) 3828056-1-2 -> created: null; updated: null
+1st sort
+5242309 = 9999 (2012-05-22 15:45:34.0)
+3828056 = 9999 (null)
+***************
+2nd sort
+5242309 = 9999 (null)
+3828056 = 9999 (null)
+===============
+itemRef -> 5242309: 9999
+#328#.- delete from answer where idanswer=3828056
+============xxxxxxxxxxxxxxxx==============
+(q15795-1-1) 5242304-1-1 -> created: 2012-05-22 15:45:33.0; updated: null
+(q15795-1-1) 3828057-1-1 -> created: null; updated: null
+1st sort
+5242304 = 9999 (2012-05-22 15:45:33.0)
+3828057 = 3 (null)
+***************
+2nd sort
+5242304 = 9999 (null)
+3828057 = 3 (null)
+===============
+itemRef -> 3828057: 3
+#330#.- delete from answer where idanswer=5242304
+============xxxxxxxxxxxxxxxx==============
+(q15795-1-2) 5242303-1-2 -> created: 2012-05-22 15:45:33.0; updated: null
+(q15795-1-2) 3828058-1-2 -> created: null; updated: null
+1st sort
+5242303 = 9999 (2012-05-22 15:45:33.0)
+3828058 = 4 (null)
+***************
+2nd sort
+5242303 = 9999 (null)
+3828058 = 4 (null)
+===============
+itemRef -> 3828058: 4
+#332#.- delete from answer where idanswer=5242303
+============xxxxxxxxxxxxxxxx==============
+(q15796-1-1) 5242298-1-1 -> created: 2012-05-22 15:45:32.0; updated: null
+(q15796-1-1) 3828059-1-1 -> created: null; updated: null
+1st sort
+5242298 = 9999 (2012-05-22 15:45:32.0)
+3828059 = 0 (null)
+***************
+2nd sort
+5242298 = 9999 (null)
+3828059 = 0 (null)
+===============
+itemRef -> 3828059: 0
+#334#.- delete from answer where idanswer=5242298
+============xxxxxxxxxxxxxxxx==============
+(q15796-1-2) 5242297-1-2 -> created: 2012-05-22 15:45:31.0; updated: null
+(q15796-1-2) 3828060-1-2 -> created: null; updated: null
+1st sort
+5242297 = 9999 (2012-05-22 15:45:31.0)
+3828060 = 9999 (null)
+***************
+2nd sort
+5242297 = 9999 (null)
+3828060 = 9999 (null)
+===============
+itemRef -> 5242297: 9999
+#336#.- delete from answer where idanswer=3828060
+============xxxxxxxxxxxxxxxx==============
+(q15798-1-1) 5242289-1-1 -> created: 2012-05-22 15:45:30.0; updated: null
+(q15798-1-1) 3828061-1-1 -> created: null; updated: null
+1st sort
+5242289 = 9999 (2012-05-22 15:45:30.0)
+3828061 = 2 (null)
+***************
+2nd sort
+5242289 = 9999 (null)
+3828061 = 2 (null)
+===============
+itemRef -> 3828061: 2
+#338#.- delete from answer where idanswer=5242289
+============xxxxxxxxxxxxxxxx==============
+(q15800-1-1) 5242288-1-1 -> created: 2012-05-22 15:45:29.0; updated: null
+(q15800-1-1) 3828062-1-1 -> created: null; updated: null
+1st sort
+5242288 = 9999 (2012-05-22 15:45:29.0)
+3828062 = 9999 (null)
+***************
+2nd sort
+5242288 = 9999 (null)
+3828062 = 9999 (null)
+===============
+itemRef -> 5242288: 9999
+#340#.- delete from answer where idanswer=3828062
+============xxxxxxxxxxxxxxxx==============
+(q15801-1-1) 5242283-1-1 -> created: 2012-05-22 15:45:29.0; updated: null
+(q15801-1-1) 3828063-1-1 -> created: null; updated: null
+1st sort
+5242283 = 9999 (2012-05-22 15:45:29.0)
+3828063 = 9999 (null)
+***************
+2nd sort
+5242283 = 9999 (null)
+3828063 = 9999 (null)
+===============
+itemRef -> 5242283: 9999
+#342#.- delete from answer where idanswer=3828063
+============xxxxxxxxxxxxxxxx==============
+(q15801-1-2) 5242282-1-2 -> created: 2012-05-22 15:45:28.0; updated: null
+(q15801-1-2) 3828064-1-2 -> created: null; updated: null
+1st sort
+5242282 = 9999 (2012-05-22 15:45:28.0)
+3828064 = 9999 (null)
+***************
+2nd sort
+5242282 = 9999 (null)
+3828064 = 9999 (null)
+===============
+itemRef -> 5242282: 9999
+#344#.- delete from answer where idanswer=3828064
+============xxxxxxxxxxxxxxxx==============
+(q15802-1-1) 5242277-1-1 -> created: 2012-05-22 15:45:28.0; updated: null
+(q15802-1-1) 3828065-1-1 -> created: null; updated: null
+1st sort
+5242277 = 9999 (2012-05-22 15:45:28.0)
+3828065 = 2 (null)
+***************
+2nd sort
+5242277 = 9999 (null)
+3828065 = 2 (null)
+===============
+itemRef -> 3828065: 2
+#346#.- delete from answer where idanswer=5242277
+============xxxxxxxxxxxxxxxx==============
+(q15804-1-1) 5242265-1-1 -> created: 2012-05-22 15:45:26.0; updated: null
+(q15804-1-1) 3828066-1-1 -> created: null; updated: null
+1st sort
+5242265 = 9999 (2012-05-22 15:45:26.0)
+3828066 = 9999 (null)
+***************
+2nd sort
+5242265 = 9999 (null)
+3828066 = 9999 (null)
+===============
+itemRef -> 5242265: 9999
+#348#.- delete from answer where idanswer=3828066
+============xxxxxxxxxxxxxxxx==============
+(q15805-1-1) 5242324-1-1 -> created: 2012-05-22 15:45:36.0; updated: null
+(q15805-1-1) 3828067-1-1 -> created: null; updated: null
+1st sort
+5242324 = 9999 (2012-05-22 15:45:36.0)
+3828067 = 9999 (null)
+***************
+2nd sort
+5242324 = 9999 (null)
+3828067 = 9999 (null)
+===============
+itemRef -> 5242324: 9999
+#350#.- delete from answer where idanswer=3828067
+============xxxxxxxxxxxxxxxx==============
+(q15805-1-2) 5242323-1-2 -> created: 2012-05-22 15:45:36.0; updated: null
+(q15805-1-2) 3828068-1-2 -> created: null; updated: null
+1st sort
+5242323 = 9999 (2012-05-22 15:45:36.0)
+3828068 = 9999 (null)
+***************
+2nd sort
+5242323 = 9999 (null)
+3828068 = 9999 (null)
+===============
+itemRef -> 5242323: 9999
+#352#.- delete from answer where idanswer=3828068
+============xxxxxxxxxxxxxxxx==============
+(q15806-1-1) 5242316-1-1 -> created: 2012-05-22 15:45:35.0; updated: null
+(q15806-1-1) 3828069-1-1 -> created: null; updated: null
+1st sort
+5242316 = 9999 (2012-05-22 15:45:35.0)
+3828069 = 2 (null)
+***************
+2nd sort
+5242316 = 9999 (null)
+3828069 = 2 (null)
+===============
+itemRef -> 3828069: 2
+#354#.- delete from answer where idanswer=5242316
+============xxxxxxxxxxxxxxxx==============
+(q15808-1-1) 5242302-1-1 -> created: 2012-05-22 15:45:33.0; updated: null
+(q15808-1-1) 3828070-1-1 -> created: null; updated: null
+1st sort
+5242302 = 9999 (2012-05-22 15:45:33.0)
+3828070 = 9999 (null)
+***************
+2nd sort
+5242302 = 9999 (null)
+3828070 = 9999 (null)
+===============
+itemRef -> 5242302: 9999
+#356#.- delete from answer where idanswer=3828070
+============xxxxxxxxxxxxxxxx==============
+(q15809-1-1) 5242296-1-1 -> created: 2012-05-22 15:45:31.0; updated: null
+(q15809-1-1) 3828071-1-1 -> created: null; updated: null
+1st sort
+5242296 = 9999 (2012-05-22 15:45:31.0)
+3828071 = 9999 (null)
+***************
+2nd sort
+5242296 = 9999 (null)
+3828071 = 9999 (null)
+===============
+itemRef -> 5242296: 9999
+#358#.- delete from answer where idanswer=3828071
+============xxxxxxxxxxxxxxxx==============
+(q15809-1-2) 5242295-1-2 -> created: 2012-05-22 15:45:31.0; updated: null
+(q15809-1-2) 3828072-1-2 -> created: null; updated: null
+1st sort
+5242295 = 9999 (2012-05-22 15:45:31.0)
+3828072 = 9999 (null)
+***************
+2nd sort
+5242295 = 9999 (null)
+3828072 = 9999 (null)
+===============
+itemRef -> 5242295: 9999
+#360#.- delete from answer where idanswer=3828072
+============xxxxxxxxxxxxxxxx==============
+(q15810-1-1) 5242276-1-1 -> created: 2012-05-22 15:45:27.0; updated: null
+(q15810-1-1) 3828073-1-1 -> created: null; updated: null
+1st sort
+5242276 = 9999 (2012-05-22 15:45:27.0)
+3828073 = 2 (null)
+***************
+2nd sort
+5242276 = 9999 (null)
+3828073 = 2 (null)
+===============
+itemRef -> 3828073: 2
+#362#.- delete from answer where idanswer=5242276
+============xxxxxxxxxxxxxxxx==============
+(q15812-1-1) 5242264-1-1 -> created: 2012-05-22 15:45:26.0; updated: null
+(q15812-1-1) 3828074-1-1 -> created: null; updated: null
+1st sort
+5242264 = 9999 (2012-05-22 15:45:26.0)
+3828074 = 9999 (null)
+***************
+2nd sort
+5242264 = 9999 (null)
+3828074 = 9999 (null)
+===============
+itemRef -> 5242264: 9999
+#364#.- delete from answer where idanswer=3828074
+============xxxxxxxxxxxxxxxx==============
+(q15813-1-1) 5242322-1-1 -> created: 2012-05-22 15:45:35.0; updated: null
+(q15813-1-1) 3828075-1-1 -> created: null; updated: null
+1st sort
+5242322 = 9999 (2012-05-22 15:45:35.0)
+3828075 = 9999 (null)
+***************
+2nd sort
+5242322 = 9999 (null)
+3828075 = 9999 (null)
+===============
+itemRef -> 5242322: 9999
+#366#.- delete from answer where idanswer=3828075
+============xxxxxxxxxxxxxxxx==============
+(q15813-1-2) 5242321-1-2 -> created: 2012-05-22 15:45:35.0; updated: null
+(q15813-1-2) 3828076-1-2 -> created: null; updated: null
+1st sort
+5242321 = 9999 (2012-05-22 15:45:35.0)
+3828076 = 9999 (null)
+***************
+2nd sort
+5242321 = 9999 (null)
+3828076 = 9999 (null)
+===============
+itemRef -> 5242321: 9999
+#368#.- delete from answer where idanswer=3828076
+============xxxxxxxxxxxxxxxx==============
+(q15814-1-1) 5242315-1-1 -> created: 2012-05-22 15:45:35.0; updated: null
+(q15814-1-1) 3828077-1-1 -> created: null; updated: null
+1st sort
+5242315 = 9999 (2012-05-22 15:45:35.0)
+3828077 = 2 (null)
+***************
+2nd sort
+5242315 = 9999 (null)
+3828077 = 2 (null)
+===============
+itemRef -> 3828077: 2
+#370#.- delete from answer where idanswer=5242315
+============xxxxxxxxxxxxxxxx==============
+(q15816-1-1) 5242301-1-1 -> created: 2012-05-22 15:45:32.0; updated: null
+(q15816-1-1) 3828078-1-1 -> created: null; updated: null
+1st sort
+5242301 = 9999 (2012-05-22 15:45:32.0)
+3828078 = 9999 (null)
+***************
+2nd sort
+5242301 = 9999 (null)
+3828078 = 9999 (null)
+===============
+itemRef -> 5242301: 9999
+#372#.- delete from answer where idanswer=3828078
+============xxxxxxxxxxxxxxxx==============
+(q15817-1-1) 5242294-1-1 -> created: 2012-05-22 15:45:31.0; updated: null
+(q15817-1-1) 3828079-1-1 -> created: null; updated: null
+1st sort
+5242294 = 9999 (2012-05-22 15:45:31.0)
+3828079 = 9999 (null)
+***************
+2nd sort
+5242294 = 9999 (null)
+3828079 = 9999 (null)
+===============
+itemRef -> 5242294: 9999
+#374#.- delete from answer where idanswer=3828079
+============xxxxxxxxxxxxxxxx==============
+(q15817-1-2) 5242293-1-2 -> created: 2012-05-22 15:45:31.0; updated: null
+(q15817-1-2) 3828080-1-2 -> created: null; updated: null
+1st sort
+5242293 = 9999 (2012-05-22 15:45:31.0)
+3828080 = 9999 (null)
+***************
+2nd sort
+5242293 = 9999 (null)
+3828080 = 9999 (null)
+===============
+itemRef -> 5242293: 9999
+#376#.- delete from answer where idanswer=3828080
+============xxxxxxxxxxxxxxxx==============
+(q15818-1-1) 5242290-1-1 -> created: 2012-05-22 15:45:30.0; updated: null
+(q15818-1-1) 3828081-1-1 -> created: null; updated: null
+1st sort
+5242290 = 9999 (2012-05-22 15:45:30.0)
+3828081 = 2 (null)
+***************
+2nd sort
+5242290 = 9999 (null)
+3828081 = 2 (null)
+===============
+itemRef -> 3828081: 2
+#378#.- delete from answer where idanswer=5242290
+============xxxxxxxxxxxxxxxx==============
+(q15820-1-1) 5242263-1-1 -> created: 2012-05-22 15:45:25.0; updated: null
+(q15820-1-1) 3828082-1-1 -> created: null; updated: null
+1st sort
+5242263 = 9999 (2012-05-22 15:45:25.0)
+3828082 = 9999 (null)
+***************
+2nd sort
+5242263 = 9999 (null)
+3828082 = 9999 (null)
+===============
+itemRef -> 5242263: 9999
+#380#.- delete from answer where idanswer=3828082
+============xxxxxxxxxxxxxxxx==============
+(q15821-1-1) 5242320-1-1 -> created: 2012-05-22 15:45:35.0; updated: null
+(q15821-1-1) 3828083-1-1 -> created: null; updated: null
+1st sort
+5242320 = 9999 (2012-05-22 15:45:35.0)
+3828083 = 9999 (null)
+***************
+2nd sort
+5242320 = 9999 (null)
+3828083 = 9999 (null)
+===============
+itemRef -> 5242320: 9999
+#382#.- delete from answer where idanswer=3828083
+============xxxxxxxxxxxxxxxx==============
+(q15821-1-2) 5242319-1-2 -> created: 2012-05-22 15:45:35.0; updated: null
+(q15821-1-2) 3828084-1-2 -> created: null; updated: null
+1st sort
+5242319 = 9999 (2012-05-22 15:45:35.0)
+3828084 = 9999 (null)
+***************
+2nd sort
+5242319 = 9999 (null)
+3828084 = 9999 (null)
+===============
+itemRef -> 5242319: 9999
+#384#.- delete from answer where idanswer=3828084
+============xxxxxxxxxxxxxxxx==============
+(q16049-2-3) 5217224-2-3 -> created: 2012-05-07 12:39:08.0; updated: null
+(q16049-2-3) 5217284-2-3 -> created: 2012-05-07 12:40:20.0; updated: null
+1st sort
+5217284 = 9999 (2012-05-07 12:40:20.0)
+5217224 = null (2012-05-07 12:39:08.0)
+***************
+2nd sort
+5217284 = 9999 (null)
+5217224 = null (null)
+===============
+itemRef -> 5217284: 9999
+#386#.- delete from answer where idanswer=5217224
+============xxxxxxxxxxxxxxxx==============
+(q16049-3-3) 5217248-3-3 -> created: 2012-05-07 12:39:24.0; updated: null
+(q16049-3-3) 5217302-3-3 -> created: 2012-05-07 12:40:20.0; updated: null
+1st sort
+5217302 = 9999 (2012-05-07 12:40:20.0)
+5217248 = null (2012-05-07 12:39:24.0)
+***************
+2nd sort
+5217302 = 9999 (null)
+5217248 = null (null)
+===============
+itemRef -> 5217302: 9999
+#388#.- delete from answer where idanswer=5217248
+============xxxxxxxxxxxxxxxx==============
+(q16049-4-3) 5217239-4-3 -> created: 2012-05-07 12:39:19.0; updated: null
+(q16049-4-3) 5217296-4-3 -> created: 2012-05-07 12:40:20.0; updated: null
+1st sort
+5217296 = 9999 (2012-05-07 12:40:20.0)
+5217239 = null (2012-05-07 12:39:19.0)
+***************
+2nd sort
+5217296 = 9999 (null)
+5217239 = null (null)
+===============
+itemRef -> 5217296: 9999
+#390#.- delete from answer where idanswer=5217239
+============xxxxxxxxxxxxxxxx==============
+(q16049-5-3) 5217230-5-3 -> created: 2012-05-07 12:39:13.0; updated: null
+(q16049-5-3) 5217290-5-3 -> created: 2012-05-07 12:40:20.0; updated: null
+1st sort
+5217290 = 9999 (2012-05-07 12:40:20.0)
+5217230 = null (2012-05-07 12:39:13.0)
+***************
+2nd sort
+5217290 = 9999 (null)
+5217230 = null (null)
+===============
+itemRef -> 5217290: 9999
+#392#.- delete from answer where idanswer=5217230
+============xxxxxxxxxxxxxxxx==============
+(q16049-2-3) 5224470-2-3 -> created: 2012-05-10 14:44:52.0; updated: null
+(q16049-2-3) 5224497-2-3 -> created: 2012-05-10 14:45:32.0; updated: null
+1st sort
+5224497 = 9999 (2012-05-10 14:45:32.0)
+5224470 = null (2012-05-10 14:44:52.0)
+***************
+2nd sort
+5224497 = 9999 (null)
+5224470 = null (null)
+===============
+itemRef -> 5224497: 9999
+#394#.- delete from answer where idanswer=5224470
+============xxxxxxxxxxxxxxxx==============
+(q16049-3-3) 5224490-3-3 -> created: 2012-05-10 14:45:10.0; updated: null
+(q16049-3-3) 5224518-3-3 -> created: 2012-05-10 14:45:32.0; updated: null
+1st sort
+5224518 = 9999 (2012-05-10 14:45:32.0)
+5224490 = null (2012-05-10 14:45:10.0)
+***************
+2nd sort
+5224518 = 9999 (null)
+5224490 = null (null)
+===============
+itemRef -> 5224518: 9999
+#396#.- delete from answer where idanswer=5224490
+============xxxxxxxxxxxxxxxx==============
+(q16049-4-3) 5224483-4-3 -> created: 2012-05-10 14:45:05.0; updated: null
+(q16049-4-3) 5224512-4-3 -> created: 2012-05-10 14:45:32.0; updated: null
+1st sort
+5224512 = 9999 (2012-05-10 14:45:32.0)
+5224483 = null (2012-05-10 14:45:05.0)
+***************
+2nd sort
+5224512 = 9999 (null)
+5224483 = null (null)
+===============
+itemRef -> 5224512: 9999
+#398#.- delete from answer where idanswer=5224483
+============xxxxxxxxxxxxxxxx==============
+(q16049-5-3) 5224475-5-3 -> created: 2012-05-10 14:44:57.0; updated: null
+(q16049-5-3) 5224503-5-3 -> created: 2012-05-10 14:45:32.0; updated: null
+1st sort
+5224503 = 9999 (2012-05-10 14:45:32.0)
+5224475 = null (2012-05-10 14:44:57.0)
+***************
+2nd sort
+5224503 = 9999 (null)
+5224475 = null (null)
+===============
+itemRef -> 5224503: 9999
+#400#.- delete from answer where idanswer=5224475
+============xxxxxxxxxxxxxxxx==============
+(q16049-6-3) 5224469-6-3 -> created: 2012-05-10 14:44:49.0; updated: null
+(q16049-6-3) 5224494-6-3 -> created: 2012-05-10 14:45:32.0; updated: null
+1st sort
+5224494 = 9999 (2012-05-10 14:45:32.0)
+5224469 = null (2012-05-10 14:44:49.0)
+***************
+2nd sort
+5224494 = 9999 (null)
+5224469 = null (null)
+===============
+itemRef -> 5224494: 9999
+#402#.- delete from answer where idanswer=5224469
+============xxxxxxxxxxxxxxxx==============
+(q16052-2-3) 5217234-2-3 -> created: 2012-05-07 12:39:16.0; updated: null
+(q16052-2-3) 5217293-2-3 -> created: 2012-05-07 12:40:20.0; updated: null
+1st sort
+5217293 = 9999 (2012-05-07 12:40:20.0)
+5217234 = null (2012-05-07 12:39:16.0)
+***************
+2nd sort
+5217293 = 9999 (null)
+5217234 = null (null)
+===============
+itemRef -> 5217293: 9999
+#404#.- delete from answer where idanswer=5217234
+============xxxxxxxxxxxxxxxx==============
+(q16052-3-3) 5217225-3-3 -> created: 2012-05-07 12:39:10.0; updated: null
+(q16052-3-3) 5217287-3-3 -> created: 2012-05-07 12:40:20.0; updated: null
+1st sort
+5217287 = 9999 (2012-05-07 12:40:20.0)
+5217225 = null (2012-05-07 12:39:10.0)
+***************
+2nd sort
+5217287 = 9999 (null)
+5217225 = null (null)
+===============
+itemRef -> 5217287: 9999
+#406#.- delete from answer where idanswer=5217225
+============xxxxxxxxxxxxxxxx==============
+(q16052-4-3) 5217218-4-3 -> created: 2012-05-07 12:39:05.0; updated: null
+(q16052-4-3) 5217281-4-3 -> created: 2012-05-07 12:40:20.0; updated: null
+1st sort
+5217281 = 9999 (2012-05-07 12:40:20.0)
+5217218 = null (2012-05-07 12:39:05.0)
+***************
+2nd sort
+5217281 = 9999 (null)
+5217218 = null (null)
+===============
+itemRef -> 5217281: 9999
+#408#.- delete from answer where idanswer=5217218
+============xxxxxxxxxxxxxxxx==============
+(q16052-5-3) 5217240-5-3 -> created: 2012-05-07 12:39:21.0; updated: null
+(q16052-5-3) 5217299-5-3 -> created: 2012-05-07 12:40:20.0; updated: null
+1st sort
+5217299 = 9999 (2012-05-07 12:40:20.0)
+5217240 = null (2012-05-07 12:39:21.0)
+***************
+2nd sort
+5217299 = 9999 (null)
+5217240 = null (null)
+===============
+itemRef -> 5217299: 9999
+#410#.- delete from answer where idanswer=5217240
+============xxxxxxxxxxxxxxxx==============
+(q16052-2-3) 5224478-2-3 -> created: 2012-05-10 14:45:02.0; updated: null
+(q16052-2-3) 5224509-2-3 -> created: 2012-05-10 14:45:32.0; updated: null
+1st sort
+5224509 = 9999 (2012-05-10 14:45:32.0)
+5224478 = null (2012-05-10 14:45:02.0)
+***************
+2nd sort
+5224509 = 9999 (null)
+5224478 = null (null)
+===============
+itemRef -> 5224509: 9999
+#412#.- delete from answer where idanswer=5224478
+============xxxxxxxxxxxxxxxx==============
+(q16052-3-3) 5224471-3-3 -> created: 2012-05-10 14:44:55.0; updated: null
+(q16052-3-3) 5224500-3-3 -> created: 2012-05-10 14:45:32.0; updated: null
+1st sort
+5224500 = 9999 (2012-05-10 14:45:32.0)
+5224471 = null (2012-05-10 14:44:55.0)
+***************
+2nd sort
+5224500 = 9999 (null)
+5224471 = null (null)
+===============
+itemRef -> 5224500: 9999
+#414#.- delete from answer where idanswer=5224471
+============xxxxxxxxxxxxxxxx==============
+(q16052-4-3) 5224466-4-3 -> created: 2012-05-10 14:44:47.0; updated: null
+(q16052-4-3) 5224491-4-3 -> created: 2012-05-10 14:45:32.0; updated: null
+1st sort
+5224491 = 9999 (2012-05-10 14:45:32.0)
+5224466 = null (2012-05-10 14:44:47.0)
+***************
+2nd sort
+5224491 = 9999 (null)
+5224466 = null (null)
+===============
+itemRef -> 5224491: 9999
+#416#.- delete from answer where idanswer=5224466
+============xxxxxxxxxxxxxxxx==============
+(q16052-5-3) 5224484-5-3 -> created: 2012-05-10 14:45:07.0; updated: null
+(q16052-5-3) 5224515-5-3 -> created: 2012-05-10 14:45:32.0; updated: null
+1st sort
+5224515 = 9999 (2012-05-10 14:45:32.0)
+5224484 = null (2012-05-10 14:45:07.0)
+***************
+2nd sort
+5224515 = 9999 (null)
+5224484 = null (null)
+===============
+itemRef -> 5224515: 9999
+#418#.- delete from answer where idanswer=5224484
+============xxxxxxxxxxxxxxxx==============
+(q16052-6-3) 5224477-6-3 -> created: 2012-05-10 14:45:00.0; updated: null
+(q16052-6-3) 5224506-6-3 -> created: 2012-05-10 14:45:32.0; updated: null
+1st sort
+5224506 = 9999 (2012-05-10 14:45:32.0)
+5224477 = null (2012-05-10 14:45:00.0)
+***************
+2nd sort
+5224506 = 9999 (null)
+5224477 = null (null)
+===============
+itemRef -> 5224506: 9999
+#420#.- delete from answer where idanswer=5224477
+============xxxxxxxxxxxxxxxx==============
+(q16159-1-1) 5145486-1-1 -> created: 2012-03-23 14:37:37.0; updated: null
+(q16159-1-1) 5145485-1-1 -> created: 2012-03-23 14:37:37.0; updated: null
+1st sort
+5145485 = TAEKWONDO (2012-03-23 14:37:37.0)
+5145486 = TAEKWONDO (2012-03-23 14:37:37.0)
+***************
+2nd sort
+5145485 = TAEKWONDO (null)
+5145486 = TAEKWONDO (null)
+===============
+itemRef -> 5145485: TAEKWONDO
+#422#.- delete from answer where idanswer=5145486
+============xxxxxxxxxxxxxxxx==============
+(q20063-1-1) 4764902-1-1 -> created: 2011-11-02 12:01:14.0; updated: null
+(q20063-1-1) 5263202-1-1 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263202 = 9999 (2012-06-20 10:11:19.0)
+4764902 = null (2011-11-02 12:01:14.0)
+***************
+2nd sort
+5263202 = 9999 (null)
+4764902 = null (null)
+===============
+itemRef -> 5263202: 9999
+#424#.- delete from answer where idanswer=4764902
+============xxxxxxxxxxxxxxxx==============
+(q20066-1-1) 4764893-1-1 -> created: 2011-11-02 12:01:13.0; updated: null
+(q20066-1-1) 5263176-1-1 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263176 = 9999 (2012-06-20 10:11:19.0)
+4764893 = null (2011-11-02 12:01:13.0)
+***************
+2nd sort
+5263176 = 9999 (null)
+4764893 = null (null)
+===============
+itemRef -> 5263176: 9999
+#426#.- delete from answer where idanswer=4764893
+============xxxxxxxxxxxxxxxx==============
+(q20069-1-1) 4764883-1-1 -> created: 2011-11-02 12:01:13.0; updated: null
+(q20069-1-1) 5263178-1-1 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263178 = 9999 (2012-06-20 10:11:19.0)
+4764883 = null (2011-11-02 12:01:13.0)
+***************
+2nd sort
+5263178 = 9999 (null)
+4764883 = null (null)
+===============
+itemRef -> 5263178: 9999
+#428#.- delete from answer where idanswer=4764883
+============xxxxxxxxxxxxxxxx==============
+(q20072-1-1) 4764900-1-1 -> created: 2011-11-02 12:01:13.0; updated: null
+(q20072-1-1) 5263193-1-1 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263193 = 9999 (2012-06-20 10:11:19.0)
+4764900 = null (2011-11-02 12:01:13.0)
+***************
+2nd sort
+5263193 = 9999 (null)
+4764900 = null (null)
+===============
+itemRef -> 5263193: 9999
+#430#.- delete from answer where idanswer=4764900
+============xxxxxxxxxxxxxxxx==============
+(q20073-1-1) 4764898-1-1 -> created: 2011-11-02 12:01:13.0; updated: null
+(q20073-1-1) 5263177-1-1 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263177 = 9999 (2012-06-20 10:11:19.0)
+4764898 = null (2011-11-02 12:01:13.0)
+***************
+2nd sort
+5263177 = 9999 (null)
+4764898 = null (null)
+===============
+itemRef -> 5263177: 9999
+#432#.- delete from answer where idanswer=4764898
+============xxxxxxxxxxxxxxxx==============
+(q20074-2-1) 4764878-2-1 -> created: 2011-11-02 12:01:13.0; updated: null
+(q20074-2-1) 5263197-2-1 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263197 = 9999 (2012-06-20 10:11:19.0)
+4764878 = null (2011-11-02 12:01:13.0)
+***************
+2nd sort
+5263197 = 9999 (null)
+4764878 = null (null)
+===============
+itemRef -> 5263197: 9999
+#434#.- delete from answer where idanswer=4764878
+============xxxxxxxxxxxxxxxx==============
+(q20074-2-2) 4764877-2-2 -> created: 2011-11-02 12:01:13.0; updated: null
+(q20074-2-2) 5263196-2-2 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263196 = 9999 (2012-06-20 10:11:19.0)
+4764877 = null (2011-11-02 12:01:13.0)
+***************
+2nd sort
+5263196 = 9999 (null)
+4764877 = null (null)
+===============
+itemRef -> 5263196: 9999
+#436#.- delete from answer where idanswer=4764877
+============xxxxxxxxxxxxxxxx==============
+(q20074-2-3) 4764876-2-3 -> created: 2011-11-02 12:01:13.0; updated: null
+(q20074-2-3) 5263195-2-3 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263195 = 9999 (2012-06-20 10:11:19.0)
+4764876 = null (2011-11-02 12:01:13.0)
+***************
+2nd sort
+5263195 = 9999 (null)
+4764876 = null (null)
+===============
+itemRef -> 5263195: 9999
+#438#.- delete from answer where idanswer=4764876
+============xxxxxxxxxxxxxxxx==============
+(q20074-3-1) 4764920-3-1 -> created: 2011-11-02 12:01:14.0; updated: null
+(q20074-3-1) 5263182-3-1 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263182 = 9999 (2012-06-20 10:11:19.0)
+4764920 = null (2011-11-02 12:01:14.0)
+***************
+2nd sort
+5263182 = 9999 (null)
+4764920 = null (null)
+===============
+itemRef -> 5263182: 9999
+#440#.- delete from answer where idanswer=4764920
+============xxxxxxxxxxxxxxxx==============
+(q20074-3-2) 4764919-3-2 -> created: 2011-11-02 12:01:14.0; updated: null
+(q20074-3-2) 5263181-3-2 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263181 = 9999 (2012-06-20 10:11:19.0)
+4764919 = null (2011-11-02 12:01:14.0)
+***************
+2nd sort
+5263181 = 9999 (null)
+4764919 = null (null)
+===============
+itemRef -> 5263181: 9999
+#442#.- delete from answer where idanswer=4764919
+============xxxxxxxxxxxxxxxx==============
+(q20074-3-3) 4764918-3-3 -> created: 2011-11-02 12:01:14.0; updated: null
+(q20074-3-3) 5263180-3-3 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263180 = 9999 (2012-06-20 10:11:19.0)
+4764918 = null (2011-11-02 12:01:14.0)
+***************
+2nd sort
+5263180 = 9999 (null)
+4764918 = null (null)
+===============
+itemRef -> 5263180: 9999
+#444#.- delete from answer where idanswer=4764918
+============xxxxxxxxxxxxxxxx==============
+(q20074-4-1) 4764906-4-1 -> created: 2011-11-02 12:01:14.0; updated: null
+(q20074-4-1) 5263188-4-1 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263188 = 9999 (2012-06-20 10:11:19.0)
+4764906 = null (2011-11-02 12:01:14.0)
+***************
+2nd sort
+5263188 = 9999 (null)
+4764906 = null (null)
+===============
+itemRef -> 5263188: 9999
+#446#.- delete from answer where idanswer=4764906
+============xxxxxxxxxxxxxxxx==============
+(q20074-4-2) 4764905-4-2 -> created: 2011-11-02 12:01:14.0; updated: null
+(q20074-4-2) 5263187-4-2 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263187 = 9999 (2012-06-20 10:11:19.0)
+4764905 = null (2011-11-02 12:01:14.0)
+***************
+2nd sort
+5263187 = 9999 (null)
+4764905 = null (null)
+===============
+itemRef -> 5263187: 9999
+#448#.- delete from answer where idanswer=4764905
+============xxxxxxxxxxxxxxxx==============
+(q20074-4-3) 4764904-4-3 -> created: 2011-11-02 12:01:14.0; updated: null
+(q20074-4-3) 5263186-4-3 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263186 = 9999 (2012-06-20 10:11:19.0)
+4764904 = null (2011-11-02 12:01:14.0)
+***************
+2nd sort
+5263186 = 9999 (null)
+4764904 = null (null)
+===============
+itemRef -> 5263186: 9999
+#450#.- delete from answer where idanswer=4764904
+============xxxxxxxxxxxxxxxx==============
+(q20075-1-1) 4764887-1-1 -> created: 2011-11-02 12:01:13.0; updated: null
+(q20075-1-1) 5263194-1-1 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263194 = 9999 (2012-06-20 10:11:19.0)
+4764887 = null (2011-11-02 12:01:13.0)
+***************
+2nd sort
+5263194 = 9999 (null)
+4764887 = null (null)
+===============
+itemRef -> 5263194: 9999
+#452#.- delete from answer where idanswer=4764887
+============xxxxxxxxxxxxxxxx==============
+(q20076-1-1) 4764885-1-1 -> created: 2011-11-02 12:01:13.0; updated: null
+(q20076-1-1) 5263179-1-1 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263179 = 9999 (2012-06-20 10:11:19.0)
+4764885 = null (2011-11-02 12:01:13.0)
+***************
+2nd sort
+5263179 = 9999 (null)
+4764885 = null (null)
+===============
+itemRef -> 5263179: 9999
+#454#.- delete from answer where idanswer=4764885
+============xxxxxxxxxxxxxxxx==============
+(q20077-2-1) 4764924-2-1 -> created: 2011-11-02 12:01:14.0; updated: null
+(q20077-2-1) 5263201-2-1 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263201 = 9999 (2012-06-20 10:11:19.0)
+4764924 = null (2011-11-02 12:01:14.0)
+***************
+2nd sort
+5263201 = 9999 (null)
+4764924 = null (null)
+===============
+itemRef -> 5263201: 9999
+#456#.- delete from answer where idanswer=4764924
+============xxxxxxxxxxxxxxxx==============
+(q20077-2-2) 4764923-2-2 -> created: 2011-11-02 12:01:14.0; updated: null
+(q20077-2-2) 5263200-2-2 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263200 = 9999 (2012-06-20 10:11:19.0)
+4764923 = null (2011-11-02 12:01:14.0)
+***************
+2nd sort
+5263200 = 9999 (null)
+4764923 = null (null)
+===============
+itemRef -> 5263200: 9999
+#458#.- delete from answer where idanswer=4764923
+============xxxxxxxxxxxxxxxx==============
+(q20077-2-3) 4764922-2-3 -> created: 2011-11-02 12:01:14.0; updated: null
+(q20077-2-3) 5263199-2-3 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263199 = 9999 (2012-06-20 10:11:19.0)
+4764922 = null (2011-11-02 12:01:14.0)
+***************
+2nd sort
+5263199 = 9999 (null)
+4764922 = null (null)
+===============
+itemRef -> 5263199: 9999
+#460#.- delete from answer where idanswer=4764922
+============xxxxxxxxxxxxxxxx==============
+(q20077-3-1) 4764910-3-1 -> created: 2011-11-02 12:01:14.0; updated: null
+(q20077-3-1) 5263185-3-1 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263185 = 9999 (2012-06-20 10:11:19.0)
+4764910 = null (2011-11-02 12:01:14.0)
+***************
+2nd sort
+5263185 = 9999 (null)
+4764910 = null (null)
+===============
+itemRef -> 5263185: 9999
+#462#.- delete from answer where idanswer=4764910
+============xxxxxxxxxxxxxxxx==============
+(q20077-3-2) 4764909-3-2 -> created: 2011-11-02 12:01:14.0; updated: null
+(q20077-3-2) 5263184-3-2 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263184 = 9999 (2012-06-20 10:11:19.0)
+4764909 = null (2011-11-02 12:01:14.0)
+***************
+2nd sort
+5263184 = 9999 (null)
+4764909 = null (null)
+===============
+itemRef -> 5263184: 9999
+#464#.- delete from answer where idanswer=4764909
+============xxxxxxxxxxxxxxxx==============
+(q20077-3-3) 4764908-3-3 -> created: 2011-11-02 12:01:14.0; updated: null
+(q20077-3-3) 5263183-3-3 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263183 = 9999 (2012-06-20 10:11:19.0)
+4764908 = null (2011-11-02 12:01:14.0)
+***************
+2nd sort
+5263183 = 9999 (null)
+4764908 = null (null)
+===============
+itemRef -> 5263183: 9999
+#466#.- delete from answer where idanswer=4764908
+============xxxxxxxxxxxxxxxx==============
+(q20077-4-1) 4764896-4-1 -> created: 2011-11-02 12:01:13.0; updated: null
+(q20077-4-1) 5263191-4-1 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263191 = 9999 (2012-06-20 10:11:19.0)
+4764896 = null (2011-11-02 12:01:13.0)
+***************
+2nd sort
+5263191 = 9999 (null)
+4764896 = null (null)
+===============
+itemRef -> 5263191: 9999
+#468#.- delete from answer where idanswer=4764896
+============xxxxxxxxxxxxxxxx==============
+(q20077-4-2) 4764895-4-2 -> created: 2011-11-02 12:01:13.0; updated: null
+(q20077-4-2) 5263190-4-2 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263190 = 9999 (2012-06-20 10:11:19.0)
+4764895 = null (2011-11-02 12:01:13.0)
+***************
+2nd sort
+5263190 = 9999 (null)
+4764895 = null (null)
+===============
+itemRef -> 5263190: 9999
+#470#.- delete from answer where idanswer=4764895
+============xxxxxxxxxxxxxxxx==============
+(q20077-4-3) 4764894-4-3 -> created: 2011-11-02 12:01:13.0; updated: null
+(q20077-4-3) 5263189-4-3 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263189 = 9999 (2012-06-20 10:11:19.0)
+4764894 = null (2011-11-02 12:01:13.0)
+***************
+2nd sort
+5263189 = 9999 (null)
+4764894 = null (null)
+===============
+itemRef -> 5263189: 9999
+#472#.- delete from answer where idanswer=4764894
+============xxxxxxxxxxxxxxxx==============
+(q20078-1-1) 4764931-1-1 -> created: 2011-11-02 12:01:15.0; updated: null
+(q20078-1-1) 5263198-1-1 -> created: 2012-06-20 10:11:19.0; updated: null
+1st sort
+5263198 = 9999 (2012-06-20 10:11:19.0)
+4764931 = null (2011-11-02 12:01:15.0)
+***************
+2nd sort
+5263198 = 9999 (null)
+4764931 = null (null)
+===============
+itemRef -> 5263198: 9999
+#474#.- delete from answer where idanswer=4764931
+============xxxxxxxxxxxxxxxx==============
+(q20200-2-1) 4773441-2-1 -> created: 2011-11-07 11:20:50.0; updated: null
+(q20200-2-1) 5261691-2-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261691 = 9999 (2012-06-18 10:39:48.0)
+4773441 = null (2011-11-07 11:20:50.0)
+***************
+2nd sort
+5261691 = 9999 (null)
+4773441 = null (null)
+===============
+itemRef -> 5261691: 9999
+#476#.- delete from answer where idanswer=4773441
+============xxxxxxxxxxxxxxxx==============
+(q20200-3-1) 4773296-3-1 -> created: 2011-11-07 11:20:39.0; updated: null
+(q20200-3-1) 5261632-3-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261632 = 9999 (2012-06-18 10:39:48.0)
+4773296 = null (2011-11-07 11:20:39.0)
+***************
+2nd sort
+5261632 = 9999 (null)
+4773296 = null (null)
+===============
+itemRef -> 5261632: 9999
+#478#.- delete from answer where idanswer=4773296
+============xxxxxxxxxxxxxxxx==============
+(q20200-4-1) 4773150-4-1 -> created: 2011-11-07 11:20:30.0; updated: null
+(q20200-4-1) 5261575-4-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261575 = 9999 (2012-06-18 10:39:47.0)
+4773150 = null (2011-11-07 11:20:30.0)
+***************
+2nd sort
+5261575 = 9999 (null)
+4773150 = null (null)
+===============
+itemRef -> 5261575: 9999
+#480#.- delete from answer where idanswer=4773150
+============xxxxxxxxxxxxxxxx==============
+(q20200-5-1) 4773476-5-1 -> created: 2011-11-07 11:20:53.0; updated: null
+(q20200-5-1) 5261705-5-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261705 = 9999 (2012-06-18 10:39:48.0)
+4773476 = null (2011-11-07 11:20:53.0)
+***************
+2nd sort
+5261705 = 9999 (null)
+4773476 = null (null)
+===============
+itemRef -> 5261705: 9999
+#482#.- delete from answer where idanswer=4773476
+============xxxxxxxxxxxxxxxx==============
+(q20200-6-1) 4773330-6-1 -> created: 2011-11-07 11:20:42.0; updated: null
+(q20200-6-1) 5261648-6-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261648 = 9999 (2012-06-18 10:39:48.0)
+4773330 = null (2011-11-07 11:20:42.0)
+***************
+2nd sort
+5261648 = 9999 (null)
+4773330 = null (null)
+===============
+itemRef -> 5261648: 9999
+#484#.- delete from answer where idanswer=4773330
+============xxxxxxxxxxxxxxxx==============
+(q20200-7-1) 4773181-7-1 -> created: 2011-11-07 11:20:32.0; updated: null
+(q20200-7-1) 5261589-7-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261589 = 9999 (2012-06-18 10:39:47.0)
+4773181 = null (2011-11-07 11:20:32.0)
+***************
+2nd sort
+5261589 = 9999 (null)
+4773181 = null (null)
+===============
+itemRef -> 5261589: 9999
+#486#.- delete from answer where idanswer=4773181
+============xxxxxxxxxxxxxxxx==============
+(q20200-8-1) 4773509-8-1 -> created: 2011-11-07 11:20:55.0; updated: null
+(q20200-8-1) 5261718-8-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261718 = 9999 (2012-06-18 10:39:49.0)
+4773509 = null (2011-11-07 11:20:55.0)
+***************
+2nd sort
+5261718 = 9999 (null)
+4773509 = null (null)
+===============
+itemRef -> 5261718: 9999
+#488#.- delete from answer where idanswer=4773509
+============xxxxxxxxxxxxxxxx==============
+(q20200-9-1) 4773358-9-1 -> created: 2011-11-07 11:20:44.0; updated: null
+(q20200-9-1) 5261658-9-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261658 = 9999 (2012-06-18 10:39:48.0)
+4773358 = null (2011-11-07 11:20:44.0)
+***************
+2nd sort
+5261658 = 9999 (null)
+4773358 = null (null)
+===============
+itemRef -> 5261658: 9999
+#490#.- delete from answer where idanswer=4773358
+============xxxxxxxxxxxxxxxx==============
+(q20200-10-1) 4773183-10-1 -> created: 2011-11-07 11:20:33.0; updated: null
+(q20200-10-1) 5261591-10-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261591 = 9999 (2012-06-18 10:39:47.0)
+4773183 = null (2011-11-07 11:20:33.0)
+***************
+2nd sort
+5261591 = 9999 (null)
+4773183 = null (null)
+===============
+itemRef -> 5261591: 9999
+#492#.- delete from answer where idanswer=4773183
+============xxxxxxxxxxxxxxxx==============
+(q20200-11-1) 4773511-11-1 -> created: 2011-11-07 11:20:56.0; updated: null
+(q20200-11-1) 5261720-11-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261720 = 9999 (2012-06-18 10:39:49.0)
+4773511 = null (2011-11-07 11:20:56.0)
+***************
+2nd sort
+5261720 = 9999 (null)
+4773511 = null (null)
+===============
+itemRef -> 5261720: 9999
+#494#.- delete from answer where idanswer=4773511
+============xxxxxxxxxxxxxxxx==============
+(q20200-12-1) 4773360-12-1 -> created: 2011-11-07 11:20:45.0; updated: null
+(q20200-12-1) 5261660-12-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261660 = 9999 (2012-06-18 10:39:48.0)
+4773360 = null (2011-11-07 11:20:45.0)
+***************
+2nd sort
+5261660 = 9999 (null)
+4773360 = null (null)
+===============
+itemRef -> 5261660: 9999
+#496#.- delete from answer where idanswer=4773360
+============xxxxxxxxxxxxxxxx==============
+(q20200-13-1) 4773210-13-1 -> created: 2011-11-07 11:20:35.0; updated: null
+(q20200-13-1) 5261600-13-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261600 = 9999 (2012-06-18 10:39:47.0)
+4773210 = null (2011-11-07 11:20:35.0)
+***************
+2nd sort
+5261600 = 9999 (null)
+4773210 = null (null)
+===============
+itemRef -> 5261600: 9999
+#498#.- delete from answer where idanswer=4773210
+============xxxxxxxxxxxxxxxx==============
+(q20200-14-1) 4773537-14-1 -> created: 2011-11-07 11:20:58.0; updated: null
+(q20200-14-1) 5261729-14-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261729 = 9999 (2012-06-18 10:39:49.0)
+4773537 = null (2011-11-07 11:20:58.0)
+***************
+2nd sort
+5261729 = 9999 (null)
+4773537 = null (null)
+===============
+itemRef -> 5261729: 9999
+#500#.- delete from answer where idanswer=4773537
+============xxxxxxxxxxxxxxxx==============
+(q20200-15-1) 4773386-15-1 -> created: 2011-11-07 11:20:46.0; updated: null
+(q20200-15-1) 5261670-15-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261670 = 9999 (2012-06-18 10:39:48.0)
+4773386 = null (2011-11-07 11:20:46.0)
+***************
+2nd sort
+5261670 = 9999 (null)
+4773386 = null (null)
+===============
+itemRef -> 5261670: 9999
+#502#.- delete from answer where idanswer=4773386
+============xxxxxxxxxxxxxxxx==============
+(q20200-16-1) 4773238-16-1 -> created: 2011-11-07 11:20:36.0; updated: null
+(q20200-16-1) 5261611-16-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261611 = 9999 (2012-06-18 10:39:47.0)
+4773238 = null (2011-11-07 11:20:36.0)
+***************
+2nd sort
+5261611 = 9999 (null)
+4773238 = null (null)
+===============
+itemRef -> 5261611: 9999
+#504#.- delete from answer where idanswer=4773238
+============xxxxxxxxxxxxxxxx==============
+(q20200-17-1) 4773564-17-1 -> created: 2011-11-07 11:21:00.0; updated: null
+(q20200-17-1) 5261739-17-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261739 = 9999 (2012-06-18 10:39:49.0)
+4773564 = null (2011-11-07 11:21:00.0)
+***************
+2nd sort
+5261739 = 9999 (null)
+4773564 = null (null)
+===============
+itemRef -> 5261739: 9999
+#506#.- delete from answer where idanswer=4773564
+============xxxxxxxxxxxxxxxx==============
+(q20200-18-1) 4773414-18-1 -> created: 2011-11-07 11:20:48.0; updated: null
+(q20200-18-1) 5261680-18-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261680 = 9999 (2012-06-18 10:39:48.0)
+4773414 = null (2011-11-07 11:20:48.0)
+***************
+2nd sort
+5261680 = 9999 (null)
+4773414 = null (null)
+===============
+itemRef -> 5261680: 9999
+#508#.- delete from answer where idanswer=4773414
+============xxxxxxxxxxxxxxxx==============
+(q20200-19-1) 4773267-19-1 -> created: 2011-11-07 11:20:37.0; updated: null
+(q20200-19-1) 5261621-19-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261621 = 9999 (2012-06-18 10:39:47.0)
+4773267 = null (2011-11-07 11:20:37.0)
+***************
+2nd sort
+5261621 = 9999 (null)
+4773267 = null (null)
+===============
+itemRef -> 5261621: 9999
+#510#.- delete from answer where idanswer=4773267
+============xxxxxxxxxxxxxxxx==============
+(q20200-20-1) 4773324-20-1 -> created: 2011-11-07 11:20:41.0; updated: null
+(q20200-20-1) 5261644-20-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261644 = 9999 (2012-06-18 10:39:48.0)
+4773324 = null (2011-11-07 11:20:41.0)
+***************
+2nd sort
+5261644 = 9999 (null)
+4773324 = null (null)
+===============
+itemRef -> 5261644: 9999
+#512#.- delete from answer where idanswer=4773324
+============xxxxxxxxxxxxxxxx==============
+(q20200-21-1) 4773175-21-1 -> created: 2011-11-07 11:20:31.0; updated: null
+(q20200-21-1) 5261585-21-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261585 = 9999 (2012-06-18 10:39:47.0)
+4773175 = null (2011-11-07 11:20:31.0)
+***************
+2nd sort
+5261585 = 9999 (null)
+4773175 = null (null)
+===============
+itemRef -> 5261585: 9999
+#514#.- delete from answer where idanswer=4773175
+============xxxxxxxxxxxxxxxx==============
+(q20200-22-1) 4773501-22-1 -> created: 2011-11-07 11:20:54.0; updated: null
+(q20200-22-1) 5261713-22-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261713 = 9999 (2012-06-18 10:39:48.0)
+4773501 = null (2011-11-07 11:20:54.0)
+***************
+2nd sort
+5261713 = 9999 (null)
+4773501 = null (null)
+===============
+itemRef -> 5261713: 9999
+#516#.- delete from answer where idanswer=4773501
+============xxxxxxxxxxxxxxxx==============
+(q20200-23-1) 4773353-23-1 -> created: 2011-11-07 11:20:43.0; updated: null
+(q20200-23-1) 5261654-23-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261654 = 9999 (2012-06-18 10:39:48.0)
+4773353 = null (2011-11-07 11:20:43.0)
+***************
+2nd sort
+5261654 = 9999 (null)
+4773353 = null (null)
+===============
+itemRef -> 5261654: 9999
+#518#.- delete from answer where idanswer=4773353
+============xxxxxxxxxxxxxxxx==============
+(q20200-24-1) 4773204-24-1 -> created: 2011-11-07 11:20:33.0; updated: null
+(q20200-24-1) 5261597-24-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261597 = 9999 (2012-06-18 10:39:47.0)
+4773204 = null (2011-11-07 11:20:33.0)
+***************
+2nd sort
+5261597 = 9999 (null)
+4773204 = null (null)
+===============
+itemRef -> 5261597: 9999
+#520#.- delete from answer where idanswer=4773204
+============xxxxxxxxxxxxxxxx==============
+(q20200-25-1) 4773531-25-1 -> created: 2011-11-07 11:20:57.0; updated: null
+(q20200-25-1) 5261726-25-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261726 = 9999 (2012-06-18 10:39:49.0)
+4773531 = null (2011-11-07 11:20:57.0)
+***************
+2nd sort
+5261726 = 9999 (null)
+4773531 = null (null)
+===============
+itemRef -> 5261726: 9999
+#522#.- delete from answer where idanswer=4773531
+============xxxxxxxxxxxxxxxx==============
+(q20200-26-1) 4773380-26-1 -> created: 2011-11-07 11:20:45.0; updated: null
+(q20200-26-1) 5261667-26-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261667 = 9999 (2012-06-18 10:39:48.0)
+4773380 = null (2011-11-07 11:20:45.0)
+***************
+2nd sort
+5261667 = 9999 (null)
+4773380 = null (null)
+===============
+itemRef -> 5261667: 9999
+#524#.- delete from answer where idanswer=4773380
+============xxxxxxxxxxxxxxxx==============
+(q20200-27-1) 4773232-27-1 -> created: 2011-11-07 11:20:35.0; updated: null
+(q20200-27-1) 5261608-27-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261608 = 9999 (2012-06-18 10:39:47.0)
+4773232 = null (2011-11-07 11:20:35.0)
+***************
+2nd sort
+5261608 = 9999 (null)
+4773232 = null (null)
+===============
+itemRef -> 5261608: 9999
+#526#.- delete from answer where idanswer=4773232
+============xxxxxxxxxxxxxxxx==============
+(q20200-28-1) 4773561-28-1 -> created: 2011-11-07 11:20:59.0; updated: null
+(q20200-28-1) 5261737-28-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261737 = 9999 (2012-06-18 10:39:49.0)
+4773561 = null (2011-11-07 11:20:59.0)
+***************
+2nd sort
+5261737 = 9999 (null)
+4773561 = null (null)
+===============
+itemRef -> 5261737: 9999
+#528#.- delete from answer where idanswer=4773561
+============xxxxxxxxxxxxxxxx==============
+(q20200-29-1) 4773409-29-1 -> created: 2011-11-07 11:20:47.0; updated: null
+(q20200-29-1) 5261677-29-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261677 = 9999 (2012-06-18 10:39:48.0)
+4773409 = null (2011-11-07 11:20:47.0)
+***************
+2nd sort
+5261677 = 9999 (null)
+4773409 = null (null)
+===============
+itemRef -> 5261677: 9999
+#530#.- delete from answer where idanswer=4773409
+============xxxxxxxxxxxxxxxx==============
+(q20200-30-1) 4773464-30-1 -> created: 2011-11-07 11:20:51.0; updated: null
+(q20200-30-1) 5261700-30-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261700 = 9999 (2012-06-18 10:39:48.0)
+4773464 = null (2011-11-07 11:20:51.0)
+***************
+2nd sort
+5261700 = 9999 (null)
+4773464 = null (null)
+===============
+itemRef -> 5261700: 9999
+#532#.- delete from answer where idanswer=4773464
+============xxxxxxxxxxxxxxxx==============
+(q20200-31-1) 4773317-31-1 -> created: 2011-11-07 11:20:40.0; updated: null
+(q20200-31-1) 5261640-31-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261640 = 9999 (2012-06-18 10:39:48.0)
+4773317 = null (2011-11-07 11:20:40.0)
+***************
+2nd sort
+5261640 = 9999 (null)
+4773317 = null (null)
+===============
+itemRef -> 5261640: 9999
+#534#.- delete from answer where idanswer=4773317
+============xxxxxxxxxxxxxxxx==============
+(q20200-32-1) 4773169-32-1 -> created: 2011-11-07 11:20:30.0; updated: null
+(q20200-32-1) 5261582-32-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261582 = 9999 (2012-06-18 10:39:47.0)
+4773169 = null (2011-11-07 11:20:30.0)
+***************
+2nd sort
+5261582 = 9999 (null)
+4773169 = null (null)
+===============
+itemRef -> 5261582: 9999
+#536#.- delete from answer where idanswer=4773169
+============xxxxxxxxxxxxxxxx==============
+(q20200-33-1) 4773496-33-1 -> created: 2011-11-07 11:20:54.0; updated: null
+(q20200-33-1) 5261711-33-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261711 = 9999 (2012-06-18 10:39:48.0)
+4773496 = null (2011-11-07 11:20:54.0)
+***************
+2nd sort
+5261711 = 9999 (null)
+4773496 = null (null)
+===============
+itemRef -> 5261711: 9999
+#538#.- delete from answer where idanswer=4773496
+============xxxxxxxxxxxxxxxx==============
+(q20200-34-1) 4773349-34-1 -> created: 2011-11-07 11:20:43.0; updated: null
+(q20200-34-1) 5261653-34-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261653 = 9999 (2012-06-18 10:39:48.0)
+4773349 = null (2011-11-07 11:20:43.0)
+***************
+2nd sort
+5261653 = 9999 (null)
+4773349 = null (null)
+===============
+itemRef -> 5261653: 9999
+#540#.- delete from answer where idanswer=4773349
+============xxxxxxxxxxxxxxxx==============
+(q20200-35-1) 4773200-35-1 -> created: 2011-11-07 11:20:33.0; updated: null
+(q20200-35-1) 5261596-35-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261596 = 9999 (2012-06-18 10:39:47.0)
+4773200 = null (2011-11-07 11:20:33.0)
+***************
+2nd sort
+5261596 = 9999 (null)
+4773200 = null (null)
+===============
+itemRef -> 5261596: 9999
+#542#.- delete from answer where idanswer=4773200
+============xxxxxxxxxxxxxxxx==============
+(q20200-36-1) 4773527-36-1 -> created: 2011-11-07 11:20:57.0; updated: null
+(q20200-36-1) 5261725-36-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261725 = 9999 (2012-06-18 10:39:49.0)
+4773527 = null (2011-11-07 11:20:57.0)
+***************
+2nd sort
+5261725 = 9999 (null)
+4773527 = null (null)
+===============
+itemRef -> 5261725: 9999
+#544#.- delete from answer where idanswer=4773527
+============xxxxxxxxxxxxxxxx==============
+(q20200-37-1) 4773376-37-1 -> created: 2011-11-07 11:20:45.0; updated: null
+(q20200-37-1) 5261666-37-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261666 = 9999 (2012-06-18 10:39:48.0)
+4773376 = null (2011-11-07 11:20:45.0)
+***************
+2nd sort
+5261666 = 9999 (null)
+4773376 = null (null)
+===============
+itemRef -> 5261666: 9999
+#546#.- delete from answer where idanswer=4773376
+============xxxxxxxxxxxxxxxx==============
+(q20200-38-1) 4773229-38-1 -> created: 2011-11-07 11:20:35.0; updated: null
+(q20200-38-1) 5261607-38-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261607 = 9999 (2012-06-18 10:39:47.0)
+4773229 = null (2011-11-07 11:20:35.0)
+***************
+2nd sort
+5261607 = 9999 (null)
+4773229 = null (null)
+===============
+itemRef -> 5261607: 9999
+#548#.- delete from answer where idanswer=4773229
+============xxxxxxxxxxxxxxxx==============
+(q20200-39-1) 4773556-39-1 -> created: 2011-11-07 11:20:59.0; updated: null
+(q20200-39-1) 5261735-39-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261735 = 9999 (2012-06-18 10:39:49.0)
+4773556 = null (2011-11-07 11:20:59.0)
+***************
+2nd sort
+5261735 = 9999 (null)
+4773556 = null (null)
+===============
+itemRef -> 5261735: 9999
+#550#.- delete from answer where idanswer=4773556
+============xxxxxxxxxxxxxxxx==============
+(q20200-40-1) 4773609-40-1 -> created: 2011-11-07 11:21:03.0; updated: null
+(q20200-40-1) 5261754-40-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261754 = 9999 (2012-06-18 10:39:49.0)
+4773609 = null (2011-11-07 11:21:03.0)
+***************
+2nd sort
+5261754 = 9999 (null)
+4773609 = null (null)
+===============
+itemRef -> 5261754: 9999
+#552#.- delete from answer where idanswer=4773609
+============xxxxxxxxxxxxxxxx==============
+(q20200-41-1) 4773459-41-1 -> created: 2011-11-07 11:20:51.0; updated: null
+(q20200-41-1) 5261698-41-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261698 = 9999 (2012-06-18 10:39:48.0)
+4773459 = null (2011-11-07 11:20:51.0)
+***************
+2nd sort
+5261698 = 9999 (null)
+4773459 = null (null)
+===============
+itemRef -> 5261698: 9999
+#554#.- delete from answer where idanswer=4773459
+============xxxxxxxxxxxxxxxx==============
+(q20200-42-1) 4773311-42-1 -> created: 2011-11-07 11:20:39.0; updated: null
+(q20200-42-1) 5261638-42-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261638 = 9999 (2012-06-18 10:39:48.0)
+4773311 = null (2011-11-07 11:20:39.0)
+***************
+2nd sort
+5261638 = 9999 (null)
+4773311 = null (null)
+===============
+itemRef -> 5261638: 9999
+#556#.- delete from answer where idanswer=4773311
+============xxxxxxxxxxxxxxxx==============
+(q20200-43-1) 4773164-43-1 -> created: 2011-11-07 11:20:30.0; updated: null
+(q20200-43-1) 5261580-43-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261580 = 9999 (2012-06-18 10:39:47.0)
+4773164 = null (2011-11-07 11:20:30.0)
+***************
+2nd sort
+5261580 = 9999 (null)
+4773164 = null (null)
+===============
+itemRef -> 5261580: 9999
+#558#.- delete from answer where idanswer=4773164
+============xxxxxxxxxxxxxxxx==============
+(q20200-44-1) 4773492-44-1 -> created: 2011-11-07 11:20:53.0; updated: null
+(q20200-44-1) 5261710-44-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261710 = 9999 (2012-06-18 10:39:48.0)
+4773492 = null (2011-11-07 11:20:53.0)
+***************
+2nd sort
+5261710 = 9999 (null)
+4773492 = null (null)
+===============
+itemRef -> 5261710: 9999
+#560#.- delete from answer where idanswer=4773492
+============xxxxxxxxxxxxxxxx==============
+(q20200-45-1) 4773344-45-1 -> created: 2011-11-07 11:20:42.0; updated: null
+(q20200-45-1) 5261652-45-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261652 = 9999 (2012-06-18 10:39:48.0)
+4773344 = null (2011-11-07 11:20:42.0)
+***************
+2nd sort
+5261652 = 9999 (null)
+4773344 = null (null)
+===============
+itemRef -> 5261652: 9999
+#562#.- delete from answer where idanswer=4773344
+============xxxxxxxxxxxxxxxx==============
+(q20200-46-1) 4773195-46-1 -> created: 2011-11-07 11:20:33.0; updated: null
+(q20200-46-1) 5261595-46-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261595 = 9999 (2012-06-18 10:39:47.0)
+4773195 = null (2011-11-07 11:20:33.0)
+***************
+2nd sort
+5261595 = 9999 (null)
+4773195 = null (null)
+===============
+itemRef -> 5261595: 9999
+#564#.- delete from answer where idanswer=4773195
+============xxxxxxxxxxxxxxxx==============
+(q20200-47-1) 4773521-47-1 -> created: 2011-11-07 11:20:56.0; updated: null
+(q20200-47-1) 5261724-47-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261724 = 9999 (2012-06-18 10:39:49.0)
+4773521 = null (2011-11-07 11:20:56.0)
+***************
+2nd sort
+5261724 = 9999 (null)
+4773521 = null (null)
+===============
+itemRef -> 5261724: 9999
+#566#.- delete from answer where idanswer=4773521
+============xxxxxxxxxxxxxxxx==============
+(q20200-48-1) 4773372-48-1 -> created: 2011-11-07 11:20:45.0; updated: null
+(q20200-48-1) 5261665-48-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261665 = 9999 (2012-06-18 10:39:48.0)
+4773372 = null (2011-11-07 11:20:45.0)
+***************
+2nd sort
+5261665 = 9999 (null)
+4773372 = null (null)
+===============
+itemRef -> 5261665: 9999
+#568#.- delete from answer where idanswer=4773372
+============xxxxxxxxxxxxxxxx==============
+(q20200-49-1) 4773223-49-1 -> created: 2011-11-07 11:20:35.0; updated: null
+(q20200-49-1) 5261605-49-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261605 = 9999 (2012-06-18 10:39:47.0)
+4773223 = null (2011-11-07 11:20:35.0)
+***************
+2nd sort
+5261605 = 9999 (null)
+4773223 = null (null)
+===============
+itemRef -> 5261605: 9999
+#570#.- delete from answer where idanswer=4773223
+============xxxxxxxxxxxxxxxx==============
+(q20200-50-1) 4773274-50-1 -> created: 2011-11-07 11:20:38.0; updated: null
+(q20200-50-1) 5261623-50-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261623 = 9999 (2012-06-18 10:39:47.0)
+4773274 = null (2011-11-07 11:20:38.0)
+***************
+2nd sort
+5261623 = 9999 (null)
+4773274 = null (null)
+===============
+itemRef -> 5261623: 9999
+#572#.- delete from answer where idanswer=4773274
+============xxxxxxxxxxxxxxxx==============
+(q20200-51-1) 4773602-51-1 -> created: 2011-11-07 11:21:02.0; updated: null
+(q20200-51-1) 5261751-51-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261751 = 9999 (2012-06-18 10:39:49.0)
+4773602 = null (2011-11-07 11:21:02.0)
+***************
+2nd sort
+5261751 = 9999 (null)
+4773602 = null (null)
+===============
+itemRef -> 5261751: 9999
+#574#.- delete from answer where idanswer=4773602
+============xxxxxxxxxxxxxxxx==============
+(q20200-52-1) 4773450-52-1 -> created: 2011-11-07 11:20:51.0; updated: null
+(q20200-52-1) 5261694-52-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261694 = 9999 (2012-06-18 10:39:48.0)
+4773450 = null (2011-11-07 11:20:51.0)
+***************
+2nd sort
+5261694 = 9999 (null)
+4773450 = null (null)
+===============
+itemRef -> 5261694: 9999
+#576#.- delete from answer where idanswer=4773450
+============xxxxxxxxxxxxxxxx==============
+(q20200-53-1) 4773303-53-1 -> created: 2011-11-07 11:20:39.0; updated: null
+(q20200-53-1) 5261634-53-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261634 = 9999 (2012-06-18 10:39:48.0)
+4773303 = null (2011-11-07 11:20:39.0)
+***************
+2nd sort
+5261634 = 9999 (null)
+4773303 = null (null)
+===============
+itemRef -> 5261634: 9999
+#578#.- delete from answer where idanswer=4773303
+============xxxxxxxxxxxxxxxx==============
+(q20200-54-1) 4773157-54-1 -> created: 2011-11-07 11:20:30.0; updated: null
+(q20200-54-1) 5261577-54-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261577 = 9999 (2012-06-18 10:39:47.0)
+4773157 = null (2011-11-07 11:20:30.0)
+***************
+2nd sort
+5261577 = 9999 (null)
+4773157 = null (null)
+===============
+itemRef -> 5261577: 9999
+#580#.- delete from answer where idanswer=4773157
+============xxxxxxxxxxxxxxxx==============
+(q20200-55-1) 4773483-55-1 -> created: 2011-11-07 11:20:53.0; updated: null
+(q20200-55-1) 5261707-55-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261707 = 9999 (2012-06-18 10:39:48.0)
+4773483 = null (2011-11-07 11:20:53.0)
+***************
+2nd sort
+5261707 = 9999 (null)
+4773483 = null (null)
+===============
+itemRef -> 5261707: 9999
+#582#.- delete from answer where idanswer=4773483
+============xxxxxxxxxxxxxxxx==============
+(q20200-56-1) 4773337-56-1 -> created: 2011-11-07 11:20:42.0; updated: null
+(q20200-56-1) 5261650-56-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261650 = 9999 (2012-06-18 10:39:48.0)
+4773337 = null (2011-11-07 11:20:42.0)
+***************
+2nd sort
+5261650 = 9999 (null)
+4773337 = null (null)
+===============
+itemRef -> 5261650: 9999
+#584#.- delete from answer where idanswer=4773337
+============xxxxxxxxxxxxxxxx==============
+(q20200-57-1) 4773188-57-1 -> created: 2011-11-07 11:20:33.0; updated: null
+(q20200-57-1) 5261593-57-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261593 = 9999 (2012-06-18 10:39:47.0)
+4773188 = null (2011-11-07 11:20:33.0)
+***************
+2nd sort
+5261593 = 9999 (null)
+4773188 = null (null)
+===============
+itemRef -> 5261593: 9999
+#586#.- delete from answer where idanswer=4773188
+============xxxxxxxxxxxxxxxx==============
+(q20200-58-1) 4773515-58-1 -> created: 2011-11-07 11:20:56.0; updated: null
+(q20200-58-1) 5261722-58-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261722 = 9999 (2012-06-18 10:39:49.0)
+4773515 = null (2011-11-07 11:20:56.0)
+***************
+2nd sort
+5261722 = 9999 (null)
+4773515 = null (null)
+===============
+itemRef -> 5261722: 9999
+#588#.- delete from answer where idanswer=4773515
+============xxxxxxxxxxxxxxxx==============
+(q20200-59-1) 4773366-59-1 -> created: 2011-11-07 11:20:45.0; updated: null
+(q20200-59-1) 5261663-59-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261663 = 9999 (2012-06-18 10:39:48.0)
+4773366 = null (2011-11-07 11:20:45.0)
+***************
+2nd sort
+5261663 = 9999 (null)
+4773366 = null (null)
+===============
+itemRef -> 5261663: 9999
+#590#.- delete from answer where idanswer=4773366
+============xxxxxxxxxxxxxxxx==============
+(q20200-60-1) 4773413-60-1 -> created: 2011-11-07 11:20:48.0; updated: null
+(q20200-60-1) 5261679-60-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261679 = 9999 (2012-06-18 10:39:48.0)
+4773413 = null (2011-11-07 11:20:48.0)
+***************
+2nd sort
+5261679 = 9999 (null)
+4773413 = null (null)
+===============
+itemRef -> 5261679: 9999
+#592#.- delete from answer where idanswer=4773413
+============xxxxxxxxxxxxxxxx==============
+(q20200-61-1) 4773266-61-1 -> created: 2011-11-07 11:20:37.0; updated: null
+(q20200-61-1) 5261620-61-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261620 = 9999 (2012-06-18 10:39:47.0)
+4773266 = null (2011-11-07 11:20:37.0)
+***************
+2nd sort
+5261620 = 9999 (null)
+4773266 = null (null)
+===============
+itemRef -> 5261620: 9999
+#594#.- delete from answer where idanswer=4773266
+============xxxxxxxxxxxxxxxx==============
+(q20200-62-1) 4773592-62-1 -> created: 2011-11-07 11:21:02.0; updated: null
+(q20200-62-1) 5261748-62-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261748 = 9999 (2012-06-18 10:39:49.0)
+4773592 = null (2011-11-07 11:21:02.0)
+***************
+2nd sort
+5261748 = 9999 (null)
+4773592 = null (null)
+===============
+itemRef -> 5261748: 9999
+#596#.- delete from answer where idanswer=4773592
+============xxxxxxxxxxxxxxxx==============
+(q20200-63-1) 4773440-63-1 -> created: 2011-11-07 11:20:49.0; updated: null
+(q20200-63-1) 5261689-63-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261689 = 9999 (2012-06-18 10:39:48.0)
+4773440 = null (2011-11-07 11:20:49.0)
+***************
+2nd sort
+5261689 = 9999 (null)
+4773440 = null (null)
+===============
+itemRef -> 5261689: 9999
+#598#.- delete from answer where idanswer=4773440
+============xxxxxxxxxxxxxxxx==============
+(q20200-64-1) 4773295-64-1 -> created: 2011-11-07 11:20:39.0; updated: null
+(q20200-64-1) 5261631-64-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261631 = 9999 (2012-06-18 10:39:48.0)
+4773295 = null (2011-11-07 11:20:39.0)
+***************
+2nd sort
+5261631 = 9999 (null)
+4773295 = null (null)
+===============
+itemRef -> 5261631: 9999
+#600#.- delete from answer where idanswer=4773295
+============xxxxxxxxxxxxxxxx==============
+(q20200-65-1) 4773149-65-1 -> created: 2011-11-07 11:20:30.0; updated: null
+(q20200-65-1) 5261574-65-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261574 = 9999 (2012-06-18 10:39:47.0)
+4773149 = null (2011-11-07 11:20:30.0)
+***************
+2nd sort
+5261574 = 9999 (null)
+4773149 = null (null)
+===============
+itemRef -> 5261574: 9999
+#602#.- delete from answer where idanswer=4773149
+============xxxxxxxxxxxxxxxx==============
+(q20200-66-1) 4773475-66-1 -> created: 2011-11-07 11:20:53.0; updated: null
+(q20200-66-1) 5261704-66-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261704 = 9999 (2012-06-18 10:39:48.0)
+4773475 = null (2011-11-07 11:20:53.0)
+***************
+2nd sort
+5261704 = 9999 (null)
+4773475 = null (null)
+===============
+itemRef -> 5261704: 9999
+#604#.- delete from answer where idanswer=4773475
+============xxxxxxxxxxxxxxxx==============
+(q20200-67-1) 4773329-67-1 -> created: 2011-11-07 11:20:42.0; updated: null
+(q20200-67-1) 5261647-67-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261647 = 9999 (2012-06-18 10:39:48.0)
+4773329 = null (2011-11-07 11:20:42.0)
+***************
+2nd sort
+5261647 = 9999 (null)
+4773329 = null (null)
+===============
+itemRef -> 5261647: 9999
+#606#.- delete from answer where idanswer=4773329
+============xxxxxxxxxxxxxxxx==============
+(q20200-68-1) 4773180-68-1 -> created: 2011-11-07 11:20:31.0; updated: null
+(q20200-68-1) 5261587-68-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261587 = 9999 (2012-06-18 10:39:47.0)
+4773180 = null (2011-11-07 11:20:31.0)
+***************
+2nd sort
+5261587 = 9999 (null)
+4773180 = null (null)
+===============
+itemRef -> 5261587: 9999
+#608#.- delete from answer where idanswer=4773180
+============xxxxxxxxxxxxxxxx==============
+(q20200-69-1) 4773508-69-1 -> created: 2011-11-07 11:20:55.0; updated: null
+(q20200-69-1) 5261717-69-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261717 = 9999 (2012-06-18 10:39:49.0)
+4773508 = null (2011-11-07 11:20:55.0)
+***************
+2nd sort
+5261717 = 9999 (null)
+4773508 = null (null)
+===============
+itemRef -> 5261717: 9999
+#610#.- delete from answer where idanswer=4773508
+============xxxxxxxxxxxxxxxx==============
+(q20200-70-1) 4773560-70-1 -> created: 2011-11-07 11:20:59.0; updated: null
+(q20200-70-1) 5261736-70-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261736 = 9999 (2012-06-18 10:39:49.0)
+4773560 = null (2011-11-07 11:20:59.0)
+***************
+2nd sort
+5261736 = 9999 (null)
+4773560 = null (null)
+===============
+itemRef -> 5261736: 9999
+#612#.- delete from answer where idanswer=4773560
+============xxxxxxxxxxxxxxxx==============
+(q20200-71-1) 4773408-71-1 -> created: 2011-11-07 11:20:47.0; updated: null
+(q20200-71-1) 5261676-71-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261676 = 9999 (2012-06-18 10:39:48.0)
+4773408 = null (2011-11-07 11:20:47.0)
+***************
+2nd sort
+5261676 = 9999 (null)
+4773408 = null (null)
+===============
+itemRef -> 5261676: 9999
+#614#.- delete from answer where idanswer=4773408
+============xxxxxxxxxxxxxxxx==============
+(q20200-72-1) 4773260-72-1 -> created: 2011-11-07 11:20:36.0; updated: null
+(q20200-72-1) 5261617-72-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261617 = 9999 (2012-06-18 10:39:47.0)
+4773260 = null (2011-11-07 11:20:36.0)
+***************
+2nd sort
+5261617 = 9999 (null)
+4773260 = null (null)
+===============
+itemRef -> 5261617: 9999
+#616#.- delete from answer where idanswer=4773260
+============xxxxxxxxxxxxxxxx==============
+(q20200-73-1) 4773586-73-1 -> created: 2011-11-07 11:21:01.0; updated: null
+(q20200-73-1) 5261746-73-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261746 = 9999 (2012-06-18 10:39:49.0)
+4773586 = null (2011-11-07 11:21:01.0)
+***************
+2nd sort
+5261746 = 9999 (null)
+4773586 = null (null)
+===============
+itemRef -> 5261746: 9999
+#618#.- delete from answer where idanswer=4773586
+============xxxxxxxxxxxxxxxx==============
+(q20200-74-1) 4773435-74-1 -> created: 2011-11-07 11:20:49.0; updated: null
+(q20200-74-1) 5261687-74-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261687 = 9999 (2012-06-18 10:39:48.0)
+4773435 = null (2011-11-07 11:20:49.0)
+***************
+2nd sort
+5261687 = 9999 (null)
+4773435 = null (null)
+===============
+itemRef -> 5261687: 9999
+#620#.- delete from answer where idanswer=4773435
+============xxxxxxxxxxxxxxxx==============
+(q20200-75-1) 4773287-75-1 -> created: 2011-11-07 11:20:38.0; updated: null
+(q20200-75-1) 5261628-75-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261628 = 9999 (2012-06-18 10:39:47.0)
+4773287 = null (2011-11-07 11:20:38.0)
+***************
+2nd sort
+5261628 = 9999 (null)
+4773287 = null (null)
+===============
+itemRef -> 5261628: 9999
+#622#.- delete from answer where idanswer=4773287
+============xxxxxxxxxxxxxxxx==============
+(q20200-76-1) 4773617-76-1 -> created: 2011-11-07 11:21:03.0; updated: null
+(q20200-76-1) 5261757-76-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261757 = 9999 (2012-06-18 10:39:49.0)
+4773617 = null (2011-11-07 11:21:03.0)
+***************
+2nd sort
+5261757 = 9999 (null)
+4773617 = null (null)
+===============
+itemRef -> 5261757: 9999
+#624#.- delete from answer where idanswer=4773617
+============xxxxxxxxxxxxxxxx==============
+(q20200-77-1) 4773469-77-1 -> created: 2011-11-07 11:20:51.0; updated: null
+(q20200-77-1) 5261702-77-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261702 = 9999 (2012-06-18 10:39:48.0)
+4773469 = null (2011-11-07 11:20:51.0)
+***************
+2nd sort
+5261702 = 9999 (null)
+4773469 = null (null)
+===============
+itemRef -> 5261702: 9999
+#626#.- delete from answer where idanswer=4773469
+============xxxxxxxxxxxxxxxx==============
+(q20200-78-1) 4773322-78-1 -> created: 2011-11-07 11:20:40.0; updated: null
+(q20200-78-1) 5261642-78-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261642 = 9999 (2012-06-18 10:39:48.0)
+4773322 = null (2011-11-07 11:20:40.0)
+***************
+2nd sort
+5261642 = 9999 (null)
+4773322 = null (null)
+===============
+itemRef -> 5261642: 9999
+#628#.- delete from answer where idanswer=4773322
+============xxxxxxxxxxxxxxxx==============
+(q20200-79-1) 4773173-79-1 -> created: 2011-11-07 11:20:30.0; updated: null
+(q20200-79-1) 5261584-79-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261584 = 9999 (2012-06-18 10:39:47.0)
+4773173 = null (2011-11-07 11:20:30.0)
+***************
+2nd sort
+5261584 = 9999 (null)
+4773173 = null (null)
+===============
+itemRef -> 5261584: 9999
+#630#.- delete from answer where idanswer=4773173
+============xxxxxxxxxxxxxxxx==============
+(q20200-80-1) 4773228-80-1 -> created: 2011-11-07 11:20:35.0; updated: null
+(q20200-80-1) 5261606-80-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261606 = 9999 (2012-06-18 10:39:47.0)
+4773228 = null (2011-11-07 11:20:35.0)
+***************
+2nd sort
+5261606 = 9999 (null)
+4773228 = null (null)
+===============
+itemRef -> 5261606: 9999
+#632#.- delete from answer where idanswer=4773228
+============xxxxxxxxxxxxxxxx==============
+(q20200-81-1) 4773555-81-1 -> created: 2011-11-07 11:20:59.0; updated: null
+(q20200-81-1) 5261734-81-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261734 = 9999 (2012-06-18 10:39:49.0)
+4773555 = null (2011-11-07 11:20:59.0)
+***************
+2nd sort
+5261734 = 9999 (null)
+4773555 = null (null)
+===============
+itemRef -> 5261734: 9999
+#634#.- delete from answer where idanswer=4773555
+============xxxxxxxxxxxxxxxx==============
+(q20200-82-1) 4773402-82-1 -> created: 2011-11-07 11:20:47.0; updated: null
+(q20200-82-1) 5261674-82-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261674 = 9999 (2012-06-18 10:39:48.0)
+4773402 = null (2011-11-07 11:20:47.0)
+***************
+2nd sort
+5261674 = 9999 (null)
+4773402 = null (null)
+===============
+itemRef -> 5261674: 9999
+#636#.- delete from answer where idanswer=4773402
+============xxxxxxxxxxxxxxxx==============
+(q20200-83-1) 4773255-83-1 -> created: 2011-11-07 11:20:36.0; updated: null
+(q20200-83-1) 5261615-83-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261615 = 9999 (2012-06-18 10:39:47.0)
+4773255 = null (2011-11-07 11:20:36.0)
+***************
+2nd sort
+5261615 = 9999 (null)
+4773255 = null (null)
+===============
+itemRef -> 5261615: 9999
+#638#.- delete from answer where idanswer=4773255
+============xxxxxxxxxxxxxxxx==============
+(q20200-84-1) 4773580-84-1 -> created: 2011-11-07 11:21:01.0; updated: null
+(q20200-84-1) 5261744-84-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261744 = 9999 (2012-06-18 10:39:49.0)
+4773580 = null (2011-11-07 11:21:01.0)
+***************
+2nd sort
+5261744 = 9999 (null)
+4773580 = null (null)
+===============
+itemRef -> 5261744: 9999
+#640#.- delete from answer where idanswer=4773580
+============xxxxxxxxxxxxxxxx==============
+(q20200-85-1) 4773428-85-1 -> created: 2011-11-07 11:20:49.0; updated: null
+(q20200-85-1) 5261685-85-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261685 = 9999 (2012-06-18 10:39:48.0)
+4773428 = null (2011-11-07 11:20:49.0)
+***************
+2nd sort
+5261685 = 9999 (null)
+4773428 = null (null)
+===============
+itemRef -> 5261685: 9999
+#642#.- delete from answer where idanswer=4773428
+============xxxxxxxxxxxxxxxx==============
+(q20201-2-1) 4773574-2-1 -> created: 2011-11-07 11:21:01.0; updated: null
+(q20201-2-1) 5261742-2-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261742 = 9999 (2012-06-18 10:39:49.0)
+4773574 = null (2011-11-07 11:21:01.0)
+***************
+2nd sort
+5261742 = 9999 (null)
+4773574 = null (null)
+===============
+itemRef -> 5261742: 9999
+#644#.- delete from answer where idanswer=4773574
+============xxxxxxxxxxxxxxxx==============
+(q20201-3-1) 4773423-3-1 -> created: 2011-11-07 11:20:49.0; updated: null
+(q20201-3-1) 5261683-3-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261683 = 9999 (2012-06-18 10:39:48.0)
+4773423 = null (2011-11-07 11:20:49.0)
+***************
+2nd sort
+5261683 = 9999 (null)
+4773423 = null (null)
+===============
+itemRef -> 5261683: 9999
+#646#.- delete from answer where idanswer=4773423
+============xxxxxxxxxxxxxxxx==============
+(q20201-4-1) 4773279-4-1 -> created: 2011-11-07 11:20:38.0; updated: null
+(q20201-4-1) 5261625-4-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261625 = 9999 (2012-06-18 10:39:47.0)
+4773279 = null (2011-11-07 11:20:38.0)
+***************
+2nd sort
+5261625 = 9999 (null)
+4773279 = null (null)
+===============
+itemRef -> 5261625: 9999
+#648#.- delete from answer where idanswer=4773279
+============xxxxxxxxxxxxxxxx==============
+(q20201-5-1) 4773607-5-1 -> created: 2011-11-07 11:21:02.0; updated: null
+(q20201-5-1) 5261753-5-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261753 = 9999 (2012-06-18 10:39:49.0)
+4773607 = null (2011-11-07 11:21:02.0)
+***************
+2nd sort
+5261753 = 9999 (null)
+4773607 = null (null)
+===============
+itemRef -> 5261753: 9999
+#650#.- delete from answer where idanswer=4773607
+============xxxxxxxxxxxxxxxx==============
+(q20201-6-1) 4773457-6-1 -> created: 2011-11-07 11:20:51.0; updated: null
+(q20201-6-1) 5261697-6-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261697 = 9999 (2012-06-18 10:39:48.0)
+4773457 = null (2011-11-07 11:20:51.0)
+***************
+2nd sort
+5261697 = 9999 (null)
+4773457 = null (null)
+===============
+itemRef -> 5261697: 9999
+#652#.- delete from answer where idanswer=4773457
+============xxxxxxxxxxxxxxxx==============
+(q20201-7-1) 4773309-7-1 -> created: 2011-11-07 11:20:39.0; updated: null
+(q20201-7-1) 5261637-7-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261637 = 9999 (2012-06-18 10:39:48.0)
+4773309 = null (2011-11-07 11:20:39.0)
+***************
+2nd sort
+5261637 = 9999 (null)
+4773309 = null (null)
+===============
+itemRef -> 5261637: 9999
+#654#.- delete from answer where idanswer=4773309
+============xxxxxxxxxxxxxxxx==============
+(q20201-8-1) 4773162-8-1 -> created: 2011-11-07 11:20:30.0; updated: null
+(q20201-8-1) 5261579-8-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261579 = 9999 (2012-06-18 10:39:47.0)
+4773162 = null (2011-11-07 11:20:30.0)
+***************
+2nd sort
+5261579 = 9999 (null)
+4773162 = null (null)
+===============
+itemRef -> 5261579: 9999
+#656#.- delete from answer where idanswer=4773162
+============xxxxxxxxxxxxxxxx==============
+(q20201-9-1) 4773490-9-1 -> created: 2011-11-07 11:20:53.0; updated: null
+(q20201-9-1) 5261709-9-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261709 = 9999 (2012-06-18 10:39:48.0)
+4773490 = null (2011-11-07 11:20:53.0)
+***************
+2nd sort
+5261709 = 9999 (null)
+4773490 = null (null)
+===============
+itemRef -> 5261709: 9999
+#658#.- delete from answer where idanswer=4773490
+============xxxxxxxxxxxxxxxx==============
+(q20201-10-1) 4773454-10-1 -> created: 2011-11-07 11:20:51.0; updated: null
+(q20201-10-1) 5261696-10-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261696 = 9999 (2012-06-18 10:39:48.0)
+4773454 = null (2011-11-07 11:20:51.0)
+***************
+2nd sort
+5261696 = 9999 (null)
+4773454 = null (null)
+===============
+itemRef -> 5261696: 9999
+#660#.- delete from answer where idanswer=4773454
+============xxxxxxxxxxxxxxxx==============
+(q20201-11-1) 4773307-11-1 -> created: 2011-11-07 11:20:39.0; updated: null
+(q20201-11-1) 5261636-11-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261636 = 9999 (2012-06-18 10:39:48.0)
+4773307 = null (2011-11-07 11:20:39.0)
+***************
+2nd sort
+5261636 = 9999 (null)
+4773307 = null (null)
+===============
+itemRef -> 5261636: 9999
+#662#.- delete from answer where idanswer=4773307
+============xxxxxxxxxxxxxxxx==============
+(q20201-12-1) 4773160-12-1 -> created: 2011-11-07 11:20:30.0; updated: null
+(q20201-12-1) 5261578-12-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261578 = 9999 (2012-06-18 10:39:47.0)
+4773160 = null (2011-11-07 11:20:30.0)
+***************
+2nd sort
+5261578 = 9999 (null)
+4773160 = null (null)
+===============
+itemRef -> 5261578: 9999
+#664#.- delete from answer where idanswer=4773160
+============xxxxxxxxxxxxxxxx==============
+(q20201-13-1) 4773487-13-1 -> created: 2011-11-07 11:20:53.0; updated: null
+(q20201-13-1) 5261708-13-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261708 = 9999 (2012-06-18 10:39:48.0)
+4773487 = null (2011-11-07 11:20:53.0)
+***************
+2nd sort
+5261708 = 9999 (null)
+4773487 = null (null)
+===============
+itemRef -> 5261708: 9999
+#666#.- delete from answer where idanswer=4773487
+============xxxxxxxxxxxxxxxx==============
+(q20201-14-1) 4773341-14-1 -> created: 2011-11-07 11:20:42.0; updated: null
+(q20201-14-1) 5261651-14-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261651 = 9999 (2012-06-18 10:39:48.0)
+4773341 = null (2011-11-07 11:20:42.0)
+***************
+2nd sort
+5261651 = 9999 (null)
+4773341 = null (null)
+===============
+itemRef -> 5261651: 9999
+#668#.- delete from answer where idanswer=4773341
+============xxxxxxxxxxxxxxxx==============
+(q20201-15-1) 4773192-15-1 -> created: 2011-11-07 11:20:33.0; updated: null
+(q20201-15-1) 5261594-15-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261594 = 9999 (2012-06-18 10:39:47.0)
+4773192 = null (2011-11-07 11:20:33.0)
+***************
+2nd sort
+5261594 = 9999 (null)
+4773192 = null (null)
+===============
+itemRef -> 5261594: 9999
+#670#.- delete from answer where idanswer=4773192
+============xxxxxxxxxxxxxxxx==============
+(q20201-16-1) 4773519-16-1 -> created: 2011-11-07 11:20:56.0; updated: null
+(q20201-16-1) 5261723-16-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261723 = 9999 (2012-06-18 10:39:49.0)
+4773519 = null (2011-11-07 11:20:56.0)
+***************
+2nd sort
+5261723 = 9999 (null)
+4773519 = null (null)
+===============
+itemRef -> 5261723: 9999
+#672#.- delete from answer where idanswer=4773519
+============xxxxxxxxxxxxxxxx==============
+(q20201-17-1) 4773370-17-1 -> created: 2011-11-07 11:20:45.0; updated: null
+(q20201-17-1) 5261664-17-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261664 = 9999 (2012-06-18 10:39:48.0)
+4773370 = null (2011-11-07 11:20:45.0)
+***************
+2nd sort
+5261664 = 9999 (null)
+4773370 = null (null)
+===============
+itemRef -> 5261664: 9999
+#674#.- delete from answer where idanswer=4773370
+============xxxxxxxxxxxxxxxx==============
+(q20201-18-1) 4773221-18-1 -> created: 2011-11-07 11:20:35.0; updated: null
+(q20201-18-1) 5261604-18-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261604 = 9999 (2012-06-18 10:39:47.0)
+4773221 = null (2011-11-07 11:20:35.0)
+***************
+2nd sort
+5261604 = 9999 (null)
+4773221 = null (null)
+===============
+itemRef -> 5261604: 9999
+#676#.- delete from answer where idanswer=4773221
+============xxxxxxxxxxxxxxxx==============
+(q20201-19-1) 4773547-19-1 -> created: 2011-11-07 11:20:59.0; updated: null
+(q20201-19-1) 5261732-19-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261732 = 9999 (2012-06-18 10:39:49.0)
+4773547 = null (2011-11-07 11:20:59.0)
+***************
+2nd sort
+5261732 = 9999 (null)
+4773547 = null (null)
+===============
+itemRef -> 5261732: 9999
+#678#.- delete from answer where idanswer=4773547
+============xxxxxxxxxxxxxxxx==============
+(q20201-20-1) 4773599-20-1 -> created: 2011-11-07 11:21:02.0; updated: null
+(q20201-20-1) 5261750-20-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261750 = 9999 (2012-06-18 10:39:49.0)
+4773599 = null (2011-11-07 11:21:02.0)
+***************
+2nd sort
+5261750 = 9999 (null)
+4773599 = null (null)
+===============
+itemRef -> 5261750: 9999
+#680#.- delete from answer where idanswer=4773599
+============xxxxxxxxxxxxxxxx==============
+(q20201-21-1) 4773447-21-1 -> created: 2011-11-07 11:20:50.0; updated: null
+(q20201-21-1) 5261693-21-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261693 = 9999 (2012-06-18 10:39:48.0)
+4773447 = null (2011-11-07 11:20:50.0)
+***************
+2nd sort
+5261693 = 9999 (null)
+4773447 = null (null)
+===============
+itemRef -> 5261693: 9999
+#682#.- delete from answer where idanswer=4773447
+============xxxxxxxxxxxxxxxx==============
+(q20201-22-1) 4773300-22-1 -> created: 2011-11-07 11:20:39.0; updated: null
+(q20201-22-1) 5261633-22-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261633 = 9999 (2012-06-18 10:39:48.0)
+4773300 = null (2011-11-07 11:20:39.0)
+***************
+2nd sort
+5261633 = 9999 (null)
+4773300 = null (null)
+===============
+itemRef -> 5261633: 9999
+#684#.- delete from answer where idanswer=4773300
+============xxxxxxxxxxxxxxxx==============
+(q20201-23-1) 4773155-23-1 -> created: 2011-11-07 11:20:30.0; updated: null
+(q20201-23-1) 5261576-23-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261576 = 9999 (2012-06-18 10:39:47.0)
+4773155 = null (2011-11-07 11:20:30.0)
+***************
+2nd sort
+5261576 = 9999 (null)
+4773155 = null (null)
+===============
+itemRef -> 5261576: 9999
+#686#.- delete from answer where idanswer=4773155
+============xxxxxxxxxxxxxxxx==============
+(q20201-24-1) 4773480-24-1 -> created: 2011-11-07 11:20:53.0; updated: null
+(q20201-24-1) 5261706-24-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261706 = 9999 (2012-06-18 10:39:48.0)
+4773480 = null (2011-11-07 11:20:53.0)
+***************
+2nd sort
+5261706 = 9999 (null)
+4773480 = null (null)
+===============
+itemRef -> 5261706: 9999
+#688#.- delete from answer where idanswer=4773480
+============xxxxxxxxxxxxxxxx==============
+(q20201-25-1) 4773334-25-1 -> created: 2011-11-07 11:20:42.0; updated: null
+(q20201-25-1) 5261649-25-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261649 = 9999 (2012-06-18 10:39:48.0)
+4773334 = null (2011-11-07 11:20:42.0)
+***************
+2nd sort
+5261649 = 9999 (null)
+4773334 = null (null)
+===============
+itemRef -> 5261649: 9999
+#690#.- delete from answer where idanswer=4773334
+============xxxxxxxxxxxxxxxx==============
+(q20201-26-1) 4773186-26-1 -> created: 2011-11-07 11:20:33.0; updated: null
+(q20201-26-1) 5261592-26-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261592 = 9999 (2012-06-18 10:39:47.0)
+4773186 = null (2011-11-07 11:20:33.0)
+***************
+2nd sort
+5261592 = 9999 (null)
+4773186 = null (null)
+===============
+itemRef -> 5261592: 9999
+#692#.- delete from answer where idanswer=4773186
+============xxxxxxxxxxxxxxxx==============
+(q20201-27-1) 4773513-27-1 -> created: 2011-11-07 11:20:56.0; updated: null
+(q20201-27-1) 5261721-27-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261721 = 9999 (2012-06-18 10:39:49.0)
+4773513 = null (2011-11-07 11:20:56.0)
+***************
+2nd sort
+5261721 = 9999 (null)
+4773513 = null (null)
+===============
+itemRef -> 5261721: 9999
+#694#.- delete from answer where idanswer=4773513
+============xxxxxxxxxxxxxxxx==============
+(q20201-28-1) 4773364-28-1 -> created: 2011-11-07 11:20:45.0; updated: null
+(q20201-28-1) 5261662-28-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261662 = 9999 (2012-06-18 10:39:48.0)
+4773364 = null (2011-11-07 11:20:45.0)
+***************
+2nd sort
+5261662 = 9999 (null)
+4773364 = null (null)
+===============
+itemRef -> 5261662: 9999
+#696#.- delete from answer where idanswer=4773364
+============xxxxxxxxxxxxxxxx==============
+(q20201-29-1) 4773215-29-1 -> created: 2011-11-07 11:20:35.0; updated: null
+(q20201-29-1) 5261602-29-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261602 = 9999 (2012-06-18 10:39:47.0)
+4773215 = null (2011-11-07 11:20:35.0)
+***************
+2nd sort
+5261602 = 9999 (null)
+4773215 = null (null)
+===============
+itemRef -> 5261602: 9999
+#698#.- delete from answer where idanswer=4773215
+============xxxxxxxxxxxxxxxx==============
+(q20201-30-1) 4773263-30-1 -> created: 2011-11-07 11:20:36.0; updated: null
+(q20201-30-1) 5261618-30-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261618 = 9999 (2012-06-18 10:39:47.0)
+4773263 = null (2011-11-07 11:20:36.0)
+***************
+2nd sort
+5261618 = 9999 (null)
+4773263 = null (null)
+===============
+itemRef -> 5261618: 9999
+#700#.- delete from answer where idanswer=4773263
+============xxxxxxxxxxxxxxxx==============
+(q20201-31-1) 4773589-31-1 -> created: 2011-11-07 11:21:02.0; updated: null
+(q20201-31-1) 5261747-31-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261747 = 9999 (2012-06-18 10:39:49.0)
+4773589 = null (2011-11-07 11:21:02.0)
+***************
+2nd sort
+5261747 = 9999 (null)
+4773589 = null (null)
+===============
+itemRef -> 5261747: 9999
+#702#.- delete from answer where idanswer=4773589
+============xxxxxxxxxxxxxxxx==============
+(q20201-32-1) 4773438-32-1 -> created: 2011-11-07 11:20:49.0; updated: null
+(q20201-32-1) 5261688-32-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261688 = 9999 (2012-06-18 10:39:48.0)
+4773438 = null (2011-11-07 11:20:49.0)
+***************
+2nd sort
+5261688 = 9999 (null)
+4773438 = null (null)
+===============
+itemRef -> 5261688: 9999
+#704#.- delete from answer where idanswer=4773438
+============xxxxxxxxxxxxxxxx==============
+(q20201-33-1) 4773293-33-1 -> created: 2011-11-07 11:20:38.0; updated: null
+(q20201-33-1) 5261629-33-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261629 = 9999 (2012-06-18 10:39:47.0)
+4773293 = null (2011-11-07 11:20:38.0)
+***************
+2nd sort
+5261629 = 9999 (null)
+4773293 = null (null)
+===============
+itemRef -> 5261629: 9999
+#706#.- delete from answer where idanswer=4773293
+============xxxxxxxxxxxxxxxx==============
+(q20201-34-1) 4773147-34-1 -> created: 2011-11-07 11:20:29.0; updated: null
+(q20201-34-1) 5261572-34-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261572 = 9999 (2012-06-18 10:39:47.0)
+4773147 = null (2011-11-07 11:20:29.0)
+***************
+2nd sort
+5261572 = 9999 (null)
+4773147 = null (null)
+===============
+itemRef -> 5261572: 9999
+#708#.- delete from answer where idanswer=4773147
+============xxxxxxxxxxxxxxxx==============
+(q20201-35-1) 4773473-35-1 -> created: 2011-11-07 11:20:52.0; updated: null
+(q20201-35-1) 5261703-35-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261703 = 9999 (2012-06-18 10:39:48.0)
+4773473 = null (2011-11-07 11:20:52.0)
+***************
+2nd sort
+5261703 = 9999 (null)
+4773473 = null (null)
+===============
+itemRef -> 5261703: 9999
+#710#.- delete from answer where idanswer=4773473
+============xxxxxxxxxxxxxxxx==============
+(q20201-36-1) 4773327-36-1 -> created: 2011-11-07 11:20:41.0; updated: null
+(q20201-36-1) 5261645-36-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261645 = 9999 (2012-06-18 10:39:48.0)
+4773327 = null (2011-11-07 11:20:41.0)
+***************
+2nd sort
+5261645 = 9999 (null)
+4773327 = null (null)
+===============
+itemRef -> 5261645: 9999
+#712#.- delete from answer where idanswer=4773327
+============xxxxxxxxxxxxxxxx==============
+(q20201-37-1) 4773178-37-1 -> created: 2011-11-07 11:20:31.0; updated: null
+(q20201-37-1) 5261586-37-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261586 = 9999 (2012-06-18 10:39:47.0)
+4773178 = null (2011-11-07 11:20:31.0)
+***************
+2nd sort
+5261586 = 9999 (null)
+4773178 = null (null)
+===============
+itemRef -> 5261586: 9999
+#714#.- delete from answer where idanswer=4773178
+============xxxxxxxxxxxxxxxx==============
+(q20201-38-1) 4773506-38-1 -> created: 2011-11-07 11:20:54.0; updated: null
+(q20201-38-1) 5261715-38-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261715 = 9999 (2012-06-18 10:39:49.0)
+4773506 = null (2011-11-07 11:20:54.0)
+***************
+2nd sort
+5261715 = 9999 (null)
+4773506 = null (null)
+===============
+itemRef -> 5261715: 9999
+#716#.- delete from answer where idanswer=4773506
+============xxxxxxxxxxxxxxxx==============
+(q20201-39-1) 4773357-39-1 -> created: 2011-11-07 11:20:43.0; updated: null
+(q20201-39-1) 5261656-39-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261656 = 9999 (2012-06-18 10:39:48.0)
+4773357 = null (2011-11-07 11:20:43.0)
+***************
+2nd sort
+5261656 = 9999 (null)
+4773357 = null (null)
+===============
+itemRef -> 5261656: 9999
+#718#.- delete from answer where idanswer=4773357
+============xxxxxxxxxxxxxxxx==============
+(q20201-40-1) 4773405-40-1 -> created: 2011-11-07 11:20:47.0; updated: null
+(q20201-40-1) 5261675-40-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261675 = 9999 (2012-06-18 10:39:48.0)
+4773405 = null (2011-11-07 11:20:47.0)
+***************
+2nd sort
+5261675 = 9999 (null)
+4773405 = null (null)
+===============
+itemRef -> 5261675: 9999
+#720#.- delete from answer where idanswer=4773405
+============xxxxxxxxxxxxxxxx==============
+(q20201-41-1) 4773258-41-1 -> created: 2011-11-07 11:20:36.0; updated: null
+(q20201-41-1) 5261616-41-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261616 = 9999 (2012-06-18 10:39:47.0)
+4773258 = null (2011-11-07 11:20:36.0)
+***************
+2nd sort
+5261616 = 9999 (null)
+4773258 = null (null)
+===============
+itemRef -> 5261616: 9999
+#722#.- delete from answer where idanswer=4773258
+============xxxxxxxxxxxxxxxx==============
+(q20201-42-1) 4773584-42-1 -> created: 2011-11-07 11:21:01.0; updated: null
+(q20201-42-1) 5261745-42-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261745 = 9999 (2012-06-18 10:39:49.0)
+4773584 = null (2011-11-07 11:21:01.0)
+***************
+2nd sort
+5261745 = 9999 (null)
+4773584 = null (null)
+===============
+itemRef -> 5261745: 9999
+#724#.- delete from answer where idanswer=4773584
+============xxxxxxxxxxxxxxxx==============
+(q20201-43-1) 4773433-43-1 -> created: 2011-11-07 11:20:49.0; updated: null
+(q20201-43-1) 5261686-43-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261686 = 9999 (2012-06-18 10:39:48.0)
+4773433 = null (2011-11-07 11:20:49.0)
+***************
+2nd sort
+5261686 = 9999 (null)
+4773433 = null (null)
+===============
+itemRef -> 5261686: 9999
+#726#.- delete from answer where idanswer=4773433
+============xxxxxxxxxxxxxxxx==============
+(q20201-44-1) 4773285-44-1 -> created: 2011-11-07 11:20:38.0; updated: null
+(q20201-44-1) 5261627-44-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261627 = 9999 (2012-06-18 10:39:47.0)
+4773285 = null (2011-11-07 11:20:38.0)
+***************
+2nd sort
+5261627 = 9999 (null)
+4773285 = null (null)
+===============
+itemRef -> 5261627: 9999
+#728#.- delete from answer where idanswer=4773285
+============xxxxxxxxxxxxxxxx==============
+(q20201-45-1) 4773615-45-1 -> created: 2011-11-07 11:21:03.0; updated: null
+(q20201-45-1) 5261756-45-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261756 = 9999 (2012-06-18 10:39:49.0)
+4773615 = null (2011-11-07 11:21:03.0)
+***************
+2nd sort
+5261756 = 9999 (null)
+4773615 = null (null)
+===============
+itemRef -> 5261756: 9999
+#730#.- delete from answer where idanswer=4773615
+============xxxxxxxxxxxxxxxx==============
+(q20201-46-1) 4773467-46-1 -> created: 2011-11-07 11:20:51.0; updated: null
+(q20201-46-1) 5261701-46-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261701 = 9999 (2012-06-18 10:39:48.0)
+4773467 = null (2011-11-07 11:20:51.0)
+***************
+2nd sort
+5261701 = 9999 (null)
+4773467 = null (null)
+===============
+itemRef -> 5261701: 9999
+#732#.- delete from answer where idanswer=4773467
+============xxxxxxxxxxxxxxxx==============
+(q20201-47-1) 4773320-47-1 -> created: 2011-11-07 11:20:40.0; updated: null
+(q20201-47-1) 5261641-47-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261641 = 9999 (2012-06-18 10:39:48.0)
+4773320 = null (2011-11-07 11:20:40.0)
+***************
+2nd sort
+5261641 = 9999 (null)
+4773320 = null (null)
+===============
+itemRef -> 5261641: 9999
+#734#.- delete from answer where idanswer=4773320
+============xxxxxxxxxxxxxxxx==============
+(q20201-48-1) 4773171-48-1 -> created: 2011-11-07 11:20:30.0; updated: null
+(q20201-48-1) 5261583-48-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261583 = 9999 (2012-06-18 10:39:47.0)
+4773171 = null (2011-11-07 11:20:30.0)
+***************
+2nd sort
+5261583 = 9999 (null)
+4773171 = null (null)
+===============
+itemRef -> 5261583: 9999
+#736#.- delete from answer where idanswer=4773171
+============xxxxxxxxxxxxxxxx==============
+(q20201-49-1) 4773498-49-1 -> created: 2011-11-07 11:20:54.0; updated: null
+(q20201-49-1) 5261712-49-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261712 = 9999 (2012-06-18 10:39:48.0)
+4773498 = null (2011-11-07 11:20:54.0)
+***************
+2nd sort
+5261712 = 9999 (null)
+4773498 = null (null)
+===============
+itemRef -> 5261712: 9999
+#738#.- delete from answer where idanswer=4773498
+============xxxxxxxxxxxxxxxx==============
+(q20201-50-1) 4773552-50-1 -> created: 2011-11-07 11:20:59.0; updated: null
+(q20201-50-1) 5261733-50-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261733 = 9999 (2012-06-18 10:39:49.0)
+4773552 = null (2011-11-07 11:20:59.0)
+***************
+2nd sort
+5261733 = 9999 (null)
+4773552 = null (null)
+===============
+itemRef -> 5261733: 9999
+#740#.- delete from answer where idanswer=4773552
+============xxxxxxxxxxxxxxxx==============
+(q20201-51-1) 4773400-51-1 -> created: 2011-11-07 11:20:47.0; updated: null
+(q20201-51-1) 5261673-51-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261673 = 9999 (2012-06-18 10:39:48.0)
+4773400 = null (2011-11-07 11:20:47.0)
+***************
+2nd sort
+5261673 = 9999 (null)
+4773400 = null (null)
+===============
+itemRef -> 5261673: 9999
+#742#.- delete from answer where idanswer=4773400
+============xxxxxxxxxxxxxxxx==============
+(q20201-52-1) 4773253-52-1 -> created: 2011-11-07 11:20:36.0; updated: null
+(q20201-52-1) 5261614-52-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261614 = 9999 (2012-06-18 10:39:47.0)
+4773253 = null (2011-11-07 11:20:36.0)
+***************
+2nd sort
+5261614 = 9999 (null)
+4773253 = null (null)
+===============
+itemRef -> 5261614: 9999
+#744#.- delete from answer where idanswer=4773253
+============xxxxxxxxxxxxxxxx==============
+(q20201-53-1) 4773578-53-1 -> created: 2011-11-07 11:21:01.0; updated: null
+(q20201-53-1) 5261743-53-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261743 = 9999 (2012-06-18 10:39:49.0)
+4773578 = null (2011-11-07 11:21:01.0)
+***************
+2nd sort
+5261743 = 9999 (null)
+4773578 = null (null)
+===============
+itemRef -> 5261743: 9999
+#746#.- delete from answer where idanswer=4773578
+============xxxxxxxxxxxxxxxx==============
+(q20201-54-1) 4773426-54-1 -> created: 2011-11-07 11:20:49.0; updated: null
+(q20201-54-1) 5261684-54-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261684 = 9999 (2012-06-18 10:39:48.0)
+4773426 = null (2011-11-07 11:20:49.0)
+***************
+2nd sort
+5261684 = 9999 (null)
+4773426 = null (null)
+===============
+itemRef -> 5261684: 9999
+#748#.- delete from answer where idanswer=4773426
+============xxxxxxxxxxxxxxxx==============
+(q20201-55-1) 4773281-55-1 -> created: 2011-11-07 11:20:38.0; updated: null
+(q20201-55-1) 5261626-55-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261626 = 9999 (2012-06-18 10:39:47.0)
+4773281 = null (2011-11-07 11:20:38.0)
+***************
+2nd sort
+5261626 = 9999 (null)
+4773281 = null (null)
+===============
+itemRef -> 5261626: 9999
+#750#.- delete from answer where idanswer=4773281
+============xxxxxxxxxxxxxxxx==============
+(q20201-56-1) 4773611-56-1 -> created: 2011-11-07 11:21:03.0; updated: null
+(q20201-56-1) 5261755-56-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261755 = 9999 (2012-06-18 10:39:49.0)
+4773611 = null (2011-11-07 11:21:03.0)
+***************
+2nd sort
+5261755 = 9999 (null)
+4773611 = null (null)
+===============
+itemRef -> 5261755: 9999
+#752#.- delete from answer where idanswer=4773611
+============xxxxxxxxxxxxxxxx==============
+(q20201-57-1) 4773461-57-1 -> created: 2011-11-07 11:20:51.0; updated: null
+(q20201-57-1) 5261699-57-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261699 = 9999 (2012-06-18 10:39:48.0)
+4773461 = null (2011-11-07 11:20:51.0)
+***************
+2nd sort
+5261699 = 9999 (null)
+4773461 = null (null)
+===============
+itemRef -> 5261699: 9999
+#754#.- delete from answer where idanswer=4773461
+============xxxxxxxxxxxxxxxx==============
+(q20201-58-1) 4773313-58-1 -> created: 2011-11-07 11:20:39.0; updated: null
+(q20201-58-1) 5261639-58-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261639 = 9999 (2012-06-18 10:39:48.0)
+4773313 = null (2011-11-07 11:20:39.0)
+***************
+2nd sort
+5261639 = 9999 (null)
+4773313 = null (null)
+===============
+itemRef -> 5261639: 9999
+#756#.- delete from answer where idanswer=4773313
+============xxxxxxxxxxxxxxxx==============
+(q20201-59-1) 4773166-59-1 -> created: 2011-11-07 11:20:30.0; updated: null
+(q20201-59-1) 5261581-59-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261581 = 9999 (2012-06-18 10:39:47.0)
+4773166 = null (2011-11-07 11:20:30.0)
+***************
+2nd sort
+5261581 = 9999 (null)
+4773166 = null (null)
+===============
+itemRef -> 5261581: 9999
+#758#.- delete from answer where idanswer=4773166
+============xxxxxxxxxxxxxxxx==============
+(q20201-60-1) 4773220-60-1 -> created: 2011-11-07 11:20:35.0; updated: null
+(q20201-60-1) 5261603-60-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261603 = 9999 (2012-06-18 10:39:47.0)
+4773220 = null (2011-11-07 11:20:35.0)
+***************
+2nd sort
+5261603 = 9999 (null)
+4773220 = null (null)
+===============
+itemRef -> 5261603: 9999
+#760#.- delete from answer where idanswer=4773220
+============xxxxxxxxxxxxxxxx==============
+(q20201-61-1) 4773546-61-1 -> created: 2011-11-07 11:20:59.0; updated: null
+(q20201-61-1) 5261731-61-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261731 = 9999 (2012-06-18 10:39:49.0)
+4773546 = null (2011-11-07 11:20:59.0)
+***************
+2nd sort
+5261731 = 9999 (null)
+4773546 = null (null)
+===============
+itemRef -> 5261731: 9999
+#762#.- delete from answer where idanswer=4773546
+============xxxxxxxxxxxxxxxx==============
+(q20201-62-1) 4773395-62-1 -> created: 2011-11-07 11:20:47.0; updated: null
+(q20201-62-1) 5261672-62-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261672 = 9999 (2012-06-18 10:39:48.0)
+4773395 = null (2011-11-07 11:20:47.0)
+***************
+2nd sort
+5261672 = 9999 (null)
+4773395 = null (null)
+===============
+itemRef -> 5261672: 9999
+#764#.- delete from answer where idanswer=4773395
+============xxxxxxxxxxxxxxxx==============
+(q20201-63-1) 4773247-63-1 -> created: 2011-11-07 11:20:36.0; updated: null
+(q20201-63-1) 5261613-63-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261613 = 9999 (2012-06-18 10:39:47.0)
+4773247 = null (2011-11-07 11:20:36.0)
+***************
+2nd sort
+5261613 = 9999 (null)
+4773247 = null (null)
+===============
+itemRef -> 5261613: 9999
+#766#.- delete from answer where idanswer=4773247
+============xxxxxxxxxxxxxxxx==============
+(q20201-64-1) 4773571-64-1 -> created: 2011-11-07 11:21:01.0; updated: null
+(q20201-64-1) 5261741-64-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261741 = 9999 (2012-06-18 10:39:49.0)
+4773571 = null (2011-11-07 11:21:01.0)
+***************
+2nd sort
+5261741 = 9999 (null)
+4773571 = null (null)
+===============
+itemRef -> 5261741: 9999
+#768#.- delete from answer where idanswer=4773571
+============xxxxxxxxxxxxxxxx==============
+(q20201-65-1) 4773419-65-1 -> created: 2011-11-07 11:20:49.0; updated: null
+(q20201-65-1) 5261682-65-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261682 = 9999 (2012-06-18 10:39:48.0)
+4773419 = null (2011-11-07 11:20:49.0)
+***************
+2nd sort
+5261682 = 9999 (null)
+4773419 = null (null)
+===============
+itemRef -> 5261682: 9999
+#770#.- delete from answer where idanswer=4773419
+============xxxxxxxxxxxxxxxx==============
+(q20201-66-1) 4773276-66-1 -> created: 2011-11-07 11:20:38.0; updated: null
+(q20201-66-1) 5261624-66-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261624 = 9999 (2012-06-18 10:39:47.0)
+4773276 = null (2011-11-07 11:20:38.0)
+***************
+2nd sort
+5261624 = 9999 (null)
+4773276 = null (null)
+===============
+itemRef -> 5261624: 9999
+#772#.- delete from answer where idanswer=4773276
+============xxxxxxxxxxxxxxxx==============
+(q20201-67-1) 4773604-67-1 -> created: 2011-11-07 11:21:02.0; updated: null
+(q20201-67-1) 5261752-67-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261752 = 9999 (2012-06-18 10:39:49.0)
+4773604 = null (2011-11-07 11:21:02.0)
+***************
+2nd sort
+5261752 = 9999 (null)
+4773604 = null (null)
+===============
+itemRef -> 5261752: 9999
+#774#.- delete from answer where idanswer=4773604
+============xxxxxxxxxxxxxxxx==============
+(q20201-68-1) 4773452-68-1 -> created: 2011-11-07 11:20:51.0; updated: null
+(q20201-68-1) 5261695-68-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261695 = 9999 (2012-06-18 10:39:48.0)
+4773452 = null (2011-11-07 11:20:51.0)
+***************
+2nd sort
+5261695 = 9999 (null)
+4773452 = null (null)
+===============
+itemRef -> 5261695: 9999
+#776#.- delete from answer where idanswer=4773452
+============xxxxxxxxxxxxxxxx==============
+(q20201-69-1) 4773305-69-1 -> created: 2011-11-07 11:20:39.0; updated: null
+(q20201-69-1) 5261635-69-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261635 = 9999 (2012-06-18 10:39:48.0)
+4773305 = null (2011-11-07 11:20:39.0)
+***************
+2nd sort
+5261635 = 9999 (null)
+4773305 = null (null)
+===============
+itemRef -> 5261635: 9999
+#778#.- delete from answer where idanswer=4773305
+============xxxxxxxxxxxxxxxx==============
+(q20201-70-1) 4773363-70-1 -> created: 2011-11-07 11:20:45.0; updated: null
+(q20201-70-1) 5261661-70-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261661 = 9999 (2012-06-18 10:39:48.0)
+4773363 = null (2011-11-07 11:20:45.0)
+***************
+2nd sort
+5261661 = 9999 (null)
+4773363 = null (null)
+===============
+itemRef -> 5261661: 9999
+#780#.- delete from answer where idanswer=4773363
+============xxxxxxxxxxxxxxxx==============
+(q20201-71-1) 4773214-71-1 -> created: 2011-11-07 11:20:35.0; updated: null
+(q20201-71-1) 5261601-71-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261601 = 9999 (2012-06-18 10:39:47.0)
+4773214 = null (2011-11-07 11:20:35.0)
+***************
+2nd sort
+5261601 = 9999 (null)
+4773214 = null (null)
+===============
+itemRef -> 5261601: 9999
+#782#.- delete from answer where idanswer=4773214
+============xxxxxxxxxxxxxxxx==============
+(q20201-72-1) 4773540-72-1 -> created: 2011-11-07 11:20:58.0; updated: null
+(q20201-72-1) 5261730-72-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261730 = 9999 (2012-06-18 10:39:49.0)
+4773540 = null (2011-11-07 11:20:58.0)
+***************
+2nd sort
+5261730 = 9999 (null)
+4773540 = null (null)
+===============
+itemRef -> 5261730: 9999
+#784#.- delete from answer where idanswer=4773540
+============xxxxxxxxxxxxxxxx==============
+(q20201-73-1) 4773389-73-1 -> created: 2011-11-07 11:20:47.0; updated: null
+(q20201-73-1) 5261671-73-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261671 = 9999 (2012-06-18 10:39:48.0)
+4773389 = null (2011-11-07 11:20:47.0)
+***************
+2nd sort
+5261671 = 9999 (null)
+4773389 = null (null)
+===============
+itemRef -> 5261671: 9999
+#786#.- delete from answer where idanswer=4773389
+============xxxxxxxxxxxxxxxx==============
+(q20201-74-1) 4773240-74-1 -> created: 2011-11-07 11:20:36.0; updated: null
+(q20201-74-1) 5261612-74-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261612 = 9999 (2012-06-18 10:39:47.0)
+4773240 = null (2011-11-07 11:20:36.0)
+***************
+2nd sort
+5261612 = 9999 (null)
+4773240 = null (null)
+===============
+itemRef -> 5261612: 9999
+#788#.- delete from answer where idanswer=4773240
+============xxxxxxxxxxxxxxxx==============
+(q20201-75-1) 4773566-75-1 -> created: 2011-11-07 11:21:00.0; updated: null
+(q20201-75-1) 5261740-75-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261740 = 9999 (2012-06-18 10:39:49.0)
+4773566 = null (2011-11-07 11:21:00.0)
+***************
+2nd sort
+5261740 = 9999 (null)
+4773566 = null (null)
+===============
+itemRef -> 5261740: 9999
+#790#.- delete from answer where idanswer=4773566
+============xxxxxxxxxxxxxxxx==============
+(q20201-76-1) 4773416-76-1 -> created: 2011-11-07 11:20:48.0; updated: null
+(q20201-76-1) 5261681-76-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261681 = 9999 (2012-06-18 10:39:48.0)
+4773416 = null (2011-11-07 11:20:48.0)
+***************
+2nd sort
+5261681 = 9999 (null)
+4773416 = null (null)
+===============
+itemRef -> 5261681: 9999
+#792#.- delete from answer where idanswer=4773416
+============xxxxxxxxxxxxxxxx==============
+(q20201-77-1) 4773269-77-1 -> created: 2011-11-07 11:20:38.0; updated: null
+(q20201-77-1) 5261622-77-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261622 = 9999 (2012-06-18 10:39:47.0)
+4773269 = null (2011-11-07 11:20:38.0)
+***************
+2nd sort
+5261622 = 9999 (null)
+4773269 = null (null)
+===============
+itemRef -> 5261622: 9999
+#794#.- delete from answer where idanswer=4773269
+============xxxxxxxxxxxxxxxx==============
+(q20201-78-1) 4773595-78-1 -> created: 2011-11-07 11:21:02.0; updated: null
+(q20201-78-1) 5261749-78-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261749 = 9999 (2012-06-18 10:39:49.0)
+4773595 = null (2011-11-07 11:21:02.0)
+***************
+2nd sort
+5261749 = 9999 (null)
+4773595 = null (null)
+===============
+itemRef -> 5261749: 9999
+#796#.- delete from answer where idanswer=4773595
+============xxxxxxxxxxxxxxxx==============
+(q20201-79-1) 4773443-79-1 -> created: 2011-11-07 11:20:50.0; updated: null
+(q20201-79-1) 5261692-79-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261692 = 9999 (2012-06-18 10:39:48.0)
+4773443 = null (2011-11-07 11:20:50.0)
+***************
+2nd sort
+5261692 = 9999 (null)
+4773443 = null (null)
+===============
+itemRef -> 5261692: 9999
+#798#.- delete from answer where idanswer=4773443
+============xxxxxxxxxxxxxxxx==============
+(q20201-80-1) 4773505-80-1 -> created: 2011-11-07 11:20:54.0; updated: null
+(q20201-80-1) 5261714-80-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261714 = 9999 (2012-06-18 10:39:49.0)
+4773505 = null (2011-11-07 11:20:54.0)
+***************
+2nd sort
+5261714 = 9999 (null)
+4773505 = null (null)
+===============
+itemRef -> 5261714: 9999
+#800#.- delete from answer where idanswer=4773505
+============xxxxxxxxxxxxxxxx==============
+(q20201-81-1) 4773356-81-1 -> created: 2011-11-07 11:20:43.0; updated: null
+(q20201-81-1) 5261655-81-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261655 = 9999 (2012-06-18 10:39:48.0)
+4773356 = null (2011-11-07 11:20:43.0)
+***************
+2nd sort
+5261655 = 9999 (null)
+4773356 = null (null)
+===============
+itemRef -> 5261655: 9999
+#802#.- delete from answer where idanswer=4773356
+============xxxxxxxxxxxxxxxx==============
+(q20201-82-1) 4773207-82-1 -> created: 2011-11-07 11:20:34.0; updated: null
+(q20201-82-1) 5261598-82-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261598 = 9999 (2012-06-18 10:39:47.0)
+4773207 = null (2011-11-07 11:20:34.0)
+***************
+2nd sort
+5261598 = 9999 (null)
+4773207 = null (null)
+===============
+itemRef -> 5261598: 9999
+#804#.- delete from answer where idanswer=4773207
+============xxxxxxxxxxxxxxxx==============
+(q20201-83-1) 4773534-83-1 -> created: 2011-11-07 11:20:57.0; updated: null
+(q20201-83-1) 5261727-83-1 -> created: 2012-06-18 10:39:49.0; updated: null
+1st sort
+5261727 = 9999 (2012-06-18 10:39:49.0)
+4773534 = null (2011-11-07 11:20:57.0)
+***************
+2nd sort
+5261727 = 9999 (null)
+4773534 = null (null)
+===============
+itemRef -> 5261727: 9999
+#806#.- delete from answer where idanswer=4773534
+============xxxxxxxxxxxxxxxx==============
+(q20201-84-1) 4773382-84-1 -> created: 2011-11-07 11:20:45.0; updated: null
+(q20201-84-1) 5261668-84-1 -> created: 2012-06-18 10:39:48.0; updated: null
+1st sort
+5261668 = 9999 (2012-06-18 10:39:48.0)
+4773382 = null (2011-11-07 11:20:45.0)
+***************
+2nd sort
+5261668 = 9999 (null)
+4773382 = null (null)
+===============
+itemRef -> 5261668: 9999
+#808#.- delete from answer where idanswer=4773382
+============xxxxxxxxxxxxxxxx==============
+(q20201-85-1) 4773234-85-1 -> created: 2011-11-07 11:20:35.0; updated: null
+(q20201-85-1) 5261609-85-1 -> created: 2012-06-18 10:39:47.0; updated: null
+1st sort
+5261609 = 9999 (2012-06-18 10:39:47.0)
+4773234 = null (2011-11-07 11:20:35.0)
+***************
+2nd sort
+5261609 = 9999 (null)
+4773234 = null (null)
+===============
+itemRef -> 5261609: 9999
+#810#.- delete from answer where idanswer=4773234
+============xxxxxxxxxxxxxxxx==============
+(q20201-1-1) 5023119-1-1 -> created: 2012-02-02 09:12:18.0; updated: null
+(q20201-1-1) 5297260-1-1 -> created: 2012-07-18 10:02:36.0; updated: null
+1st sort
+5297260 = 9999 (2012-07-18 10:02:36.0)
+5023119 = null (2012-02-02 09:12:18.0)
+***************
+2nd sort
+5297260 = 9999 (null)
+5023119 = null (null)
+===============
+itemRef -> 5297260: 9999
+#812#.- delete from answer where idanswer=5023119
+============xxxxxxxxxxxxxxxx==============
+(q20708-1-1) 5110997-1-1 -> created: 2012-03-09 09:54:57.0; updated: null
+(q20708-1-1) 5110996-1-1 -> created: 2012-03-09 09:54:57.0; updated: null
+1st sort
+5110996 = 4 EDTA + 1 SUERO + 1 CELLSAVE (2012-03-09 09:54:57.0)
+5110997 = 4 EDTA   1 SUERO   1 CELLSAVE (2012-03-09 09:54:57.0)
+***************
+2nd sort
+5110996 = 4 EDTA + 1 SUERO + 1 CELLSAVE (null)
+5110997 = 4 EDTA   1 SUERO   1 CELLSAVE (null)
+===============
+itemRef -> 5110996: 4 EDTA + 1 SUERO + 1 CELLSAVE
+#814#.- delete from answer where idanswer=5110997
+============xxxxxxxxxxxxxxxx==============
+(q20712-1-2) 5110687-1-2 -> created: 2012-03-09 09:22:59.0; updated: null
+(q20712-1-2) 5110691-1-2 -> created: 2012-03-09 09:22:59.0; updated: null
+1st sort
+5110687 = 3 (2012-03-09 09:22:59.0)
+5110691 = 3 (2012-03-09 09:22:59.0)
+***************
+2nd sort
+5110687 = 3 (null)
+5110691 = 3 (null)
+===============
+itemRef -> 5110687: 3
+#816#.- delete from answer where idanswer=5110691
+============xxxxxxxxxxxxxxxx==============
+(q20712-1-3) 5110688-1-3 -> created: 2012-03-09 09:22:59.0; updated: null
+(q20712-1-3) 5110690-1-3 -> created: 2012-03-09 09:22:59.0; updated: null
+1st sort
+5110688 = 2012 (2012-03-09 09:22:59.0)
+5110690 = 2012 (2012-03-09 09:22:59.0)
+***************
+2nd sort
+5110688 = 2012 (null)
+5110690 = 2012 (null)
+===============
+itemRef -> 5110688: 2012
+#818#.- delete from answer where idanswer=5110690
+============xxxxxxxxxxxxxxxx==============
+(q20714-1-1) 5110694-1-1 -> created: 2012-03-09 09:22:59.0; updated: null
+(q20714-1-1) 5110689-1-1 -> created: 2012-03-09 09:22:59.0; updated: null
+1st sort
+5110689 = 2 (2012-03-09 09:22:59.0)
+5110694 = 2 (2012-03-09 09:22:59.0)
+***************
+2nd sort
+5110689 = 2 (null)
+5110694 = 2 (null)
+===============
+itemRef -> 5110689: 2
+#820#.- delete from answer where idanswer=5110694
+============xxxxxxxxxxxxxxxx==============
+(q20728-15-1) 5114351-15-1 -> created: 2012-03-12 10:33:59.0; updated: 2012-03-12 10:34:21.0
+(q20728-15-1) 5114352-15-1 -> created: 2012-03-12 10:33:59.0; updated: null
+1st sort
+5114351 = CANCER FAMILIAR SUERO CAJA Nº4 (2012-03-12 10:33:59.0)
+5114352 = 9999 (2012-03-12 10:33:59.0)
+***************
+2nd sort
+5114351 = CANCER FAMILIAR SUERO CAJA Nº4 (2012-03-12 10:34:21.0)
+5114352 = 9999 (null)
+===============
+itemRef -> 5114351: CANCER FAMILIAR SUERO CAJA Nº4
+#822#.- delete from answer where idanswer=5114352
+============xxxxxxxxxxxxxxxx==============
+(q20728-17-1) 5114805-17-1 -> created: 2012-03-12 11:02:21.0; updated: 2012-03-12 11:02:47.0
+(q20728-17-1) 5114804-17-1 -> created: 2012-03-12 11:02:21.0; updated: null
+1st sort
+5114804 = 9999 (2012-03-12 11:02:21.0)
+5114805 = CANCER FAMILIAR LINFOS CAJA Nº2 (2012-03-12 11:02:21.0)
+***************
+2nd sort
+5114805 = CANCER FAMILIAR LINFOS CAJA Nº2 (2012-03-12 11:02:47.0)
+5114804 = 9999 (null)
+===============
+itemRef -> 5114805: CANCER FAMILIAR LINFOS CAJA Nº2
+#824#.- delete from answer where idanswer=5114804
+============xxxxxxxxxxxxxxxx==============
+(q20728-8-1) 5111776-8-1 -> created: 2012-03-09 12:05:51.0; updated: 2012-03-09 12:06:09.0
+(q20728-8-1) 5111777-8-1 -> created: 2012-03-09 12:05:51.0; updated: 2012-03-09 12:12:10.0
+1st sort
+5111776 = CANCER FAMILIAR HEMATIES CAJA Nº2 (2012-03-09 12:05:51.0)
+5111777 = CANCER FAMILIAR HEMATIES CAJA Nº2 (2012-03-09 12:05:51.0)
+***************
+2nd sort
+5111777 = CANCER FAMILIAR HEMATIES CAJA Nº2 (2012-03-09 12:12:10.0)
+5111776 = CANCER FAMILIAR HEMATIES CAJA Nº2 (2012-03-09 12:06:09.0)
+===============
+itemRef -> 5111777: CANCER FAMILIAR HEMATIES CAJA Nº2
+#826#.- delete from answer where idanswer=5111776
+============xxxxxxxxxxxxxxxx==============
+(q20728-14-1) 5111879-14-1 -> created: 2012-03-09 12:09:13.0; updated: 2012-03-09 12:09:27.0
+(q20728-14-1) 5111880-14-1 -> created: 2012-03-09 12:09:13.0; updated: 2012-03-09 12:12:11.0
+1st sort
+5111879 = CANCER FAMILIAR SUERO CAJA Nº4 (2012-03-09 12:09:13.0)
+5111880 = CANCER FAMILIAR SUERO CAJA Nº4 (2012-03-09 12:09:13.0)
+***************
+2nd sort
+5111880 = CANCER FAMILIAR SUERO CAJA Nº4 (2012-03-09 12:12:11.0)
+5111879 = CANCER FAMILIAR SUERO CAJA Nº4 (2012-03-09 12:09:27.0)
+===============
+itemRef -> 5111880: CANCER FAMILIAR SUERO CAJA Nº4
+#828#.- delete from answer where idanswer=5111879
+============xxxxxxxxxxxxxxxx==============
+(q20728-10-1) 5115089-10-1 -> created: 2012-03-12 11:40:49.0; updated: 2012-03-12 11:41:14.0
+(q20728-10-1) 5115090-10-1 -> created: 2012-03-12 11:40:49.0; updated: 2012-03-12 11:45:25.0
+1st sort
+5115089 = CANCER FAMILIAR PLASMA CAJA Nº5 (2012-03-12 11:40:49.0)
+5115090 = CANCER FAMILIAR PLASMA CAJA Nº5 (2012-03-12 11:40:49.0)
+***************
+2nd sort
+5115090 = CANCER FAMILIAR PLASMA CAJA Nº5 (2012-03-12 11:45:25.0)
+5115089 = CANCER FAMILIAR PLASMA CAJA Nº5 (2012-03-12 11:41:14.0)
+===============
+itemRef -> 5115090: CANCER FAMILIAR PLASMA CAJA Nº5
+#830#.- delete from answer where idanswer=5115089
+============xxxxxxxxxxxxxxxx==============
+(q20728-12-1) 5115119-12-1 -> created: 2012-03-12 11:41:59.0; updated: 2012-03-12 11:42:11.0
+(q20728-12-1) 5115118-12-1 -> created: 2012-03-12 11:41:59.0; updated: 2012-03-12 11:45:25.0
+1st sort
+5115118 = CANCER FAMILIAR HEMATIES CAJA Nº2 (2012-03-12 11:41:59.0)
+5115119 = CANCER FAMILIAR HEMATIES CAJA Nº2 (2012-03-12 11:41:59.0)
+***************
+2nd sort
+5115118 = CANCER FAMILIAR HEMATIES CAJA Nº2 (2012-03-12 11:45:25.0)
+5115119 = CANCER FAMILIAR HEMATIES CAJA Nº2 (2012-03-12 11:42:11.0)
+===============
+itemRef -> 5115118: CANCER FAMILIAR HEMATIES CAJA Nº2
+#832#.- delete from answer where idanswer=5115119
+============xxxxxxxxxxxxxxxx==============
+(q20728-14-1) 5115143-14-1 -> created: 2012-03-12 11:43:05.0; updated: 2012-03-12 11:43:27.0
+(q20728-14-1) 5115144-14-1 -> created: 2012-03-12 11:43:05.0; updated: 2012-03-12 11:45:25.0
+1st sort
+5115143 = CANCER FAMILIAR LEUCOS CAJA Nº2 (2012-03-12 11:43:05.0)
+5115144 = CANCER FAMILIAR LEUCOS CAJA Nº2 (2012-03-12 11:43:05.0)
+***************
+2nd sort
+5115144 = CANCER FAMILIAR LEUCOS CAJA Nº2 (2012-03-12 11:45:25.0)
+5115143 = CANCER FAMILIAR LEUCOS CAJA Nº2 (2012-03-12 11:43:27.0)
+===============
+itemRef -> 5115144: CANCER FAMILIAR LEUCOS CAJA Nº2
+#834#.- delete from answer where idanswer=5115143
+============xxxxxxxxxxxxxxxx==============
+(q20728-1-1) 5111018-1-1 -> created: 2012-03-09 09:56:46.0; updated: 2012-03-09 09:57:30.0
+(q20728-1-1) 5111019-1-1 -> created: 2012-03-09 09:56:46.0; updated: null
+1st sort
+5111018 = CANCER FAMILIAR PLASMA CAJA Nº5 (2012-03-09 09:56:46.0)
+5111019 = 9999 (2012-03-09 09:56:46.0)
+***************
+2nd sort
+5111018 = CANCER FAMILIAR PLASMA CAJA Nº5 (2012-03-09 09:57:30.0)
+5111019 = 9999 (null)
+===============
+itemRef -> 5111018: CANCER FAMILIAR PLASMA CAJA Nº5
+#836#.- delete from answer where idanswer=5111019
+============xxxxxxxxxxxxxxxx==============
+(q20728-6-1) 5111104-6-1 -> created: 2012-03-09 09:59:33.0; updated: 2012-03-09 09:59:57.0
+(q20728-6-1) 5111105-6-1 -> created: 2012-03-09 09:59:33.0; updated: 2012-03-09 10:10:23.0
+1st sort
+5111104 = CANCER FAMILIAR PLASMA CAJA Nº5 (2012-03-09 09:59:33.0)
+5111105 = CANCER FAMILIAR PLASMA CAJA Nº5 (2012-03-09 09:59:33.0)
+***************
+2nd sort
+5111105 = CANCER FAMILIAR PLASMA CAJA Nº5 (2012-03-09 10:10:23.0)
+5111104 = CANCER FAMILIAR PLASMA CAJA Nº5 (2012-03-09 09:59:57.0)
+===============
+itemRef -> 5111105: CANCER FAMILIAR PLASMA CAJA Nº5
+#838#.- delete from answer where idanswer=5111104
+============xxxxxxxxxxxxxxxx==============
+(q20728-4-1) 5111379-4-1 -> created: 2012-03-09 11:17:40.0; updated: 2012-03-09 11:19:00.0
+(q20728-4-1) 5111380-4-1 -> created: 2012-03-09 11:17:40.0; updated: 2012-03-09 11:45:23.0
+1st sort
+5111379 = CANCER FAMILIAR PLASMA CAJA Nº5 (2012-03-09 11:17:40.0)
+5111380 = CANCER FAMILIAR PLASMA CAJA Nº5 (2012-03-09 11:17:40.0)
+***************
+2nd sort
+5111380 = CANCER FAMILIAR PLASMA CAJA Nº5 (2012-03-09 11:45:23.0)
+5111379 = CANCER FAMILIAR PLASMA CAJA Nº5 (2012-03-09 11:19:00.0)
+===============
+itemRef -> 5111380: CANCER FAMILIAR PLASMA CAJA Nº5
+#840#.- delete from answer where idanswer=5111379
+============xxxxxxxxxxxxxxxx==============
+(q20728-16-1) 5111584-16-1 -> created: 2012-03-09 11:44:11.0; updated: 2012-03-09 11:44:22.0
+(q20728-16-1) 5111585-16-1 -> created: 2012-03-09 11:44:11.0; updated: 2012-03-09 11:45:22.0
+1st sort
+5111584 = CANCER FAMILIAR PLASMA CAJA Nº6 (2012-03-09 11:44:11.0)
+5111585 = CANCER FAMILIAR PLASMA CAJA Nº6 (2012-03-09 11:44:11.0)
+***************
+2nd sort
+5111585 = CANCER FAMILIAR PLASMA CAJA Nº6 (2012-03-09 11:45:22.0)
+5111584 = CANCER FAMILIAR PLASMA CAJA Nº6 (2012-03-09 11:44:22.0)
+===============
+itemRef -> 5111585: CANCER FAMILIAR PLASMA CAJA Nº6
+#842#.- delete from answer where idanswer=5111584
+============xxxxxxxxxxxxxxxx==============
+(q20728-18-1) 5111620-18-1 -> created: 2012-03-09 11:45:08.0; updated: 2012-03-09 11:45:21.0
+(q20728-18-1) 5111619-18-1 -> created: 2012-03-09 11:45:08.0; updated: null
+1st sort
+5111619 = 9999 (2012-03-09 11:45:08.0)
+5111620 = CANCER FAMILIAR LINFOS CAJA Nº2 (2012-03-09 11:45:08.0)
+***************
+2nd sort
+5111620 = CANCER FAMILIAR LINFOS CAJA Nº2 (2012-03-09 11:45:21.0)
+5111619 = 9999 (null)
+===============
+itemRef -> 5111620: CANCER FAMILIAR LINFOS CAJA Nº2
+#844#.- delete from answer where idanswer=5111619
+============xxxxxxxxxxxxxxxx==============
+(q20728-16-1) 5114699-16-1 -> created: 2012-03-12 10:58:01.0; updated: null
+(q20728-16-1) 5114700-16-1 -> created: 2012-03-12 10:58:02.0; updated: 2012-03-12 10:58:24.0
+1st sort
+5114700 = CANCER FAMILIAR PLASMA CAJA Nº6 (2012-03-12 10:58:02.0)
+5114699 = 9999 (2012-03-12 10:58:01.0)
+***************
+2nd sort
+5114700 = CANCER FAMILIAR PLASMA CAJA Nº6 (2012-03-12 10:58:24.0)
+5114699 = 9999 (null)
+===============
+itemRef -> 5114700: CANCER FAMILIAR PLASMA CAJA Nº6
+#846#.- delete from answer where idanswer=5114699
+============xxxxxxxxxxxxxxxx==============
+(q20728-18-1) 5114734-18-1 -> created: 2012-03-12 10:59:01.0; updated: 2012-03-12 10:59:23.0
+(q20728-18-1) 5114735-18-1 -> created: 2012-03-12 10:59:01.0; updated: 2012-03-12 10:59:31.0
+1st sort
+5114734 = CANCER FAMILIAR LINFOS CAJA Nº3 (2012-03-12 10:59:01.0)
+5114735 = CANCER FAMILIAR LINFOS CAJA Nº3 (2012-03-12 10:59:01.0)
+***************
+2nd sort
+5114735 = CANCER FAMILIAR LINFOS CAJA Nº3 (2012-03-12 10:59:31.0)
+5114734 = CANCER FAMILIAR LINFOS CAJA Nº3 (2012-03-12 10:59:23.0)
+===============
+itemRef -> 5114735: CANCER FAMILIAR LINFOS CAJA Nº3
+#848#.- delete from answer where idanswer=5114734
+============xxxxxxxxxxxxxxxx==============
+(q20729-18-1) 5114404-18-1 -> created: 2012-03-12 10:36:10.0; updated: null
+(q20729-18-1) 5114409-18-1 -> created: 2012-03-12 10:36:10.0; updated: null
+1st sort
+5114404 = 1 (2012-03-12 10:36:10.0)
+5114409 = 9999 (2012-03-12 10:36:10.0)
+***************
+2nd sort
+5114404 = 1 (null)
+5114409 = 9999 (null)
+===============
+itemRef -> 5114404: 1
+#850#.- delete from answer where idanswer=5114409
+============xxxxxxxxxxxxxxxx==============
+(q20729-18-2) 5114408-18-2 -> created: 2012-03-12 10:36:10.0; updated: null
+(q20729-18-2) 5114405-18-2 -> created: 2012-03-12 10:36:10.0; updated: null
+1st sort
+5114405 = A (2012-03-12 10:36:10.0)
+5114408 = 9999 (2012-03-12 10:36:10.0)
+***************
+2nd sort
+5114405 = A (null)
+5114408 = 9999 (null)
+===============
+itemRef -> 5114405: A
+#852#.- delete from answer where idanswer=5114408
+============xxxxxxxxxxxxxxxx==============
+(q20730-18-1) 5114406-18-1 -> created: 2012-03-12 10:36:10.0; updated: null
+(q20730-18-1) 5114407-18-1 -> created: 2012-03-12 10:36:10.0; updated: null
+1st sort
+5114406 = 04 (2012-03-12 10:36:10.0)
+5114407 = 9999 (2012-03-12 10:36:10.0)
+***************
+2nd sort
+5114406 = 04 (null)
+5114407 = 9999 (null)
+===============
+itemRef -> 5114406: 04
+#854#.- delete from answer where idanswer=5114407
+============xxxxxxxxxxxxxxxx==============
+(q20973-1-1) 5211323-1-1 -> created: 2012-04-30 10:19:46.0; updated: null
+(q20973-1-1) 5212399-1-1 -> created: 2012-04-30 11:00:32.0; updated: null
+(q20973-1-1) 5212941-1-1 -> created: 2012-04-30 11:14:30.0; updated: null
+(q20973-1-1) 5213185-1-1 -> created: 2012-04-30 11:53:22.0; updated: null
+(q20973-1-1) 5325930-1-1 -> created: 2012-07-25 12:47:26.0; updated: null
+(q20973-1-1) 5326399-1-1 -> created: 2012-07-25 14:42:33.0; updated: null
+1st sort
+5326399 = null (2012-07-25 14:42:33.0)
+5325930 = null (2012-07-25 12:47:26.0)
+5213185 = null (2012-04-30 11:53:22.0)
+5212941 = null (2012-04-30 11:14:30.0)
+5212399 = null (2012-04-30 11:00:32.0)
+5211323 = null (2012-04-30 10:19:46.0)
+***************
+2nd sort
+5326399 = null (null)
+5325930 = null (null)
+5213185 = null (null)
+5212941 = null (null)
+5212399 = null (null)
+5211323 = null (null)
+===============
+itemRef -> 5326399: null
+#860#.- delete from answer where idanswer=5325930
+#860#.- delete from answer where idanswer=5213185
+#860#.- delete from answer where idanswer=5212941
+#860#.- delete from answer where idanswer=5212399
+#860#.- delete from answer where idanswer=5211323
+============xxxxxxxxxxxxxxxx==============
+(q21212-1-1) 5325123-1-1 -> created: 2012-07-25 11:31:00.0; updated: null
+(q21212-1-1) 5325222-1-1 -> created: 2012-07-25 11:36:00.0; updated: null
+(q21212-1-1) 5325223-1-1 -> created: 2012-07-25 11:36:01.0; updated: null
+(q21212-1-1) 5325265-1-1 -> created: 2012-07-25 11:38:29.0; updated: null
+1st sort
+5325265 = null (2012-07-25 11:38:29.0)
+5325223 = null (2012-07-25 11:36:01.0)
+5325222 = null (2012-07-25 11:36:00.0)
+5325123 = null (2012-07-25 11:31:00.0)
+***************
+2nd sort
+5325265 = null (null)
+5325223 = null (null)
+5325222 = null (null)
+5325123 = null (null)
+===============
+itemRef -> 5325265: null
+#864#.- delete from answer where idanswer=5325223
+#864#.- delete from answer where idanswer=5325222
+#864#.- delete from answer where idanswer=5325123
+============xxxxxxxxxxxxxxxx==============
+Total answers retrieved: 864; deleted: 461
+
+Process finished with exit code 0

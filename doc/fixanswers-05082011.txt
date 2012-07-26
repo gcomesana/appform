@@ -1,0 +1,1120 @@
+Fixing repetad answers for jdbc:postgresql://padme:5432/appform...
+Running database LIVE update...
+============xxxxxxxxxxxxxxxx==============
+4203847 -> created: 2011-02-21 12:11:06.0; updated: null
+4605114 -> created: 2011-08-04 12:13:19.0; updated: null
+1st sort
+4605114 = 9999 (2011-08-04 12:13:19.0)
+4203847 = 1 (2011-02-21 12:11:06.0)
+***************
+2nd sort
+4605114 = 9999 (null)
+4203847 = 1 (null)
+***************
+#2#.- delete from answer where idanswer=4203847
+============xxxxxxxxxxxxxxxx==============
+4605076 -> created: 2011-08-04 12:08:58.0; updated: null
+4605098 -> created: 2011-08-04 12:09:52.0; updated: null
+1st sort
+4605098 = 9999 (2011-08-04 12:09:52.0)
+4605076 = 1 (2011-08-04 12:08:58.0)
+***************
+2nd sort
+4605098 = 9999 (null)
+4605076 = 1 (null)
+***************
+#4#.- delete from answer where idanswer=4605076
+============xxxxxxxxxxxxxxxx==============
+4603124 -> created: 2011-08-03 17:07:11.0; updated: null
+4603146 -> created: 2011-08-03 17:19:23.0; updated: null
+1st sort
+4603146 = 9999 (2011-08-03 17:19:23.0)
+4603124 = 2 (2011-08-03 17:07:11.0)
+***************
+2nd sort
+4603146 = 9999 (null)
+4603124 = 2 (null)
+***************
+#6#.- delete from answer where idanswer=4603124
+============xxxxxxxxxxxxxxxx==============
+4603773 -> created: 2011-08-03 18:14:11.0; updated: null
+4603788 -> created: 2011-08-03 18:14:40.0; updated: null
+1st sort
+4603788 = 9999 (2011-08-03 18:14:40.0)
+4603773 = 1 (2011-08-03 18:14:11.0)
+***************
+2nd sort
+4603788 = 9999 (null)
+4603773 = 1 (null)
+***************
+#8#.- delete from answer where idanswer=4603773
+============xxxxxxxxxxxxxxxx==============
+4604350 -> created: 2011-08-04 10:58:15.0; updated: null
+4604365 -> created: 2011-08-04 10:59:03.0; updated: null
+1st sort
+4604365 = 9999 (2011-08-04 10:59:03.0)
+4604350 = 2 (2011-08-04 10:58:15.0)
+***************
+2nd sort
+4604365 = 9999 (null)
+4604350 = 2 (null)
+***************
+#10#.- delete from answer where idanswer=4604350
+============xxxxxxxxxxxxxxxx==============
+4604943 -> created: 2011-08-04 11:52:44.0; updated: null
+4604964 -> created: 2011-08-04 11:54:21.0; updated: null
+1st sort
+4604964 = 9999 (2011-08-04 11:54:21.0)
+4604943 = 1 (2011-08-04 11:52:44.0)
+***************
+2nd sort
+4604964 = 9999 (null)
+4604943 = 1 (null)
+***************
+#12#.- delete from answer where idanswer=4604943
+============xxxxxxxxxxxxxxxx==============
+4203849 -> created: 2011-02-21 12:11:13.0; updated: null
+4605113 -> created: 2011-08-04 12:13:18.0; updated: null
+1st sort
+4605113 = 9999 (2011-08-04 12:13:18.0)
+4203849 = 4 (2011-02-21 12:11:13.0)
+***************
+2nd sort
+4605113 = 9999 (null)
+4203849 = 4 (null)
+***************
+#14#.- delete from answer where idanswer=4203849
+============xxxxxxxxxxxxxxxx==============
+4605078 -> created: 2011-08-04 12:09:03.0; updated: null
+4605097 -> created: 2011-08-04 12:09:52.0; updated: null
+1st sort
+4605097 = 9999 (2011-08-04 12:09:52.0)
+4605078 = 4 (2011-08-04 12:09:03.0)
+***************
+2nd sort
+4605097 = 9999 (null)
+4605078 = 4 (null)
+***************
+#16#.- delete from answer where idanswer=4605078
+============xxxxxxxxxxxxxxxx==============
+4603126 -> created: 2011-08-03 17:07:20.0; updated: null
+4603145 -> created: 2011-08-03 17:19:23.0; updated: null
+1st sort
+4603145 = 9999 (2011-08-03 17:19:23.0)
+4603126 = 4 (2011-08-03 17:07:20.0)
+***************
+2nd sort
+4603145 = 9999 (null)
+4603126 = 4 (null)
+***************
+#18#.- delete from answer where idanswer=4603126
+============xxxxxxxxxxxxxxxx==============
+4603775 -> created: 2011-08-03 18:14:17.0; updated: null
+4603801 -> created: 2011-08-03 18:14:40.0; updated: null
+1st sort
+4603801 = 9999 (2011-08-03 18:14:40.0)
+4603775 = 4 (2011-08-03 18:14:17.0)
+***************
+2nd sort
+4603801 = 9999 (null)
+4603775 = 4 (null)
+***************
+#20#.- delete from answer where idanswer=4603775
+============xxxxxxxxxxxxxxxx==============
+4604352 -> created: 2011-08-04 10:58:23.0; updated: null
+4604378 -> created: 2011-08-04 10:59:03.0; updated: null
+1st sort
+4604378 = 9999 (2011-08-04 10:59:03.0)
+4604352 = 3 (2011-08-04 10:58:23.0)
+***************
+2nd sort
+4604378 = 9999 (null)
+4604352 = 3 (null)
+***************
+#22#.- delete from answer where idanswer=4604352
+============xxxxxxxxxxxxxxxx==============
+4604945 -> created: 2011-08-04 11:52:52.0; updated: null
+4604963 -> created: 2011-08-04 11:54:21.0; updated: null
+1st sort
+4604963 = 9999 (2011-08-04 11:54:21.0)
+4604945 = 4 (2011-08-04 11:52:52.0)
+***************
+2nd sort
+4604963 = 9999 (null)
+4604945 = 4 (null)
+***************
+#24#.- delete from answer where idanswer=4604945
+============xxxxxxxxxxxxxxxx==============
+4203859 -> created: 2011-02-21 12:11:44.0; updated: null
+4605112 -> created: 2011-08-04 12:13:18.0; updated: null
+1st sort
+4605112 = 9999 (2011-08-04 12:13:18.0)
+4203859 = 4 (2011-02-21 12:11:44.0)
+***************
+2nd sort
+4605112 = 9999 (null)
+4203859 = 4 (null)
+***************
+#26#.- delete from answer where idanswer=4203859
+============xxxxxxxxxxxxxxxx==============
+4605088 -> created: 2011-08-04 12:09:28.0; updated: null
+4605096 -> created: 2011-08-04 12:09:52.0; updated: null
+1st sort
+4605096 = 9999 (2011-08-04 12:09:52.0)
+4605088 = 4 (2011-08-04 12:09:28.0)
+***************
+2nd sort
+4605096 = 9999 (null)
+4605088 = 4 (null)
+***************
+#28#.- delete from answer where idanswer=4605088
+============xxxxxxxxxxxxxxxx==============
+4603136 -> created: 2011-08-03 17:07:52.0; updated: null
+4603144 -> created: 2011-08-03 17:19:23.0; updated: null
+1st sort
+4603144 = 9999 (2011-08-03 17:19:23.0)
+4603136 = 4 (2011-08-03 17:07:52.0)
+***************
+2nd sort
+4603144 = 9999 (null)
+4603136 = 4 (null)
+***************
+#30#.- delete from answer where idanswer=4603136
+============xxxxxxxxxxxxxxxx==============
+4603785 -> created: 2011-08-03 18:14:34.0; updated: null
+4603796 -> created: 2011-08-03 18:14:40.0; updated: null
+1st sort
+4603796 = 9999 (2011-08-03 18:14:40.0)
+4603785 = 4 (2011-08-03 18:14:34.0)
+***************
+2nd sort
+4603796 = 9999 (null)
+4603785 = 4 (null)
+***************
+#32#.- delete from answer where idanswer=4603785
+============xxxxxxxxxxxxxxxx==============
+4604362 -> created: 2011-08-04 10:58:58.0; updated: null
+4604373 -> created: 2011-08-04 10:59:03.0; updated: null
+1st sort
+4604373 = 9999 (2011-08-04 10:59:03.0)
+4604362 = 4 (2011-08-04 10:58:58.0)
+***************
+2nd sort
+4604373 = 9999 (null)
+4604362 = 4 (null)
+***************
+#34#.- delete from answer where idanswer=4604362
+============xxxxxxxxxxxxxxxx==============
+4604955 -> created: 2011-08-04 11:53:38.0; updated: null
+4604962 -> created: 2011-08-04 11:54:21.0; updated: null
+1st sort
+4604962 = 9999 (2011-08-04 11:54:21.0)
+4604955 = 4 (2011-08-04 11:53:38.0)
+***************
+2nd sort
+4604962 = 9999 (null)
+4604955 = 4 (null)
+***************
+#36#.- delete from answer where idanswer=4604955
+============xxxxxxxxxxxxxxxx==============
+4203848 -> created: 2011-02-21 12:11:12.0; updated: null
+4605108 -> created: 2011-08-04 12:13:18.0; updated: null
+1st sort
+4605108 = 9999 (2011-08-04 12:13:18.0)
+4203848 = 4 (2011-02-21 12:11:12.0)
+***************
+2nd sort
+4605108 = 9999 (null)
+4203848 = 4 (null)
+***************
+#38#.- delete from answer where idanswer=4203848
+============xxxxxxxxxxxxxxxx==============
+4605077 -> created: 2011-08-04 12:09:02.0; updated: null
+4605092 -> created: 2011-08-04 12:09:52.0; updated: null
+1st sort
+4605092 = 9999 (2011-08-04 12:09:52.0)
+4605077 = 4 (2011-08-04 12:09:02.0)
+***************
+2nd sort
+4605092 = 9999 (null)
+4605077 = 4 (null)
+***************
+#40#.- delete from answer where idanswer=4605077
+============xxxxxxxxxxxxxxxx==============
+4603125 -> created: 2011-08-03 17:07:18.0; updated: null
+4603140 -> created: 2011-08-03 17:19:23.0; updated: null
+1st sort
+4603140 = 9999 (2011-08-03 17:19:23.0)
+4603125 = 4 (2011-08-03 17:07:18.0)
+***************
+2nd sort
+4603140 = 9999 (null)
+4603125 = 4 (null)
+***************
+#42#.- delete from answer where idanswer=4603125
+============xxxxxxxxxxxxxxxx==============
+4603774 -> created: 2011-08-03 18:14:16.0; updated: null
+4603799 -> created: 2011-08-03 18:14:40.0; updated: null
+1st sort
+4603799 = 9999 (2011-08-03 18:14:40.0)
+4603774 = 4 (2011-08-03 18:14:16.0)
+***************
+2nd sort
+4603799 = 9999 (null)
+4603774 = 4 (null)
+***************
+#44#.- delete from answer where idanswer=4603774
+============xxxxxxxxxxxxxxxx==============
+4604351 -> created: 2011-08-04 10:58:20.0; updated: null
+4604376 -> created: 2011-08-04 10:59:03.0; updated: null
+1st sort
+4604376 = 9999 (2011-08-04 10:59:03.0)
+4604351 = 3 (2011-08-04 10:58:20.0)
+***************
+2nd sort
+4604376 = 9999 (null)
+4604351 = 3 (null)
+***************
+#46#.- delete from answer where idanswer=4604351
+============xxxxxxxxxxxxxxxx==============
+4604944 -> created: 2011-08-04 11:52:50.0; updated: null
+4604958 -> created: 2011-08-04 11:54:21.0; updated: null
+1st sort
+4604958 = 9999 (2011-08-04 11:54:21.0)
+4604944 = 4 (2011-08-04 11:52:50.0)
+***************
+2nd sort
+4604958 = 9999 (null)
+4604944 = 4 (null)
+***************
+#48#.- delete from answer where idanswer=4604944
+============xxxxxxxxxxxxxxxx==============
+4203850 -> created: 2011-02-21 12:11:15.0; updated: null
+4605122 -> created: 2011-08-04 12:13:19.0; updated: null
+1st sort
+4605122 = 9999 (2011-08-04 12:13:19.0)
+4203850 = 4 (2011-02-21 12:11:15.0)
+***************
+2nd sort
+4605122 = 9999 (null)
+4203850 = 4 (null)
+***************
+#50#.- delete from answer where idanswer=4203850
+============xxxxxxxxxxxxxxxx==============
+4605079 -> created: 2011-08-04 12:09:04.0; updated: null
+4605106 -> created: 2011-08-04 12:09:52.0; updated: null
+1st sort
+4605106 = 9999 (2011-08-04 12:09:52.0)
+4605079 = 3 (2011-08-04 12:09:04.0)
+***************
+2nd sort
+4605106 = 9999 (null)
+4605079 = 3 (null)
+***************
+#52#.- delete from answer where idanswer=4605079
+============xxxxxxxxxxxxxxxx==============
+4603127 -> created: 2011-08-03 17:07:23.0; updated: null
+4603154 -> created: 2011-08-03 17:19:23.0; updated: null
+1st sort
+4603154 = 9999 (2011-08-03 17:19:23.0)
+4603127 = 4 (2011-08-03 17:07:23.0)
+***************
+2nd sort
+4603154 = 9999 (null)
+4603127 = 4 (null)
+***************
+#54#.- delete from answer where idanswer=4603127
+============xxxxxxxxxxxxxxxx==============
+4603776 -> created: 2011-08-03 18:14:19.0; updated: null
+4603794 -> created: 2011-08-03 18:14:40.0; updated: null
+1st sort
+4603794 = 9999 (2011-08-03 18:14:40.0)
+4603776 = 4 (2011-08-03 18:14:19.0)
+***************
+2nd sort
+4603794 = 9999 (null)
+4603776 = 4 (null)
+***************
+#56#.- delete from answer where idanswer=4603776
+============xxxxxxxxxxxxxxxx==============
+4604353 -> created: 2011-08-04 10:58:25.0; updated: null
+4604371 -> created: 2011-08-04 10:59:03.0; updated: null
+1st sort
+4604371 = 9999 (2011-08-04 10:59:03.0)
+4604353 = 3 (2011-08-04 10:58:25.0)
+***************
+2nd sort
+4604371 = 9999 (null)
+4604353 = 3 (null)
+***************
+#58#.- delete from answer where idanswer=4604353
+============xxxxxxxxxxxxxxxx==============
+4604946 -> created: 2011-08-04 11:52:58.0; updated: null
+4604972 -> created: 2011-08-04 11:54:22.0; updated: null
+1st sort
+4604972 = 9999 (2011-08-04 11:54:22.0)
+4604946 = 4 (2011-08-04 11:52:58.0)
+***************
+2nd sort
+4604972 = 9999 (null)
+4604946 = 4 (null)
+***************
+#60#.- delete from answer where idanswer=4604946
+============xxxxxxxxxxxxxxxx==============
+4203851 -> created: 2011-02-21 12:11:18.0; updated: null
+4605120 -> created: 2011-08-04 12:13:19.0; updated: null
+1st sort
+4605120 = 9999 (2011-08-04 12:13:19.0)
+4203851 = 3 (2011-02-21 12:11:18.0)
+***************
+2nd sort
+4605120 = 9999 (null)
+4203851 = 3 (null)
+***************
+#62#.- delete from answer where idanswer=4203851
+============xxxxxxxxxxxxxxxx==============
+4605080 -> created: 2011-08-04 12:09:06.0; updated: null
+4605104 -> created: 2011-08-04 12:09:52.0; updated: null
+1st sort
+4605104 = 9999 (2011-08-04 12:09:52.0)
+4605080 = 4 (2011-08-04 12:09:06.0)
+***************
+2nd sort
+4605104 = 9999 (null)
+4605080 = 4 (null)
+***************
+#64#.- delete from answer where idanswer=4605080
+============xxxxxxxxxxxxxxxx==============
+4603128 -> created: 2011-08-03 17:07:25.0; updated: null
+4603152 -> created: 2011-08-03 17:19:23.0; updated: null
+1st sort
+4603152 = 9999 (2011-08-03 17:19:23.0)
+4603128 = 3 (2011-08-03 17:07:25.0)
+***************
+2nd sort
+4603152 = 9999 (null)
+4603128 = 3 (null)
+***************
+#66#.- delete from answer where idanswer=4603128
+============xxxxxxxxxxxxxxxx==============
+4603777 -> created: 2011-08-03 18:14:21.0; updated: null
+4603790 -> created: 2011-08-03 18:14:40.0; updated: null
+1st sort
+4603790 = 9999 (2011-08-03 18:14:40.0)
+4603777 = 4 (2011-08-03 18:14:21.0)
+***************
+2nd sort
+4603790 = 9999 (null)
+4603777 = 4 (null)
+***************
+#68#.- delete from answer where idanswer=4603777
+============xxxxxxxxxxxxxxxx==============
+4604354 -> created: 2011-08-04 10:58:30.0; updated: null
+4604367 -> created: 2011-08-04 10:59:03.0; updated: null
+1st sort
+4604367 = 9999 (2011-08-04 10:59:03.0)
+4604354 = 2 (2011-08-04 10:58:30.0)
+***************
+2nd sort
+4604367 = 9999 (null)
+4604354 = 2 (null)
+***************
+#70#.- delete from answer where idanswer=4604354
+============xxxxxxxxxxxxxxxx==============
+4604947 -> created: 2011-08-04 11:53:07.0; updated: null
+4604970 -> created: 2011-08-04 11:54:22.0; updated: null
+1st sort
+4604970 = 9999 (2011-08-04 11:54:22.0)
+4604947 = 4 (2011-08-04 11:53:07.0)
+***************
+2nd sort
+4604970 = 9999 (null)
+4604947 = 4 (null)
+***************
+#72#.- delete from answer where idanswer=4604947
+============xxxxxxxxxxxxxxxx==============
+4203852 -> created: 2011-02-21 12:11:22.0; updated: null
+4605119 -> created: 2011-08-04 12:13:19.0; updated: null
+1st sort
+4605119 = 9999 (2011-08-04 12:13:19.0)
+4203852 = 4 (2011-02-21 12:11:22.0)
+***************
+2nd sort
+4605119 = 9999 (null)
+4203852 = 4 (null)
+***************
+#74#.- delete from answer where idanswer=4203852
+============xxxxxxxxxxxxxxxx==============
+4605081 -> created: 2011-08-04 12:09:07.0; updated: null
+4605103 -> created: 2011-08-04 12:09:52.0; updated: null
+1st sort
+4605103 = 9999 (2011-08-04 12:09:52.0)
+4605081 = 4 (2011-08-04 12:09:07.0)
+***************
+2nd sort
+4605103 = 9999 (null)
+4605081 = 4 (null)
+***************
+#76#.- delete from answer where idanswer=4605081
+============xxxxxxxxxxxxxxxx==============
+4603129 -> created: 2011-08-03 17:07:28.0; updated: null
+4603151 -> created: 2011-08-03 17:19:23.0; updated: null
+1st sort
+4603151 = 9999 (2011-08-03 17:19:23.0)
+4603129 = 4 (2011-08-03 17:07:28.0)
+***************
+2nd sort
+4603151 = 9999 (null)
+4603129 = 4 (null)
+***************
+#78#.- delete from answer where idanswer=4603129
+============xxxxxxxxxxxxxxxx==============
+4603778 -> created: 2011-08-03 18:14:22.0; updated: null
+4603802 -> created: 2011-08-03 18:14:40.0; updated: null
+1st sort
+4603802 = 9999 (2011-08-03 18:14:40.0)
+4603778 = 4 (2011-08-03 18:14:22.0)
+***************
+2nd sort
+4603802 = 9999 (null)
+4603778 = 4 (null)
+***************
+#80#.- delete from answer where idanswer=4603778
+============xxxxxxxxxxxxxxxx==============
+4604355 -> created: 2011-08-04 10:58:34.0; updated: null
+4604379 -> created: 2011-08-04 10:59:03.0; updated: null
+1st sort
+4604379 = 9999 (2011-08-04 10:59:03.0)
+4604355 = 3 (2011-08-04 10:58:34.0)
+***************
+2nd sort
+4604379 = 9999 (null)
+4604355 = 3 (null)
+***************
+#82#.- delete from answer where idanswer=4604355
+============xxxxxxxxxxxxxxxx==============
+4604948 -> created: 2011-08-04 11:53:16.0; updated: null
+4604969 -> created: 2011-08-04 11:54:21.0; updated: null
+1st sort
+4604969 = 9999 (2011-08-04 11:54:21.0)
+4604948 = 4 (2011-08-04 11:53:16.0)
+***************
+2nd sort
+4604969 = 9999 (null)
+4604948 = 4 (null)
+***************
+#84#.- delete from answer where idanswer=4604948
+============xxxxxxxxxxxxxxxx==============
+4203853 -> created: 2011-02-21 12:11:26.0; updated: null
+4605117 -> created: 2011-08-04 12:13:19.0; updated: null
+1st sort
+4605117 = 9999 (2011-08-04 12:13:19.0)
+4203853 = 4 (2011-02-21 12:11:26.0)
+***************
+2nd sort
+4605117 = 9999 (null)
+4203853 = 4 (null)
+***************
+#86#.- delete from answer where idanswer=4203853
+============xxxxxxxxxxxxxxxx==============
+4605082 -> created: 2011-08-04 12:09:09.0; updated: null
+4605101 -> created: 2011-08-04 12:09:52.0; updated: null
+1st sort
+4605101 = 9999 (2011-08-04 12:09:52.0)
+4605082 = 4 (2011-08-04 12:09:09.0)
+***************
+2nd sort
+4605101 = 9999 (null)
+4605082 = 4 (null)
+***************
+#88#.- delete from answer where idanswer=4605082
+============xxxxxxxxxxxxxxxx==============
+4603130 -> created: 2011-08-03 17:07:33.0; updated: null
+4603149 -> created: 2011-08-03 17:19:23.0; updated: null
+1st sort
+4603149 = 9999 (2011-08-03 17:19:23.0)
+4603130 = 2 (2011-08-03 17:07:33.0)
+***************
+2nd sort
+4603149 = 9999 (null)
+4603130 = 2 (null)
+***************
+#90#.- delete from answer where idanswer=4603130
+============xxxxxxxxxxxxxxxx==============
+4603779 -> created: 2011-08-03 18:14:24.0; updated: null
+4603797 -> created: 2011-08-03 18:14:40.0; updated: null
+1st sort
+4603797 = 9999 (2011-08-03 18:14:40.0)
+4603779 = 4 (2011-08-03 18:14:24.0)
+***************
+2nd sort
+4603797 = 9999 (null)
+4603779 = 4 (null)
+***************
+#92#.- delete from answer where idanswer=4603779
+============xxxxxxxxxxxxxxxx==============
+4604356 -> created: 2011-08-04 10:58:38.0; updated: null
+4604374 -> created: 2011-08-04 10:59:03.0; updated: null
+1st sort
+4604374 = 9999 (2011-08-04 10:59:03.0)
+4604356 = 3 (2011-08-04 10:58:38.0)
+***************
+2nd sort
+4604374 = 9999 (null)
+4604356 = 3 (null)
+***************
+#94#.- delete from answer where idanswer=4604356
+============xxxxxxxxxxxxxxxx==============
+4604949 -> created: 2011-08-04 11:53:17.0; updated: null
+4604967 -> created: 2011-08-04 11:54:21.0; updated: null
+1st sort
+4604967 = 9999 (2011-08-04 11:54:21.0)
+4604949 = 3 (2011-08-04 11:53:17.0)
+***************
+2nd sort
+4604967 = 9999 (null)
+4604949 = 3 (null)
+***************
+#96#.- delete from answer where idanswer=4604949
+============xxxxxxxxxxxxxxxx==============
+4203854 -> created: 2011-02-21 12:11:28.0; updated: null
+4605111 -> created: 2011-08-04 12:13:18.0; updated: null
+1st sort
+4605111 = 9999 (2011-08-04 12:13:18.0)
+4203854 = 4 (2011-02-21 12:11:28.0)
+***************
+2nd sort
+4605111 = 9999 (null)
+4203854 = 4 (null)
+***************
+#98#.- delete from answer where idanswer=4203854
+============xxxxxxxxxxxxxxxx==============
+4605083 -> created: 2011-08-04 12:09:11.0; updated: null
+4605095 -> created: 2011-08-04 12:09:52.0; updated: null
+1st sort
+4605095 = 9999 (2011-08-04 12:09:52.0)
+4605083 = 4 (2011-08-04 12:09:11.0)
+***************
+2nd sort
+4605095 = 9999 (null)
+4605083 = 4 (null)
+***************
+#100#.- delete from answer where idanswer=4605083
+============xxxxxxxxxxxxxxxx==============
+4603131 -> created: 2011-08-03 17:07:36.0; updated: null
+4603143 -> created: 2011-08-03 17:19:23.0; updated: null
+1st sort
+4603143 = 9999 (2011-08-03 17:19:23.0)
+4603131 = 4 (2011-08-03 17:07:36.0)
+***************
+2nd sort
+4603143 = 9999 (null)
+4603131 = 4 (null)
+***************
+#102#.- delete from answer where idanswer=4603131
+============xxxxxxxxxxxxxxxx==============
+4603780 -> created: 2011-08-03 18:14:26.0; updated: null
+4603792 -> created: 2011-08-03 18:14:40.0; updated: null
+1st sort
+4603792 = 9999 (2011-08-03 18:14:40.0)
+4603780 = 4 (2011-08-03 18:14:26.0)
+***************
+2nd sort
+4603792 = 9999 (null)
+4603780 = 4 (null)
+***************
+#104#.- delete from answer where idanswer=4603780
+============xxxxxxxxxxxxxxxx==============
+4604357 -> created: 2011-08-04 10:58:40.0; updated: null
+4604369 -> created: 2011-08-04 10:59:03.0; updated: null
+1st sort
+4604369 = 9999 (2011-08-04 10:59:03.0)
+4604357 = 4 (2011-08-04 10:58:40.0)
+***************
+2nd sort
+4604369 = 9999 (null)
+4604357 = 4 (null)
+***************
+#106#.- delete from answer where idanswer=4604357
+============xxxxxxxxxxxxxxxx==============
+4604950 -> created: 2011-08-04 11:53:26.0; updated: null
+4604961 -> created: 2011-08-04 11:54:21.0; updated: null
+1st sort
+4604961 = 9999 (2011-08-04 11:54:21.0)
+4604950 = 4 (2011-08-04 11:53:26.0)
+***************
+2nd sort
+4604961 = 9999 (null)
+4604950 = 4 (null)
+***************
+#108#.- delete from answer where idanswer=4604950
+============xxxxxxxxxxxxxxxx==============
+4203855 -> created: 2011-02-21 12:11:32.0; updated: null
+4605110 -> created: 2011-08-04 12:13:18.0; updated: null
+1st sort
+4605110 = 9999 (2011-08-04 12:13:18.0)
+4203855 = 3 (2011-02-21 12:11:32.0)
+***************
+2nd sort
+4605110 = 9999 (null)
+4203855 = 3 (null)
+***************
+#110#.- delete from answer where idanswer=4203855
+============xxxxxxxxxxxxxxxx==============
+4605084 -> created: 2011-08-04 12:09:13.0; updated: null
+4605094 -> created: 2011-08-04 12:09:52.0; updated: null
+1st sort
+4605094 = 9999 (2011-08-04 12:09:52.0)
+4605084 = 4 (2011-08-04 12:09:13.0)
+***************
+2nd sort
+4605094 = 9999 (null)
+4605084 = 4 (null)
+***************
+#112#.- delete from answer where idanswer=4605084
+============xxxxxxxxxxxxxxxx==============
+4603132 -> created: 2011-08-03 17:07:40.0; updated: null
+4603142 -> created: 2011-08-03 17:19:23.0; updated: null
+1st sort
+4603142 = 9999 (2011-08-03 17:19:23.0)
+4603132 = 4 (2011-08-03 17:07:40.0)
+***************
+2nd sort
+4603142 = 9999 (null)
+4603132 = 4 (null)
+***************
+#114#.- delete from answer where idanswer=4603132
+============xxxxxxxxxxxxxxxx==============
+4603781 -> created: 2011-08-03 18:14:27.0; updated: null
+4603787 -> created: 2011-08-03 18:14:40.0; updated: null
+1st sort
+4603787 = 9999 (2011-08-03 18:14:40.0)
+4603781 = 4 (2011-08-03 18:14:27.0)
+***************
+2nd sort
+4603787 = 9999 (null)
+4603781 = 4 (null)
+***************
+#116#.- delete from answer where idanswer=4603781
+============xxxxxxxxxxxxxxxx==============
+4604358 -> created: 2011-08-04 10:58:44.0; updated: null
+4604364 -> created: 2011-08-04 10:59:03.0; updated: null
+1st sort
+4604364 = 9999 (2011-08-04 10:59:03.0)
+4604358 = 4 (2011-08-04 10:58:44.0)
+***************
+2nd sort
+4604364 = 9999 (null)
+4604358 = 4 (null)
+***************
+#118#.- delete from answer where idanswer=4604358
+============xxxxxxxxxxxxxxxx==============
+4604951 -> created: 2011-08-04 11:53:27.0; updated: null
+4604960 -> created: 2011-08-04 11:54:21.0; updated: null
+1st sort
+4604960 = 9999 (2011-08-04 11:54:21.0)
+4604951 = 3 (2011-08-04 11:53:27.0)
+***************
+2nd sort
+4604960 = 9999 (null)
+4604951 = 3 (null)
+***************
+#120#.- delete from answer where idanswer=4604951
+============xxxxxxxxxxxxxxxx==============
+4203856 -> created: 2011-02-21 12:11:37.0; updated: null
+4605109 -> created: 2011-08-04 12:13:18.0; updated: null
+1st sort
+4605109 = 9999 (2011-08-04 12:13:18.0)
+4203856 = 3 (2011-02-21 12:11:37.0)
+***************
+2nd sort
+4605109 = 9999 (null)
+4203856 = 3 (null)
+***************
+#122#.- delete from answer where idanswer=4203856
+============xxxxxxxxxxxxxxxx==============
+4605085 -> created: 2011-08-04 12:09:16.0; updated: null
+4605093 -> created: 2011-08-04 12:09:52.0; updated: null
+1st sort
+4605093 = 9999 (2011-08-04 12:09:52.0)
+4605085 = 4 (2011-08-04 12:09:16.0)
+***************
+2nd sort
+4605093 = 9999 (null)
+4605085 = 4 (null)
+***************
+#124#.- delete from answer where idanswer=4605085
+============xxxxxxxxxxxxxxxx==============
+4603133 -> created: 2011-08-03 17:07:46.0; updated: null
+4603141 -> created: 2011-08-03 17:19:23.0; updated: null
+1st sort
+4603141 = 9999 (2011-08-03 17:19:23.0)
+4603133 = 2 (2011-08-03 17:07:46.0)
+***************
+2nd sort
+4603141 = 9999 (null)
+4603133 = 2 (null)
+***************
+#126#.- delete from answer where idanswer=4603133
+============xxxxxxxxxxxxxxxx==============
+4603782 -> created: 2011-08-03 18:14:30.0; updated: null
+4603800 -> created: 2011-08-03 18:14:40.0; updated: null
+1st sort
+4603800 = 9999 (2011-08-03 18:14:40.0)
+4603782 = 4 (2011-08-03 18:14:30.0)
+***************
+2nd sort
+4603800 = 9999 (null)
+4603782 = 4 (null)
+***************
+#128#.- delete from answer where idanswer=4603782
+============xxxxxxxxxxxxxxxx==============
+4604359 -> created: 2011-08-04 10:58:47.0; updated: null
+4604377 -> created: 2011-08-04 10:59:03.0; updated: null
+1st sort
+4604377 = 9999 (2011-08-04 10:59:03.0)
+4604359 = 3 (2011-08-04 10:58:47.0)
+***************
+2nd sort
+4604377 = 9999 (null)
+4604359 = 3 (null)
+***************
+#130#.- delete from answer where idanswer=4604359
+============xxxxxxxxxxxxxxxx==============
+4604952 -> created: 2011-08-04 11:53:33.0; updated: null
+4604959 -> created: 2011-08-04 11:54:21.0; updated: null
+1st sort
+4604959 = 9999 (2011-08-04 11:54:21.0)
+4604952 = 3 (2011-08-04 11:53:33.0)
+***************
+2nd sort
+4604959 = 9999 (null)
+4604952 = 3 (null)
+***************
+#132#.- delete from answer where idanswer=4604952
+============xxxxxxxxxxxxxxxx==============
+4203857 -> created: 2011-02-21 12:11:40.0; updated: null
+4605107 -> created: 2011-08-04 12:13:18.0; updated: null
+1st sort
+4605107 = 9999 (2011-08-04 12:13:18.0)
+4203857 = 4 (2011-02-21 12:11:40.0)
+***************
+2nd sort
+4605107 = 9999 (null)
+4203857 = 4 (null)
+***************
+#134#.- delete from answer where idanswer=4203857
+============xxxxxxxxxxxxxxxx==============
+4605086 -> created: 2011-08-04 12:09:17.0; updated: null
+4605091 -> created: 2011-08-04 12:09:52.0; updated: null
+1st sort
+4605091 = 9999 (2011-08-04 12:09:52.0)
+4605086 = 4 (2011-08-04 12:09:17.0)
+***************
+2nd sort
+4605091 = 9999 (null)
+4605086 = 4 (null)
+***************
+#136#.- delete from answer where idanswer=4605086
+============xxxxxxxxxxxxxxxx==============
+4603134 -> created: 2011-08-03 17:07:48.0; updated: null
+4603139 -> created: 2011-08-03 17:19:23.0; updated: null
+1st sort
+4603139 = 9999 (2011-08-03 17:19:23.0)
+4603134 = 4 (2011-08-03 17:07:48.0)
+***************
+2nd sort
+4603139 = 9999 (null)
+4603134 = 4 (null)
+***************
+#138#.- delete from answer where idanswer=4603134
+============xxxxxxxxxxxxxxxx==============
+4603783 -> created: 2011-08-03 18:14:32.0; updated: null
+4603795 -> created: 2011-08-03 18:14:40.0; updated: null
+1st sort
+4603795 = 9999 (2011-08-03 18:14:40.0)
+4603783 = 4 (2011-08-03 18:14:32.0)
+***************
+2nd sort
+4603795 = 9999 (null)
+4603783 = 4 (null)
+***************
+#140#.- delete from answer where idanswer=4603783
+============xxxxxxxxxxxxxxxx==============
+4604360 -> created: 2011-08-04 10:58:48.0; updated: null
+4604372 -> created: 2011-08-04 10:59:03.0; updated: null
+1st sort
+4604372 = 9999 (2011-08-04 10:59:03.0)
+4604360 = 4 (2011-08-04 10:58:48.0)
+***************
+2nd sort
+4604372 = 9999 (null)
+4604360 = 4 (null)
+***************
+#142#.- delete from answer where idanswer=4604360
+============xxxxxxxxxxxxxxxx==============
+4604953 -> created: 2011-08-04 11:53:35.0; updated: null
+4604957 -> created: 2011-08-04 11:54:21.0; updated: null
+1st sort
+4604957 = 9999 (2011-08-04 11:54:21.0)
+4604953 = 4 (2011-08-04 11:53:35.0)
+***************
+2nd sort
+4604957 = 9999 (null)
+4604953 = 4 (null)
+***************
+#144#.- delete from answer where idanswer=4604953
+============xxxxxxxxxxxxxxxx==============
+4203858 -> created: 2011-02-21 12:11:43.0; updated: null
+4605121 -> created: 2011-08-04 12:13:19.0; updated: null
+1st sort
+4605121 = 9999 (2011-08-04 12:13:19.0)
+4203858 = 4 (2011-02-21 12:11:43.0)
+***************
+2nd sort
+4605121 = 9999 (null)
+4203858 = 4 (null)
+***************
+#146#.- delete from answer where idanswer=4203858
+============xxxxxxxxxxxxxxxx==============
+4605087 -> created: 2011-08-04 12:09:26.0; updated: null
+4605105 -> created: 2011-08-04 12:09:52.0; updated: null
+1st sort
+4605105 = 9999 (2011-08-04 12:09:52.0)
+4605087 = 2 (2011-08-04 12:09:26.0)
+***************
+2nd sort
+4605105 = 9999 (null)
+4605087 = 2 (null)
+***************
+#148#.- delete from answer where idanswer=4605087
+============xxxxxxxxxxxxxxxx==============
+4603135 -> created: 2011-08-03 17:07:50.0; updated: null
+4603153 -> created: 2011-08-03 17:19:23.0; updated: null
+1st sort
+4603153 = 9999 (2011-08-03 17:19:23.0)
+4603135 = 4 (2011-08-03 17:07:50.0)
+***************
+2nd sort
+4603153 = 9999 (null)
+4603135 = 4 (null)
+***************
+#150#.- delete from answer where idanswer=4603135
+============xxxxxxxxxxxxxxxx==============
+4603784 -> created: 2011-08-03 18:14:33.0; updated: null
+4603791 -> created: 2011-08-03 18:14:40.0; updated: null
+1st sort
+4603791 = 9999 (2011-08-03 18:14:40.0)
+4603784 = 4 (2011-08-03 18:14:33.0)
+***************
+2nd sort
+4603791 = 9999 (null)
+4603784 = 4 (null)
+***************
+#152#.- delete from answer where idanswer=4603784
+============xxxxxxxxxxxxxxxx==============
+4604361 -> created: 2011-08-04 10:58:51.0; updated: null
+4604368 -> created: 2011-08-04 10:59:03.0; updated: null
+1st sort
+4604368 = 9999 (2011-08-04 10:59:03.0)
+4604361 = 4 (2011-08-04 10:58:51.0)
+***************
+2nd sort
+4604368 = 9999 (null)
+4604361 = 4 (null)
+***************
+#154#.- delete from answer where idanswer=4604361
+============xxxxxxxxxxxxxxxx==============
+4604954 -> created: 2011-08-04 11:53:37.0; updated: null
+4604971 -> created: 2011-08-04 11:54:22.0; updated: null
+1st sort
+4604971 = 9999 (2011-08-04 11:54:22.0)
+4604954 = 4 (2011-08-04 11:53:37.0)
+***************
+2nd sort
+4604971 = 9999 (null)
+4604954 = 4 (null)
+***************
+#156#.- delete from answer where idanswer=4604954
+============xxxxxxxxxxxxxxxx==============
+4203860 -> created: 2011-02-21 12:11:51.0; updated: null
+4605118 -> created: 2011-08-04 12:13:19.0; updated: null
+1st sort
+4605118 = 9999 (2011-08-04 12:13:19.0)
+4203860 = 4 (2011-02-21 12:11:51.0)
+***************
+2nd sort
+4605118 = 9999 (null)
+4203860 = 4 (null)
+***************
+#158#.- delete from answer where idanswer=4203860
+============xxxxxxxxxxxxxxxx==============
+4605089 -> created: 2011-08-04 12:09:29.0; updated: null
+4605102 -> created: 2011-08-04 12:09:52.0; updated: null
+1st sort
+4605102 = 9999 (2011-08-04 12:09:52.0)
+4605089 = 4 (2011-08-04 12:09:29.0)
+***************
+2nd sort
+4605102 = 9999 (null)
+4605089 = 4 (null)
+***************
+#160#.- delete from answer where idanswer=4605089
+============xxxxxxxxxxxxxxxx==============
+4603137 -> created: 2011-08-03 17:18:21.0; updated: null
+4603150 -> created: 2011-08-03 17:19:23.0; updated: null
+1st sort
+4603150 = 9999 (2011-08-03 17:19:23.0)
+4603137 = 3 (2011-08-03 17:18:21.0)
+***************
+2nd sort
+4603150 = 9999 (null)
+4603137 = 3 (null)
+***************
+#162#.- delete from answer where idanswer=4603137
+============xxxxxxxxxxxxxxxx==============
+4603786 -> created: 2011-08-03 18:14:38.0; updated: null
+4603798 -> created: 2011-08-03 18:14:40.0; updated: null
+1st sort
+4603798 = 9999 (2011-08-03 18:14:40.0)
+4603786 = 4 (2011-08-03 18:14:38.0)
+***************
+2nd sort
+4603798 = 9999 (null)
+4603786 = 4 (null)
+***************
+#164#.- delete from answer where idanswer=4603786
+============xxxxxxxxxxxxxxxx==============
+4604363 -> created: 2011-08-04 10:59:01.0; updated: null
+4604375 -> created: 2011-08-04 10:59:03.0; updated: null
+1st sort
+4604375 = 9999 (2011-08-04 10:59:03.0)
+4604363 = 3 (2011-08-04 10:59:01.0)
+***************
+2nd sort
+4604375 = 9999 (null)
+4604363 = 3 (null)
+***************
+#166#.- delete from answer where idanswer=4604363
+============xxxxxxxxxxxxxxxx==============
+4604956 -> created: 2011-08-04 11:53:39.0; updated: null
+4604968 -> created: 2011-08-04 11:54:21.0; updated: null
+1st sort
+4604968 = 9999 (2011-08-04 11:54:21.0)
+4604956 = 4 (2011-08-04 11:53:39.0)
+***************
+2nd sort
+4604968 = 9999 (null)
+4604956 = 4 (null)
+***************
+#168#.- delete from answer where idanswer=4604956
+============xxxxxxxxxxxxxxxx==============
+4203846 -> created: 2011-02-21 12:11:05.0; updated: null
+4605116 -> created: 2011-08-04 12:13:19.0; updated: null
+1st sort
+4605116 = 9999 (2011-08-04 12:13:19.0)
+4203846 = 1 (2011-02-21 12:11:05.0)
+***************
+2nd sort
+4605116 = 9999 (null)
+4203846 = 1 (null)
+***************
+#170#.- delete from answer where idanswer=4203846
+============xxxxxxxxxxxxxxxx==============
+4605075 -> created: 2011-08-04 12:08:55.0; updated: null
+4605100 -> created: 2011-08-04 12:09:52.0; updated: null
+1st sort
+4605100 = 9999 (2011-08-04 12:09:52.0)
+4605075 = 1 (2011-08-04 12:08:55.0)
+***************
+2nd sort
+4605100 = 9999 (null)
+4605075 = 1 (null)
+***************
+#172#.- delete from answer where idanswer=4605075
+============xxxxxxxxxxxxxxxx==============
+4603123 -> created: 2011-08-03 17:07:10.0; updated: null
+4603148 -> created: 2011-08-03 17:19:23.0; updated: null
+1st sort
+4603148 = 9999 (2011-08-03 17:19:23.0)
+4603123 = 1 (2011-08-03 17:07:10.0)
+***************
+2nd sort
+4603148 = 9999 (null)
+4603123 = 1 (null)
+***************
+#174#.- delete from answer where idanswer=4603123
+============xxxxxxxxxxxxxxxx==============
+4603772 -> created: 2011-08-03 18:14:10.0; updated: null
+4603793 -> created: 2011-08-03 18:14:40.0; updated: null
+1st sort
+4603793 = 9999 (2011-08-03 18:14:40.0)
+4603772 = 1 (2011-08-03 18:14:10.0)
+***************
+2nd sort
+4603793 = 9999 (null)
+4603772 = 1 (null)
+***************
+#176#.- delete from answer where idanswer=4603772
+============xxxxxxxxxxxxxxxx==============
+4604349 -> created: 2011-08-04 10:58:13.0; updated: null
+4604370 -> created: 2011-08-04 10:59:03.0; updated: null
+1st sort
+4604370 = 9999 (2011-08-04 10:59:03.0)
+4604349 = 1 (2011-08-04 10:58:13.0)
+***************
+2nd sort
+4604370 = 9999 (null)
+4604349 = 1 (null)
+***************
+#178#.- delete from answer where idanswer=4604349
+============xxxxxxxxxxxxxxxx==============
+4604942 -> created: 2011-08-04 11:52:42.0; updated: null
+4604966 -> created: 2011-08-04 11:54:21.0; updated: null
+1st sort
+4604966 = 9999 (2011-08-04 11:54:21.0)
+4604942 = 1 (2011-08-04 11:52:42.0)
+***************
+2nd sort
+4604966 = 9999 (null)
+4604942 = 1 (null)
+***************
+#180#.- delete from answer where idanswer=4604942
+============xxxxxxxxxxxxxxxx==============
+4203861 -> created: 2011-02-21 12:11:54.0; updated: null
+4605115 -> created: 2011-08-04 12:13:19.0; updated: null
+1st sort
+4605115 = 9999 (2011-08-04 12:13:19.0)
+4203861 = 9999 (2011-02-21 12:11:54.0)
+***************
+2nd sort
+4605115 = 9999 (null)
+4203861 = 9999 (null)
+***************
+#182#.- delete from answer where idanswer=4203861
+============xxxxxxxxxxxxxxxx==============
+4605090 -> created: 2011-08-04 12:09:48.0; updated: null
+4605099 -> created: 2011-08-04 12:09:52.0; updated: null
+1st sort
+4605099 = 9999 (2011-08-04 12:09:52.0)
+4605090 = C*: No smoke inhalation took place whilst smoking (2011-08-04 12:09:48.0)
+***************
+2nd sort
+4605099 = 9999 (null)
+4605090 = C*: No smoke inhalation took place whilst smoking (null)
+***************
+#184#.- delete from answer where idanswer=4605090
+============xxxxxxxxxxxxxxxx==============
+4603138 -> created: 2011-08-03 17:19:21.0; updated: null
+4603147 -> created: 2011-08-03 17:19:23.0; updated: null
+1st sort
+4603147 = 9999 (2011-08-03 17:19:23.0)
+4603138 = D8 Alternates bath  and shower. If they don't have a shower they will have a bath. But there is no consistancy of how many they have. (2011-08-03 17:19:21.0)
+***************
+2nd sort
+4603147 = 9999 (null)
+4603138 = D8 Alternates bath  and shower. If they don't have a shower they will have a bath. But there is no consistancy of how many they have. (null)
+***************
+#186#.- delete from answer where idanswer=4603138
+============xxxxxxxxxxxxxxxx==============
+Total answers retrieved: 186; deleted: 93
