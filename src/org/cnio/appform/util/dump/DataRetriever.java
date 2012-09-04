@@ -872,8 +872,6 @@ System.out.println (rows.size() + " patiens for \npatients4Intrv query: "+sqlQry
 		  	catch (Exception ex) {
 		  		ex.printStackTrace();
 		  	}		  	
-
-		  	
 /*
 		  	while (moreResults) {
 		  		resultSet = getResultSet (prjCode, intrvId, grpId, orderSec, offset, maxRows);
