@@ -65,9 +65,10 @@ System.out.println("resetpass: "+strqry+"; digest: "+digest);
 <script type="text/javascript" src="js/yahoo/yahoo-dom-event.js"></script>
 <script type="text/javascript" src="js/yahoo/connection-debug.js"></script>
 <script type="text/javascript" src="js/yahoo/json-debug.js"></script>
-<script type="text/javascript" src="js/yahoo/container/container-debug.js"></script>
+<!--  <script type="text/javascript" src="js/yahoo/container/container-debug.js"></script> -->
 <script type="text/javascript" src="../js/yahoo/container/container-debug.js"></script>
 
+<script type="text/javascript" src="../js/core.js"></script>
 <script type="text/javascript" src="js/yahoo/ajaxreq.js"></script>
 
 <script type="text/javascript" src="js/jquery/jquery-1.3.js"></script>

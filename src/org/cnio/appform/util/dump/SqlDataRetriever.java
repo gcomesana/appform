@@ -63,6 +63,7 @@ System.out.println ("\nSqlDataRetriever => ResultSet query:\n"+sqlqry);
 =======
 >>>>>>> develop
 */
+System.out.println ("\nSqlDataRetriever => ResultSet query:\n"+sqlqry);	     
       ResultSet rs = stmt.executeQuery(sqlqry);
       
       return rs;

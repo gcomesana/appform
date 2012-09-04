@@ -274,6 +274,7 @@ System.out.println ("Writing out data");
         }	
       	else {
   				out.append("\""+patRef+"\""+CSV_SEP);
+// System.out.println("\""+grpRef+"\""+CSV_SEP);
   	      out.append("\""+grpRef+"\""+CSV_SEP);
   	      out.append("\""+intrvName+"\""+CSV_SEP);
   	      out.append("\""+secName+"\""+CSV_SEP);
@@ -296,6 +297,7 @@ System.out.println ("Writing out data");
         	patRef = (String)patient[0];
 //          grpName = (String)patient[1];
         	grpRef = (String)patient[1];
+// System.out.println("*** group change: "+grpRef);        	
 //          intrvName = (String)innRow[2];
 //          secName = (String)innRow[3];
         }
@@ -305,7 +307,8 @@ System.out.println ("Writing out data");
         }
       } // eo while (...) => new patient detected
 
-      
+   
+// System.out.println ("***=> out.length? "+out.length());
 // new patient with list of results
   		if (out.length() == 0) {
   			intrvName = (String)innRow[2];
@@ -313,6 +316,7 @@ System.out.println ("Writing out data");
 
         out.append("\""+patRef+"\""+CSV_SEP);
         out.append("\""+grpRef+"\""+CSV_SEP);
+// System.out.println ("***=> appending group: "+grpRef);        
         out.append("\""+intrvName+"\""+CSV_SEP);
         out.append("\""+secName+"\""+CSV_SEP);
   		}

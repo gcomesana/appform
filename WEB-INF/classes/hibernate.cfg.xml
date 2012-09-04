@@ -8,27 +8,13 @@
     <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
     <property name="query.substitutions">yes 'Y', no 'N'</property>
     <property name="connection.driver_class">org.postgresql.Driver</property>
-		<!--
  	  <property name="connection.url">
- 			jdbc:postgresql://gredos.cnio.es:5432/appform 
-		</property> 		
+ 			jdbc:postgresql://padme.cnio.es:5432/appform 
+		</property> 
+		
     <property name="connection.username">gcomesana</property>
  		<property name="connection.password">appform</property> 
-		-->
-<!--
- 		<property name="connection.url">
-		 jdbc:postgresql://localhost:5432/epiquestdb
-		</property>  
-    <property name="connection.username">epiquestusr</property>
-    <property name="connection.password">3piqu3st</property>
--->
 
-		<property name="connection.url">
- 			jdbc:postgresql://localhost:4321/appform 
-		</property> 		
-    <property name="connection.username">gcomesana</property>
- 		<property name="connection.password">appform</property>
-		
     <!-- Use the C3P0 connection pool provider -->
     <property name="hibernate.c3p0.min_size">5</property>
     <property name="hibernate.c3p0.max_size">20</property>
@@ -40,7 +26,7 @@
     <property name="connection.pool_size">3</property>
 
     <!-- Enable auto-commit mode for special cases (integration testing) -->
-    <property name="connection.autocommit">false</property>
+    <property name="connection.autocommit">true</property>
 
     <!-- Disable the second-level cache  -->
     <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
@@ -65,10 +51,6 @@
     <property name="hibernate.cglib.use_reflection_optimizer">false</property> -->
 		<property name="hibernate.bytecode.use_reflection_optimizer">false</property>
     <!-- Application mapping classes/tables -->
-		
-		
-		<!-- enable log activity for sql queries -->
-		<property name="show_sql">false</property>
 
     <!-- CaveatEmptor annotated EJB3 entity beans.
 
