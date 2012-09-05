@@ -6,6 +6,7 @@ if (!Date.now) {
   };
 }
 
+
 var AjaxReq = (function () {
 	
 // private-static properties (static in the C sense:
