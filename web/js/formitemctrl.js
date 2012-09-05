@@ -562,7 +562,15 @@ var FormItemCtrl = function () {
 	
 	
 	
-//	var chkQuestionCode = function (comp, oldQCode, isClon, intrvId) {
+//	var chkQue stionCode = function (comp, oldQCode, isClon, intrvId) {
+/**
+ * Ajax-checks if the question code was changed compared to the value on database
+ * @param {Object} comp, the component
+ * @param {Object} qid, the question id set in the component
+ * @param {Object} isClon, true if this interview is a clon; false otherwise
+ * @param {Object} intrvId, the interview identifier
+ * @return nothing
+ */
 	var chkQuestionCode = function (comp, qid, isClon, intrvId) {
 		var newVal = comp.value;
 		var postData;
@@ -571,13 +579,13 @@ var FormItemCtrl = function () {
 		if (isClon) {
 			postData = "what=qcode&intrvid="+intrvId+"&qid="+qid+"&newcode="+newVal;
 			
-			var xReq = new AjaxReq();
+			var xReq = new AjaxReq('no-overlay');
 			xReq.setUrl(APPNAME+"/servlet/QryServlet");
 			xReq.setMethod("GET");
 			xReq.setPostdata(postData);
 			xReq.setCallback(ajaxResp.onCheckQCode, ajaxResp.onFail, ajaxResp, null);
 			
-			xReq.startReq("NoOverlay");
+			xReq.startReq();
 		}
 		
 		
