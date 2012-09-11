@@ -1,5 +1,6 @@
 11.09.2012
 Deleted Aliquots_GERMAN interview (and related performances with answers and so...).
+In addition, some redundant FKs on database where removed.
 
 11.04.2011
 Added org.cnio.appform.util.SaveAnswers.java class, in order to save values in a faster way than previously, skipping hibernate entity classes and using a native psql query to retrieve and cache the answers already in database. So, the comparison of the request provided values and the previous values in the database is done straigh in the application server. 

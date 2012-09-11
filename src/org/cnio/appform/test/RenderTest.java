@@ -24,7 +24,7 @@ class RenderTest {
     rajon.setAge(24);
     System.out.println (rajon.toString());
 */
-  	
+/*  	
   	String answersToRmv = "15690-2-1,15691-2-1,15692-2-1,15696-2-1,15696-2-2,16213-2-1,15693-2-1,15693-2-1,15694-2-1,15695-2-1,15697-2-1,15698-2-1";
   	Session hibSes = HibernateUtil.getSessionFactory().openSession();
   	IntrvFormCtrl ifc = new IntrvFormCtrl (hibSes);
@@ -32,6 +32,39 @@ class RenderTest {
   	boolean res = ifc.removeAnswers(answersToRmv, 3432);
   	
     System.out.println("Remove answers: "+res);
+*/
+  	String interviewId = "4351";
+  	Session hibSes = HibernateUtil.getSessionFactory().openSession();
+  	Transaction tx = null; 
+  	try {
+  		
+			tx = hibSes.beginTransaction();
+			
+			(new RenderTest()).delInterview (hibSes, interviewId);
+			tx.commit();
+  	}
+  	catch (HibernateException hibEx) {
+  		if (tx != null)
+  			tx.rollback();
+ 
+  		hibEx.printStackTrace();		
+  	}
+  		
+  	hibSes.close();
+  }
+  
+  
+
+  
+  private void delInterview (Session hibSes, String id) {
+  	Interview it = 
+			(Interview)hibSes.get(Interview.class, Integer.decode(id));
+		String theName = it.getName();
+		
+		hibSes.delete(it);
+		String msgOut = "The interview '"+theName+"' has been removed from project";
+		boolean res = true, intrvDeleted = true;
+		Integer what = org.cnio.appform.audit.ActionsLogger.INTERVIEW;
   }
   
   
