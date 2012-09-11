@@ -1,0 +1,143 @@
+11.09.2012
+Deleted Aliquots_GERMAN interview (and related performances with answers and so...).
+
+11.04.2011
+Added org.cnio.appform.util.SaveAnswers.java class, in order to save values in a faster way than previously, skipping hibernate entity classes and using a native psql query to retrieve and cache the answers already in database. So, the comparison of the request provided values and the previous values in the database is done straigh in the application server. 
+A new wrapper method (saveAnswers(...)) was added to org.cnio.appform.util.IntrvFormCtrl.java.
+
+Speed is notably increased.
+
+02.03.2011
+formrenderer.jar was added. This file contains the new form renderer groovy development. It was developed in groovy by using Intellij Idea 8.1 featuring the use of groovy builders. Also, jsp/intrv/ajaxjsp/items4sec.jsp was modified to accomodate the new renderer, removing or disabling all previous render logic
+
+14.01.2011
+This is another change on database rather than the web application change.
+A trigger 'onDelSubject' for table patient was added in order to audit the subjects which were deleted from patient table (and, then, from performance, pat_gives_ans2ques, perf_history and answer tables, all of them not audit). Possibility to extend the logAnswerUpdate to include also deletions.
+
+
+13.01.2011
+This is not a change on the application as a change on database.
+The following list of patients were deleted from database upon Mirari (& Gabi)'s request, as they don't have participation questionnaire:
+'157081015','157082014','157091033','157091041','157091042',
+'157091043','157091044','157091046','157092003','157092005','157092010',
+'157092013','157092014','157101002','157101007','157102002' 
+
+
+
+14.10.2010
+SqlFixer run on padme. 620 repeated question fixed (311 deleted). Next check returns 0 repeated rows.
+Command line script interfaze for groovy script and program SqlFixer. Two scripts were made:
+- simfixer.sh, makes just a check for repeated questions
+- runfixer.sh, makes the real fix for the questions.
+Must edit FixAnswersScript.groovy to define the server.
+
+02.12.2010
+Sample with code 15079104901 changed into 15709104901. This was an error prior to change de sample configuration dialog to check the first nine digits 
+
+18.11.2010+
+!!! REMOVED PATIENTS FROM DATABASE !!!
+The following samples where removed from database upon tarsila request:
+15709000028 (7170)
+15709001563 (6966)
+15706107202 (6552)
+
+
+15.11.2010
+!!! REMOVED PATIENTS FROM DATABASE !!!
+Patient 157801099 (AMNCH Ireland) was removed upon Damian request. Recovery must be done by
+importing the backup of that day early in the morning
+
+
+02.11.2010
+!!! REMOVED PATIENTS FROM DATABASE !!!
+According with the following query:
+
+delete from patient
+where codpatient in ('157082010','157082011','157082012','157082013','
+157082014','157082017','157082018','157081024','157081030',
+'157081031','157081032','157081033','157081034','157081035','157081036',
+'157081037','157081038','157081039','157081040','157081041',
+'157081042','157081043','157081044','157081045','157081046','157081050',
+'157081051','157081055','157081056','157011482');
+
+Those patients, their answers and performances where removed from db.
+To recovery them, the backup on 02.11.2010 (7:00am) should be retrieved.
+
+
+26.08.2010
+Respuestas múltiples arreglado. Si hay algo mal hay que recuperar el backup de la base de datos de 26.08 a las 7am
+
+
+15.06.2009
+- Answer changes audit:
+	* added perf_history table in database to support M:N relationship between 
+	appuser and performance entities
+	* added onUpdAnswer trigger in database
+	* entity classes AppUser, Performance updated
+	* entity class PerfUserHistory updated
+	* IntrvFormCtrl class modified to set every interview performed
+	* HibernateUtil class modified to support new entity class
+	
+- Login attempts limit outlined:
+	* table appuser updated with field login_attempts to count how many attempts
+	* AppLoginModule updated to support increase of attempts
+	* AppSessionListener updated to set number of attempts in database to 0 on logout
+	* AppUserCtrl updated to support new audit messages
+	* HibernateUtl now supports a variable with the number of login attempts
+	* Improvements:
+		get the number of login attempts from file
+		support automatic password retrieve through a form in error.jsp with jcaptcha
+
+
+20.05.2009
+- Authentication method changed: from JDBCRealm to JAASRealm to have more
+control on the login process (org.cnio.appform.jaas and 
+org.cnio.appform.servlet.filter packages added)
+- Real time sending data included. Now the interviewers can perform an interview
+by sending every answer at a time or by using the traditional method.
+- Audit issues solved.
+- As required by editors, the element edition has no restrictions as for cloned
+interviews
+- Some minor bugs solved
+
+
+20.03.2009
+- Group dialog changed: the combobox for the groups was replaced 
+by a group of radiobuttons in order to accomodate long group names
+
+
+26.02.2009
+- Logging problems fixed. The current version for commons logging (where the
+problems came from) is 1.1.1 (1.0.4 had the invalid hierarchy... bug)
+- Known bugs:
+	- session and IP not reset sometimes.
+	
+
+13.02.2009
+- Session listener (org.cnio.appform.audit.AppSessionListener) appears to work 
+fine now.
+- Programatic group management finished. Features are:
+	- as before, there are two sort of groups: primary (country, company) and 
+	secondary (department, lab, office, ...)
+	- New active group concept, for both primary and secondary groups
+	- For an user with several primary groups, primary group selector (modal 
+	dialog) is early displayed to choose the active primary group
+	- At the time to perform an interview, the user should be choose one among
+	his/her many secondary groups
+
+
+21.01.2009
+- interview performance, user access and interview management audit in database 
+(applog table) and file (by using log4j and auditing to 
+$CATALINA_HOME/logs/appform directory)
+
+- simultaneous (concurrent) access not allowed for any user (one user can be logged in
+just once at the same time)
+
+- now a new interview has its own datatypes from the scratch (basic types will 
+be cloned for the new interview)
+
+- the admin user is able to see any interview template along with modifying and
+deleting them. Not able to create new interview templates (as they need an owner)
+
+	
