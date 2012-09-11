@@ -1,14 +1,14 @@
 #Fat Jar Configuration File
-#Thu Apr 12 14:04:41 CEST 2012
-onejar.license.required=true
+#Wed Sep 05 17:58:57 CEST 2012
+onejar.license.required=false
 manifest.classpath=
 manifest.removesigners=false
 onejar.checkbox=false
-jarname=/Users/bioinfo/Development/deploy/appform/batch/padme-sqldumper.jar
+jarname=/Users/bioinfo/Development/deploy/appform/batch/gredos-sqldumper.jar
 manifest.mergeall=false
 manifest.mainclass=org.cnio.appform.util.dump.MainDump
 manifest.file=<createnew>
 jarname.isextern=true
 onejar.expand=
-excludes=<jar|catalina-ant.jar>;<jar|catalina-ha.jar>;<jar|catalina-tribes.jar>;<jar|catalina.jar>;<jar|glassboxMonitor.jar>;<jar|jasper-el.jar>;<jar|jasper-jdt.jar>;<jar|jasper.jar>;<jar|jsp-api.jar>;<jar|jipViewer.jar>;<jar|profile.jar>;<jar|servlet-api.jar>;<jar|tomcat-coyote.jar>;<jar|tomcat-dbcp.jar>;<jar|tomcat-i18n-es.jar>;<jar|tomcat-i18n-fr.jar>;<jar|tomcat-i18n-ja.jar>;<jar|formrenderer.jar>;<jar|junit-4.9b2.jar>
+excludes=<po|appform7>~hibernate-cegen-prep.cfg.xml;<po|appform7>~hibernate-cegen.cfg.xml;<po|appform7>~hibernate-epidb-prep.cfg.xml;<po|appform7>~hibernate-epidb.cfg.xml;<po|appform7>~hibernate-generic.cfg.xml;<po|appform7>~hibernate-pre.cfg.xml;<po|appform7>~hibernate-war.cfg.xml;<po|appform7>~hibernate.cfg.xml.def;<po|appform7>~hibernate.cfg.xml~;<po|appform7>~log4j-cegen.xml;<po|appform7>~log4j-generic.xml;<po|appform7>~log4j-pgt.xml;<jar|activation.jar>;<jar|mail.jar>;<jar|imap.jar>;<jar|mailapi.jar>;<jar|pop3.jar>;<jar|smtp.jar>;<jar|catalina-ant.jar>;<jar|catalina-ha.jar>;<jar|catalina-tribes.jar>;<jar|catalina.jar>;<jar|glassboxMonitor.jar>;<jar|jasper-el.jar>;<jar|jasper-jdt.jar>;<jar|jasper.jar>;<jar|jsp-api.jar>;<jar|jipViewer.jar>;<jar|profile.jar>;<jar|servlet-api.jar>;<jar|tomcat-coyote.jar>;<jar|tomcat-dbcp.jar>;<jar|tomcat-i18n-es.jar>;<jar|tomcat-i18n-fr.jar>;<jar|tomcat-i18n-ja.jar>;<jar|formrenderer.jar>;<jar|junit-4.9b2.jar>
 includes=
