@@ -336,7 +336,7 @@ System.out.println ("Writing out data");
       if (codes.containsKey(keyField))
       	codes.put(keyField, ansVal);
       else
-      	System.err.println("No key for question: "+keyField);
+      	System.err.println("Interview '"+intrvName+"', sec. '"+secName+"': No key for question: " + keyField + "("+codq+")");
       
 //      out.append(ansVal+CSV_SEP);
     } // EO while (rs.next()), loop over resultset
@@ -476,19 +476,11 @@ System.out.println("Writing out result:");
 		if (codes.containsKey(keyField))
 			codes.put(keyField, ansVal);
 		else
-			System.err.println("No key for question: " + keyField);
+			System.err.println("Interview '"+intrvName+"', sec. '"+secName+"': No key for question: " + keyField + "("+codq+")");
 
 	} // EO for row, ResultSet loop
-/*		
- * 
-<<<<<<< HEAD
-// System.out.println ("\n** Rows processed: "+countRows);
-=======
-System.out.println ("\n** Rows processed: "+countRows);
->>>>>>> develop
 
-*/
-// here i have to write the very last subject retrieved
+// here I have to write the very last subject retrieved
 	if (out.length() > 0) { // spit everything
 
 		for (Map.Entry<String, String> entry : codes.entrySet()) {
@@ -514,6 +506,7 @@ System.out.println ("\n** Rows processed: "+countRows);
   
   
 /**
+ * @deprecated
  * This method writes out the results in the file in the correct place, which is,
  * matching with the file header (it means, matching answers with questions). 
  * It takes and additional list of subjects with any performance for the interview
@@ -634,7 +627,7 @@ System.out.print ("Resultset progress: ");
 			if (codes.containsKey(keyField))
 				codes.put(keyField, ansVal);
 			else
-				System.err.println("No key for question: " + keyField);
+				System.err.println("Interview '"+intrvName+"', sec. '"+secName+"': No key for question: " + keyField + "("+codq+")");
 
 			rowsForLastPat++;
 		} // EO for row, ResultSet loop
