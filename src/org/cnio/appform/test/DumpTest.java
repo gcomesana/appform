@@ -13,7 +13,8 @@ public class DumpTest {
 		Integer orderSec = 1;
 		Integer sortOrder = 1;
 		
-		String fileName = "/Users/bioinfo/Development/dbdumps/aliquotsnew-isblac.props";
+//		String fileName = "/Users/bioinfo/Development/dbdumps/aliquotsnew-isblac.props";
+		String fileName = "/Users/bioinfo/Development/deploy/appform/batch/RecogidaMuestras_ES-pangen.props";
 		
 		try {
 			MainDump md = new MainDump ();
@@ -22,9 +23,6 @@ public class DumpTest {
 		catch (IOException ex) {
 			ex.printStackTrace();
 		}
-		
-		
-		
 	}
 	
 	

@@ -325,6 +325,12 @@ System.out.println();
     LinkedHashMap<String, String> fullMap = new LinkedHashMap<String, String>();
 
 // now, aMap and fullMap has to be merged with item order to get the full list
+// every time an item is put into the fullMap list, it is removed from the source list
+// (either repeatable or single list) and his assciated boolean variable
+// (singleRemoved or repRemoved for singles and repeatables) is set to true
+// indicating that item was the last one in being removed from the list and 
+// another has to be taken off the list. In such a way, all items are got in
+// the specific order
     boolean singleRemoved = true, repRemoved = true;
     while (true) {
       singleKey = null;
@@ -333,7 +339,8 @@ System.out.println();
       repEntry = repRemoved == false ? repEntry : null;
 
       // end condition, loop is over
-      if (singleIt.hasNext() == false && repIt.hasNext() == false)
+      if (singleIt.hasNext() == false && repIt.hasNext() == false &&
+      		singleEntry == null && repEntry == null)
         break;
 
       if (singleRemoved) {
@@ -610,7 +617,6 @@ System.out.println ("\nResultSet query:\n"+sqlqry);
   	
   	
   	return sqlIt;
-  	
   }
   
   
@@ -867,7 +873,8 @@ System.out.println (rows.size() + " patiens for \npatients4Intrv query: "+sqlQry
 		  	SqlDataRetriever sqldr = new SqlDataRetriever();
 		  	java.sql.ResultSet rs = sqldr.getResultSet(prjCode, intrvId, grpId, orderSec);
 		  	try {
-		  		dw.buildResultSet(patients, listMapHdr, rs, fileOut);
+		  		if (patients.size() > 0)
+		  			dw.buildResultSet(patients, listMapHdr, rs, fileOut);
 		  	}
 		  	catch (Exception ex) {
 		  		ex.printStackTrace();
