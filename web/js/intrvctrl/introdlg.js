@@ -394,7 +394,7 @@ var IntroDlg = function () {
 				
 				vtype: 'subjCode',
 //				anotherCode: 'patcodebis',
-				maskRe: /\d/,
+				maskRe: /[a-zA-Z0-9]/,
 				maxLength: 3,
 				
 				disabled: true,
@@ -413,7 +413,7 @@ var IntroDlg = function () {
 				vtype: 'subjCode',
 //				vtype: 'patcode',
 				anotherCode: 'patcode',
-				maskRe: /\d/,
+				maskRe: /[a-zA-Z0-9]/,
 				maxLength: 3,
 				
 				disabled: true,
