@@ -821,11 +821,13 @@ for (StackTraceElement ste: Thread.currentThread().getStackTrace())
       LogFile.getLogger().error(ex.getLocalizedMessage());
       StackTraceElement[] stElems = ex.getStackTrace();
       LogFile.logStackTrace(stElems);
-
     }
     return null;
   }
 
+  
+  
+  
   /**
    * Remove records from entity classes PatGivesAnswer2Ques and Answer from the
    * ids parameter got from client.

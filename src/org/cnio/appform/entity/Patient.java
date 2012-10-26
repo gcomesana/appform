@@ -78,7 +78,7 @@ public class Patient {
 	public Patient (String code) {
 		this ();
 		
-		this.codpatient= code;
+		this.codpatient= code.toUpperCase();
 	}
 /*	
 	public Section (String username, String passwd, AbstractItem anItem) {
@@ -113,7 +113,7 @@ public class Patient {
 	}
 
 	public void setCodpatient(String codpatient) {
-		this.codpatient = codpatient;
+		this.codpatient = codpatient.toUpperCase();
 	}
 
 	public String getPhone() {
@@ -198,7 +198,7 @@ public class Patient {
 	}
 
 	public void setCodSubject(String codSubject) {
-		this.codSubject = codSubject;
+		this.codSubject = codSubject.toUpperCase();
 	}
 }
 

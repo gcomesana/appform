@@ -14,7 +14,7 @@ public class DumpTest {
 		Integer sortOrder = 1;
 		
 //		String fileName = "/Users/bioinfo/Development/dbdumps/aliquotsnew-isblac.props";
-		String fileName = "/Users/bioinfo/Development/deploy/appform/batch/RecogidaMuestras_ES-pangen.props";
+		String fileName = "/Users/bioinfo/Development/deploy/appform/batch/Part_pangen.props";
 		
 		try {
 			MainDump md = new MainDump ();
