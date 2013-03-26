@@ -392,9 +392,14 @@ System.out.println();
       								Integer intrvId, Integer sortOrder, Integer secOrder) {
   	
   	String repids = getRepeatableItems (prjCode, intrvId, secOrder);
+  	/*
   	String repIdsConstraint = repids.length() == 0? "and it.ite_iditem is NULL ": 
   														"and (it.ite_iditem not in ("+repids+") or it.ite_iditem is NULL)";
-  						
+  	*/
+  	// This was removed in order to be able to get the nested items as well
+  	String repIdsConstraint = repids.length() == 0? "": 
+							"and (it.ite_iditem not in ("+repids+") or it.ite_iditem is NULL)";
+  	
   	String sql = "select q.codquestion as codq, it.item_order as itorder, qa.answer_order "+
   				"from interview i, section s, item it, question q, question_ansitem qa "+
   				"where i.idinterview = "+intrvId+" "+

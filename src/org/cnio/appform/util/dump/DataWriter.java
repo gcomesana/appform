@@ -472,6 +472,10 @@ System.out.println("Writing out result:");
 		String newkeyField = num + "." + itOrd + "." + codq + "." + ord;
 
 		
+/*
+ * Check for the codes-field_key relation. codes are the question codes (like A23)
+ * keyField is the field position inside the form like 23.1.1.
+ */		
 		ansVal = "\"" + ansVal + "\"";
 		if (codes.containsKey(keyField))
 			codes.put(keyField, ansVal);
