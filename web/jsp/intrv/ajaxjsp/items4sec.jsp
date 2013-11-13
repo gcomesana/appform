@@ -115,7 +115,7 @@ if (session.getAttribute ("preview") != null) {
 // for preview we use the default project with the NULL_PATIENT
 // no worries as it is not possible to save data on preview
 	codProject = IntrvFormCtrl.DEFAULT_PRJ;
-	Patient pat = intrCtrl.getPatientFromCode(IntrvFormCtrl.NULL_PATIENT);
+	Patient pat = intrCtrl.getPatientFromCode(IntrvFormCtrl.TEST_PATIENT);
 	patId = Integer.toString(pat.getId());
 	btnDisabled = "disabled=\"disabled\" ";
 }
@@ -240,7 +240,7 @@ else { // a "normal" section
 
 	String thePatCode;
 	Patient myPat = (Patient)hibSes.get(Patient.class, Integer.decode(patId));
-	thePatCode = (session.getAttribute ("preview") != null)? IntrvFormCtrl.NULL_PATIENT:
+	thePatCode = (session.getAttribute ("preview") != null)? IntrvFormCtrl.TEST_PATIENT:
 		myPat.getCodpatient();
 	int secOrder = sec.getSectionOrder().intValue();
 

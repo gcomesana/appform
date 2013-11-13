@@ -473,6 +473,7 @@ ControlForms.prototype.sendItem = function (type, item, min, max, exc) {
 		var patId = $('#patId').val();
 		itemName = item.getAttribute('name');
 		
+		itemVal = encodeURIComponent(itemVal);
 		postdata = "what=perf&q=" + itemName + "&val=" + itemVal;
 		postdata += "&patid=" + patId;
 		

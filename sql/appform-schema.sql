@@ -1404,6 +1404,14 @@ ALTER TABLE ONLY pat_gives_answer2ques
 -- Name: public; Type: ACL; Schema: -; Owner: postgres
 --
 
+
+-- INDEXES --
+CREATE INDEX "performance_codpat_idx" ON "public"."performance"
+  USING btree ("codpat");
+
+
+
+
 REVOKE ALL ON SCHEMA public FROM PUBLIC;
 REVOKE ALL ON SCHEMA public FROM postgres;
 GRANT ALL ON SCHEMA public TO postgres;
