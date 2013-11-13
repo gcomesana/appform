@@ -260,6 +260,7 @@ import org.json.simple.JSONObject;
 // what=perf&q=q-NNNN-OO-GG&val=XXX&patid=patId
 		String quesId = request.getParameter("q"); 
 		String paramVal = request.getParameter("val");
+System.out.println("paramVal pete: "+paramVal);
 		paramVal = URLDecoder.decode (paramVal, "UTF-8");
 		paramVal = (paramVal == "")? org.cnio.appform.util.RenderEng.MISSING_ANSWER:
 																paramVal;

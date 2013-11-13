@@ -24,6 +24,10 @@ this interview before
 								
 								
 <%!
+/**
+	* Convenient jsp method to save the questions in the introduction section to
+	* and interview
+	*/
 	public void saveFrontQuestions (HttpServletRequest request,
 																	Patient newPat, Session ses) {
 		boolean res = false;

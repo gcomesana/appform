@@ -1,10 +1,10 @@
 #Fat Jar Configuration File
-#Tue Sep 11 12:08:49 CEST 2012
+#Thu Sep 13 11:57:49 CEST 2012
 onejar.license.required=false
 manifest.classpath=
 manifest.removesigners=false
 onejar.checkbox=false
-jarname=/Users/bioinfo/Development/deploy/appform/batch/padme-sqldumper.jar
+jarname=/Users/bioinfo/Development/deploy/appform/batch/local-sqldumper.jar
 manifest.mergeall=false
 manifest.mainclass=org.cnio.appform.util.dump.MainDump
 manifest.file=<createnew>

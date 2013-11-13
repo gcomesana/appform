@@ -9,7 +9,7 @@
     <property name="query.substitutions">yes 'Y', no 'N'</property>
     <property name="connection.driver_class">org.postgresql.Driver</property>
  	  <property name="connection.url">
- 			jdbc:postgresql://padme.cnio.es:5432/appform 
+ 			jdbc:postgresql://localhost:4321/appform 
 		</property> 
 		
     <property name="connection.username">gcomesana</property>
